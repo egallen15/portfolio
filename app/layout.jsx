@@ -2,6 +2,7 @@
 import React from 'react'
 import BlogTheme from './components/BlogTheme'
 import { Head } from 'nextra/components'
+import { getPageMap } from 'nextra/page-map'
 import './globals.css'
 
 // Optional: define some metadata for your site
@@ -10,12 +11,13 @@ export const metadata = {
   description: 'A site built with a custom Nextra v4 theme'
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const pageMap = await getPageMap()
   return (
     <html lang="en">
       <Head />
       <body>
-        <BlogTheme>
+        <BlogTheme pageMap={pageMap}>
           {children}
         </BlogTheme>
       </body>

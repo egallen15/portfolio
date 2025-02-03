@@ -4,6 +4,7 @@ const withNextra = nextra({})
 
 export default withNextra({
   reactStrictMode: true,
+  pageExtensions: ['tsx', 'jsx', 'md', 'mdx'], // Added support for MDX pages
   images: {
     remotePatterns: [
       {
