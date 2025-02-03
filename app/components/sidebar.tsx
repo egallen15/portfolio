@@ -16,7 +16,7 @@ export const Sidebar: FC<{ pageMap: PageMapItem[] }> = ({ pageMap }) => {
   return (
     <div
       style={{
-        background: 'lightblue',
+        background: '#222222',
         padding: 20
       }}
     >
