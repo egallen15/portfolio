@@ -1,11 +1,11 @@
 import { useMDXComponents as getNextraComponents } from 'nextra/mdx-components'
-import { TOC } from './app/_components/toc'
+import { TOC } from './app/components/toc'
  
 const defaultComponents = getNextraComponents({
   wrapper({ children, toc }) {
     return (
       <>
-        <div style={{ flexGrow: 1, padding: 20 }}>{children}</div>
+        <div className="flex-grow p-5">{children}</div>
         <TOC toc={toc} />
       </>
     )

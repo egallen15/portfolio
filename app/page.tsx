@@ -10,7 +10,7 @@ export default function Home() {
       <div className="p-4"> {/* Added padding here */}
         <h1 className="text-4xl font-bold">Welcome to My Portfolio</h1>
         <p className="text-xl pt-2">
-          Hi, I'm Eric, a UX Designer. Here are some of my projects:
+          Hi, my name is Eric, a UX Designer. Here are some of my projects:
         </p>
         <div className="flex flex-col pt-2 gap-4">
           <ul>
