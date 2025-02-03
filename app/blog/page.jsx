@@ -11,6 +11,7 @@ export default async function Blog() {
   const posts = blogPage.children ?? [];
   
   return (
+    <div className="mx-16">
       <div>
         <h1 className="text-3xl font-bold mx-4 mt-4 mb-4">Blog Posts</h1>
         {posts.length > 0 ? (
@@ -27,5 +28,6 @@ export default async function Blog() {
           <p className="font-bold mx-4 mt-4 mb-4">No blog posts found.</p>
         )}
       </div>
+    </div>
   );
 }

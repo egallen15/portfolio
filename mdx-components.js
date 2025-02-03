@@ -5,7 +5,7 @@ const defaultComponents = getNextraComponents({
   wrapper({ children, toc }) {
     return (
       <>
-        <article className="mx-8 prose prose-slate dark:prose-invert mb-6 max-w-none prose-pre:bg-gray-800 prose-pre:p-4 prose-img:rounded-xl">
+        <article className="prose prose-slate dark:prose-invert mb-6 max-w-none prose-pre:bg-gray-800 prose-pre:p-4 prose-img:rounded-xl p-8">
           {children}
         </article>
         <TOC toc={toc} />
