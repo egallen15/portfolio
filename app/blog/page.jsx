@@ -1,7 +1,7 @@
 import { getPageMap } from 'nextra/page-map';
 
 export const metadata = {
-    title: 'My blog',
+    title: 'Index',
     description: 'Welcome to my Next.js 13 portfolio!',
 };
 
@@ -12,7 +12,7 @@ export default async function Blog() {
   
   return (
       <div>
-        <h1 className="text-3xl font-bold mb-4">Blog Posts</h1>
+        <h1 className="text-3xl font-bold mx-4 mt-4 mb-4">Blog Posts</h1>
         {posts.length > 0 ? (
           <ul className="list-disc pl-5">
             {posts.map(post => (
@@ -24,7 +24,7 @@ export default async function Blog() {
             ))}
           </ul>
         ) : (
-          <p>No blog posts found.</p>
+          <p className="font-bold mx-4 mt-4 mb-4">No blog posts found.</p>
         )}
       </div>
   );
