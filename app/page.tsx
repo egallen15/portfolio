@@ -1,6 +1,6 @@
 
 export const metadata = {
-  title: 'My blog',
+  title: 'Home',
   description: 'Welcome to my Next.js 13 portfolio!',
 };
 

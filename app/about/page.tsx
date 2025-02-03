@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 export const metadata = {
-  title: 'My blog',
+  title: 'About',
   description: 'Welcome to my Next.js 13 portfolio!',
 };
 
