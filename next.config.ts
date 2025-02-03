@@ -1,6 +1,9 @@
-import type { NextConfig } from "next";
+import nextra from 'nextra'
 
-const nextConfig: NextConfig = {
+const withNextra = nextra({})
+
+export default withNextra({
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
@@ -12,6 +15,4 @@ const nextConfig: NextConfig = {
     ],
     dangerouslyAllowSVG: true,
   },
-};
-
-export default nextConfig;
+})

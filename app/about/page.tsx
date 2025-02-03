@@ -1,6 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
+export const metadata = {
+  title: 'My blog',
+  description: 'Welcome to my Next.js 13 portfolio!',
+};
+
 const About: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
