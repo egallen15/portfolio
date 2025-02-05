@@ -1,13 +1,13 @@
-import type { PageMapItem } from 'nextra'
-import { version } from 'nextra/package.json'
-import type { FC, ReactNode } from 'react'
-import { Footer } from './footer'
-import { Navbar } from './navbar'
-import { Sidebar } from './sidebar'
- 
+import type { PageMapItem } from "nextra";
+import { version } from "nextra/package.json";
+import type { FC, ReactNode } from "react";
+import { Footer } from "./footer";
+import { Navbar } from "./navbar";
+import { Sidebar } from "./sidebar";
+
 const NextraTheme: FC<{
-  children: ReactNode
-  pageMap: PageMapItem[]
+  children: ReactNode;
+  pageMap: PageMapItem[];
 }> = ({ children, pageMap }) => {
   return (
     <>
@@ -21,7 +21,7 @@ const NextraTheme: FC<{
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default NextraTheme
+export default NextraTheme;

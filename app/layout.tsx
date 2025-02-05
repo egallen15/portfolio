@@ -9,7 +9,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: {
     absolute: '',
-    template: '%s - Nextra'
+    template: '%s | Eric Allen',
   }
 }
  

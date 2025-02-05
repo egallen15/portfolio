@@ -1,7 +1,7 @@
 import { getPageMap } from 'nextra/page-map';
 
 export const metadata = {
-    title: 'Index',
+    title: 'Blog Index',
     description: 'Welcome to my Next.js 13 portfolio!',
 };
 
