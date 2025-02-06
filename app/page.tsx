@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
       <div className="sm:flex sm:items-center sm:justify-between">
+        <h1 className="text-2xl font-semibold dark:text-white">Welcome to My Portfolio</h1>
         {/* Optionally, add navigation links or additional header content here */}
       </div>
       <main className="mx-3 my-4"> {/* Corrected margin classes */}

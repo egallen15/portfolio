@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
 
-## Getting Started
+## Overview
 
-First, run the development server:
+- Built with Next.js 13 and styled with Tailwind CSS.
+- Uses a consistent layout: a responsive header, main content area, and a shared footer.
+- The homepage (app/page.tsx) displays your projects and welcome message.
+- The footer (app/components/footer.tsx) provides navigation links and copyright info.
+- Blog posts and other content reside in the /app/blog folder.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## File Structure & How It Works
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **/app**: Contains your application source code.
+  - *page.tsx*: Defines the homepage layout and project listings.
+  - **/components**: Shared UI components like the Footer, Navbar, and Sidebar.
+  - **/blog**: Contains blog post pages (often written in MDX).
+- **/.next**: Auto-generated build artifacts by Next.js; you don't modify these directly.
+- **/public**: (If present) contains static assets.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Making Changes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- To update the layout, text, or styling, edit files under the /app folder and its subdirectories.
+- Changes to shared components (e.g. footer) are reflected site-wide.
+- After making changes, rebuild the site to update the auto-generated files.
+- Remember to update this document with any significant modifications to your structure or design.
