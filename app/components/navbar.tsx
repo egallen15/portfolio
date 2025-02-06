@@ -27,25 +27,24 @@ export const Navbar: FC<{ pageMap: PageMapItem[] }> = ({ pageMap }) => {
     <ul
       style={{
         display: 'flex',
-        listStyleType: 'disc',
         padding: 20,
         gap: 20,
-        background: 'green',
+        background: '#222222',
         margin: 0,
         color: 'white',
         fontWeight: 'bold',
-        fontSize: '1.5rem'
+        fontSize: '1.24rem'
       }}
     >
-      {topLevelNavbarItems.length === 0 ? (
+      {pageMap.length === 0 ? (
         <li>No navigation items available</li>
       ) : (
-        topLevelNavbarItems.map((item) => {
+        pageMap.map((item) => {
           const route = item.route || ('href' in item ? item.href! : '')
           return (
             <li key={route}>
               <Anchor href={route} style={{ textDecoration: 'none' }}>
-                {item.title}
+                {item.name}
               </Anchor>
             </li>
           )
