@@ -39,15 +39,21 @@ export const Navbar: FC<{ pageMap: PageMapItem[] }> = ({ pageMap }) => {
       {pageMap.length === 0 ? (
         <li>No navigation items available</li>
       ) : (
-        pageMap.map((item) => {
-          const route = item.route || ('href' in item ? item.href! : '')
+        pageMap.map((item: PageMapItem, index: number) => {
+          // Ensure route is a string type
+          const route: string = typeof item === 'object' && 'route' in item 
+            ? String(item.route) 
+            : `nav-item-${index}`;
+            
           return (
             <li key={route}>
-              <Anchor href={route} style={{ textDecoration: 'none' }}>
-                {item.name}
+              <Anchor href={route}>
+                {typeof item === 'object' && 'name' in item 
+                  ? String(item.name) 
+                  : 'Untitled'}
               </Anchor>
             </li>
-          )
+          );
         })
       )}
     </ul>

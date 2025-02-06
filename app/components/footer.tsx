@@ -10,13 +10,13 @@ export const Footer: FC = () => {
             href="https://ericallenux.com"
             className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
           >
-            {/* <Image
+            <Image
               src="https://placehold.co/320x320"
               className="h-8"
               alt="Logo"
               width={32}
               height={32}
-            /> */}
+            />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               Eric Allen UX
             </span>
