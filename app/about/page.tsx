@@ -13,7 +13,7 @@ const About: React.FC = () => {
         <main className="flex flex-col gap-8 items-center text-center">
             <h1 className="text-4xl font-bold">About Us</h1>
             <p className="text-lg">
-                Welcome to our website. We are dedicated to providing the best service possible.
+              I&apos;m Eric--an optimistic realist with a passion for UX design and writing.
             </p>
             <Image
                 className="dark:invert"
