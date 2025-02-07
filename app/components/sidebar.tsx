@@ -14,12 +14,7 @@ export const Sidebar: FC<{ pageMap: PageMapItem[] }> = ({ pageMap }) => {
   })
  
   return (
-    <div
-      style={{
-        background: '#222222',
-        padding: 20
-      }}
-    >
+    <div className="hidden lg:block" style={{ background: '#222222', padding: 20 }}>
       <h3>Sidebar</h3>
       <ul
         style={{

@@ -18,7 +18,7 @@ const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
   return (
     <html lang="en" dir="ltr">
       <Head faviconGlyph="✦" />
-      <body style={{ margin: 0 }}>
+      <body style={{ margin: 0, minHeight: '100vh' }}>
         <NextraTheme pageMap={pageMap}>{children}</NextraTheme>
       </body>
     </html>
