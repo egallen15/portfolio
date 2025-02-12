@@ -38,7 +38,7 @@ export default {
       animation: {
         gradient: 'gradient 15s ease infinite',
       },
-      typography: (theme) => ({
+      typography: (theme: any) => ({
         DEFAULT: {
           css: {
             maxWidth: '650px',
