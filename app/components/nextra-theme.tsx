@@ -2,7 +2,6 @@ import type { PageMapItem } from "nextra";
 import type { FC, ReactNode } from "react";
 import { Footer } from "./footer";
 import { Navbar } from "./navbar";
-import { Sidebar } from "./sidebar";
 
 const NextraTheme: FC<{
   children: ReactNode;
@@ -15,7 +14,6 @@ const NextraTheme: FC<{
       </h1>
       <Navbar pageMap={pageMap} />
       <div className="flex">
-        <Sidebar pageMap={pageMap} />
         {children}
       </div>
       <Footer />

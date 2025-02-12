@@ -21,7 +21,9 @@ export default async function Blog() {
       .map(post => ({
         name: post.name,
         title: post.frontMatter.title || post.name,
-        route: `/blog/${post.name}`
+        route: `/blog/${post.name}`,
+        date: post.frontMatter.date,
+        excerpt: post.frontMatter.excerpt || 'No excerpt available.'
       }));
 
     console.log('Normalized posts:', posts);
@@ -31,15 +33,24 @@ export default async function Blog() {
         <div>
           <h1 className="text-3xl font-bold mx-4 mt-4 mb-4">Blog Posts</h1>
           {posts.length > 0 ? (
-            <ul className="list-disc pl-5">
+            // Render posts as full width clickable cards
+            <div className="flex flex-col space-y-4">
               {posts.map(post => (
-                <li key={post.name} className="py-1">
-                  <a href={post.route} className="text-blue-600 hover:underline">
+                <a
+                  key={post.name}
+                  href={post.route}
+                  className="block w-full border p-4 rounded shadow hover:shadow-md hover:bg-gray-100 transform transition duration-200 hover:scale-105"
+                >
+                  <h2 className="text-2xl font-semibold text-blue-600 hover:underline">
                     {post.title}
-                  </a>
-                </li>
+                  </h2>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {new Date(post.date).toLocaleDateString()}
+                  </p>
+                  <p className="mt-2">{post.excerpt}</p>
+                </a>
               ))}
-            </ul>
+            </div>
           ) : (
             <p className="font-bold mx-4 mt-4 mb-4">No blog posts found.</p>
           )}

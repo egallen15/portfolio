@@ -5,7 +5,7 @@ const defaultComponents = getNextraComponents({
   wrapper({ children, toc }) {
     return (
       <>
-        <article className="prose prose-slate dark:prose-invert mb-6 max-w-none prose-pre:bg-gray-800 prose-pre:p-4 prose-img:rounded-xl p-8">
+        <article className="prose prose-slate dark:prose-invert mb-6 prose-pre:bg-gray-800 prose-pre:p-4 prose-img:rounded-xl p-8">
           {children}
         </article>
         <TOC toc={toc} />
@@ -25,8 +25,8 @@ const defaultComponents = getNextraComponents({
       {children}
     </a>
   ),
-  ul: ({ children }) => <ul className="list-disc ml-6 mb-4">{children}</ul>,
-  ol: ({ children }) => <ol className="list-decimal ml-6 mb-4">{children}</ol>,
+  ul: ({ children }) => <ul className="list-disc list-inside ml-6 mb-4">{children}</ul>,
+  ol: ({ children }) => <ol className="list-decimal list-inside ml-6 mb-4">{children}</ol>,
   li: ({ children }) => <li className="mb-1">{children}</li>,
   blockquote: ({ children }) => (
     <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4">{children}</blockquote>

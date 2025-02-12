@@ -20,7 +20,7 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #333333;
     --foreground: #ededed;
   }
 }
@@ -29,4 +29,17 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Funnel Display', Arial, Helvetica, sans-serif;
+}
+
+article.prose {
+  max-width: 650px;
+}
+
+article.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;  /* matches ml-6 */
+}
+article.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
 }
