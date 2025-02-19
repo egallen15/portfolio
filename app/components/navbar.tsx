@@ -33,6 +33,7 @@ export const Navbar: FC<{ pageMap: PageMapItem[] }> = ({ pageMap }) => {
           style={{
             display: 'flex',
             alignItems: 'center',
+            justifyContent: 'space-between',
             padding: 24,
             gap: 16,
             margin: 0,

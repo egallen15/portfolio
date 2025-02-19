@@ -5,7 +5,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen max-w-[720px] mx-auto flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <div className="w-full md:py-8 flex-grow">
         <div className="sm:flex sm:items-center sm:justify-between">
         </div>

@@ -30,7 +30,7 @@ export default async function Blog() {
     console.log('Normalized posts:', posts);
 
     return (
-      <div className="p-4">
+      <div className="flex max-w-[1024px] mx-auto p-4">
         <div>
           <h1 className="text-3xl font-bold mx-4 mt-4 mb-4">Blog Posts</h1>
           {posts.length > 0 ? (

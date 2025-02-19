@@ -13,7 +13,7 @@ const NextraTheme: FC<{
         Custom theme demo for <strong>Nextra</strong>
       </h1> */}
       <Navbar pageMap={pageMap} />
-      <div className="flex">
+      <div className="flex justify-center max-w-[1024px] mx-auto">
         {children}
       </div>
       <Footer />
