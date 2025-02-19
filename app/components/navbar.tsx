@@ -45,7 +45,13 @@ export const Navbar: FC<{ pageMap: PageMapItem[] }> = ({ pageMap }) => {
           <li className="flex items-center gap-3">
             <Link href="/">
               <span className="cursor-pointer">
-                <Image src="/images/logo.png" alt="Logo" width={48} height={48} className="object-contain" />
+                <Image
+                  src="/images/logo.png"
+                  alt="Logo"
+                  width={48}
+                  height={48}
+                  className="object-contain rounded-md transition transform duration-200 hover:-rotate-6 hover:scale-[1.02]"
+                />
               </span>
             </Link>
             <div className="flex flex-col pr-4">
