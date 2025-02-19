@@ -28,7 +28,7 @@ export const Navbar: FC<{ pageMap: PageMapItem[] }> = ({ pageMap }) => {
   return (
     // Full width sticky background container with semi-transparent dark glass effect and backdrop blur
     <div className="w-full sticky top-0 z-50 bg-black/50 backdrop-blur-sm">
-      <div className="max-w-[720px] mx-auto">
+      <div className="max-w-[1024px] mx-auto">
         <ul
           style={{
             display: 'flex',
@@ -41,12 +41,16 @@ export const Navbar: FC<{ pageMap: PageMapItem[] }> = ({ pageMap }) => {
             fontSize: '1.24rem'
           }}
         >
-          <li>
+          <li className="flex items-center gap-3">
             <Link href="/">
               <span className="cursor-pointer">
                 <Image src="/images/logo.png" alt="Logo" width={48} height={48} className="object-contain" />
               </span>
             </Link>
+            <div className="flex flex-col pr-4">
+              <span className="text-xl font-bold">Eric Allen</span>
+              <span className="text-sm text-gray-500">UX Designer</span>
+            </div>
           </li>
           {pageMap.length === 0 ? (
             <li>No navigation items available</li>
