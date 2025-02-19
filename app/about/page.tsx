@@ -8,11 +8,11 @@ export const metadata = {
 
 const About: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="w-full max-w-3xl flex flex-col gap-8 items-center text-center">
+    <div className="min-h-screen flex flex-col items-center justify-center pb-20 sm:p-20">
+      <main className="flex flex-col items-center justify-center w-full max-w-[1024px] mx-auto gap-8 text-center">
         <h1 className="text-4xl font-bold">About Me</h1>
         <p className="text-lg">
-        I&#39;m Eric—an optimistic realist with a passion for UX design and writing.
+          I&#39;m Eric—an optimistic realist with a passion for design, learning, and writing.
         </p>
         <Image
           className="dark:invert"
