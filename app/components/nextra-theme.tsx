@@ -9,9 +9,9 @@ const NextraTheme: FC<{
 }> = ({ children, pageMap }) => {
   return (
     <>
-      <h1 className="m-0 p-5 bg-slate-400 font-normal">
+      {/* <h1 className="m-0 p-5 bg-slate-400 font-normal">
         Custom theme demo for <strong>Nextra</strong>
-      </h1>
+      </h1> */}
       <Navbar pageMap={pageMap} />
       <div className="flex">
         {children}

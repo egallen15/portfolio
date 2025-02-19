@@ -10,9 +10,9 @@ const About: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="w-full max-w-3xl flex flex-col gap-8 items-center text-center">
-        <h1 className="text-4xl font-bold">About Us</h1>
+        <h1 className="text-4xl font-bold">About Me</h1>
         <p className="text-lg">
-          I&apos;m Eric--an optimistic realist with a passion for UX design and writing.
+        I&#39;m Eric—an optimistic realist with a passion for UX design and writing.
         </p>
         <Image
           className="dark:invert"

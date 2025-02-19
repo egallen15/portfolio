@@ -1,5 +1,6 @@
 import { getPageMap } from 'nextra/page-map';
 import { normalizePages } from 'nextra/normalize-pages';
+import BlogPostListItem from '../components/BlogPostListItem'; // updated import
 
 export const metadata = {
     title: 'Blog Index',
@@ -36,19 +37,12 @@ export default async function Blog() {
             // Render posts as full width clickable cards
             <div className="flex flex-col space-y-4">
               {posts.map(post => (
-                <a
+                <BlogPostListItem
                   key={post.name}
-                  href={post.route}
-                  className="block w-full border p-4 rounded shadow hover:shadow-md hover:bg-gray-100 transform transition duration-200 hover:scale-105"
-                >
-                  <h2 className="text-2xl font-semibold text-blue-600 hover:underline">
-                    {post.title}
-                  </h2>
-                  <p className="text-sm text-gray-500 mt-1">
-                    {new Date(post.date).toLocaleDateString()}
-                  </p>
-                  <p className="mt-2">{post.excerpt}</p>
-                </a>
+                  title={post.title}
+                  excerpt={post.excerpt}
+                  url={post.route}
+                />
               ))}
             </div>
           ) : (
