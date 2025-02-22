@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const metadata = {
   title: "Eric Allen | UX Designer",
   description: "Welcome to my Next.js 13 portfolio!",
@@ -42,6 +44,13 @@ export default function Home() {
                   </a>
                 </li>
               </ul>
+              <Image
+                src="/images/funnyduck.webp"
+                alt="Descriptive alt text"
+                width={500}
+                height={300}
+                className="rounded-lg mt-4"
+              />
             </div>
           </div>
         </main>

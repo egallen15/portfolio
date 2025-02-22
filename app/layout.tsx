@@ -2,10 +2,8 @@
 import type { FC, ReactNode } from "react";
 import type { Metadata } from "next";
 import NextraTheme from "./components/nextra-theme";
-import { Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import "./globals.css";
-import { Banner } from "nextra/components";
 
 export const metadata: Metadata = {
   title: {
