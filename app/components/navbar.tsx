@@ -26,7 +26,6 @@ export const Navbar: FC<{ pageMap: PageMapItem[] }> = ({ pageMap }) => {
   }, [pathname, pageMap, topLevelNavbarItems])
 
   return (
-    // Full width sticky background container with semi-transparent dark glass effect and backdrop blur
     <div className="w-full sticky top-0 z-50 bg-black/50 backdrop-blur-sm">
       <div className="max-w-[1024px] mx-auto">
         <ul
