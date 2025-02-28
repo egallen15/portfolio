@@ -17,7 +17,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
 }) => {
   return (
     <Link href={url} className="block">
-      <div className="flex items-start w-full p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-md hover:bg-gray-50 transition duration-200">
+      <div className="flex items-start w-full max-w-7xl p-4 rounded-lg hover:shadow-md hover:bg-gray-800 transition duration-200">
         <div className="flex-shrink-0">
           <Image src={imageUrl} alt="Post Image" width={150} height={150} className="object-cover" />
         </div>

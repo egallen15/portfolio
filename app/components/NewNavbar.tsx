@@ -38,43 +38,44 @@ export default function NewNavbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Updated container */}
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center">
-            <Link href="/">
+            <div className="flex items-center">
+            <Link href="/" className="flex items-center transition transform duration-200 hover:-rotate-2 hover:scale-[1.02]">
+              <div>
               <span className="cursor-pointer">
                 <Image
-                  src="/images/logo.png"
-                  alt="Logo"
-                  width={48}
-                  height={48}
-                  className="object-contain rounded-md transition transform duration-200 hover:-rotate-6 hover:scale-[1.02]"
+                src="/images/logo.png"
+                alt="Logo"
+                width={48}
+                height={48}
+                className="object-contain rounded-md transition transform duration-200 hover:-rotate-6 hover:scale-[1.02]"
                 />
               </span>
-            </Link>
-            <div className="flex flex-col justify-start px-4">
+              </div>
+              <div className="flex flex-col justify-center px-3">
               <span className="text-l font-bold">Eric Allen</span>
               <span className="text-sm text-gray-500">UX Designer</span>
+              </div>
+            </Link>          
             </div>
-          </div>
-          
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-4">
             {navItems.map((item) => (
-              <Link
+                <Link
                 key={item.name}
                 href={item.path}
-                className="px-3 py-2 rounded-md text-sm font-medium transition border border-transparent hover:border-current focus:border-current"
-              >
+                className="px-3 py-2 rounded-md text-sm font-medium transition border border-transparent hover:bg-gray-800"
+                >
                 {item.name}
-              </Link>
+                </Link>
             ))}
           </div>
           
-          {/* Mobile Hamburger */}
+          {/* Mobile Hamburger Menu */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="p-2 rounded-md text-gray-600 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-800"
+              className="p-2 rounded-md text-gray-500 hover:bg-gray-800"
               aria-label="Toggle menu"
             >
               {isOpen ? (
@@ -120,7 +121,7 @@ export default function NewNavbar() {
                 key={item.name}
                 href={item.path}
                 onClick={() => setIsOpen(false)} // close menu on click
-                className="block px-3 py-2 rounded-md text-base font-medium transition border border-transparent hover:border-current focus:border-current"
+                className="block px-3 py-2 rounded-md text-base font-medium transition border border-transparent hover:bg-gray-800"
               >
                 {item.name}
               </Link>
