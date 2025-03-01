@@ -12,8 +12,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col mx-auto w-full lg:max-w-7xl">
       <div className="w-full md:py-8 flex-grow">
         <div className="sm:flex sm:items-center sm:justify-between"></div>
-        <main className="mx-3 my-4">
-          <div className="p-4">
+        <main className="mx-6 my-4">
+          <div className="mb-8">
             <h1 className="text-4xl font-bold">Hi! 👋 I&#39;m Eric</h1>
             <p className="text-xl pt-2">
               I&#39;m an Austin-based UX Designer. Occasionally, I write stuff.

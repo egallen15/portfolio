@@ -13,7 +13,7 @@ const defaultComponents = getNextraComponents({
   wrapper({ children, toc }) {
     return (
       <>
-        <article className="mx-auto px-12 sm:max-w-xs md:max-w-md lg:max-w-7xl xl:max-w-7xl prose prose-slate dark:prose-invert mb-6 prose-pre:bg-gray-800 prose-pre:p-4 prose-img:rounded-xl p-8">
+        <article className="mx-auto px-12 sm:max-w-xs md:max-w-md lg:max-w-7xl xl:max-w-7xl prose prose-slate dark:prose-invert mb-6 prose-pre:bg-lime-800 prose-pre:p-4 prose-img:rounded-xl p-8">
           {children}
         </article>
         <TOC toc={toc} />
@@ -41,7 +41,7 @@ const defaultComponents = getNextraComponents({
   ),
   hr: () => <hr className="my-6 border-t" />,
   code: ({ children }) => (
-    <code className="bg-gray-100 dark:bg-gray-800 rounded px-1 py-0.5">
+    <code className="bg-gray-100 dark:bg-lime-900 rounded px-1 py-0.5">
       {children}
     </code>
   ),

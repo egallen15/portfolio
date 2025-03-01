@@ -35,7 +35,7 @@ export default function NewNavbar() {
       ref={navRef}
       className="fixed top-0 left-0 w-full z-50 bg-gray-900 shadow"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6">
         {/* Updated container */}
         <div className="flex items-center justify-between h-20">
             <div className="flex items-center">
