@@ -63,7 +63,7 @@ export default function NewNavbar() {
                 <Link
                 key={item.name}
                 href={item.path}
-                className="px-3 py-2 rounded-md text-sm font-medium transition border border-transparent hover:bg-gray-800"
+                className="px-3 py-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-800"
                 >
                 {item.name}
                 </Link>
