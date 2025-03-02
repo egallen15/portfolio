@@ -5,11 +5,21 @@ import Image from "next/image";
 
 export default function NewNavbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+
+  // Update html class on mount and when darkMode changes
+  useEffect(() => {
+    const htmlEl = document.documentElement;
+    if (darkMode) {
+      htmlEl.classList.add("dark");
+    } else {
+      htmlEl.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   // Customize your nav items here:
   const navItems = [
-    { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Blog", path: "/blog" },
     // Add more items as needed
@@ -30,6 +40,11 @@ export default function NewNavbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => !prev);
+  };
+
   return (
     <nav
       ref={navRef}
@@ -38,44 +53,54 @@ export default function NewNavbar() {
       <div className="max-w-7xl mx-auto px-6 sm:px-6">
         {/* Updated container */}
         <div className="flex items-center justify-between h-20">
-            <div className="flex items-center">
-            <Link href="/" className="flex items-center transition transform duration-200 hover:-rotate-2 hover:scale-[1.02]">
+          <div className="flex items-center">
+            <Link
+              href="/"
+              className="flex items-center transition transform duration-200 hover:-rotate-2 hover:scale-[1.02]"
+            >
               <div>
-              <span className="cursor-pointer">
-                <Image
-                src="/images/logo.png"
-                alt="Logo"
-                width={48}
-                height={48}
-                className="object-contain rounded-md transition transform duration-200 hover:-rotate-6 hover:scale-[1.02]"
-                />
-              </span>
+                <span className="cursor-pointer">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Logo"
+                    width={40}
+                    height={40}
+                    className="object-contain rounded-md transition transform duration-200 hover:-rotate-6 hover:scale-[1.02]"
+                  />
+                </span>
               </div>
               <div className="flex flex-col justify-center px-3">
-              <span className="text-l font-bold">Eric Allen</span>
-              <span className="text-sm text-gray-500">UX Designer</span>
+                <span className="text-l font-bold">Eric Allen</span>
+                <span className="text-sm text-gray-500">UX Designer</span>
               </div>
-            </Link>          
-            </div>
+            </Link>
+          </div>
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
-                <Link
+              <Link
                 key={item.name}
                 href={item.path}
                 className="px-3 py-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-800"
-                >
+              >
                 {item.name}
-                </Link>
+              </Link>
             ))}
+            {/* Dark mode toggle button */}
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-800"
+            >
+              {darkMode ? "Light ☀️" : "Dark 🌑"}
+            </button>
           </div>
-          
+
           {/* Mobile Hamburger Menu */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="p-2 rounded-md text-gray-500 hover:bg-gray-800"
+              className="p-2 rounded-md text-gray-500 bg-gray-800"
               aria-label="Toggle menu"
             >
               {isOpen ? (
@@ -126,6 +151,13 @@ export default function NewNavbar() {
                 {item.name}
               </Link>
             ))}
+            {/* Mobile dark mode toggle */}
+            <button
+              onClick={toggleDarkMode}
+              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium transition border border-transparent hover:bg-gray-800"
+            >
+              {darkMode ? "Light Mode" : "Dark Mode"}
+            </button>
           </div>
         </div>
       )}

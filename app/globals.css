@@ -1,35 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
-  background-color: #222222; /* Replace with your preferred color */
+  background-color: var(--background); /* Replace with your preferred color */
   margin: 0;
   padding: 0;
   min-height: 100%;
 }
 
 :root {
-  /* Adjusted nextra v4 theme colors for light mode */
-  --background: #222222;    /* lighter background */
+  --background: #fafafa;    /* light background */
   --foreground: #333333;    /* darker text */
-  --nextra-primary-hue: 220deg;
-  --nextra-primary-saturation: 80%;
-  --nextra-primary-lightness: 50%;
-  --nextra-bg: 245, 245, 245;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Adjusted nextra v4 theme colors for dark mode */
-    --background: #222222;
+    --background: #252525; /* dark background */
     --foreground: #ececec;
-    --nextra-primary-hue: 220deg;
-    --nextra-primary-saturation: 80%;
-    --nextra-primary-lightness: 40%;
   }
+}
+
+/* class-based dark mode toggle*/
+html.dark {
+  --background: #000; /* dark background for class-based */
+  --foreground: #fff;
 }
 
 body {
@@ -38,7 +35,7 @@ body {
   padding: 0;
   color: var(--foreground);
   background-color: var(--background);
-  font-family: 'Funnel Display', Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
 }
 
 article.prose {
