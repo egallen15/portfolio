@@ -22,6 +22,7 @@ export default function NewNavbar() {
   const navItems = [
     { name: "About", path: "/about" },
     { name: "Blog", path: "/blog" },
+    { name: "Portfolio", path: "/portfolio" },
     // Add more items as needed
   ];
 
@@ -48,7 +49,7 @@ export default function NewNavbar() {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 w-full z-50 bg-gray-900 shadow"
+      className="w-full z-50 bg-gray-900 shadow"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-6">
         {/* Updated container */}

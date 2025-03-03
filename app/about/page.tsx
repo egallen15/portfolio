@@ -20,7 +20,7 @@ const About: React.FC = () => {
           priority
         />
         <p className="text-lg">
-          I&#39;m Eric—an optimistic realist with a passion for design,
+          I&#39;m Eric--an optimistic realist with a passion for design,
           learning, and writing.
         </p>
         <p className="text-lg">

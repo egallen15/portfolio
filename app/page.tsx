@@ -16,7 +16,7 @@ export default function Home() {
           <div className="mb-6">
             <h1 className="text-3xl md:text-5xl max-w-2xl font-bold">Hi! I&#39;m Eric.</h1>
             <p className="text-md max-w-3xl pt-8">
-              I&#39;m a software designer based in Austin, Texas. I currently work at Subsplash, where I design software for churches, ministries, and non-profits.
+              I&#39;m a software designer based in Austin, Texas. For the past 7 years, I&#39;ve worked at <a href="https://subsplash.com" className="underline hover:text-gray-400">Subsplash</a>, where I help design a SaaS platform for churches, ministries, and non-profits.
             </p>
           </div>
           <div className="flex gap-4 mb-8">
