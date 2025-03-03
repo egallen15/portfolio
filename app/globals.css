@@ -24,13 +24,13 @@ html.dark {
 }
 
 html.green {
-  --background: #042804;
+  --background: #013b01;
   --foreground: #e7f3e7;
 }
 
 html.blue {
-  --background: #0c2037;
-  --foreground: #d0d9ea;
+  --background: #2B2C2E;
+  --foreground: #fff;
 }
 
 @media (prefers-color-scheme: dark) {

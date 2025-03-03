@@ -29,6 +29,7 @@ export default function NewNavbar() {
       const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       applyThemeClass(systemPrefersDark ? "dark" : "light");
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Listen for system preference changes
@@ -225,7 +226,10 @@ export default function NewNavbar() {
     className = "" 
   }: { 
     isOpen: boolean, 
-    variants: any,
+    variants: {
+      closed: { opacity: number; y?: number; scale?: number; transition: { duration: number; ease: string; }; };
+      open: { opacity: number; y?: number; scale?: number; transition: { duration: number; ease: string; }; };
+    },
     className?: string
   }) => (
     <AnimatePresence>
