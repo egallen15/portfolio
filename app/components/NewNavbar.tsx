@@ -114,11 +114,11 @@ export default function NewNavbar() {
   return (
     <nav
       ref={navRef}
-      className="w-full z-50 bg-background shadow-lg border-b md:shadow-none md:border-b-0"
+      className="w-full z-50 bg-background md:shadow-none"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-6">
         {/* Updated container */}
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center border-b justify-between h-20">
           <div className="flex items-center">
             <Link
               href="/"
