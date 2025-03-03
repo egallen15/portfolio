@@ -25,8 +25,8 @@ html {
 
 /* class-based dark mode toggle*/
 html.dark {
-  --background: #000; /* dark background for class-based */
-  --foreground: #fff;
+  --background: #fafafa; /* dark background for class-based */
+  --foreground: #333333;
 }
 
 body {

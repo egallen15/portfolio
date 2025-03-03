@@ -18,9 +18,9 @@ export default function BlogContent({ posts }) {
   }
 
   return (
-    <div className="flex w-full max-w-7xl mx-auto p-4">
+    <div className="flex w-full max-w-7xl mx-auto">
       <div className='w-full'>
-        <h1 className="text-3xl font-bold mx-4 mt-4 mb-4">All Posts</h1>
+        <h1 className="text-5xl font-bold mb-4 mx-6">All Posts</h1>
         {posts.length > 0 ? (
           <div className="flex flex-col space-y-4">
             {posts.map(post => (

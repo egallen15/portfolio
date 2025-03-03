@@ -8,9 +8,9 @@ export const metadata = {
 
 const About: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen flex flex-col items-center pb-8 font-[family-name:var(--font-geist-sans)]">
       <main className="w-full max-w-7xl flex flex-col gap-8 items-center text-center">
-        <h1 className="text-4xl font-bold">About Me</h1>
+        <h1 className="text-5xl font-bold">About Me</h1>
         <Image
           className="dark:invert"
           src="https://placehold.co/600x400"

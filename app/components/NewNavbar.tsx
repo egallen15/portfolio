@@ -5,18 +5,67 @@ import Image from "next/image";
 
 export default function NewNavbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState<boolean | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
 
-  // Update html class on mount and when darkMode changes
+  // Initialize darkMode from localStorage or system preference on mount
   useEffect(() => {
+    // First check localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setDarkMode(true);
+    } else if (savedTheme === 'light') {
+      setDarkMode(false);
+    } else {
+      // If no localStorage value, use system preference
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setDarkMode(systemPrefersDark);
+    }
+  }, []);
+
+  // Listen for system preference changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      // Only apply system preference if user hasn't manually set a preference
+      const savedTheme = localStorage.getItem('theme');
+      if (!savedTheme) {
+        setDarkMode(e.matches);
+      }
+    };
+    
+    // Add event listener
+    mediaQuery.addEventListener('change', handleChange);
+    
+    // Clean up
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  // Update html class and localStorage when darkMode changes
+  useEffect(() => {
+    if (darkMode === null) return; // Skip initial null state
+    
     const htmlEl = document.documentElement;
     if (darkMode) {
       htmlEl.classList.add("dark");
+      localStorage.setItem('theme', 'dark');
     } else {
       htmlEl.classList.remove("dark");
+      localStorage.setItem('theme', 'light');
     }
   }, [darkMode]);
+
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    setDarkMode(prev => !prev);
+  };
+
+  // Reset to system preference
+  const useSystemTheme = () => {
+    localStorage.removeItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setDarkMode(systemPrefersDark);
+  };
 
   // Customize your nav items here:
   const navItems = [
@@ -41,15 +90,10 @@ export default function NewNavbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    setDarkMode((prev) => !prev);
-  };
-
   return (
     <nav
       ref={navRef}
-      className="w-full z-50 bg-gray-900 shadow"
+      className="w-full z-50 bg-background"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-6">
         {/* Updated container */}
@@ -71,7 +115,7 @@ export default function NewNavbar() {
                 </span>
               </div>
               <div className="flex flex-col justify-center px-3">
-                <span className="text-l font-bold">Eric Allen</span>
+                <span className="font-bold">Eric Allen</span>
                 <span className="text-sm text-gray-500">UX Designer</span>
               </div>
             </Link>
@@ -90,9 +134,29 @@ export default function NewNavbar() {
             {/* Dark mode toggle button */}
             <button
               onClick={toggleDarkMode}
-              className="p-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-800"
+              className="p-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-800 flex items-center"
+              title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
-              {darkMode ? "Light ☀️" : "Dark 🌑"}
+              {darkMode ? (
+                <>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
+                  </svg>
+                </>
+              ) : (
+                <>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                  </svg>
+                </>
+              )}
+            </button>
+            <button
+              onClick={useSystemTheme}
+              className="p-2 rounded-md text-sm font-medium text-gray-500 transition border border-transparent hover:bg-gray-800"
+              title="Use system theme"
+            >
+              System
             </button>
           </div>
 
@@ -155,9 +219,29 @@ export default function NewNavbar() {
             {/* Mobile dark mode toggle */}
             <button
               onClick={toggleDarkMode}
+              className="w-full text-left px-3 py-2 rounded-md text-base font-medium transition border border-transparent hover:bg-gray-800 flex items-center"
+            >
+              {darkMode ? (
+                <>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
+                  </svg>
+                  Switch to Light Mode
+                </>
+              ) : (
+                <>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                  </svg>
+                  Switch to Dark Mode
+                </>
+              )}
+            </button>
+            <button
+              onClick={useSystemTheme}
               className="block w-full text-left px-3 py-2 rounded-md text-base font-medium transition border border-transparent hover:bg-gray-800"
             >
-              {darkMode ? "Light Mode" : "Dark Mode"}
+              Use System Theme
             </button>
           </div>
         </div>
