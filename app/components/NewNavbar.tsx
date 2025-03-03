@@ -300,11 +300,16 @@ export default function NewNavbar() {
           <div className="flex items-center space-x-2 md:space-x-4">
             {/* Theme dropdown (desktop) - Moved before nav items */}
             <div ref={themeDropdownRef} className="relative hidden md:block">
-              <button
+                <button
                 onClick={() => setThemeDropdownOpen(!themeDropdownOpen)}
-                className="p-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-800 flex items-center space-x-1"
+                className={`p-2 rounded-md text-md font-medium transition border border-transparent flex items-center space-x-1
+                      ${currentTheme === 'light' ? 'hover:bg-gray-200' : ''}
+                      ${currentTheme === 'dark' ? 'hover:bg-gray-700' : ''}
+                      ${currentTheme === 'green' ? 'hover:bg-green-700' : ''}
+                      ${currentTheme === 'blue' ? 'hover:bg-blue-700' : ''}
+                      ${currentTheme === 'system' ? 'hover:bg-gray-800' : ''}`}
                 title="Change theme"
-              >
+                >
                 {getThemeIcon(currentTheme)}
                 <span className="ml-1">{getCurrentThemeName()}</span>
                 <svg 
@@ -315,7 +320,7 @@ export default function NewNavbar() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </button>
+                </button>
               
               {/* Desktop Theme dropdown menu */}
               <ThemeDropdown 
@@ -331,7 +336,12 @@ export default function NewNavbar() {
                 <Link
                   key={item.name}
                   href={item.path}
-                  className="px-3 py-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-800"
+                  className={`p-2 rounded-md text-md font-medium transition border border-transparent flex items-center space-x-1
+                    ${currentTheme === 'light' ? 'hover:bg-gray-200' : ''}
+                    ${currentTheme === 'dark' ? 'hover:bg-gray-700' : ''}
+                    ${currentTheme === 'green' ? 'hover:bg-green-700' : ''}
+                    ${currentTheme === 'blue' ? 'hover:bg-blue-700' : ''}
+                    ${currentTheme === 'system' ? 'hover:bg-gray-800' : ''}`}
                 >
                   {item.name}
                 </Link>
@@ -361,7 +371,7 @@ export default function NewNavbar() {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="p-2 rounded-md text-gray-500 bg-gray-800"
+                className="p-2 rounded-md text-gray-500 hover:bg-gray-800"
                 aria-label="Toggle menu"
               >
                 {isOpen ? (
