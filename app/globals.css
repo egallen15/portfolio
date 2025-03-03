@@ -5,28 +5,39 @@
 @tailwind utilities;
 
 html {
-  background-color: var(--background); /* Replace with your preferred color */
+  background-color: var(--background);
   margin: 0;
   padding: 0;
   min-height: 100%;
 }
 
 :root {
-  --background: #fafafa;    /* light background */
-  --foreground: #333333;    /* darker text */
+  /* Light theme (default) */
+  --background: #fafafa;
+  --foreground: #333333;
+}
+
+/* Theme definitions */
+html.dark {
+  --background: #252525;
+  --foreground: #ececec;
+}
+
+html.green {
+  --background: #042804;
+  --foreground: #e7f3e7;
+}
+
+html.blue {
+  --background: #0c2037;
+  --foreground: #d0d9ea;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #252525; /* dark background */
+  :root:not(.light):not(.green):not(.blue) {
+    --background: #252525;
     --foreground: #ececec;
   }
-}
-
-/* class-based dark mode toggle*/
-html.dark {
-  --background: #fafafa; /* dark background for class-based */
-  --foreground: #333333;
 }
 
 body {
@@ -44,7 +55,7 @@ article.prose {
 
 article.prose ul {
   list-style-type: disc;
-  padding-left: 1.5rem;  /* matches ml-6 */
+  padding-left: 1.5rem;
 }
 article.prose ol {
   list-style-type: decimal;
