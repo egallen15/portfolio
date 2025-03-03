@@ -1,10 +1,12 @@
 import { getPageMap } from 'nextra/page-map';
 import { normalizePages } from 'nextra/normalize-pages';
-import BlogPostListItem from '../components/BlogPostListItem'; // updated import
+import BlogPostListItem from '../components/BlogPostListItem';
+import { LoadingProvider } from '../components/LoadingProvider';
+import BlogContent from './BlogContent';
 
 export const metadata = {
-    title: 'Blog Index',
-    description: 'Welcome to my Next.js 13 portfolio!',
+  title: 'Blog Index',
+  description: 'Welcome to my Next.js 13 portfolio!',
 };
 
 export default async function Blog() {
@@ -30,26 +32,9 @@ export default async function Blog() {
     console.log('Normalized posts:', posts);
 
     return (
-      <div className="flex w-full max-w-7xl mx-auto p-4">
-        <div>
-          <h1 className="text-3xl font-bold mx-4 mt-4 mb-4">All Posts</h1>
-          {posts.length > 0 ? (
-            // Render posts as full width clickable cards
-            <div className="flex flex-col space-y-4">
-              {posts.map(post => (
-                <BlogPostListItem
-                  key={post.name}
-                  title={post.title}
-                  excerpt={post.excerpt}
-                  url={post.route}
-                />
-              ))}
-            </div>
-          ) : (
-            <p className="font-bold mx-4 mt-4 mb-4">No blog posts found.</p>
-          )}
-        </div>
-      </div>
+      <LoadingProvider initialLoadingState={false}>
+        <BlogContent posts={posts} />
+      </LoadingProvider>
     );
   } catch (error) {
     console.error('Error loading blog posts:', error);
