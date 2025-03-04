@@ -1,4 +1,3 @@
-import Image from "next/image";
 import CaseStudyListItem from "./components/CaseStudyListItem";
 
 export const metadata = {
