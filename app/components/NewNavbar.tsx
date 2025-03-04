@@ -302,8 +302,8 @@ export default function NewNavbar() {
                 <button
                 onClick={() => setThemeDropdownOpen(!themeDropdownOpen)}
                 className={`p-2 rounded-md text-md font-medium transition border border-transparent flex items-center space-x-1
-                      ${currentTheme === 'light' ? 'hover:bg-gray-200' : ''}
-                      ${currentTheme === 'dark' ? 'hover:bg-gray-700' : ''}
+                      ${currentTheme === 'light' ? 'hover:bg-gray-100' : ''}
+                      ${currentTheme === 'dark' ? 'hover:bg-gray-800' : ''}
                       ${currentTheme === 'green' ? 'hover:bg-green-700' : ''}
                       ${currentTheme === 'blue' ? 'hover:bg-blue-700' : ''}
                       ${currentTheme === 'system' ? 'hover:bg-gray-800' : ''}`}
@@ -335,8 +335,8 @@ export default function NewNavbar() {
                   key={item.name}
                   href={item.path}
                   className={`p-2 rounded-md text-md font-medium transition border border-transparent flex items-center space-x-1
-                    ${currentTheme === 'light' ? 'hover:bg-gray-200' : ''}
-                    ${currentTheme === 'dark' ? 'hover:bg-gray-700' : ''}
+                    ${currentTheme === 'light' ? 'hover:bg-gray-100' : ''}
+                    ${currentTheme === 'dark' ? 'hover:bg-gray-800' : ''}
                     ${currentTheme === 'green' ? 'hover:bg-green-700' : ''}
                     ${currentTheme === 'blue' ? 'hover:bg-blue-700' : ''}
                     ${currentTheme === 'system' ? 'hover:bg-gray-800' : ''}`}
