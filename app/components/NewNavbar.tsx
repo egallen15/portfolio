@@ -108,8 +108,8 @@ export default function NewNavbar() {
     switch(theme) {
       case "light":
         return (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12,0 C12.8284271,0 13.5,0.671572875 13.5,1.5 L13.5,3 C13.5,3.82842712 12.8284271,4.5 12,4.5 C11.1715729,4.5 10.5,3.82842712 10.5,3 L10.5,1.5 C10.5,0.671572875 11.1715729,0 12,0 Z M12,6 C15.3137085,6 18,8.6862915 18,12 C18,15.3137085 15.3137085,18 12,18 C8.6862915,18 6,15.3137085 6,12 C6,8.6862915 8.6862915,6 12,6 Z M12,8 C9.790861,8 8,9.790861 8,12 C8,14.209139 9.790861,16 12,16 C14.209139,16 16,14.209139 16,12 C16,9.790861 14.209139,8 12,8 Z M17.304,19.425 L18.3645,20.4855 C18.9530683,21.0539583 19.8886272,21.0458286 20.4672279,20.4672279 C21.0458286,19.8886272 21.0539583,18.9530683 20.4855,18.3645 L19.425,17.304 C18.8364317,16.7355417 17.9008728,16.7436714 17.3222721,17.3222721 C16.7436714,17.9008728 16.7355417,18.8364317 17.304,19.425 Z M20.484,3.5145 C21.0695729,4.10024978 21.0695729,5.04975022 20.484,5.6355 L19.425,6.696 C19.0483883,7.08593488 18.4906832,7.2423189 17.966239,7.10504573 C17.4417949,6.96777257 17.0322274,6.55820513 16.8949543,6.03376099 C16.7576811,5.50931684 16.9140651,4.95161171 17.304,4.575 L18.3645,3.5145 C18.9502498,2.92892709 19.8997502,2.92892709 20.4855,3.5145 L20.484,3.5145 Z M22.5,13.5 C23.3284271,13.5 24,12.8284271 24,12 C24,11.1715729 23.3284271,10.5 22.5,10.5 L21,10.5 C20.1715729,10.5 19.5,11.1715729 19.5,12 C19.5,12.8284271 20.1715729,13.5 21,13.5 L22.5,13.5 Z M12,19.5 C12.8284271,19.5 13.5,20.1715729 13.5,21 L13.5,22.5 C13.5,23.3284271 12.8284271,24 12,24 C11.1715729,24 10.5,23.3284271 10.5,22.5 L10.5,21 C10.5,20.1715729 11.1715729,19.5 12,19.5 Z M4.575,6.696 C4.95388015,7.07514813 5.50625298,7.22336529 6.02404496,7.0848195 C6.54183694,6.94627371 6.94638317,6.54201339 7.08529498,6.02431948 C7.22420679,5.50662557 7.07638018,4.9541481 6.6975,4.575 L5.6355,3.5145 C5.04693167,2.94604169 4.11137283,2.95417144 3.53277214,3.53277214 C2.95417144,4.11137283 2.94604169,5.04693167 3.5145,5.6355 L4.575,6.696 L4.575,6.696 Z M6.696,19.425 L5.6355,20.4855 C5.04693167,21.0539583 4.11137283,21.0458286 3.53277214,20.4672279 C2.95417144,19.8886272 2.94604169,18.9530683 3.5145,18.3645 L4.575,17.304 C5.16356833,16.7355417 6.09912717,16.7436714 6.67772786,17.3222721 C7.25632856,17.9008728 7.26445831,18.8364317 6.696,19.425 L6.696,19.425 Z M3,13.5 C3.82842712,13.5 4.5,12.8284271 4.5,12 C4.5,11.1715729 3.82842712,10.5 3,10.5 L1.5,10.5 C0.671572875,10.5 0,11.1715729 0,12 C0,12.8284271 0.671572875,13.5 1.5,13.5 L3,13.5 Z" id="Shape"></path>
           </svg>
         );
       case "dark":
@@ -214,10 +214,10 @@ export default function NewNavbar() {
     { id: "system", name: "System" },
   ];
 
-  // Get current theme display name
-  const getCurrentThemeName = () => {
-    return themeOptions.find(option => option.id === currentTheme)?.name || "System";
-  };
+  // // Get current theme display name
+  // const getCurrentThemeName = () => {
+  //   return themeOptions.find(option => option.id === currentTheme)?.name || "System";
+  // };
 
   // Theme dropdown component (reusable for both desktop and mobile)
   const ThemeDropdown = ({ 
@@ -271,8 +271,7 @@ export default function NewNavbar() {
       className="w-full z-50 bg-background md:shadow-none"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-6">
-        {/* Updated container */}
-        <div className="flex items-center border-b justify-between h-20">
+        <div className="flex items-center border-b border-b-gray-200 dark:border-b-gray-700 justify-between h-20">
           <div className="flex items-center">
             <Link
               href="/"
@@ -298,7 +297,7 @@ export default function NewNavbar() {
 
           {/* Main navigation area with reordered items */}
           <div className="flex items-center space-x-2 md:space-x-4">
-            {/* Theme dropdown (desktop) - Moved before nav items */}
+            {/* Theme dropdown (desktop) */}
             <div ref={themeDropdownRef} className="relative hidden md:block">
                 <button
                 onClick={() => setThemeDropdownOpen(!themeDropdownOpen)}
@@ -311,7 +310,6 @@ export default function NewNavbar() {
                 title="Change theme"
                 >
                 {getThemeIcon(currentTheme)}
-                <span className="ml-1">{getCurrentThemeName()}</span>
                 <svg 
                   className={`h-4 w-4 transition-transform ${themeDropdownOpen ? 'rotate-180' : ''}`} 
                   fill="none" 
@@ -352,7 +350,7 @@ export default function NewNavbar() {
             <div ref={mobileThemeDropdownRef} className="relative md:hidden">
               <button
                 onClick={() => setMobileThemeDropdownOpen(!mobileThemeDropdownOpen)}
-                className="p-2 rounded-md text-sm font-medium transition border border-transparent hover:bg-gray-800 flex items-center"
+                className="p-2 rounded-md text-sm font-medium transition border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center"
                 title="Change theme"
               >
                 {getThemeIcon(currentTheme)}
@@ -371,7 +369,7 @@ export default function NewNavbar() {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="p-2 rounded-md text-gray-500 hover:bg-gray-800"
+                className="p-2 rounded-md text-foreground hover:bg-gray-100 dark:hover:bg-gray-800"
                 aria-label="Toggle menu"
               >
                 {isOpen ? (
