@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CaseStudyListItem from "./components/CaseStudyListItem";
 
 export const metadata = {
   title: "Eric Allen | UX Designer",
@@ -14,7 +15,7 @@ export default function Home() {
           <div className="mb-6">
             <h1 className="text-3xl md:text-5xl max-w-2xl font-bold">Hi! I&#39;m Eric.</h1>
             <p className="text-md max-w-3xl pt-8">
-              I&#39;m a software designer based in Austin, Texas. For the past 7 years, I&#39;ve worked at <a href="https://subsplash.com" className="underline hover:text-gray-400">Subsplash</a>, where I help design a SaaS platform for churches, ministries, and non-profits.
+              I&#39;m a software designer based in <del className="text-gray-400">Seattle, Washington</del> <strong>Austin, Texas</strong>. For the past 7 years, I&#39;ve worked at <a href="https://subsplash.com" className="underline hover:text-gray-400">Subsplash</a>, where I help design a SaaS platform for churches, ministries, and non-profits.
             </p>
           </div>
           <div className="flex gap-4 mb-8">
@@ -44,7 +45,7 @@ export default function Home() {
               </svg>
             </a>
           </div>
-          {/* Image gallery */}
+          {/* Image gallery
           <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             <div className="relative h-48">
               <Image
@@ -86,6 +87,41 @@ export default function Home() {
                 className="object-cover rounded-md"
               />
             </div>
+          </section> */}
+            <section className="mt-12">
+            <CaseStudyListItem
+              title="Case Study 1"
+              description="A brief description of the case study."
+              imageSrc="https://placehold.co/600x400"
+              imageAlt="Case Study 1 Image"
+              metric1Value="90%"
+              metric1Label="Satisfaction"
+              metric2Value="2x"
+              metric2Label="Conversion"
+              linkHref="/case-study-1"
+            />
+            <CaseStudyListItem
+              title="Case Study 2"
+              description="Another interesting case study with great results."
+              imageSrc="https://placehold.co/600x400"
+              imageAlt="Case Study 2 Image"
+              metric1Value="40%"
+              metric1Label="Efficiency"
+              metric2Value="30%"
+              metric2Label="Cost Reduction"
+              linkHref="/case-study-2"
+            />
+            <CaseStudyListItem
+              title="Case Study 3"
+              description="A case study focusing on user engagement."
+              imageSrc="https://placehold.co/600x400"
+              imageAlt="Case Study 3 Image"
+              metric1Value="150k"
+              metric1Label="Active Users"
+              metric2Value="4.5"
+              metric2Label="Avg. Session Time"
+              linkHref="/case-study-3"
+            />
           </section>
         </main>
       </div>
