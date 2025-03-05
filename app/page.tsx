@@ -13,8 +13,8 @@ export default function Home() {
         <main className="mx-6">
           <div className="mb-6">
             <h1 className="text-3xl md:text-5xl max-w-2xl font-bold">Hi! I&#39;m Eric.</h1>
-            <p className="text-md max-w-3xl pt-8">
-              I&#39;m a software designer based in <del className="text-gray-400">Seattle, Washington</del> <strong>Austin, Texas</strong>. For the past 7 years, I&#39;ve worked at <a href="https://subsplash.com" className="underline hover:text-gray-400">Subsplash</a>, where I help design a SaaS platform for churches, ministries, and non-profits.
+            <p className="text-md max-w-3xl pt-6 md:pt-8">
+              I&#39;m a senior UX designer based in <strong>Austin, Texas</strong>. For the past <span>7 years</span>, I&#39;ve worked at <a href="https://subsplash.com" className="underline hover:text-gray-400">Subsplash</a>, where I help design a SaaS platform for churches, ministries, and non-profits.
             </p>
           </div>
           <div className="flex gap-4 mb-8">
@@ -87,7 +87,7 @@ export default function Home() {
               />
             </div>
           </section> */}
-            <section className="mt-12">
+            <section className="mt-10">
             <CaseStudyListItem
               title="Case Study 1"
               description="A brief description of the case study."
