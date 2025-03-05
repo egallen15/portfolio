@@ -50,7 +50,18 @@ body {
 }
 
 article.prose {
-  max-width: 850px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+pre {
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #1F2937;
+  color: #D1D5DB;
+  border-radius: 0.5rem;
+  overflow-x: auto;
 }
 
 article.prose ul {
