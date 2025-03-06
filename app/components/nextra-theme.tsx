@@ -1,3 +1,4 @@
+'use client';
 import type { FC, ReactNode } from "react";
 import { Footer } from "./footer";
 import NewNavbar from "./NewNavbar";

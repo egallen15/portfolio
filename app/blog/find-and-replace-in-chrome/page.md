@@ -8,6 +8,7 @@ tags:
   - markdown
 ---
 
+## How to find and replace in Chrome console with javascript
 
 ### code for the lazy
 
