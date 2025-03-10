@@ -48,11 +48,3 @@ body {
   background-color: var(--background);
   font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
 }
-
-pre {
-  padding: 1rem;
-  background-color: #1F2937;
-  color: #D1D5DB;
-  border-radius: 0.5rem;
-  overflow-x: auto;
-}
