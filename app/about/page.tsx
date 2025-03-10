@@ -9,8 +9,12 @@ export const metadata = {
 const About: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center pb-8 font-[family-name:var(--font-geist-sans)]">
-      <main className="mx-6 max-w-7xl flex flex-col gap-8 items-center text-center">
-        <h1 className="text-5xl font-bold">About Me</h1>
+      <main className="mx-6 max-w-7xl flex flex-col">
+        <h1 className="text-3xl md:text-5xl font-bold">About Me</h1>
+        <p className="text-md max-w-3xl pt-6 md:pt-8">
+        I&#39;m Eric--an optimistic realist with a passion for design,
+        learning, and writing.
+            </p>
         <Image
           className="dark:invert"
           src="https://placehold.co/600x400"
@@ -19,11 +23,7 @@ const About: React.FC = () => {
           height={400}
           priority
         />
-        <p className="text-lg">
-          I&#39;m Eric--an optimistic realist with a passion for design,
-          learning, and writing.
-        </p>
-        <p className="text-lg">
+        <p className="text-lg prose-invert max-w-3xl">
           In 2018, I joined Subsplash as a UX Designer. Since then, I&#39;ve helped
           Subsplash ship dozens of experiences: Launched new products
           contributing to 6 years of ~40% YOY growth. Designed core payment flows
