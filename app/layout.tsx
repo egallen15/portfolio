@@ -15,7 +15,7 @@ const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
   return (
     <html lang="en" dir="ltr">
       <body>
-        <div className="flex flex-col w-full mx-auto">
+        <div className="flex flex-col mx-auto">
           {" "}
           <NextraTheme>{children}</NextraTheme>
         </div>

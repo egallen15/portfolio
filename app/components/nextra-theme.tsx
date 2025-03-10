@@ -10,7 +10,7 @@ const NextraTheme: FC<{ children: ReactNode }> = ({ children }) => {
         Custom theme demo for <strong>Nextra</strong>
       </h1> */}
       <NewNavbar />
-      <div className="pt-12 md:pt-20 flex justify-center w-full max-w-7xl mx-auto">
+      <div className="pt-12 md:pt-20 flex max-w-7xl mx-auto">
         {children}
       </div>
       <Footer />

@@ -149,7 +149,7 @@ export default function NewNavbar() {
   };
 
   return (
-    <nav ref={navRef} className="w-full z-50 bg-background md:shadow-none">
+    <nav ref={navRef} className="w-full z-50">
       <div className="max-w-7xl mx-auto px-6 sm:px-6">
         <div className="flex items-center border-b border-b-gray-200 dark:border-b-gray-700 justify-between h-20">
           <div className="flex items-center">

@@ -2,7 +2,7 @@ export default function Loading() {
   return (
     <div className="flex w-full max-w-7xl mx-auto">
       <div className='w-full'>
-        <h1 className="text-5xl font-bold mx-6 mb-4">Loading...</h1>
+        <h1 className="text-3xl md:text-5xl font-bold mx-6 mb-4">Loading...</h1>
         <div className="flex flex-col space-y-4">
           {[...Array(5)].map((_, i) => (
             <div 

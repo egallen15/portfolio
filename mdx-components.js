@@ -3,9 +3,10 @@ import { TOC } from './app/components/toc'
  
 const defaultComponents = getNextraComponents({
   wrapper({ children, toc }) {
+    console.log('Wrapper component rendered');
     return (
       <>
-        <article className="px-12 max-w-none prose prose-pre:bg-rose-700 dark:prose-invert mb-6 mx-6 prose-img:rounded-xl p-8">
+        <article className="px-12 max-w-none prose dark:prose-invert mb-6 mx-6 prose-img:rounded-xl p-8">
           {children}
         </article>
         <TOC toc={toc} />
