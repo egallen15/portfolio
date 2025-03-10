@@ -35,9 +35,15 @@ const config: Config = {
           '50%': { 'background-position': '100% 50%' },
           '100%': { 'background-position': '0% 50%' },
         },
+        fadeInRight: {
+          '0%': { opacity: '0', transform: 'translate3d(-60%,0,0)' },
+          '30%': { opacity: '0', transform: 'translate3d(-30%,0,0)' },
+          '100%': { opacity: '1', transform: 'translateZ(0)' },
+        },
       },
       animation: {
         gradient: 'gradient 15s ease infinite',
+        fadeInRight: 'fadeInRight .6s ease-out forwards',
       },
       typography: (theme: any) => ({
         DEFAULT: {

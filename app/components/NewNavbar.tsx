@@ -1,32 +1,58 @@
-"use client";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import LightModeIcon from "./LightModeIcon";
+import DarkModeIcon from "./DarkModeIcon";
 
 // Define available themes (only "light" and "dark" are used after toggle)
 type Theme = "system" | "light" | "dark";
 
 export default function NewNavbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState<Theme>("system");
   const navRef = useRef<HTMLDivElement>(null);
+
+  // Initialize theme state. The function ensures it only runs on the client.
+  const [currentTheme, setCurrentTheme] = useState<Theme>(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme') as Theme | null;
+      return savedTheme || "system";
+    }
+    return "system";
+  });
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Function to apply theme based on selection
+  const applyTheme = (theme: Theme) => {
+    if (typeof window !== 'undefined') {
+      if (theme === "system") {
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyThemeClass(systemPrefersDark ? "dark" : "light");
+        localStorage.removeItem('theme');
+      } else {
+        applyThemeClass(theme);
+        localStorage.setItem('theme', theme);
+      }
+    }
+  };
 
   // Initialize theme from localStorage or system preference on mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme') as Theme | null;
-      if (savedTheme) {
-        setCurrentTheme(savedTheme);
-        applyTheme(savedTheme);
-      } else {
-        setCurrentTheme("system");
+      // Apply the theme after the component has mounted on the client
+      if (currentTheme === "system") {
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        applyThemeClass(systemPrefersDark ? "dark" : "light");
+        applyTheme(systemPrefersDark ? "dark" : "light");
+      } else {
+        applyTheme(currentTheme);
       }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [currentTheme]);
 
   // Listen for system preference changes (only when using system theme)
   useEffect(() => {
@@ -57,20 +83,6 @@ export default function NewNavbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
-  // Function to apply theme based on selection
-  const applyTheme = (theme: Theme) => {
-    if (typeof window !== 'undefined') {
-      if (theme === "system") {
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        applyThemeClass(systemPrefersDark ? "dark" : "light");
-        localStorage.removeItem('theme');
-      } else {
-        applyThemeClass(theme);
-        localStorage.setItem('theme', theme);
-      }
-    }
-  };
-
   // Function to apply theme class to HTML element
   const applyThemeClass = (theme: string) => {
     if (typeof document !== 'undefined') {
@@ -99,21 +111,13 @@ export default function NewNavbar() {
     // Determine the effective theme if "system" is in use.
     const effectiveTheme: "light" | "dark" =
       currentTheme === "system"
-      ? (typeof window !== 'undefined' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light") : "light")
-      : currentTheme;
+        ? (typeof window !== 'undefined' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light") : "light")
+        : currentTheme;
     
     if (effectiveTheme === "light") {
-      return (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12,0 C12.8284271,0 13.5,0.671572875 13.5,1.5 L13.5,3 C13.5,3.82842712 12.8284271,4.5 12,4.5 C11.1715729,4.5 10.5,3.82842712 10.5,3 L10.5,1.5 C10.5,0.671572875 11.1715729,0 12,0 Z M12,6 C15.3137085,6 18,8.6862915 18,12 C18,15.3137085 15.3137085,18 12,18 C8.6862915,18 6,15.3137085 6,12 C6,8.6862915 8.6862915,6 12,6 Z M12,8 C9.790861,8 8,9.790861 8,12 C8,14.209139 9.790861,16 12,16 C14.209139,16 16,14.209139 16,12 C16,9.790861 14.209139,8 12,8 Z M17.304,19.425 L18.3645,20.4855 C18.9530683,21.0539583 19.8886272,21.0458286 20.4672279,20.4672279 C21.0458286,19.8886272 21.0539583,18.9530683 20.4855,18.3645 L19.425,17.304 C18.8364317,16.7355417 17.9008728,16.7436714 17.3222721,17.3222721 C16.7436714,17.9008728 16.7355417,18.8364317 17.304,19.425 Z M20.484,3.5145 C21.0695729,4.10024978 21.0695729,5.04975022 20.484,5.6355 L19.425,6.696 C19.0483883,7.08593488 18.4906832,7.2423189 17.966239,7.10504573 C17.4417949,6.96777257 17.0322274,6.55820513 16.8949543,6.03376099 C16.7576811,5.50931684 16.9140651,4.95161171 17.304,4.575 L18.3645,3.5145 C18.9502498,2.92892709 19.8997502,2.92892709 20.4855,3.5145 L20.484,3.5145 Z M22.5,13.5 C23.3284271,13.5 24,12.8284271 24,12 C24,11.1715729 23.3284271,10.5 22.5,10.5 L21,10.5 C20.1715729,10.5 19.5,11.1715729 19.5,12 C19.5,12.8284271 20.1715729,13.5 21,13.5 L22.5,13.5 Z M12,19.5 C12.8284271,19.5 13.5,20.1715729 13.5,21 L13.5,22.5 C13.5,23.3284271 12.8284271,24 12,24 C11.1715729,24 10.5,23.3284271 10.5,22.5 L10.5,21 C10.5,20.1715729 11.1715729,19.5 12,19.5 Z M4.575,6.696 C4.95388015,7.07514813 5.50625298,7.22336529 6.02404496,7.0848195 C6.54183694,6.94627371 6.94638317,6.54201339 7.08529498,6.02431948 C7.22420679,5.50662557 7.07638018,4.9541481 6.6975,4.575 L5.6355,3.5145 C5.04693167,2.94604169 4.11137283,2.95417144 3.53277214,3.53277214 C2.95417144,4.11137283 2.94604169,5.04693167 3.5145,5.6355 L4.575,6.696 L4.575,6.696 Z M6.696,19.425 L5.6355,20.4855 C5.04693167,21.0539583 4.11137283,21.0458286 3.53277214,20.4672279 C2.95417144,19.8886272 2.94604169,18.9530683 3.5145,18.3645 L4.575,17.304 C5.16356833,16.7355417 6.09912717,16.7436714 6.67772786,17.3222721 C7.25632856,17.9008728 7.26445831,18.8364317 6.696,19.425 L6.696,19.425 Z M3,13.5 C3.82842712,13.5 4.5,12.8284271 4.5,12 C4.5,11.1715729 3.82842712,10.5 3,10.5 L1.5,10.5 C0.671572875,10.5 0,11.1715729 0,12 C0,12.8284271 0.671572875,13.5 1.5,13.5 L3,13.5 Z" id="Shape"></path>
-        </svg>
-      );
+      return <LightModeIcon />;
     } else {
-      return (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-        </svg>
-      );
+      return <DarkModeIcon />;
     }
   };
 
@@ -174,13 +178,15 @@ export default function NewNavbar() {
           <div className="flex items-center space-x-2 md:space-x-4">
             {/* Desktop Theme Toggle Button */}
             <div className="hidden md:block">
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800"
-                title="Toggle theme"
-              >
-                {getThemeIcon()}
-              </button>
+              {isClient && (
+                <button
+                  onClick={toggleTheme}
+                  className="p-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800"
+                  title="Toggle theme"
+                >
+                  {getThemeIcon()}
+                </button>
+              )}
             </div>
             
             {/* Desktop Navigation Items */}
@@ -198,13 +204,15 @@ export default function NewNavbar() {
             
             {/* Mobile Theme Toggle Button */}
             <div className="md:hidden">
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-md text-sm font-medium transition border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800"
-                title="Toggle theme"
-              >
-                {getThemeIcon()}
-              </button>
+              {isClient && (
+                <button
+                  onClick={toggleTheme}
+                  className="p-2 rounded-md text-sm font-medium transition border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800"
+                  title="Toggle theme"
+                >
+                  {getThemeIcon()}
+                </button>
+              )}
             </div>
 
             {/* Mobile Hamburger Menu Button */}
