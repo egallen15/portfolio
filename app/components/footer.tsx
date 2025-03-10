@@ -4,19 +4,14 @@ import type { FC } from "react";
 import { useState, useEffect } from "react";
 
 const mowedFrames = [
-  "`\\.=.wwwWWwwWWwwwWWwWWWWwwwwwwWwwW",
-  "_`\\.=.wwWWwwWWwwwWWwWWWWwwwwwwWwwW",
-  "__`\\.=.wWWwwWWwwwWWwWWWWwwwwwwWwwW",
-  "___`\\.=.WWwwWWwwwWWwWWWWwwwwwwWwwW",
-  "____`\\.=.WwwWWwwwWWwWWWWwwwwwwWwwW",
-  "_____`\\.=.wwWWwwwWWwWWWWwwwwwwWwwW",
-  "______`\\.=.wWWwwwWWwWWWWwwwwwwWwwW",
-  "_______`\\.=.WWwwwWWwWWWWwwwwwwWwwW",
-  "_`\\.=.wwWWwwWWwwwWWwWWWWwwwwwwWwwW",
-  "_`\\.=.wwWWwwWWwwwWWwWWWWwwwwwwWwwW",
-  "_`\\.=.wwWWwwWWwwwWWwWWWWwwwwwwWwwW",
-  "_`\\.=.wwWWwwWWwwwWWwWWWWwwwwwwWwwW",
-  "_`\\.=.wwWWwwWWwwwWWwWWWWwwwwwwWwwW",
+  "`\\.=.wwwWWwwWWwwwWWwWWWWw",
+  "_`\\.=.wwWWwwWWwwwWWwWWWWw",
+  "__`\\.=.wWWwwWWwwwWWwWWWWw",
+  "___`\\.=.WWwwWWwwwWWwWWWWw",
+  "____`\\.=.WwwWWwwwWWwWWWWw",
+  "_____`\\.=.wwWWwwwWWwWWWWw",
+  "______`\\.=.wWWwwwWWwWWWWw",
+  "_______`\\.=.WWwwwWWwWWWWw",
 ];
 
 export const Footer: FC = () => {
@@ -33,13 +28,13 @@ export const Footer: FC = () => {
   return (
     <footer>
       <div className="w-full max-w-screen-xl mx-auto p-6 mb-6 md:py-8">
-      {/* <button>
+      <button>
           {Array.from(mowedFrames[frameIndex]).map((char, index) => (
             <span key={index} style={{ transitionDelay: `${index * 25}ms`, color: 'green' }}>
               {char}
             </span>
           ))}
-        </button> */}
+        </button>
         <hr className="mb-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
       
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
