@@ -1,16 +1,27 @@
 import { useMDXComponents as getNextraComponents } from 'nextra/mdx-components'
 import { TOC } from './app/components/toc'
+import BlogPostHeader from './app/components/BlogPostHeader'
+import Link from 'next/link'
  
 const defaultComponents = getNextraComponents({
   wrapper({ children, toc }) {
-    console.log('Wrapper component rendered');
+    // Extract frontMatter from children.props
+    const frontMatter = children?.props?.frontMatter || {};
     return (
-      <>
-        <article className="prose dark:prose-invert mb-6 mx-auto prose-img:rounded-xl p-8">
-          {children}
-        </article>
-        <TOC toc={toc} />
-      </>
+      <div className='container flex flex-col justify-center max-w-7xl mx-auto'>
+          <Link href="/blog" className='self-start ml-4'>
+            <button className="font-bold py-2 px-4 rounded-full items-stretch hover:bg-gray-100 dark:hover:bg-gray-800">
+              Back to All Posts
+            </button>
+          </Link>
+        <BlogPostHeader frontMatter={frontMatter} />
+        <div className="container flex justify-center mx-auto">
+          <article className="container prose dark:prose-invert mb-6 mx-auto lg:mx-0 prose-img:rounded-xl p-8">
+            {children}
+          </article>
+          <TOC toc={toc} />
+        </div>
+      </div>
     )
   },
   // Add custom components for specific markdown elements with auto-generated IDs
@@ -39,13 +50,13 @@ const defaultComponents = getNextraComponents({
   //   </code>
   // ),
   // // Explicitly define pre component with the styling you want
-  // pre: ({ children }) => {
-  //   return (
-  //     <pre className="p-4 rounded-lg my-4">
-  //       {children}
-  //     </pre>
-  //   );
-  // },
+  pre: ({ children }) => {
+    return (
+      <pre className="p-4 rounded-lg my-4 overflow-x-auto">
+      {children}
+      </pre>
+    );
+  },
 })
 
 export const useMDXComponents = components => ({

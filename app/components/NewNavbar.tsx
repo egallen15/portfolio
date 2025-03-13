@@ -52,6 +52,7 @@ export default function NewNavbar() {
         applyTheme(currentTheme);
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentTheme]);
 
   // Listen for system preference changes (only when using system theme)

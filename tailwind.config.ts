@@ -50,15 +50,8 @@ const config: Config = {
       typography: (theme: any) => ({
         DEFAULT: {
           css: {
-            maxWidth: '650px',
-            ul: {
-              listStyleType: 'disc',
-              marginLeft: theme('spacing.6'),
-            },
-            ol: {
-              listStyleType: 'decimal',
-              marginLeft: theme('spacing.6'),
-            },
+            maxWidth: '80ch',
+            lineHeight: '1.6',
           },
         },
       }),

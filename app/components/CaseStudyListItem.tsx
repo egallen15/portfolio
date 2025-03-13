@@ -12,6 +12,7 @@ interface CaseStudyListItemProps {
     metric2Value: string;
     metric2Label: string;
     linkHref: string;
+    className?: string;
 }
 
 const CaseStudyListItem: React.FC<CaseStudyListItemProps> = ({
@@ -24,9 +25,10 @@ const CaseStudyListItem: React.FC<CaseStudyListItemProps> = ({
     metric2Value,
     metric2Label,
     linkHref,
+    className,
 }) => {
     return (
-        <Link href={linkHref} className="flex flex-col md:flex-row items-center mb-8 no-underline border rounded-lg overflow-hidden">
+        <Link href={linkHref} className={`flex flex-col md:flex-row items-center mb-8 no-underline border rounded-lg overflow-hidden ${className}`}>
             <div className="w-full md:w-1/3">
                 <Image
                     src={imageSrc}

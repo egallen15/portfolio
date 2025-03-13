@@ -1,5 +1,5 @@
 ---
-title: "How to find and replace in Chrome console"
+title: "Supercharged find and replace in Chrome"
 author: "Eric Allen"
 date: "2024-01-19"
 tags:
@@ -8,7 +8,7 @@ tags:
   - markdown
 ---
 
-## How to find and replace in Chrome console with javascript
+## Supercharged find and replace in Chrome
 
 ### code for the lazy
 

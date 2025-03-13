@@ -12,7 +12,7 @@ export default function Home() {
         <div className="sm:flex sm:items-center sm:justify-between"></div>
         <main className="mx-6">
           <div className="mb-6">
-            <h1 className="text-3xl md:text-5xl max-w-2xl font-bold">Hi! I&#39;m Eric.</h1>
+            <h1 className="text-5xl max-w-fit font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Hi! I&#39;m Eric</h1>
             <p className="text-md max-w-3xl pt-6 md:pt-8">
               I&#39;m a senior UX designer based in <strong>Austin, Texas</strong>. For the past <span>7 years</span>, I&#39;ve worked at <a href="https://subsplash.com" className="underline hover:text-gray-400">Subsplash</a>, where I help design a SaaS platform for churches, ministries, and non-profits.
             </p>
@@ -87,41 +87,44 @@ export default function Home() {
               />
             </div>
           </section> */}
-            <section className="mt-10 opacity-0 animate-fadeInRight">
-            <CaseStudyListItem
-              title="Case Study 1"
-              description="A brief description of the case study."
-              imageSrc="https://placehold.co/600x400"
-              imageAlt="Case Study 1 Image"
-              metric1Value="90%"
-              metric1Label="Satisfaction"
-              metric2Value="2x"
-              metric2Label="Conversion"
-              linkHref="/case-study-1"
-            />
-            <CaseStudyListItem
-              title="Case Study 2"
-              description="Another interesting case study with great results."
-              imageSrc="https://placehold.co/600x400"
-              imageAlt="Case Study 2 Image"
-              metric1Value="40%"
-              metric1Label="Efficiency"
-              metric2Value="30%"
-              metric2Label="Cost Reduction"
-              linkHref="/case-study-2"
-            />
-            <CaseStudyListItem
-              title="Case Study 3"
-              description="A case study focusing on user engagement."
-              imageSrc="https://placehold.co/600x400"
-              imageAlt="Case Study 3 Image"
-              metric1Value="150k"
-              metric1Label="Active Users"
-              metric2Value="4.5"
-              metric2Label="Avg. Session Time"
-              linkHref="/case-study-3"
-            />
-          </section>
+                <section className="mt-10">
+                <CaseStudyListItem
+                title="Subsplash Check-in"
+                description="A brief description of the case study."
+                imageSrc="https://placehold.co/600x400"
+                imageAlt="Case Study 1 Image"
+                metric1Value="90%"
+                metric1Label="Satisfaction"
+                metric2Value="2x"
+                metric2Label="Conversion"
+                linkHref="/case-study-1"
+                className="opacity-0 animate-fadeInRight"
+                />
+                <CaseStudyListItem
+                title="Subsplash Event Registration"
+                description="Another interesting case study with great results."
+                imageSrc="https://placehold.co/600x400"
+                imageAlt="Case Study 2 Image"
+                metric1Value="40%"
+                metric1Label="Efficiency"
+                metric2Value="30%"
+                metric2Label="Cost Reduction"
+                linkHref="/case-study-2"
+                className="opacity-0 animate-fadeInRight"
+                />
+                <CaseStudyListItem
+                title="Subsplash Import"
+                description="A case study focusing on user engagement."
+                imageSrc="https://placehold.co/600x400"
+                imageAlt="Case Study 3 Image"
+                metric1Value="150k"
+                metric1Label="Active Users"
+                metric2Value="4.5"
+                metric2Label="Avg. Session Time"
+                linkHref="/case-study-3"
+                className="opacity-0 animate-fadeInRight"
+                />
+                </section>
         </main>
       </div>
     </div>
