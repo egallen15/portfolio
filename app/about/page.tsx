@@ -11,7 +11,7 @@ const About: React.FC = () => {
     <div className="min-h-screen flex flex-col items-center pb-8 font-[family-name:var(--font-geist-sans)]">
       <main className="mx-6 max-w-7xl flex flex-col">
         <h1 className="text-3xl md:text-5xl font-bold">About Me</h1>
-        <p className="text-md max-w-3xl pt-6 md:pt-8">
+        <p className="text-md max-w-3xl py-6 md:py-8">
         I&#39;m Eric--an optimistic realist with a passion for design,
         learning, and writing.
             </p>
@@ -23,21 +23,27 @@ const About: React.FC = () => {
           height={400}
           priority
         />
-        <p className="text-lg prose-invert max-w-3xl">
+        <p className="prose dark:prose-invert pt-6">
           In 2018, I joined Subsplash as a UX Designer. Since then, I&#39;ve helped
-          Subsplash ship dozens of experiences: Launched new products
-          contributing to 6 years of ~40% YOY growth. Designed core payment flows
-          generating millions in recurring revenue. Iterated on dozens of
-          improvements across a broad platform (web, mobile, TV). Trained new UX
-          Designers on how to maintain Subsplash&#39;s industry-leading NPS scores
-          (35+). I enjoy the thrill of cracking intricate design puzzles with
-          simple solutions. My top career ambitions are: Build beautiful
-          products that solve real problems, cultivate strong and meaningful
-          friendships with teammates, and make work feel like play by empowering
-          authenticity. I live in the Austin, TX area with my family. My perfect
-          day starts with a walk to a café, and ends with a great movie. I&#39;m
-          always up for a chat about design, tech, or life in general. Feel free
-          to reach out!
+          Subsplash ship dozens of experiences: 
+        </p>
+        <ul className="prose dark:prose-invert pt-6 list-disc list-inside"> 
+          <li>Launched new products contributing to 6 years of ~40% YOY growth.</li>
+          <li>Designed core payment flows generating millions in recurring revenue.</li>
+          <li>Iterated on dozens of improvements across a broad platform (web, mobile, TV).</li>
+          <li>Trained new UX Designers on how to maintain Subsplash&#39;s industry-leading NPS scores (35+).</li>
+        </ul>
+        <p className="prose dark:prose-invert pt-6">
+          I enjoy the thrill of cracking intricate design puzzles with simple
+          solutions. My top career ambitions are: Build beautiful products that
+          solve real problems, cultivate strong and meaningful friendships with
+          teammates, and make work feel like play by empowering authenticity.
+        </p>
+        <p className="prose dark:prose-invert pt-6">
+          I live in the Austin, TX area with my family. My perfect day starts
+          with a walk to a café, and ends with a great movie. I&#39;m always up
+          for a chat about design, tech, or life in general. Feel free to reach
+          out!
         </p>
         
       </main>

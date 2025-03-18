@@ -16,7 +16,7 @@ const defaultComponents = getNextraComponents({
           </Link>
         <BlogPostHeader frontMatter={frontMatter} />
         <div className="container flex justify-center mx-auto">
-          <article className="container prose dark:prose-invert mb-6 mx-auto lg:mx-0 prose-img:rounded-xl p-8">
+          <article className="container prose dark:prose-invert mb-6 mx-auto lg:mx-6 prose-img:rounded-xl p-6">
             {children}
           </article>
           <TOC toc={toc} />
@@ -27,10 +27,10 @@ const defaultComponents = getNextraComponents({
   // Add custom components for specific markdown elements with auto-generated IDs
   h1: ({ children, id }) => <h1 id={id} className="text-5xl font-bold pt-6 mb-8">{children}</h1>,
   h2: ({ children, id }) => <h2 id={id} className="text-4xl font-semibold pt-8 mb-6">{children}</h2>,
-  h3: ({ children, id }) => <h3 id={id} className="text-3xl font-semibold pt-6 mb-6">{children}</h3>,
-  h4: ({ children, id }) => <h4 id={id} className="text-2xl font-medium pt-4 mb-2">{children}</h4>,
-  h5: ({ children, id }) => <h5 id={id} className="text-xl font-semibold pt-3 mb-2">{children}</h5>,
-  h6: ({ children, id }) => <h6 id={id} className="text-lg font-medium pt-2 mb-1">{children}</h6>,
+  h3: ({ children, id }) => <h3 id={id} className="text-2xl font-semibold pt-6 mb-6">{children}</h3>,
+  h4: ({ children, id }) => <h4 id={id} className="text-xl font-medium pt-4 mb-2">{children}</h4>,
+  h5: ({ children, id }) => <h5 id={id} className="text-lg font-semibold pt-3 mb-2">{children}</h5>,
+  h6: ({ children, id }) => <h6 id={id} className="text-md font-medium pt-2 mb-1">{children}</h6>,
   // p: ({ children }) => <p className="mb-4">{children}</p>,
   // a: ({ children, href }) => (
   //   <a href={href} className="text-blue-600 hover:underline">

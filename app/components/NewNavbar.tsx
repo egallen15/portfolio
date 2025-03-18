@@ -170,7 +170,7 @@ export default function NewNavbar() {
                 </span>
               </div>
               <div className="flex flex-col justify-center px-3">
-                <span className="text-lg font-medium">Eric Allen</span>
+                <span className="text-lg font-semibold">Eric Allen</span>
               </div>
             </Link>
           </div>

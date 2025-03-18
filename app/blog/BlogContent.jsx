@@ -8,8 +8,7 @@ export default function BlogContent({ posts }) {
   const { isLoading, setIsLoading } = useLoading();
 
   useEffect(() => {
-    // When posts are available, start transitioning away from loading state
-    // The provider will ensure minimum loading time
+    console.log("BlogContent posts:", posts); // Debug: verify posts include tags
     setIsLoading(false);
   }, [posts, setIsLoading]);
 
@@ -26,9 +25,11 @@ export default function BlogContent({ posts }) {
             {posts.map(post => (
               <BlogPostListItem
                 key={post.name}
+                date={post.date}
                 title={post.title}
                 excerpt={post.excerpt}
                 url={post.route}
+                tags={post.tags} // Pass the tags here
               />
             ))}
           </div>
