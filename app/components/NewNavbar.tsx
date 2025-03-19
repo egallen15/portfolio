@@ -182,7 +182,7 @@ export default function NewNavbar() {
               {isClient && (
                 <button
                   onClick={toggleTheme}
-                  className="p-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800"
+                  className="p-2 rounded-md text-md font-medium transition-colors duration-300 ease-in-out border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800"
                   title="Toggle theme"
                 >
                   {getThemeIcon()}
@@ -208,7 +208,7 @@ export default function NewNavbar() {
               {isClient && (
                 <button
                   onClick={toggleTheme}
-                  className="p-2 rounded-md text-sm font-medium transition border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800"
+                  className="p-2 rounded-md text-sm font-medium transition-colors duration-300 ease-in-out border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800"
                   title="Toggle theme"
                 >
                   {getThemeIcon()}
