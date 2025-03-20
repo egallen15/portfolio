@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -24,14 +24,17 @@ html.dark {
   --foreground: #ececec;
 }
 
-html.green {
-  --background: #013b01;
-  --foreground: #e7f3e7;
+/* Neon White definitions */
+.neon-white {
+  --neon: #fefefe;
+  --neon-glow: #ffffff;
+  text-shadow: 0 0 10px var(--neon);
 }
 
-html.blue {
-  --background: #2B2C2E;
-  --foreground: #fff;
+@layer components {
+  .neon {
+    @apply neon-white;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,5 +51,5 @@ body {
   color: var(--foreground);
   background-color: var(--background);
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
 }

@@ -152,11 +152,11 @@ export default function NewNavbar() {
   return (
     <nav ref={navRef} className="w-full z-50">
       <div className="max-w-7xl mx-auto px-6 sm:px-6">
-        <div className="flex items-center border-b border-b-gray-200 dark:border-b-gray-700 justify-between h-20">
+        <div className="flex items-center border-b border-b-gray-200 dark:border-b-slate-700 justify-between h-20">
           <div className="flex items-center">
             <Link
               href="/"
-              className="flex items-center transition transform duration-200 hover:-rotate-2 hover:scale-[1.02]"
+              className="flex items-center transition transform duration-200 hover:neon hover:-rotate-2 hover:scale-[1.02]"
             >
               <div>
                 <span className="cursor-pointer">
@@ -170,7 +170,8 @@ export default function NewNavbar() {
                 </span>
               </div>
               <div className="flex flex-col justify-center px-3">
-                <span className="text-lg font-semibold">Eric Allen</span>
+                <span className="text-lg font-semibold hover:neon">Eric Allen</span>
+                <span className="text-sm text-gray-500">UX Designer</span>
               </div>
             </Link>
           </div>
@@ -182,7 +183,7 @@ export default function NewNavbar() {
               {isClient && (
                 <button
                   onClick={toggleTheme}
-                  className="p-2 rounded-md text-md font-medium transition-colors duration-300 ease-in-out border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800"
+                  className="p-2 rounded-md text-md font-medium transition-colors duration-300 ease-in-out border border-transparent hover:bg-gray-100 dark:hover:bg-slate-800"
                   title="Toggle theme"
                 >
                   {getThemeIcon()}
@@ -196,7 +197,7 @@ export default function NewNavbar() {
                 <Link
                   key={item.name}
                   href={item.path}
-                  className="p-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center"
+                  className="p-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center"
                 >
                   {item.name}
                 </Link>
@@ -208,7 +209,7 @@ export default function NewNavbar() {
               {isClient && (
                 <button
                   onClick={toggleTheme}
-                  className="p-2 rounded-md text-sm font-medium transition-colors duration-300 ease-in-out border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800"
+                  className="p-2 rounded-md text-sm font-medium transition-colors duration-300 ease-in-out border border-transparent hover:bg-gray-100 dark:hover:bg-slate-800"
                   title="Toggle theme"
                 >
                   {getThemeIcon()}

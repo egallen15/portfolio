@@ -15,7 +15,7 @@ const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
   return (
     <html lang="en" dir="ltr">
       <body>
-        <div className="flex flex-col w-full mx-auto bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+        <div className="flex flex-col w-full mx-auto dark:bg-gradient-to-br from-slate-800 via-slate-900 to-slate-600">
           <NextraTheme>{children}</NextraTheme>
         </div>
       </body>

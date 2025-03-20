@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CaseStudyListItem from "./components/CaseStudyListItem";
 
 export const metadata = {
@@ -12,7 +13,7 @@ export default function Home() {
         <div className="sm:flex sm:items-center sm:justify-between"></div>
         <main className="mx-6">
           <div className="mb-6">
-            <h1 className="text-5xl max-w-fit font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Hi! I&#39;m Eric</h1>
+            <h1 className="text-5xl max-w-fit font-bold">Hi! I&#39;m <Link href="/about" className="hover:neon">Eric</Link></h1>
             <p className="text-md max-w-3xl pt-6 md:pt-8">
               I&#39;m a senior UX designer based in <strong>Austin, Texas</strong>. For the past <span>7 years</span>, I&#39;ve worked at <a href="https://subsplash.com" className="underline hover:text-gray-400">Subsplash</a>, where I help design a SaaS platform for churches, ministries, and non-profits.
             </p>

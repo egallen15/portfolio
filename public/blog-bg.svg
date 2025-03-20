@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960px" height="540px" viewBox="0 0 960 540" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>blog bg</title>
+    <defs>
+        <path d="M486,486 C434,449.3 382,412.6 323.4,392.6 C264.7,372.7 199.3,369.4 148,338 C96.7,306.6 170.3,171 148,110 C125.7,49 7.3,62.5 0,0 L486,0 L486,486 Z" id="path-1"></path>
+        <filter x="-9.7%" y="-9.3%" width="119.4%" height="122.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-14.8%" y="-14.3%" width="129.5%" height="132.7%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="8.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.917261096   0 0 0 0 0.915432745   0 0 0 0 0.676497537  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M0,0 C50.2,34.6 100.4,69.3 165.7,86 C231,102.7 311.6,101.4 343.7,142.3 C375.8,183.3 281.3,326.7 297,391 C312.7,455.3 438.4,440.5 486,486 L0,486 L0,0 Z" id="path-4"></path>
+        <filter x="-9.9%" y="-13.4%" width="123.5%" height="123.7%" filterUnits="objectBoundingBox" id="filter-5">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-15.0%" y="-18.5%" width="133.7%" height="133.9%" filterUnits="objectBoundingBox" id="filter-6">
+            <feMorphology radius="10.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="13.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.917261096   0 0 0 0 0.915432745   0 0 0 0 0.676497537  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="blog-bg" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="blob-scene-haikei" fill-rule="nonzero">
+            <rect id="Rectangle" fill="#001220" x="0" y="0" width="960" height="540"></rect>
+            <g id="Path" transform="translate(474, 0)" filter="url(#filter-2)">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                <use fill="#DFC00C" xlink:href="#path-1"></use>
+            </g>
+            <g id="Path" transform="translate(0, 54)" filter="url(#filter-5)">
+                <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-4"></use>
+                <use fill="#DFC00C" xlink:href="#path-4"></use>
+            </g>
+        </g>
+    </g>
+</svg>
