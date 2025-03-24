@@ -35,7 +35,7 @@ export const Footer: FC = () => {
             </span>
           ))}
         </button>
-        <hr className="mb-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
+        <hr className="mb-6 border-gray-200 dark:border-slate-700 sm:mx-auto lg:my-8" />
       
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © {new Date().getFullYear()}{" "}
