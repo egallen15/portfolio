@@ -4,24 +4,42 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Light theme (default) */
+  --background: #ffffff;
+  --foreground: #333333;
+}
+
 html {
-  background-color: var(--background);
   transition: background-color 0.3s ease, color 0.3s ease;
   margin: 0;
   padding: 0;
   min-height: 100%;
 }
 
-:root {
-  /* Light theme (default) */
-  --background: #fafafa;
-  --foreground: #333333;
-}
-
 /* Theme definitions */
 html.dark {
-  --background: #252525;
+  --background: #1e293b;
   --foreground: #ececec;
+  background-attachment: fixed;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #1e293b;
+    --foreground: #ececec;
+    background-attachment: fixed;
+  }
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: var(--foreground);
+  background-color: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
 }
 
 /* Neon White definitions */
@@ -35,21 +53,4 @@ html.dark {
   .neon {
     @apply neon-white;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not(.light):not(.green):not(.blue) {
-    --background: #252525;
-    --foreground: #ececec;
-  }
-}
-
-body {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  color: var(--foreground);
-  background-color: var(--background);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
 }
