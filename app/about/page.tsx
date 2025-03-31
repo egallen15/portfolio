@@ -8,7 +8,7 @@ export const metadata = {
 
 const About: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center pb-8 font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen flex flex-col justify-center items-center pb-8">
       <main className="mx-6 max-w-7xl flex flex-col">
         <h1 className="text-3xl md:text-5xl font-bold">About Me</h1>
         <p className="text-md max-w-3xl py-6 md:py-8">
@@ -19,8 +19,8 @@ const About: React.FC = () => {
           className="rounded-lg dark:invert"
           src="https://placehold.co/600x400"
           alt="About us image"
-          width={600}
-          height={400}
+          width="740"
+          height="500"
           priority
         />
         {/* <svg id="visual"><rect x="0" y="0" width="900" height="600" fill="#FF0066"></rect><g transform="translate(442.29705101177933 280.6360684745338)"><path d="M111.2 -97.5C151.7 -70.7 197.4 -35.4 212.6 15.2C227.8 65.8 212.5 131.5 172 167C131.5 202.5 65.8 207.8 -2.5 210.2C-70.7 212.7 -141.4 212.4 -174.8 176.9C-208.1 141.4 -204 70.7 -201 3.1C-197.9 -64.6 -195.8 -129.2 -162.5 -156C-129.2 -182.8 -64.6 -171.9 -14.6 -157.3C35.4 -142.7 70.7 -124.4 111.2 -97.5" fill="#BB004B"></path></g></svg> */}

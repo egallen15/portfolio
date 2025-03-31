@@ -6,7 +6,7 @@ import BlogContent from './BlogContent';
 
 export const metadata = {
   title: 'Blog Index',
-  description: 'Welcome to my Next.js 13 portfolio!',
+  description: 'The latest blog posts from our site.',
 };
 
 export default async function Blog() {
