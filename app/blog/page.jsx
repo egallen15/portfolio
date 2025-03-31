@@ -2,7 +2,7 @@ import { getPageMap } from 'nextra/page-map';
 import { normalizePages } from 'nextra/normalize-pages';
 import BlogPostListItem from '../components/BlogPostListItem';
 import { LoadingProvider } from '../components/LoadingProvider';
-import BlogContent from './BlogContent';
+import BlogContent from '../components/BlogContent';
 
 export const metadata = {
   title: 'Blog Index',

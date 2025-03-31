@@ -11,13 +11,13 @@ const defaultComponents = getNextraComponents({
     return (
       <div className='container flex flex-col justify-center max-w-7xl mx-auto'>
         <Link href="/blog" className='self-start ml-4'>
-        <button className="font-bold py-2 px-4 rounded-full items-stretch hover:bg-gray-100 dark:hover:bg-gray-800">
+        <button className="font-bold py-2 px-4 rounded-full items-stretch hover:bg-sky-100 dark:hover:bg-sky-800">
           ⬅️ Back to All Posts
         </button>
         </Link>
       <BlogPostHeader frontMatter={frontMatter} />
       <div className="container flex justify-center mx-auto">
-        <article className="container prose dark:prose-invert mb-6 mx-auto lg:mx-6 prose-img:rounded-xl p-6 pt-16">
+        <article className="container prose dark:prose-invert mb-6 mx-auto lg:mx-6 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400 p-6 pt-16">
         {children}
         </article>
         <TOC toc={toc} />

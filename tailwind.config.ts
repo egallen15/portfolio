@@ -42,10 +42,24 @@ const config: Config = {
           '30%': { opacity: '0', transform: 'translate3d(-30%,0,0)' },
           '100%': { opacity: '1', transform: 'translateZ(0)' },
         },
+        lawnMower: {
+          '0%': { transform: 'translate(0)' },
+          '10%': { transform: 'translate(-1px, -1px)' },
+          '20%': { transform: 'translate(1px, -1px)' },
+          '30%': { transform: 'translate(-1px, 1px)' },
+          '40%': { transform: 'translate(1px, 1px)' },
+          '50%': { transform: 'translate(-1px, -1px)' },
+          '60%': { transform: 'translate(1px, -1px)' },
+          '70%': { transform: 'translate(-1px, 1px)' },
+          '80%': { transform: 'translate(-1px, -1px)' },
+          '90%': { transform: 'translate(1px, -1px)' },
+          '100%': { transform: 'translate(0)' },
+        },
       },
       animation: {
         gradient: 'gradient 15s ease infinite',
         fadeInRight: 'fadeInRight .6s ease-out forwards',
+        lawnmower: 'lawnMower 1s ease 0s infinite normal forwards',
       },
       typography: (theme: any) => ({
         DEFAULT: {

@@ -51,19 +51,19 @@ export const TOC: FC<{ toc: Heading[] }> = ({ toc }) => {
   return (
     <aside className="hidden lg:block p-6 pt-20 w-[250px] dark:text-slate-300 rounded">
       <div className='sticky top-20'>
-        <h2 className="font-bold uppercase pb-4 text-sm tracking-widest">Table of contents</h2>
+        <h2 className="font-bold uppercase pb-4 text-sm tracking-widest">On this page</h2>
         <ul className=''>
           {toc.map(heading => (
             <li key={heading.id} className="relative">
               <a
                 href={`#${heading.id}`}
-                className={`hover:underline pb-3 block ${activeHeading === heading.id ? 'font-bold dark:text-slate-300' : ''}`}
+                className={`hover:underline pb-3 block ${activeHeading === heading.id ? 'font-bold dark:text-sky-400' : ''}`}
                 onClick={(e) => handleHeadingClick(e, heading.id)}
               >
                 {heading.value}
               </a>
               {activeHeading === heading.id && (
-                <div className="absolute left-[-10px] top-[0px] bottom-[12px] w-[3px] bg-gray-900 dark:bg-slate-300 rounded-full"></div>
+                <div className="absolute left-[-10px] top-[0px] bottom-[12px] w-[3px] bg-sky-500 dark:bg-sky-400 rounded-full"></div>
               )}
             </li>
           ))}

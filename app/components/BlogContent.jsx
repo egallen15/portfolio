@@ -1,8 +1,8 @@
 'use client';
 import { useEffect } from 'react';
-import { useLoading } from '../components/LoadingProvider';
-import BlogPostListItem from '../components/BlogPostListItem';
-import LoadingUI from './loading';
+import { useLoading } from './LoadingProvider';
+import BlogPostListItem from './BlogPostListItem';
+import LoadingUI from '../blog/loading';
 
 export default function BlogContent({ posts }) {
   const { isLoading, setIsLoading } = useLoading();
