@@ -1,29 +1,8 @@
 "use client";
 
 import type { FC } from "react";
-import { useState, useEffect } from "react";
-
-const mowedFrames = [
-  "`\\.=.wwwWWwwWWwwwWWwWWWWw",
-  "_`\\.=.wwWWwwWWwwwWWwWWWWw",
-  "__`\\.=.wWWwwWWwwwWWwWWWWw",
-  "___`\\.=.WWwwWWwwwWWwWWWWw",
-  "____`\\.=.WwwWWwwwWWwWWWWw",
-  "_____`\\.=.wwWWwwwWWwWWWWw",
-  "______`\\.=.wWWwwwWWwWWWWw",
-  "_______`\\.=.WWwwwWWwWWWWw",
-];
 
 export const Footer: FC = () => {
-  const [frameIndex, setFrameIndex] = useState(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFrameIndex((prevIndex) => (prevIndex + 1) % mowedFrames.length);
-    }, 800);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <footer>
