@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { formatDistanceToNow } from "date-fns";
 
 interface BlogPostListItemProps {
   title: string;
@@ -8,7 +9,7 @@ interface BlogPostListItemProps {
   url: string;
   date: string;
   imageUrl?: string;
-  tags?: string[]; // Add tags property
+  tags?: string[];
 }
 
 const BlogPostListItem: FC<BlogPostListItemProps> = ({
@@ -17,20 +18,28 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
   date,
   url,
   imageUrl = "https://placehold.co/150",
-  tags = ['test1', 'test2', 'test3'], // Default empty array if no tags provided
+  tags = ['test1', 'test2', 'test3'],
 }) => {
+  // Convert the input date string to a Date object.
+  const parsedDate = new Date(date);
+
+  // Use date-fns to generate a relative time string.
+  const relativeDate = formatDistanceToNow(parsedDate, { addSuffix: true });
+  
   return (
     <Link href={url} className="block">
-      <div className="flex items-start w-full max-w-7xl p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600">
+      <div className="flex flex-col md:flex-row items-start w-full max-w-7xl p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600">
         <div className="flex-shrink-0">
-          <Image src={imageUrl} alt="Post Image" width={150} height={150} className="object-cover" />
+          <Image src={imageUrl} alt="Post Image" width={150} height={150} className="object-cover rounded-lg" />
         </div>
         <div className="ml-4">
-          <h2 className="text-xl font-bold">{title}</h2>
-          <p className="text-gray-500 dark:text-gray-400">{date}</p>
-          <div className="h-1 w-20 bg-gray-200 dark:bg-gray-700 rounded-full my-2" />
+            <div className="flex items-end">
+            <h2 className="text-xl font-bold mr-2">{title}</h2>
+            </div>
+          <div className="h-1 w-20 bg-gray-200 dark:bg-sky-400 rounded-full my-2" />
           <p className="mt-2 text-gray-700 dark:text-gray-300">{excerpt}</p>
-          <div className="mt-2">
+          <div className="my-2 flex-col justify-between items-center">
+          <p className="text-gray-500 dark:text-gray-400 mb-2 mr-4">{relativeDate}</p>
             {tags.map((tag) => (
               <span
                 key={tag}

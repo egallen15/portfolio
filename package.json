@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "date-fns": "^4.1.0",
     "framer-motion": "^12.4.9",
     "next": "^15.1.6",
     "nextra": "^4.2.1",
