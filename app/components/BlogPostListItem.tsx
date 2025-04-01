@@ -28,7 +28,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
   
   return (
     <Link href={url} className="block">
-      <div className="flex flex-col md:flex-row items-start w-full max-w-7xl p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600">
+      <div className="flex flex-col md:flex-row items-start w-full max-w-7xl p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gradient-to-r dark:hover:from-slate-800 dark:hover:to-sky-700">
         <div className="flex-shrink-0">
           <Image src={imageUrl} alt="Post Image" width={150} height={150} className="object-cover rounded-lg" />
         </div>
@@ -36,7 +36,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
             <div className="flex items-end">
             <h2 className="text-xl font-bold mr-2">{title}</h2>
             </div>
-          <div className="h-1 w-20 bg-gray-200 dark:bg-sky-400 rounded-full my-2" />
+            <div className="h-1 w-20 bg-gradient-to-r from-sky-500 to-sky-300 rounded-full my-2" />
           <p className="mt-2 text-gray-700 dark:text-gray-300">{excerpt}</p>
           <div className="my-2 flex-col justify-between items-center">
           <p className="text-gray-500 dark:text-gray-400 mb-2 mr-4">{relativeDate}</p>
