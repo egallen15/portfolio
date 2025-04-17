@@ -9,6 +9,22 @@ export const metadata: Metadata = {
     absolute: "",
     template: "%s | Eric Allen",
   },
+  openGraph: {
+    // A default OG image for every page
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Eric Allen UX Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    // Twitter cards use the same image
+    card: "summary_large_image",
+    images: ["/og-default.png"],
+  },
 };
 
 const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
