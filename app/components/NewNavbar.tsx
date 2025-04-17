@@ -276,7 +276,7 @@ export default function NewNavbar() {
                   key={item.name}
                   href={item.path}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 rounded-md text-base font-medium transition border border-transparent hover:bg-gray-800"
+                  className="block px-3 py-2 rounded-md text-base font-medium transition border border-transparent dark:hover:bg-slate-700 hover:bg-gray-100"
                 >
                   {item.name}
                 </Link>
