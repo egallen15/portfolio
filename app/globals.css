@@ -4,10 +4,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 1. Fallback (light) */
 :root {
-  /* Light theme (default) */
   --background: #ffffff;
   --foreground: #333333;
+}
+
+/* 2. Manual overrides */
+html.light {
+  --background: #ffffff;
+  --foreground: #333333;
+}
+
+html.dark {
+  --background: #1e293b;
+  --foreground: #ececec;
+}
+
+/* 3. System‑dark only when no manual class */
+@media (prefers-color-scheme: dark) {
+  html:not(.light):not(.dark) {
+    --background: #1e293b;
+    --foreground: #ececec;
+  }
 }
 
 html {
@@ -15,21 +34,6 @@ html {
   margin: 0;
   padding: 0;
   min-height: 100%;
-}
-
-/* Theme definitions */
-html.dark {
-  --background: #1e293b;
-  --foreground: #ececec;
-  background-attachment: fixed;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    --background: #1e293b;
-    --foreground: #ececec;
-    background-attachment: fixed;
-  }
 }
 
 body {

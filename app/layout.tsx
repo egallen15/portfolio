@@ -25,6 +25,17 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: ["/og-default.png"],
   },
+  // ← new addition
+  themeColor: [
+    {
+      media: "(prefers-color-scheme: light)",
+      color: "#ffffff",
+    },
+    {
+      media: "(prefers-color-scheme: dark)",
+      color: "#1e293b",
+    },
+  ],
 };
 
 const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
