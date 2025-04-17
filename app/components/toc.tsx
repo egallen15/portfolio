@@ -51,7 +51,7 @@ export const TOC: FC<{ toc: Heading[] }> = ({ toc }) => {
   return (
     <aside className="hidden lg:block p-6 pt-20 w-[250px] dark:text-slate-300 rounded">
       <div className='sticky top-20'>
-        <h2 className="font-bold uppercase pb-4 text-sm tracking-widest">On this page</h2>
+        <h2 className="font-bold uppercase pb-4 text-sm text-foreground dark:text-white tracking-widest">On this page</h2>
         <ul className=''>
           {toc.map(heading => (
             <li key={heading.id} className="relative">
