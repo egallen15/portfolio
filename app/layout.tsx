@@ -1,16 +1,20 @@
 // app/layout.jsx
 import type { FC, ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import NextraTheme from "./components/nextra-theme";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  // resolve all relative URLs (OG & twitter images, alternates, etc.)
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  ),
+
   title: {
     absolute: "",
     template: "%s | Eric Allen",
   },
   openGraph: {
-    // A default OG image for every page
     images: [
       {
         url: "/og-default.png",
@@ -21,21 +25,13 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    // Twitter cards use the same image
     card: "summary_large_image",
     images: ["/og-default.png"],
   },
-  // ← new addition
-  themeColor: [
-    {
-      media: "(prefers-color-scheme: light)",
-      color: "#ffffff",
-    },
-    {
-      media: "(prefers-color-scheme: dark)",
-      color: "#1e293b",
-    },
-  ],
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
 };
 
 const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
