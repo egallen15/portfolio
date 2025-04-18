@@ -24,21 +24,13 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
   } = frontMatter ?? {};
 
   return (
-    <header className='flex flex-col items-center justify-center max-w-4xl p-6 rounded-lg shadow-lg'>
-      <h1 className='text-6xl font-bold text-center'>{title}</h1>
+    <header className='self-center w-full mx-auto flex flex-col items-center justify-center p-6 rounded-lg'>
+      <h1 className='text-5xl font-bold pt-6 mb-8 text-center'>{title}</h1>
       <p className='text-orange-300'>{excerpt}</p>
-      <div>
+      <div className='flex justify-center items-center mt-4'>
         <p>By {author}</p>
         <time dateTime={date}>{date}</time>
       </div>
-      <Image
-        src={image}
-        alt={title}
-        width={1200}
-        height={600}
-        className='rounded-lg shadow-md mt-4 max-w-4xl'
-        style={{ width: '100%', height: 'auto' }}
-      />
       {tags.length > 0
         ? (
           <div className="flex space-x-2">
@@ -51,6 +43,14 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
         )
         : <p className="text-gray-500">No tags</p>
       }
+      <Image
+        src={image}
+        alt={title}
+        width={1200}
+        height={600}
+        className='rounded-lg max-w-5xl mt-4'
+        style={{ width: '100%', height: 'auto' }}
+      />
     </header>
   );
 };

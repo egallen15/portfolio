@@ -10,7 +10,7 @@ const defaultComponents = getNextraComponents({
     console.log("MDXContent frontMatter:", frontMatter);
     return (
       <div className='container flex flex-col justify-center max-w-7xl mx-auto'>
-        <Link href="/blog" className='self-start ml-4'>
+        <Link href="/blog" className='self-center ml-4'>
         <button className="font-bold py-2 px-4 rounded-full items-stretch hover:bg-sky-100 dark:hover:bg-sky-800">
           ⬅️ Back to All Posts
         </button>
