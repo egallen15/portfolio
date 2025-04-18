@@ -122,11 +122,12 @@ export default function NewNavbar() {
     }
   };
 
-  // Navigation items remain unchanged
+  // Navigation items
   const navItems = [
     { name: "About", path: "/about" },
     { name: "Blog", path: "/blog" },
     { name: "Portfolio", path: "/portfolio" },
+    { name: "Contact", path: "/contact" },
   ];
 
   // Mobile menu animation variants remain unchanged
@@ -150,7 +151,7 @@ export default function NewNavbar() {
   };
 
   return (
-    <nav ref={navRef} className="w-full z-50">
+    <nav ref={navRef} className="w-full sticky top-0 z-50 bg-white dark:bg-gradient-to-br from-slate-900 via-slate-950 via-80% to-slate-900 dark:bg-fixed">
       <div className="max-w-7xl mx-auto px-6 sm:px-6">
         <div className="flex items-center border-b border-b-gray-200 dark:border-b-slate-700 justify-between h-20">
           <div className="flex items-center">
