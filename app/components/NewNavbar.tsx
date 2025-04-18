@@ -156,7 +156,7 @@ export default function NewNavbar() {
           <div className="flex items-center">
             <Link
               href="/"
-              className="flex items-center transition transform duration-200 hover:neon hover:-rotate-2 hover:scale-[1.02]"
+              className="flex items-center transition transform duration-200 lg:hover:neon lg:hover:-rotate-2 lg:hover:scale-[1.02]"
             >
               <div>
                 <span className="cursor-pointer">
@@ -165,12 +165,12 @@ export default function NewNavbar() {
                     alt="Logo"
                     width={40}
                     height={40}
-                    className="object-contain rounded-md transition transform duration-200 hover:-rotate-6 hover:scale-[1.02]"
+                    className="object-contain rounded-md transition transform duration-200 lg:hover:-rotate-6 lg:hover:scale-[1.02]"
                   />
                 </span>
               </div>
               <div className="flex flex-col justify-center px-3">
-                <span className="text-lg font-semibold hover:neon">Eric Allen</span>
+                <span className="text-lg font-semibold lg:hover:neon">Eric Allen</span>
                 <span className="text-sm text-gray-500">UX Designer</span>
               </div>
             </Link>
@@ -222,7 +222,7 @@ export default function NewNavbar() {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="p-2 rounded-md text-foreground hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="p-2 rounded-md text-foreground hover:bg-gray-100 dark:hover:bg-slate-800"
                 aria-label="Toggle menu"
               >
                 {isOpen ? (

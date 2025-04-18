@@ -35,7 +35,7 @@ const CaseStudyListItem: React.FC<CaseStudyListItemProps> = ({
                     alt={imageAlt}
                     width={600}
                     height={400}
-                    className="w-full h-auto shadow-md object-cover rounded-lg hover:-rotate-2 hover:scale-105 transition-transform"
+                    className="w-full h-auto shadow-md object-cover rounded-lg lg:hover:-rotate-2 lg:hover:scale-105 transition-transform"
                 />
             </div>
             <div className="w-full md:w-2/3 md:p-8 pt-6">
