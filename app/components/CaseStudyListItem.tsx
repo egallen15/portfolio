@@ -28,7 +28,7 @@ const CaseStudyListItem: React.FC<CaseStudyListItemProps> = ({
     className,
 }) => {
     return (
-        <Link href={linkHref} className={`flex flex-col md:flex-row items-center mb-8 p-6 md:p-8 no-underline rounded-lg overflow-hidden hover:bg-gray-100 dark:hover:bg-gradient-to-r dark:hover:from-slate-800 dark:hover:to-sky-700 ${className}`}>
+        <Link href={linkHref} className={`flex flex-col md:flex-row items-center shadow-xl backdrop-blur-lg dark:backdrop-blur-lg bg-white/30 dark:bg-transparent mb-8 p-6 md:p-8 no-underline rounded-lg overflow-hidden hover:bg-gray-100 dark:hover:bg-gradient-to-r dark:hover:from-slate-800 dark:hover:to-sky-700 ${className}`}>
             <div className="w-full neon md:w-1/3">
                 <Image
                     src={imageSrc}

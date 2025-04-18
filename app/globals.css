@@ -36,6 +36,26 @@ html {
   min-height: 100%;
 }
 
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;                        /* cover full viewport */
+  background: url("/curves.svg")   /* #file:public/curves.svg */
+              no-repeat center/cover;
+  pointer-events: none;            /* clicks pass through */
+  z-index: -1;                     /* above background, below content */
+}
+
+html.dark body::before {
+  content: "";
+  position: fixed;
+  inset: 0;                        /* cover full viewport */
+  background: url("/curves.svg") no-repeat center/cover;
+  pointer-events: none;            /* clicks pass through */
+  z-index: -1; 
+}
+
 body {
   min-height: 100vh;
   margin: 0;
