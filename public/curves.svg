@@ -6,7 +6,7 @@
             <path d="M460,603 C1036,27 1855,1152 2431,576" id="Path" stroke="#3B82F6"></path>
             <path d="M249,876.5 L420,851 C804,83 2047,960 2431,192" id="Path" stroke="#60A5FA"></path>
             <path d="M0,271.5 L447.5,0 C927.5,1152 1951,-192 2431,768" id="Path" stroke="#93C5FD"></path>
-            <path d="M511,384 C1087,768 1979,655.5 2555,271.5" id="Path" stroke="#BFDBFE"></path>
+            <path d="M360,523 L438,328.5 C1014,712.5 1979,655.5 2555,271.5" id="Path" stroke="#BFDBFE"></path>
             <path d="M401,519 C785,-249 2047,1344 2431,384" id="Path" stroke="#A5B4FC"></path>
         </g>
     </g>
