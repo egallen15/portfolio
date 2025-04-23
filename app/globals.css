@@ -51,7 +51,7 @@ html.dark body::before {
   content: "";
   position: fixed;
   inset: 0;                        /* cover full viewport */
-  background: url("/curves.svg") no-repeat center/cover;
+  background: url("/mango-curves.svg") no-repeat center/cover;
   pointer-events: none;            /* clicks pass through */
   z-index: -1; 
 }
