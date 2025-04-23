@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3174px" height="2030px" viewBox="0 0 3174 2030" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>mango</title>
+    <g id="mango" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(-726, 496)" stroke-width="2">
+            <path d="M460,603 C1036,27 3959.5,1179 4535.5,603" id="Path" stroke="#57F63B"></path>
+            <path d="M249,876.5 L420,851 C804,83 4151.5,987 4535.5,219" id="Path" stroke="#CAF69C"></path>
+            <path d="M0,271.5 L447.5,0 C927.5,1152 4055.5,-165 4535.5,795" id="Path" stroke="#7AF24B"></path>
+            <path d="M360,523 L438,328.5 C1014,712.5 4083.5,682.5 4659.5,298.5" id="Path" stroke="#62EC53"></path>
+            <path d="M401,519 C785,-249 4151.5,1371 4535.5,411" id="Path" stroke="#39BA38"></path>
+        </g>
+    </g>
+</svg>
