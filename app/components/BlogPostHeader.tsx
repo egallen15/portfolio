@@ -25,13 +25,12 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
 
   return (
     <header className='self-center w-full mx-auto flex flex-col items-center justify-center p-6 rounded-lg'>
-      <h1 className='text-5xl font-bold pt-6 mb-8 text-center'>{title}</h1>
-      <p className='text-orange-300'>{excerpt}</p>
-      <div className='flex justify-center items-center mt-4'>
+      <h1 className='text-5xl font-bold pt-6 mb-6 text-center'>{title}</h1>
+      {/* <p className='text-orange-300'>{excerpt}</p> */}
+      <div className='flex gap-3 items-center mt-4'>
         <p>By {author}</p>
         <time dateTime={date}>{date}</time>
-      </div>
-      {tags.length > 0
+        {tags.length > 0
         ? (
           <div className="flex space-x-2">
             {tags.map(tag => (
@@ -43,6 +42,8 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
         )
         : <p className="text-gray-500">No tags</p>
       }
+      </div>
+      
       <Image
         src={image}
         alt={title}

@@ -16,8 +16,8 @@ const defaultComponents = getNextraComponents({
         </button>
         </Link>
       <BlogPostHeader frontMatter={frontMatter} />
-      <div className="container flex justify-center mx-auto">
-        <article className="container prose dark:prose-invert mb-6 mx-auto lg:mx-6 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400 p-6 pt-16">
+      <div className="container flex justify-center mx-auto backdrop-blur-lg lg:shadow-lg rounded-xl">
+        <article className="container prose dark:prose-invert mb-6 mx-auto lg:mx-6 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400 p-6">
         {children}
         </article>
         <TOC toc={toc} />

@@ -17,7 +17,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
   excerpt,
   date,
   url,
-  imageUrl = "https://placehold.co/150",
+  imageUrl = "https://placehold.co/300x150",
   tags = ['test1', 'test2', 'test3'],
 }) => {
   // Convert the input date string to a Date object.
@@ -28,11 +28,11 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
   
   return (
     <Link href={url} className="block backdrop-blur-sm bg-slate-200/30 dark:bg-slate-400/30 rounded-lg hover:bg-gradient-to-tr hover:from-slate-200/30 hover:to-sky-100 dark:hover:bg-gradient-to-tr dark:hover:from-slate-400/30 dark:hover:to-sky-700/30">
-      <div className="flex flex-col md:flex-row items-start w-full max-w-7xl p-4 rounded-lg">
-        <div className="flex-shrink-0">
-          <Image src={imageUrl} alt="Post Image" width={150} height={150} className="object-cover rounded-lg" />
+      <div className="flex flex-col lg:flex-row items-start w-full max-w-7xl p-4 rounded-lg">
+        <div className="flex flex-shrink-0">
+          <Image src={imageUrl} alt="Post Image" width={800} height={150} className="object-cover aspect-video rounded-lg mb-4 lg:mb-0" />
         </div>
-        <div className="ml-4">
+        <div className="lg:ml-4">
             <div className="flex items-end">
             <h2 className="text-xl font-bold mr-2">{title}</h2>
             </div>
