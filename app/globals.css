@@ -45,6 +45,9 @@ body::before {
               no-repeat center/cover;
   pointer-events: none;            /* clicks pass through */
   z-index: -1;                     /* above background, below content */
+  shape-rendering:geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  transform: translateZ(0);
 }
 
 html.dark body::before {
@@ -54,6 +57,9 @@ html.dark body::before {
   background: url("/mango-curves.svg") no-repeat center/cover;
   pointer-events: none;            /* clicks pass through */
   z-index: -1; 
+  shape-rendering:geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  transform: translateZ(0);
 }
 
 body {

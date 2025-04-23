@@ -16,7 +16,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
   // destructure with defaults
   const {
     title   = 'Untitled Post',
-    excerpt = 'No excerpt available.',
+    // excerpt = 'No excerpt available.',
     author  = 'Anonymous',
     date    = new Date().toISOString().split('T')[0],
     image   = 'https://placehold.co/1200x600',
