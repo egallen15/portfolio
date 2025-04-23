@@ -27,7 +27,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
   const relativeDate = formatDistanceToNow(parsedDate, { addSuffix: true });
   
   return (
-    <Link href={url} className="block">
+    <Link href={url} className="block backdrop-blur-md dark:bg-slate-400/30 rounded-lg hover:bg-gray-100 dark:backdrop-blur-md">
       <div className="flex flex-col md:flex-row items-start w-full max-w-7xl p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gradient-to-r dark:hover:from-slate-800 dark:hover:to-sky-700">
         <div className="flex-shrink-0">
           <Image src={imageUrl} alt="Post Image" width={150} height={150} className="object-cover rounded-lg" />
