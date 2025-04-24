@@ -17,7 +17,7 @@ const AuthorBio: React.FC = () => {
       <div>
         <h4 className="text-xl font-bold mb-2">A little about me</h4>
         <p className="prose dark:prose-invert">
-          I'm a UX designer and writer living in Austin, Texas. I get a kick out of empowering
+          I&#39;m a UX designer and writer living in Austin, Texas. I get a kick out of empowering
           designers to do their very best work. In my spare time, I love long walks with a
           good playlist, spending time with my family, and watching great films.
         </p>
