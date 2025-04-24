@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Timeline, { TimelineEvent } from "../components/Timeline";
 
 export const metadata = {
   title: "About",
@@ -7,6 +8,20 @@ export const metadata = {
 };
 
 const About: React.FC = () => {
+  // define your timeline data
+  const timelineEvents: TimelineEvent[] = [
+    { id: 1, title: "Started at Subsplash",   description: "Joined as UX Designer",                side: "left"  },
+    { id: 2, title: "Launched Product X",     description: "Contributed to 40% YOY growth",        side: "right" },
+    { id: 3, title: "Placeholder Event 3",   description: "Description for event 3",             side: "left"  },
+    { id: 4, title: "Placeholder Event 4",   description: "Description for event 4",             side: "right" },
+    { id: 5, title: "Placeholder Event 5",   description: "Description for event 5",             side: "left"  },
+    { id: 6, title: "Placeholder Event 6",   description: "Description for event 6",             side: "right" },
+    { id: 7, title: "Placeholder Event 7",   description: "Description for event 7",             side: "left"  },
+    { id: 8, title: "Placeholder Event 8",   description: "Description for event 8",             side: "right" },
+    { id: 9, title: "Placeholder Event 9",   description: "Description for event 9",             side: "left"  },
+    { id: 10, title: "Placeholder Event 10", description: "Description for event 10",            side: "right" },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col justify-center items-center pb-8">
       <main className="mx-6 max-w-7xl flex flex-col backdrop-blur-sm px-8 rounded-md">
@@ -51,6 +66,28 @@ const About: React.FC = () => {
           for a chat about design, tech, or life in general. Feel free to reach
           out!
         </p>
+        <div className="w-full h-1 bg-slate-200 my-8" />
+        <h3 className="relative inline-block text-2xl font-bold pt-16">
+          {/* pink skewed “hand‑drawn” highlight */}
+          <span
+            className="
+              absolute
+              bottom-1          /* nudge it up a bit under the text baseline */
+              left-0
+              min-w-fit
+              h-3               /* highlight thickness */
+              bg-pink-300       /* highlight color */
+              skew-y-2          /* slight skew for hand‑drawn feel */
+              transform
+              origin-left       /* skew around the left edge */
+              rounded-sm        /* soft corners */
+            "
+          />
+          <span className="relative z-10">
+            My journey
+          </span>
+        </h3>
+        <Timeline events={timelineEvents} />
       </main>
     </div>
   );
