@@ -2,6 +2,7 @@ import { useMDXComponents as getNextraComponents } from 'nextra/mdx-components'
 import { TOC } from './app/components/toc'
 import BlogPostHeader from './app/components/BlogPostHeader'
 import Link from 'next/link'
+import AuthorBio from './app/components/AuthorBio' // Import the new component
  
 const defaultComponents = getNextraComponents({
   wrapper({ children, toc }) {
@@ -9,19 +10,21 @@ const defaultComponents = getNextraComponents({
     const frontMatter = children?.props?.frontMatter || {};
     console.log("MDXContent frontMatter:", frontMatter);
     return (
-      <div className='container flex flex-col justify-center max-w-7xl mx-auto'>
+      <div className='container flex flex-col justify-center items-center max-w-7xl mx-auto'>
         <Link href="/blog" className='self-center ml-4'>
         <button className="font-bold py-2 px-4 rounded-full items-stretch hover:bg-sky-100 dark:hover:bg-sky-800">
           ⬅️ Back to All Posts
         </button>
         </Link>
       <BlogPostHeader frontMatter={frontMatter} />
-      <div className="container flex justify-center mx-auto backdrop-blur-lg lg:shadow-lg rounded-xl">
+      <div className="container flex justify-center mx-auto rounded-xl">
         <article className="container prose dark:prose-invert mb-6 mx-auto lg:mx-6 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400 p-6">
         {children}
         </article>
         <TOC toc={toc} />
       </div>
+      {/* Add the AuthorBio component here */}
+      <AuthorBio /> 
       </div>
     )
   },
