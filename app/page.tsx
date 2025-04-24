@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CaseStudyListItem from "./components/CaseStudyListItem";
+import Image from "next/image";
 
 export const metadata = {
   title: "Eric Allen | UX Designer",
@@ -45,7 +46,7 @@ export default function Home() {
               </svg>
             </a>
           </div>
-          {/* Image gallery
+          <h3 className="text-2xl font-bold pt-16">My work</h3>
           <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             <div className="relative h-48">
               <Image
@@ -87,8 +88,9 @@ export default function Home() {
                 className="object-cover rounded-md"
               />
             </div>
-          </section> */}
-                <section className="mt-10">
+          </section>
+          <h3 className="text-2xl font-bold pt-16">Case Studies</h3>
+                <section className="mt-4">
                 <CaseStudyListItem
                 title="Subsplash Check-in"
                 description="A brief description of the case study."

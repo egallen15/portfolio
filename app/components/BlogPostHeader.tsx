@@ -25,7 +25,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
 
   return (
     <header className='self-center w-full mx-auto flex flex-col items-center justify-center p-6 rounded-lg'>
-      <h1 className='text-5xl font-bold pt-6 mb-6 text-center'>{title}</h1>
+      <h1 className='text-3xl md:text-5xl font-bold pt-6 mb-6 text-center'>{title}</h1>
       {/* <p className='text-orange-300'>{excerpt}</p> */}
       <div className='flex gap-3 items-center mt-4'>
         <p>By {author}</p>
