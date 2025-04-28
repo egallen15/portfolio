@@ -24,7 +24,7 @@ const About: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center pb-8">
-      <main className="mx-6 max-w-7xl flex flex-col backdrop-blur-sm px-8 rounded-md">
+      <main className="mx-6 max-w-7xl flex flex-col backdrop-blur-sm rounded-md">
         <h1 className="text-3xl md:text-5xl font-bold">About Me</h1>
         <p className="text-md max-w-3xl py-6 md:py-8">
         I&#39;m Eric—an optimistic realist with a passion for design,

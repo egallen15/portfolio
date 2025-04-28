@@ -6,13 +6,13 @@
 
 /* 1. Fallback (light) */
 :root {
-  --background: #f9f9f9;
+  --background: #FDFDFF;
   --foreground: #333333;
 }
 
 /* 2. Manual overrides */
 html.light {
-  --background: #f9f9f9;
+  --background: #FDFDFF;
   --foreground: #333333;
 }
 
