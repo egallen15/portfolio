@@ -46,49 +46,6 @@ export default function Home() {
               </svg>
             </a>
           </div>
-          <h3 className="text-2xl font-bold pt-16">My work</h3>
-          <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            <div className="relative h-48">
-              <Image
-                src="https://placehold.co/600x400"
-                alt="A plane cockpit"
-                fill
-                className="object-cover rounded-md"
-              />
-            </div>
-            <div className="relative h-48">
-              <Image
-                src="https://placehold.co/600x400"
-                alt="A large auditorium"
-                fill
-                className="object-cover rounded-md"
-              />
-            </div>
-            <div className="relative h-48">
-              <Image
-                src="https://placehold.co/600x400"
-                alt="Desk with 'Do More' sign"
-                fill
-                className="object-cover rounded-md"
-              />
-            </div>
-            <div className="relative h-48">
-              <Image
-                src="https://placehold.co/600x400"
-                alt="Clouds in the sky"
-                fill
-                className="object-cover rounded-md"
-              />
-            </div>
-            <div className="relative h-48">
-              <Image
-                src="https://placehold.co/600x400"
-                alt="Mountains"
-                fill
-                className="object-cover rounded-md"
-              />
-            </div>
-          </section>
           <h3 className="text-2xl font-bold pt-16">Case Studies</h3>
                 <section className="mt-4">
                 <CaseStudyListItem

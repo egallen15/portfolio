@@ -11,6 +11,12 @@ export default withNextra({
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'tailwindcss.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
     dangerouslyAllowSVG: true,
   },
