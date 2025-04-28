@@ -1,6 +1,5 @@
 import Link from "next/link";
 import CaseStudyListItem from "./components/CaseStudyListItem";
-import Image from "next/image";
 
 export const metadata = {
   title: "Eric Allen | UX Designer",
