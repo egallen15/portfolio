@@ -29,7 +29,7 @@ export default async function Blog() {
         excerpt: post.frontMatter.excerpt || 'No excerpt available.'
       }));
 
-    console.log('Normalized posts:', posts);
+    // console.log('Normalized posts:', posts);
 
     return (
       <LoadingProvider initialLoadingState={false}>
