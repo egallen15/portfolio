@@ -79,22 +79,22 @@ export default function Home() {
                         y2="0%"
                         id="linearGradient-5p8i0s5bj8-1"
                       >
-                        <stop stop-color="#F87537" offset="0%"></stop>
-                        <stop stop-color="#FBA81F" offset="100%"></stop>
+                        <stop stopColor="#F87537" offset="0%"></stop>
+                        <stop stopColor="#FBA81F" offset="100%"></stop>
                       </linearGradient>
                     </defs>
                     <g
                       id="Workflow-activity-on-Profile"
                       stroke="none"
-                      stroke-width="1"
+                      strokeWidth="1"
                       fill="none"
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                     >
                       <g
                         id="Workflows-Frame-in-Profile---idea-for-just-the-workflow-Card"
                         transform="translate(-420, -543)"
                         fill="url(#linearGradient-5p8i0s5bj8-1)"
-                        fill-rule="nonzero"
+                        fillRule="nonzero"
                       >
                         <g id="Group" transform="translate(420, 543)">
                           <path
