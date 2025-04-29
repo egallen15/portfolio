@@ -115,6 +115,7 @@ export default function Home() {
                   height={300}
                   className="shadow-xl w-44 md:w-64 lg:w-72 h-auto"
                   style={{ clipPath: "url(#blobClip)" }}
+                  priority
                 />
               </div>
             </div>
