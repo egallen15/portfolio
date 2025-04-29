@@ -119,7 +119,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <h3 className="text-xl font-bold pt-8">Case Studies</h3>
+          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">Latest posts</h3>
+          <section className="mt-4">
+            {/* Add latest posts here */}
+          </section>
+          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">Case Studies</h3>
           <section className="mt-4">
             <CaseStudyListItem
               title="Subsplash Check-in"
@@ -157,6 +161,14 @@ export default function Home() {
               linkHref="/case-study-3"
               className="opacity-0 animate-fadeInRight"
             />
+          </section>
+          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">Testimonials</h3>
+          <section className="mt-4">
+            {/* Add testimonials here */}
+          </section>
+          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">Experience</h3>
+          <section className="mt-4">
+            {/* Add experience here */}
           </section>
         </main>
       </div>
