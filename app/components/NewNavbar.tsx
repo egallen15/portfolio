@@ -136,7 +136,7 @@ export default function NewNavbar() {
       opacity: 0,
       height: 0,
       transition: {
-        duration: 0.2,
+        duration: 0.3,
         ease: "easeInOut"
       }
     },
@@ -144,7 +144,7 @@ export default function NewNavbar() {
       opacity: 1,
       height: "auto",
       transition: {
-        duration: 0.2,
+        duration: 0.3,
         ease: "easeInOut"
       }
     }
@@ -157,7 +157,7 @@ export default function NewNavbar() {
           <div className="flex items-center">
             <Link
               href="/"
-              className="flex items-center transition transform duration-200 lg:hover:neon lg:hover:-rotate-2 lg:hover:scale-[1.02]"
+              className="flex items-center transition transform duration-300 lg:hover:neon lg:hover:-rotate-2 lg:hover:scale-[1.02]"
             >
               <div>
                 <span className="cursor-pointer">
@@ -166,7 +166,7 @@ export default function NewNavbar() {
                     alt="Logo"
                     width={40}
                     height={40}
-                    className="object-contain rounded-md transition transform duration-200 lg:hover:-rotate-6 lg:hover:scale-[1.02]"
+                    className="object-contain rounded-md transition transform duration-300 lg:hover:-rotate-6 lg:hover:scale-[1.02]"
                   />
                 </span>
               </div>
