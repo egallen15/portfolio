@@ -62,7 +62,7 @@ export default function Home() {
               {/* Container for blobs + image */}
               <div className="relative order-first md:order-none mt-6 md:mt-0 mb-6 md:mb-0 md:ml-6">
                 {/* 1) Background blob with gradient */}
-                <span className="absolute md:-top-0 -right-12 md:right-4 lg:right-2 h-auto w-44 md:w-72 lg:w-[348px] -z-10">
+                <span className="absolute md:-top-0 -right-8 md:right-4 lg:right-2 h-auto w-44 md:w-72 lg:w-[320px] -z-10">
                   <svg
                     width="100%"
                     height="100%"
@@ -113,7 +113,7 @@ export default function Home() {
                   alt="Eric Allen Profile Picture"
                   width={300}
                   height={300}
-                  className="shadow-xl w-40 md:w-64 lg:w-72 h-auto"
+                  className="shadow-xl w-44 md:w-64 lg:w-72 h-auto"
                   style={{ clipPath: "url(#blobClip)" }}
                 />
               </div>
