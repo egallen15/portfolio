@@ -6,7 +6,7 @@ export const Footer: FC = () => {
 
   return (
     <footer>
-      <div className="w-full max-w-screen-xl mx-auto mb-6 md:py-8">
+      <div className="w-full max-w-screen-xl mx-auto mb-6 px-6 xl:px-0 md:py-8">
         <hr className="mb-6 border-slate-200 dark:border-slate-700 sm:mx-auto lg:my-8" />
         <div className="relative group w-full">
           <button
