@@ -2,13 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 import CaseStudyListItem from "./components/CaseStudyListItem";
 import SocialLinks from "./components/SocialLinks";
+import * as motion from "motion/react-client";
 
 export const metadata = {
   title: "Eric Allen | UX Designer",
-  description: "Austin-based UX Designer. Occasionally writes stuff.",
+  description: "Austin-based UX Designer. Learner, Writer, Dad.",
 };
 
 export default function Home() {
+  // This is the main page of the portfolio
+  // It contains the hero section, latest posts, case studies, and other sections
   return (
     <div className="min-h-screen flex flex-col mx-auto w-full lg:max-w-7xl">
       <div className="w-full flex-grow">
@@ -113,64 +116,163 @@ export default function Home() {
                   alt="Eric Allen Profile Picture"
                   width={300}
                   height={300}
-                  className="shadow-xl w-44 md:w-64 lg:w-72 h-auto"
+                  className="shadow-xl w-44 md:w-64 lg:w-72 h-auto dark:neon"
                   style={{ clipPath: "url(#blobClip)" }}
                   priority
                 />
               </div>
             </div>
           </div>
-          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">Latest posts</h3>
+          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+            What&apos;s new
+          </h3>
+          <motion.section className="mt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {/* Add latest posts here */}
+            </motion.div>
+          </motion.section>
+          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+            Case studies
+          </h3>
           <section className="mt-4">
-            {/* Add latest posts here */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <CaseStudyListItem
+                title="Subsplash Check-in"
+                description="A fast, safe, and secure check-in system for churches."
+                imageSrc="/images/Check-in frame.png"
+                imageAlt="Case Study 1 Image"
+                metric1Value="90%"
+                metric1Label="Satisfaction"
+                metric2Value="2x"
+                metric2Label="Conversion"
+                linkHref="/case-study-1"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <CaseStudyListItem
+                title="Subsplash Event Registration"
+                description="Effortless event registration for free and paid events."
+                imageSrc="https://placehold.co/600x400"
+                imageAlt="Case Study 2 Image"
+                metric1Value="40%"
+                metric1Label="Efficiency"
+                metric2Value="30%"
+                metric2Label="Cost Reduction"
+                linkHref="/case-study-2"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0.4 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <CaseStudyListItem
+                title="Subsplash Import"
+                description="Importing data into the Subsplash platform."
+                imageSrc="https://placehold.co/600x400"
+                imageAlt="Case Study 3 Image"
+                metric1Value="150k"
+                metric1Label="Active Users"
+                metric2Value="4.5"
+                metric2Label="Avg. Session Time"
+                linkHref="/case-study-3"
+              />
+            </motion.div>
           </section>
-          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">Case Studies</h3>
-          <section className="mt-4">
-            <CaseStudyListItem
-              title="Subsplash Check-in"
-              description="A brief description of the case study."
-              imageSrc="/images/Check-in frame.png"
-              imageAlt="Case Study 1 Image"
-              metric1Value="90%"
-              metric1Label="Satisfaction"
-              metric2Value="2x"
-              metric2Label="Conversion"
-              linkHref="/case-study-1"
-              className="opacity-0 animate-fadeInRight"
-            />
-            <CaseStudyListItem
-              title="Subsplash Event Registration"
-              description="Another interesting case study with great results."
-              imageSrc="https://placehold.co/600x400"
-              imageAlt="Case Study 2 Image"
-              metric1Value="40%"
-              metric1Label="Efficiency"
-              metric2Value="30%"
-              metric2Label="Cost Reduction"
-              linkHref="/case-study-2"
-              className="opacity-0 animate-fadeInRight"
-            />
-            <CaseStudyListItem
-              title="Subsplash Import"
-              description="A case study focusing on user engagement."
-              imageSrc="https://placehold.co/600x400"
-              imageAlt="Case Study 3 Image"
-              metric1Value="150k"
-              metric1Label="Active Users"
-              metric2Value="4.5"
-              metric2Label="Avg. Session Time"
-              linkHref="/case-study-3"
-              className="opacity-0 animate-fadeInRight"
-            />
-          </section>
-          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">Testimonials</h3>
-          <section className="mt-4">
-            {/* Add testimonials here */}
-          </section>
-          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">Experience</h3>
-          <section className="mt-4">
-            {/* Add experience here */}
-          </section>
+          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+            Services
+          </h3>
+          <motion.section className="mt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {/* Add links to book a call or service here */}
+            </motion.div>
+          </motion.section>
+          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+            Products
+          </h3>
+          <motion.section className="mt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {/* Add products here */}
+            </motion.div>
+          </motion.section>
+          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+            Testimonials
+          </h3>
+          <motion.section className="mt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {/* Add testimonials here */}
+            </motion.div>
+          </motion.section>
+          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+            CV/Experience
+          </h3>
+          <motion.section className="mt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {/* Add experience here */}
+            </motion.div>
+          </motion.section>
+          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+            My Stack
+          </h3>
+          <motion.section className="mt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {/* Add my tech stack here */}
+            </motion.div>
+          </motion.section>
+          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+            FAQ
+          </h3>
+          <motion.section className="mt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {/* Add FAQ content here */}
+            </motion.div>
+          </motion.section>
         </main>
       </div>
     </div>

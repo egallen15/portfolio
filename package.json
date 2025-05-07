@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "date-fns": "^4.1.0",
-    "framer-motion": "^12.4.9",
+    "motion": "^12.10.1",
     "next": "^15.1.6",
     "nextra": "^4.2.1",
     "react": "^19.0.0",

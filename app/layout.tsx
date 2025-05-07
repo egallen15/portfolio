@@ -3,6 +3,13 @@ import type { FC, ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import NextraTheme from "./components/nextra-theme";
 import "./globals.css";
+import { Noto_Sans } from 'next/font/google'
+
+const noto = Noto_Sans({
+  subsets: ['latin'],
+  weight: ['100','200','300','400','500','600','700','800','900'],
+  display: 'swap'
+})
 
 export const metadata: Metadata = {
   // resolve all relative URLs (OG & twitter images, alternates, etc.)
@@ -35,15 +42,15 @@ export const viewport: Viewport = {
   initialScale: 1,
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#FDFDFF' },
-    { media: '(prefers-color-scheme: dark)', color: '#0F172A' },
+    { media: '(prefers-color-scheme: dark)', color: '#020617' },
   ],
 };
 
 const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
   return (
-    <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr" className={`${noto.className}`}>
       <body className="flex flex-col w-full mx-auto dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-950 dark:via-80% dark:to-slate-900 dark:bg-fixed">
-          <NextraTheme>{children}</NextraTheme>
+        <NextraTheme>{children}</NextraTheme>
       </body>
     </html>
   );

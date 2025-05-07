@@ -1,8 +1,7 @@
 'use client';
 
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useEffect, useState, useRef, useLayoutEffect, useCallback } from 'react';
+import { motion } from 'motion/react';
+import { useRef, useState, useLayoutEffect, useCallback } from 'react';
 import React from 'react';
 
 export type TimelineEvent = {
@@ -97,36 +96,21 @@ function TimelineCard({
   index: number;
   cardRef?: React.Ref<HTMLDivElement>;
 }) {
-  const controls = useAnimation();
-  const [inViewRef, inView] = useInView({ threshold: 0.3 });
-
-  useEffect(() => {
-    if (inView) controls.start({ opacity: 1, y: 0 });
-  }, [controls, inView]);
-
-  // forward both the inView ref and our measurement ref
-  const combinedRef = useCallback(
-    (node: HTMLDivElement | null) => {
-      inViewRef(node);
-      if (typeof cardRef === 'function') {
-        cardRef(node);
-      } else if (cardRef && 'current' in cardRef) {
-        // Only assign non-null DOM nodes to satisfy current's type
-        if (node) {
-          (cardRef as React.RefObject<HTMLDivElement>).current = node;
-        }
-      }
-    },
-    [inViewRef, cardRef]
-  );
+  // forward ref for measurement and scrolling
+  const handleRef = useCallback((node: HTMLDivElement | null) => {
+    if (cardRef && typeof cardRef === 'function') {
+      cardRef(node);
+    }
+  }, [cardRef]);
 
   const isLeft = event.side === 'left';
   return (
     <motion.div
-      ref={combinedRef}
-      initial={{ opacity: 0, y: 20 }}       // start 20px below, invisible
-      animate={controls}                    // controls will drive us to…
+      ref={handleRef}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 0.3 }}
       className={`relative snap-start my-8 flex ${
         isLeft ? 'justify-start' : 'justify-end'
       } md:flex-row flex-col items-center`}

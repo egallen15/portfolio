@@ -1,80 +1,13 @@
+"use client";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import LightModeIcon from "./LightModeIcon";
-import DarkModeIcon from "./DarkModeIcon";
-
-// Define available themes (only "light" and "dark" are used after toggle)
-type Theme = "system" | "light" | "dark";
+import { motion, AnimatePresence } from "motion/react";
+import ThemeToggle from "@/app/components/ThemeToggle";
 
 export default function NewNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
-
-  // Initialize theme state. The function ensures it only runs on the client.
-  const [currentTheme, setCurrentTheme] = useState<Theme>(() => {
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme') as Theme | null;
-      return savedTheme || "system";
-    }
-    return "system";
-  });
-
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  // Function to apply theme based on selection
-  const applyTheme = (theme: Theme) => {
-    if (typeof window === 'undefined') return;
-    if (theme === "system") {
-      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      applyThemeClass(isDark ? "dark" : "light");
-      localStorage.removeItem('theme');
-      updateMetaThemeColor(isDark ? "#0F172A" : "#FDFDFF");
-    } else {
-      applyThemeClass(theme);
-      localStorage.setItem('theme', theme);
-      updateMetaThemeColor(theme === "dark" ? "#0F172A" : "#FDFDFF");
-    }
-  };
-
-  // 1) helper to update the theme-color meta in the DOM
-  const updateMetaThemeColor = (color: string) => {
-    const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', color);
-  };
-
-  // Initialize theme from localStorage or system preference on mount
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Apply the theme after the component has mounted on the client
-      if (currentTheme === "system") {
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        applyTheme(systemPrefersDark ? "dark" : "light");
-      } else {
-        applyTheme(currentTheme);
-      }
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentTheme]);
-
-  // Listen for system preference changes (only when using system theme)
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      const handleChange = (e: MediaQueryListEvent) => {
-        if (currentTheme === "system") {
-          applyThemeClass(e.matches ? "dark" : "light");
-        }
-      };
-      mediaQuery.addEventListener('change', handleChange);
-      return () => mediaQuery.removeEventListener('change', handleChange);
-    }
-  }, [currentTheme]);
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -90,44 +23,6 @@ export default function NewNavbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
-
-  // Function to apply theme class to HTML element
-  const applyThemeClass = (theme: string) => {
-    if (typeof document !== 'undefined') {
-      const htmlEl = document.documentElement;
-      htmlEl.classList.remove("light", "dark");
-      if (theme !== "system") {
-        htmlEl.classList.add(theme);
-      }
-    }
-  };
-
-  // Toggle theme between light and dark.
-  const toggleTheme = () => {
-    const effectiveTheme: "light" | "dark" =
-      currentTheme === "system"
-        ? (typeof window !== 'undefined' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light") : "light")
-        : currentTheme === "light" ? "light" : "dark";
-
-    const newTheme: Theme = effectiveTheme === "light" ? "dark" : "light";
-    setCurrentTheme(newTheme);
-    applyTheme(newTheme);
-  };
-
-  // Simple theme icon function to show only light and dark icons.
-  const getThemeIcon = () => {
-    // Determine the effective theme if "system" is in use.
-    const effectiveTheme: "light" | "dark" =
-      currentTheme === "system"
-        ? (typeof window !== 'undefined' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light") : "light")
-        : currentTheme;
-    
-    if (effectiveTheme === "light") {
-      return <LightModeIcon />;
-    } else {
-      return <DarkModeIcon />;
-    }
-  };
 
   // Navigation items
   const navItems = [
@@ -187,17 +82,7 @@ export default function NewNavbar() {
           {/* Main navigation area */}
           <div className="flex items-center space-x-2 md:space-x-4">
             {/* Desktop Theme Toggle Button */}
-            <div className="hidden md:block">
-              {isClient && (
-                <button
-                  onClick={toggleTheme}
-                  className="p-2 rounded-md text-md font-medium transition-colors duration-300 ease-in-out border border-transparent hover:bg-gray-100 dark:hover:bg-slate-800"
-                  title="Toggle theme"
-                >
-                  {getThemeIcon()}
-                </button>
-              )}
-            </div>
+            <ThemeToggle className="hidden md:block" />
             
             {/* Desktop Navigation Items */}
             <div className="hidden md:flex items-center space-x-4">
@@ -213,17 +98,7 @@ export default function NewNavbar() {
             </div>
             
             {/* Mobile Theme Toggle Button */}
-            <div className="md:hidden">
-              {isClient && (
-                <button
-                  onClick={toggleTheme}
-                  className="p-2 rounded-md text-sm font-medium transition-colors duration-300 ease-in-out border border-transparent hover:bg-gray-100 dark:hover:bg-slate-800"
-                  title="Toggle theme"
-                >
-                  {getThemeIcon()}
-                </button>
-              )}
-            </div>
+            <ThemeToggle className="md:hidden" />
 
             {/* Mobile Hamburger Menu Button */}
             <div className="md:hidden">

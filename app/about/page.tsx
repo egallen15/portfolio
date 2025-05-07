@@ -27,8 +27,7 @@ const About: React.FC = () => {
       <main className="mx-6 max-w-7xl flex flex-col backdrop-blur-sm rounded-md">
         <h1 className="text-3xl md:text-5xl font-bold">About Me</h1>
         <p className="text-md max-w-3xl py-6 md:py-8">
-        I&#39;m Eric—an optimistic realist with a passion for design,
-        learning, and writing.
+        I&#39;m Eric—an optimist, realist, product designer, father, learner, and writer.
             </p>
         <Image
           className="rounded-lg self-center"
