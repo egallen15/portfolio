@@ -31,7 +31,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FDFDFF' },
+    { media: '(prefers-color-scheme: dark)', color: '#0F172A' },
+  ],
 };
 
 const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
