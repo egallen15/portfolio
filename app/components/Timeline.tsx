@@ -124,9 +124,9 @@ function TimelineCard({
   return (
     <motion.div
       ref={combinedRef}
-      initial={{ opacity: 0 }}
-      animate={controls}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      initial={{ opacity: 0, y: 20 }}       // start 20px below, invisible
+      animate={controls}                    // controls will drive us to…
+      transition={{ duration: 0.3, ease: 'easeOut' }}
       className={`relative snap-start my-8 flex ${
         isLeft ? 'justify-start' : 'justify-end'
       } md:flex-row flex-col items-center`}
