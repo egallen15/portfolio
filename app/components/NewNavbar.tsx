@@ -29,16 +29,23 @@ export default function NewNavbar() {
 
   // Function to apply theme based on selection
   const applyTheme = (theme: Theme) => {
-    if (typeof window !== 'undefined') {
-      if (theme === "system") {
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        applyThemeClass(systemPrefersDark ? "dark" : "light");
-        localStorage.removeItem('theme');
-      } else {
-        applyThemeClass(theme);
-        localStorage.setItem('theme', theme);
-      }
+    if (typeof window === 'undefined') return;
+    if (theme === "system") {
+      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyThemeClass(isDark ? "dark" : "light");
+      localStorage.removeItem('theme');
+      updateMetaThemeColor(isDark ? "#0F172A" : "#FDFDFF");
+    } else {
+      applyThemeClass(theme);
+      localStorage.setItem('theme', theme);
+      updateMetaThemeColor(theme === "dark" ? "#0F172A" : "#FDFDFF");
     }
+  };
+
+  // 1) helper to update the theme-color meta in the DOM
+  const updateMetaThemeColor = (color: string) => {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', color);
   };
 
   // Initialize theme from localStorage or system preference on mount
@@ -151,7 +158,7 @@ export default function NewNavbar() {
   };
 
   return (
-    <nav ref={navRef} className="w-full sticky top-0 z-50 bg-[#FDFDFF] dark:bg-gradient-to-br from-slate-900 via-slate-950 via-80% to-slate-900 dark:bg-fixed">
+    <nav ref={navRef} className="w-full sticky top-0 z-50 backdrop-blur-xl dark:bg-gradient-to-br from-slate-900 via-slate-950 via-80% to-slate-900 dark:bg-fixed">
       <div className="max-w-7xl mx-auto px-6 xl:px-0">
         <div className="flex items-center border-b border-b-slate-200 dark:border-b-slate-700 justify-between h-20">
           <div className="flex items-center">
