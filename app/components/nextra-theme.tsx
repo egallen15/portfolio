@@ -3,7 +3,13 @@ import type { FC, ReactNode } from "react";
 import { Footer } from "./footer";
 import NewNavbar from "./NewNavbar";
 
-const NextraTheme: FC<{ children: ReactNode }> = ({ children }) => {
+// PageMap represents the array of items for navigation
+type PageMap = unknown[];
+
+const NextraTheme: FC<{ children: ReactNode; pageMap: PageMap }> = ({ children, pageMap }) => {
+  // consume pageMap prop to satisfy signature
+  void pageMap;
+
   return (
     <>
       {/* <h1 className="m-0 p-5 bg-slate-400 font-normal">

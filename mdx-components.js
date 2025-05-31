@@ -5,26 +5,30 @@ import Link from 'next/link'
 import AuthorBio from './app/components/AuthorBio' // Import the new component
  
 const defaultComponents = getNextraComponents({
-  wrapper({ children, toc }) {
-    // Extract frontMatter from children.props
-    const frontMatter = children?.props?.frontMatter || {};
-    console.log("MDXContent frontMatter:", frontMatter);
+  wrapper({ children, toc, ...allProps }) {
+    // Nextra provides frontMatter as 'metadata' in App Router
+    const frontMatter = allProps.metadata || {};
+    
+    // Clean development logging (remove this entirely when you're confident)
+    if (process.env.NODE_ENV === 'development') {
+      console.log('📝 Blog post loaded:', frontMatter.title);
+    }
+    
     return (
       <div className='container flex flex-col justify-center items-center max-w-7xl mx-auto'>
         <Link href="/blog" className='self-center ml-4'>
-        <button className="font-bold py-2 px-4 rounded-full items-stretch hover:bg-sky-100 dark:hover:bg-sky-800">
-          ⬅️ Back to All Posts
-        </button>
+          <button className="font-bold py-2 px-4 rounded-full items-stretch hover:bg-sky-100 dark:hover:bg-sky-800">
+            ⬅️ Back to All Posts
+          </button>
         </Link>
-      <BlogPostHeader frontMatter={frontMatter} />
-      <div className="container flex justify-center mx-auto rounded-xl">
-        <article className="container prose dark:prose-invert mb-6 mx-auto lg:mx-6 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400 p-6">
-        {children}
-        </article>
-        <TOC toc={toc} />
-      </div>
-      {/* Add the AuthorBio component here */}
-      <AuthorBio /> 
+        <BlogPostHeader frontMatter={frontMatter} />
+        <div className="container flex justify-center mx-auto rounded-xl">
+          <article className="container prose dark:prose-invert mb-6 mx-auto lg:mx-6 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400 p-6">
+            {children}
+          </article>
+          <TOC toc={toc} />
+        </div>
+        <AuthorBio /> 
       </div>
     )
   },

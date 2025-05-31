@@ -1,6 +1,7 @@
 // app/layout.jsx
 import type { FC, ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
+import { getPageMap } from "nextra/page-map";
 import NextraTheme from "./components/nextra-theme";
 import "./globals.css";
 import { Noto_Sans } from 'next/font/google'
@@ -46,11 +47,13 @@ export const viewport: Viewport = {
   ],
 };
 
+const pageMap = await getPageMap() 
+
 const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
   return (
     <html lang="en" dir="ltr" className={`${noto.className}`}>
       <body className="flex flex-col w-full mx-auto dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-950 dark:via-80% dark:to-slate-900 dark:bg-fixed">
-        <NextraTheme>{children}</NextraTheme>
+        <NextraTheme pageMap={pageMap}>{children}</NextraTheme>
       </body>
     </html>
   );
