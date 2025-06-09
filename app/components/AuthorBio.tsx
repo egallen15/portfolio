@@ -11,7 +11,6 @@ const AuthorBio: React.FC = () => {
           alt="Eric Allen profile picture"
           width={100} // Adjust size as needed
           height={100} // Adjust size as needed
-          priority // Load image sooner if it's important
         />
       </div>
       <div>

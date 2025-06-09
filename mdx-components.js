@@ -28,7 +28,6 @@ const defaultComponents = getNextraComponents({
           </article>
           <TOC toc={toc} />
         </div>
-        <AuthorBio /> 
       </div>
     )
   },

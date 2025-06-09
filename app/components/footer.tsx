@@ -1,6 +1,7 @@
 "use client";
 
 import type { FC } from "react";
+import AuthorBio from "./AuthorBio";
 
 export const Footer: FC = () => {
 
@@ -22,6 +23,7 @@ export const Footer: FC = () => {
           </a>
           . All Rights Reserved.
         </span>
+        <AuthorBio />
         </div>
 
       </div>
