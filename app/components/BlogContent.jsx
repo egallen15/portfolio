@@ -1,25 +1,15 @@
 'use client';
-import { useEffect } from 'react';
-import { useLoading } from './LoadingProvider';
 import BlogPostListItem from './BlogPostListItem';
-import LoadingUI from '../blog/loading';
 
-export default function BlogContent({ posts }) {
-  const { isLoading, setIsLoading } = useLoading();
-
-  useEffect(() => {
-    console.log("BlogContent posts:", posts); // Debug: verify posts include tags
-    setIsLoading(false);
-  }, [posts, setIsLoading]);
-
-  if (isLoading) {
-    return <LoadingUI />;
-  }
-
+export default function BlogContentClient({ 
+  posts = [],
+  showTitle = true,
+  title = "All Posts" 
+}) {
   return (
     <div className="flex w-full max-w-7xl mx-auto">
       <div className='w-full mx-6 xl:mx-0'>
-        <h1 className="text-3xl md:text-5xl font-bold mb-6">All Posts</h1>
+        {showTitle && <h1 className="text-3xl md:text-5xl font-bold mb-6">{title}</h1>}
         {posts.length > 0 ? (
           <div className="flex flex-col -mx-4 space-y-4">
             {posts.map(post => (
@@ -29,7 +19,7 @@ export default function BlogContent({ posts }) {
                 title={post.title}
                 excerpt={post.excerpt}
                 url={post.route}
-                tags={post.tags} // Pass the tags here
+                tags={post.tags}
               />
             ))}
           </div>

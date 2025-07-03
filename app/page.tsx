@@ -3,6 +3,7 @@ import Image from "next/image";
 import CaseStudyListItem from "./components/CaseStudyListItem";
 import SocialLinks from "./components/SocialLinks";
 import * as motion from "motion/react-client";
+import BlogContentServer from "./components/BlogContentServer";
 
 export const metadata = {
   title: "Eric Allen | UX Designer",
@@ -144,7 +145,10 @@ export default function Home() {
               transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              {/* Add latest posts here */}
+              <BlogContentServer 
+  maxPosts={2}
+  showTitle={false} 
+/>
             </motion.div>
           </motion.section>
           <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
