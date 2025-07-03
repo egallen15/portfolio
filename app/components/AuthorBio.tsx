@@ -18,8 +18,6 @@ const AuthorBio: React.FC = () => {
         <p className="prose text-sm dark:prose-invert">
           I&#39;m Eric—a dad, product designer, and writer living in Austin, Texas. I love learning and sharing with others through my work and writing.
         </p>
-        <p className="prose text-sm dark:prose-invert pt-3">
-        </p>
       </div>
     </div>
   );
