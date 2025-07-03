@@ -16,10 +16,9 @@ const AuthorBio: React.FC = () => {
       <div>
         <h4 className="text-xl font-bold mb-2">A little about me</h4>
         <p className="prose text-sm dark:prose-invert">
-          I&#39;m Eric—a dad, designer, builder, and writer living in Austin, Texas.
+          I&#39;m Eric—a dad, designer, builder, and writer living in Austin, Texas. I love learning and sharing my insights with others through my work and writing.
         </p>
         <p className="prose text-sm dark:prose-invert pt-3">
-        I am obsessed with learning. I love reading and watching everything I can about science, engineering, product, and technology and sharing my insights with others. 
         </p>
       </div>
     </div>
