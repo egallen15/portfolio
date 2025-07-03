@@ -1,11 +1,12 @@
 'use client';
 import BlogPostListItem from './BlogPostListItem';
+import { BlogContentProps } from '../types/blog';
 
-export default function BlogContentClient({ 
-  posts = [],
+const BlogContentClient = ({ 
+  posts,
   showTitle = true,
   title = "All Posts" 
-}) {
+}: BlogContentProps) => {
   return (
     <div className="flex w-full max-w-7xl mx-auto">
       <div className='w-full mx-6 xl:mx-0'>
@@ -29,4 +30,6 @@ export default function BlogContentClient({
       </div>
     </div>
   );
-}
+};
+
+export default BlogContentClient;

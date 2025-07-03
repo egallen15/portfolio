@@ -1,12 +1,13 @@
 import { getPageMap } from 'nextra/page-map';
 import { normalizePages } from 'nextra/normalize-pages';
 import BlogContentClient from './BlogContent';
+import { BlogPost, BlogContentServerProps } from '../types/blog';
 
 export default async function BlogContentServer({ 
-  maxPosts = null, 
+  maxPosts, 
   showTitle = true,
   title = "All Posts" 
-}) {
+}: BlogContentServerProps) {
   try {
     // Fetch and normalize the page map for '/blog'
     const { directories } = normalizePages({
@@ -15,9 +16,13 @@ export default async function BlogContentServer({
     });
 
     // Filter out 'index' and sort posts by date descending
-    const fetchedPosts = directories
+    const fetchedPosts: BlogPost[] = directories
       .filter(post => post.name !== 'index')
-      .sort((a, b) => new Date(b.frontMatter.date) - new Date(a.frontMatter.date))
+      .sort((a, b) => {
+        const dateA = new Date(b.frontMatter.date);
+        const dateB = new Date(a.frontMatter.date);
+        return dateA.getTime() - dateB.getTime();
+      })
       .map(post => ({
         name: post.name,
         title: post.frontMatter.title || post.name,
