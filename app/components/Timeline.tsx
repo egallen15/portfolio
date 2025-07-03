@@ -130,9 +130,7 @@ function TimelineCard({
         <h3 className="text-xl font-bold">{event.title}</h3>
         <p className="mt-2 text-gray-600">{event.description}</p>
         <p className="mt-2 text-gray-500">{event.icon}</p> {/* Added icon display */}
-        <p className="mt-2 text-gray-400">Event ID: {event.id}</p> {/* Added event ID display */}
-        <p className="mt-2 text-gray-400">Side: {event.side}</p> {/* Added side display */}
-        <p className="mt-2 text-gray-400">Index: {index + 1}</p> {/* Added index display */}
+        <p className="mt-2 text-gray-400">{event.date}</p> {/* Added date display */}
       </div>
     </motion.div>
   );
