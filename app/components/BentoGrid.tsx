@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function BentoGrid() {
   return (
-        <div className="py-24 sm:py-32">
+        <div>
           <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
             <h2 className="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
             <p className="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-foreground text-pretty sm:text-5xl">
