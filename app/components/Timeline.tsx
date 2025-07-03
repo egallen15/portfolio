@@ -89,7 +89,6 @@ function CurvyLine({ points }: { points: number[] }) {
 
 function TimelineCard({
   event,
-  index,
   cardRef,
 }: {
   event: TimelineEvent;
