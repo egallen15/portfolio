@@ -39,13 +39,19 @@ export default function Home() {
           <div className="flex flex-col">
             <div className="mb-6 flex flex-col md:flex-row items-start md:items-center">
               <div className="flex-1">
-                <h1 className="text-3xl pr-4 pt-6 rounded-lg md:text-5xl max-w-fit font-bold">
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  className="text-3xl pr-4 pt-6 rounded-lg md:text-5xl max-w-fit font-bold"
+                >
                   Hi! I&#39;m{" "}
                   <Link href="/about" className="hover:neon">
                     Eric
                   </Link>{" "}
                   👋
-                </h1>
+                </motion.h1>
                 <p className="text-md max-w-3xl backdrop-blur-lg rounded-lg pt-6 mb-6 md:pt-8">
                   I&#39;m a senior UX designer based in{" "}
                   <strong>Austin, Texas</strong>. For the past{" "}
@@ -63,7 +69,12 @@ export default function Home() {
               </div>
 
               {/* Container for blobs + image */}
-              <div className="relative order-first md:order-none mt-6 md:mt-0 mb-6 md:mb-0 md:ml-6">
+              <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  className="relative order-first md:order-none mt-6 md:mt-0 mb-6 md:mb-0 md:ml-6">
                 {/* 1) Background blob with gradient */}
                 <span className="absolute md:-top-0 -right-8 md:right-4 lg:right-2 h-auto w-44 md:w-72 lg:w-[320px] -z-10">
                   <svg
@@ -120,7 +131,7 @@ export default function Home() {
                   style={{ clipPath: "url(#blobClip)" }}
                   priority
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
           <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
@@ -143,7 +154,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true, amount: 0.1 }}
             >
               <CaseStudyListItem
