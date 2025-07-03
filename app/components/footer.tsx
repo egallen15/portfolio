@@ -9,7 +9,8 @@ export const Footer: FC = () => {
     <footer>
       <div className="w-full max-w-screen-xl mx-auto mb-6 px-6 xl:px-0 md:py-8">
         <hr className="mb-6 border-slate-200 dark:border-slate-700 sm:mx-auto lg:my-8" />
-        <div className="relative group w-full">
+        <AuthorBio />
+        <div className="relative group w-full mt-6">
           <button
             className="inline-block hover:animate-lawnmower active:animate-lawnmower hover:text-green-500 hover:neon text-slate-500 mr-1 absolute transition-transform duration-1000 z-10"
             style={{ left: 0 }}
@@ -23,7 +24,6 @@ export const Footer: FC = () => {
           </a>
           . All Rights Reserved.
         </span>
-        <AuthorBio />
         </div>
 
       </div>
