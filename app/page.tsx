@@ -136,7 +136,7 @@ export default function Home() {
             </div>
           </div>
           <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
-            What&apos;s new
+            Latest posts
           </h3>
           <motion.section className="mt-4">
             <motion.div

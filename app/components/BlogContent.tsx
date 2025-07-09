@@ -12,7 +12,7 @@ const BlogContentClient = ({
       <div className='w-full mx-6 xl:mx-0'>
         {showTitle && <h1 className="text-3xl md:text-5xl font-bold mb-6">{title}</h1>}
         {posts.length > 0 ? (
-          <div className="flex flex-col -mx-4 space-y-4">
+          <div className="flex flex-col space-y-4">
             {posts.map(post => (
               <BlogPostListItem
                 key={post.name}
