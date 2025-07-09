@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const AuthorBio: React.FC = () => {
   return (
-    <div className="dark:bg-slate-800 text-foreground rounded-lg flex flex-col md:flex-row items-start md:space-x-6 md:space-y-0 space-y-4 lg:mx-0">
+    <div className="text-foreground rounded-lg flex flex-col md:flex-row items-start md:space-x-6 md:space-y-0 space-y-4 lg:mx-0">
       <div className="flex-shrink-0">
         <Image
           className="rounded-full"
