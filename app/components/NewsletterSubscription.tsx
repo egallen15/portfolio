@@ -60,8 +60,8 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
   };
 
   return (
-    <div className={`max-w-md mx-auto p-8 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm ${className}`}>
-      <div className="text-center">
+    <div className={`max-w-md mx-auto ${className}`}>
+      <div className="">
         <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
           Stay in the Loop
         </h4>
