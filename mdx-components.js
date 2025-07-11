@@ -2,7 +2,6 @@ import { useMDXComponents as getNextraComponents } from 'nextra/mdx-components'
 import { TOC } from './app/components/toc'
 import BlogPostHeader from './app/components/BlogPostHeader'
 import Link from 'next/link'
-import AuthorBio from './app/components/AuthorBio' // Import the new component
  
 const defaultComponents = getNextraComponents({
   wrapper({ children, toc, ...allProps }) {
@@ -15,17 +14,17 @@ const defaultComponents = getNextraComponents({
     }
     
     return (
-      <div className='container flex flex-col justify-center items-center max-w-7xl mx-auto'>
-        <Link href="/blog" className='self-center ml-4'>
-          <button className="font-bold py-2 px-4 rounded-full items-stretch hover:bg-sky-100 dark:hover:bg-sky-800">
-            ⬅️ Back to All Posts
-          </button>
+      <div className='container flex flex-col max-w-6xl mx-auto'>
+        <Link href="/blog" className='w-fit underline rounded-full items-stretch hover:text-sky-800 dark:text-bg-sky-800'>
+          ⬅️ Back to All Posts
         </Link>
-        <BlogPostHeader frontMatter={frontMatter} />
-        <div className="container flex justify-center mx-auto rounded-xl">
-          <article className="container prose dark:prose-invert mb-6 mx-auto lg:mx-6 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400 p-6">
-            {children}
-          </article>
+        <div className="container flex flex-col lg:flex-row">
+          <div className="w-full max-w-7xl xl:max-w-4xl">
+            <BlogPostHeader frontMatter={frontMatter} />
+            <article className="container w-auto prose dark:prose-invert mb-6 mx-6 lg:mx-0 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
+              {children}
+            </article>
+          </div>
           <TOC toc={toc} />
         </div>
       </div>
