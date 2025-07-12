@@ -15,13 +15,13 @@ const defaultComponents = getNextraComponents({
     
     return (
       <div className='container flex flex-col max-w-6xl mx-auto'>
-        <Link href="/blog" className='w-fit underline rounded-full items-stretch hover:text-sky-800 dark:text-bg-sky-800'>
+        <Link href="/blog" className='w-fit underline ml-6 lg:ml-0 rounded-full items-stretch hover:text-sky-800 dark:text-bg-sky-800'>
           ⬅️ Back to All Posts
         </Link>
         <div className="container flex flex-col lg:flex-row">
-          <div className="w-full max-w-7xl xl:max-w-4xl">
+          <div className="w-full :w-fit max-w-7xl xl:max-w-4xl">
             <BlogPostHeader frontMatter={frontMatter} />
-            <article className="container w-auto prose dark:prose-invert mb-6 mx-6 lg:mx-0 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
+            <article className="container w-auto prose leading-relaxed dark:prose-invert mb-6 mx-6 lg:mx-0 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
               {children}
             </article>
           </div>

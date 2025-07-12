@@ -37,7 +37,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
   };
 
   return (
-    <header className='w-full mx-auto flex flex-col p-6 lg:px-0 lg:mr-8 mb-8 rounded-lg'>
+    <header className='w-full mx-auto flex flex-col p-6 lg:px-0 lg:mr-8 lg:mb-8 rounded-lg'>
       <h1 className='text-2xl md:text-4xl font-bold mb-2'>
         {title}
       </h1>
