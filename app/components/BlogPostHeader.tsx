@@ -80,7 +80,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
         alt={title}
         width={896}
         height={384}
-        className='rounded-lg shadow-lg w-auto max-h-96 object-cover'
+        className='rounded-lg shadow-md w-auto max-h-96 object-cover'
         priority // This loads the image faster since it's above the fold
       />
     </header>
