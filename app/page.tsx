@@ -68,6 +68,7 @@ export default function Home() {
                   ministries, and non‑profits.
                 </p>
                 <SocialLinks />
+                <NewsletterSubscription />
               </div>
 
               {/* Container for blobs + image */}
@@ -147,10 +148,9 @@ export default function Home() {
               viewport={{ once: true, amount: 0.1 }}
             >
               <BlogContentServer 
-  maxPosts={2}
+  maxPosts={3}
   showTitle={false} 
 />
-<NewsletterSubscription className="mt-6" />
             </motion.div>
           </motion.section>
           <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
