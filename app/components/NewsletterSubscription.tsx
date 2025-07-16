@@ -60,14 +60,30 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
   };
 
   return (
-    <div className={`max-w-md mx-auto ${className}`}>
-      <div className="">
-        <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-          Stay in the Loop
+    <div className={`max-w-md ${className}`}>
+      <div className="flex items-center mb-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-2 flex-shrink-0"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z"
+          />
+        </svg>
+        <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
+          Subscribe to updates
         </h4>
-        <p className="prose text-sm dark:prose-invert mb-6 leading-relaxed">
-          Get the latest updates, insights, and exclusive content delivered straight to your inbox.
-        </p>
+      </div>
+      <p className="prose text-sm dark:prose-invert mb-6 leading-relaxed">
+        Get email updates when I publish something. No spam. No nonsense.
+      </p>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex flex-col sm:flex-row gap-3">
@@ -76,7 +92,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-4 py-3 text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 dark:border dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={isLoading}
               aria-label="Email address"
               required
@@ -104,7 +120,6 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
           )}
         </form>
       </div>
-    </div>
   );
 };
 

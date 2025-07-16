@@ -4,6 +4,7 @@ import CaseStudyListItem from "./components/CaseStudyListItem";
 import SocialLinks from "./components/SocialLinks";
 import * as motion from "motion/react-client";
 import BlogContentServer from "./components/BlogContentServer";
+import NewsletterSubscription from "./components/NewsletterSubscription";
 
 export const metadata = {
   title: "Eric Allen | UX Designer",
@@ -38,7 +39,7 @@ export default function Home() {
             </defs>
           </svg>
           <div className="flex flex-col">
-            <div className="mb-6 flex flex-col md:flex-row items-start md:items-center">
+            <div className="mb-8 flex flex-col md:flex-row items-start md:items-center">
               <div className="flex-1">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
@@ -149,6 +150,7 @@ export default function Home() {
   maxPosts={2}
   showTitle={false} 
 />
+<NewsletterSubscription className="mt-6" />
             </motion.div>
           </motion.section>
           <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
