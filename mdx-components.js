@@ -19,7 +19,7 @@ const defaultComponents = getNextraComponents({
           ⬅️ Back to All Posts
         </Link>
         <div className="container flex flex-col lg:flex-row">
-          <div className="w-full max-w-7xl xl:max-w-4xl">
+          <div className="w-full max-w-7xl xl:max-w-[53rem]">
             <BlogPostHeader frontMatter={frontMatter} />
             <article className="container w-auto prose leading-relaxed dark:prose-invert mb-6 mx-6 lg:mx-0 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
               {children}
