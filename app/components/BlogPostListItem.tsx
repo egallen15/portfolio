@@ -30,11 +30,11 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
     <Link href={url} className="block rounded-lg -mx-4 p-4 hover:bg-gradient-to-tr hover:from-slate-200/30 hover:to-sky-100 dark:hover:bg-gradient-to-tr dark:hover:from-slate-400/30 dark:hover:to-sky-700/30">
       <div className="flex flex-col md:flex-row items-start w-full max-w-7xl rounded-lg">
         <div className="flex flex-shrink-0">
-          <Image src={imageUrl} alt="Post Image" width={300} height={150} className="object-cover aspect-video rounded-lg mb-4 lg:mb-0" />
+          {/* <Image src={imageUrl} alt="Post Image" width={300} height={150} className="object-cover aspect-video rounded-lg mb-4 lg:mb-0" /> */}
         </div>
-        <div className="lg:ml-4">
+        <div>
             <div className="flex items-end">
-            <h2 className="text-xl font-bold mr-2">{title}</h2>
+            <h2 className="text-lg font-bold mr-2">{title}</h2>
             </div>
             <div className="h-[2px] w-full bg-gradient-to-r from-sky-500 to-sky-300 rounded-full my-2" />
           <p className="mt-2 text-gray-700 dark:text-gray-300">{excerpt}</p>
