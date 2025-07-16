@@ -36,11 +36,13 @@ export default async function BlogContentServer({
     const posts = maxPosts ? fetchedPosts.slice(0, maxPosts) : fetchedPosts;
 
     return (
+      <div className="flex w-full max-w-7xl mx-6 xl:mx-auto">
       <BlogContentClient 
         posts={posts}
         showTitle={showTitle}
         title={title}
       />
+      </div>
     );
   } catch (error) {
     console.error('Error loading blog posts:', error);

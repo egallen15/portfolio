@@ -18,7 +18,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
     title   = 'Untitled Post',
     author  = 'Eric Allen',
     date    = new Date().toISOString().split('T')[0],
-    image   = 'https://placehold.co/960x540',
+    image   = 'https://placehold.co/1792x770',
     tags    = [],
     excerpt
   } = frontMatter ?? {};
@@ -37,7 +37,8 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
   };
 
   return (
-    <header className='w-full mx-auto flex flex-col p-6 pt-8 lg:px-0 lg:mr-8 lg:mb-8 rounded-lg'>
+    <header className='w-full mx-auto flex flex-col p-6 pt-8 lg:px-0 rounded-lg'>
+    
       <h1 className='text-2xl md:text-4xl font-bold mb-2'>
         {title}
       </h1>
@@ -74,13 +75,12 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
           </div>
         )}
       </div>
-      
       <Image
         src={image}
         alt={title}
-        width={300}
-        height={150}
-        className='rounded-lg max-w-4xl shadow-lg w-auto h-auto'
+        width={896}
+        height={384}
+        className='rounded-lg shadow-lg w-auto max-h-96 object-cover'
         priority // This loads the image faster since it's above the fold
       />
     </header>
