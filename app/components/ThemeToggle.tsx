@@ -15,11 +15,18 @@ export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
     if (typeof window === "undefined") return "system";
     return (localStorage.getItem("theme") as Theme) || "system";
   });
-  const [resolved, setResolved] = useState<"light" | "dark">(() => {
-    if (typeof window === "undefined") return "light";
-    // Check the class that was already applied by our blocking script
-    return document.documentElement.classList.contains("dark") ? "dark" : "light";
-  });
+  
+  const [resolved, setResolved] = useState<"light" | "dark">("light");
+  const [mounted, setMounted] = useState(false);
+
+  // Set mounted state and read actual DOM theme after component mounts
+  useEffect(() => {
+    setMounted(true);
+    
+    // Read the theme from the DOM (set by our blocking script)
+    const isDark = document.documentElement.classList.contains("dark");
+    setResolved(isDark ? "dark" : "light");
+  }, []);
 
   // apply theme to document and track resolved color
   const applyTheme = (next: Theme) => {
@@ -55,7 +62,12 @@ export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
       className={`${className} p-2 rounded-md text-md font-medium transition-colors duration-300 ease-in-out border border-transparent hover:bg-gray-100 dark:hover:bg-slate-800`}
       title="Toggle theme"
     >
-      {resolved === "dark" ? <DarkModeIcon /> : <LightModeIcon />}
+      {!mounted ? (
+        // Show a neutral state during hydration to prevent flash
+        <div className="h-5 w-5" />
+      ) : (
+        resolved === "dark" ? <DarkModeIcon /> : <LightModeIcon />
+      )}
     </button>
   );
 }
