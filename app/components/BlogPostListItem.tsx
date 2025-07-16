@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import Image from "next/image";
+// 
 import Link from "next/link";
 import { formatDistanceToNow } from "date-fns";
 
@@ -17,7 +17,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
   excerpt,
   date,
   url,
-  imageUrl = "https://placehold.co/300x150",
+  // imageUrl = "https://placehold.co/300x150",
   tags = ['test1', 'test2', 'test3'],
 }) => {
   // Convert the input date string to a Date object.
