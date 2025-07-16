@@ -14,7 +14,7 @@ const defaultComponents = getNextraComponents({
     }
     
     return (
-      <div className='container flex flex-col max-w-6xl mx-auto'>
+      <div className='container flex flex-col mx-auto'>
         <Link href="/blog" className='w-fit underline ml-6 lg:ml-0 rounded-full items-stretch hover:text-sky-800 dark:text-bg-sky-800'>
           ⬅️ Back to All Posts
         </Link>
