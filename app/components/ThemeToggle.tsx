@@ -15,7 +15,11 @@ export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
     if (typeof window === "undefined") return "system";
     return (localStorage.getItem("theme") as Theme) || "system";
   });
-  const [resolved, setResolved] = useState<"light" | "dark">("light");
+  const [resolved, setResolved] = useState<"light" | "dark">(() => {
+    if (typeof window === "undefined") return "light";
+    // Check the class that was already applied by our blocking script
+    return document.documentElement.classList.contains("dark") ? "dark" : "light";
+  });
 
   // apply theme to document and track resolved color
   const applyTheme = (next: Theme) => {

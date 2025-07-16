@@ -52,6 +52,30 @@ const pageMap = await getPageMap()
 const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
   return (
     <html lang="en" dir="ltr" className={`${noto.className}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function getThemePreference() {
+                  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+                    return localStorage.getItem('theme');
+                  }
+                  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                
+                const theme = getThemePreference();
+                const resolvedTheme = theme === 'system' 
+                  ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                  : theme;
+                
+                document.documentElement.classList.remove('light', 'dark');
+                document.documentElement.classList.add(resolvedTheme);
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="flex flex-col w-full mx-auto dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-950 dark:via-80% dark:to-slate-900 dark:bg-fixed">
         <NextraTheme pageMap={pageMap}>{children}</NextraTheme>
       </body>
