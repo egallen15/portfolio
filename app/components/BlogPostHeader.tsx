@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import * as motion from "motion/react-client";
 
 interface BlogPostHeaderProps {
   frontMatter?: {
@@ -75,14 +76,21 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
           </div>
         )}
       </div>
-      <Image
-        src={image}
-        alt={title}
-        width={896}
-        height={384}
-        className='rounded-lg shadow-md w-auto max-h-96 object-cover'
-        priority // This loads the image faster since it's above the fold
-      />
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        <Image
+          src={image}
+          alt={title}
+          width={896}
+          height={384}
+          className='rounded-lg shadow-md w-auto max-h-96 object-cover'
+          priority // This loads the image faster since it's above the fold
+        />
+      </motion.div>
     </header>
   );
 };

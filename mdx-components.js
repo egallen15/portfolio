@@ -2,6 +2,7 @@ import { useMDXComponents as getNextraComponents } from 'nextra/mdx-components'
 import { TOC } from './app/components/toc'
 import BlogPostHeader from './app/components/BlogPostHeader'
 import Link from 'next/link'
+import * as motion from "motion/react-client";
  
 const defaultComponents = getNextraComponents({
   wrapper({ children, toc, ...allProps }) {
@@ -15,9 +16,16 @@ const defaultComponents = getNextraComponents({
     
     return (
       <div className='container flex flex-col mx-auto'>
+         <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
+      >
         <Link href="/blog" className='w-fit font-semibold underline ml-6 lg:ml-0 rounded-full items-stretch hover:text-sky-800 dark:text-bg-sky-800'>
           ⬅️ Back to All Posts
         </Link>
+       </motion.div> 
         <div className="container flex flex-col lg:flex-row">
           <div className="w-full max-w-7xl xl:max-w-[53rem]">
             <BlogPostHeader frontMatter={frontMatter} />
