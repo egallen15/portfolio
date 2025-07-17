@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import * as motion from "motion/react-client";
+import Link from 'next/link';
 
 interface BlogPostHeaderProps {
   frontMatter?: {
@@ -38,25 +39,34 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
   };
 
   return (
-    <header className='w-full mx-auto flex flex-col p-6 pt-8 lg:px-0 rounded-lg'>
-    
-      <h1 className='text-2xl md:text-4xl font-bold mb-2'>
+    <header className='w-auto mx-6 mb-4 md:mb-8 md:mx-auto flex flex-col lg:items-center lg:px-0 rounded-lg'>
+     <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            <Link href="/blog" className='w-fit font-semibold underline lg:ml-0 rounded-full items-stretch hover:text-sky-800 dark:text-bg-sky-800'>
+              ⬅️ Back to All Posts
+            </Link>
+           </motion.div> 
+      <h1 className='text-3xl md:text-4xl font-bold mt-8 mb-3'>
         {title}
       </h1>
       
       {excerpt && (
-        <p className='text-md text-gray-600 dark:text-gray-300 max-w-2xl md:mb-4'>
+        <p className='text-md text-gray-600 dark:text-gray-300 max-w-2xl mb-2 md:mb-4'>
           {excerpt}
         </p>
       )}
       
-      <div className='flex flex-wrap gap-4 mt-4 mb-6'>
-        <div className='flex items-center gap-2'>
+      <div className='flex flex-wrap gap-4 mt-2 mb-6'>
+        <div className='flex items-baseline gap-2'>
           <span className='text-sm text-gray-500'>By</span>
           <span className='font-medium'>{author}</span>
         </div>
         
-        <div className='flex items-center gap-2'>
+        <div className='flex items-baseline gap-2'>
           <span className='text-sm text-gray-500'>Published</span>
           <time dateTime={date} className='font-medium'>
             {formatDate(date)}

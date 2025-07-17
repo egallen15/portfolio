@@ -64,7 +64,7 @@ const config: Config = {
       typography: (theme: any) => ({
         DEFAULT: {
           css: {
-            maxWidth: '100ch',
+            maxWidth: '80ch',
             lineHeight: '1.6',
           },
         },
