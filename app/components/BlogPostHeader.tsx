@@ -60,7 +60,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
         </p>
       )}
       
-      <div className='flex flex-wrap gap-4 mt-2 mb-6'>
+      <div className='flex flex-wrap items-center gap-4 mt-2 mb-6'>
         <div className='flex items-baseline gap-2'>
           <span className='text-sm text-gray-500'>By</span>
           <span className='font-medium'>{author}</span>
