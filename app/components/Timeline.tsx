@@ -123,13 +123,13 @@ function TimelineCard({
       {/* Card */}
       <div
         className={`p-6 w-full lg:w-96 bg-slate-100 dark:bg-slate-700 text-foreground z-10 rounded-lg shadow-lg ${
-          isLeft ? 'rotate-2' : '-rotate-2'
+          isLeft ? 'md:rotate-2' : 'md:-rotate-2'
         }`}
       >
         <h3 className="text-xl font-bold">{event.title}</h3>
-        <p className="mt-2 text-gray-600">{event.description}</p>
-        <p className="mt-2 text-gray-500">{event.icon}</p> {/* Added icon display */}
-        <p className="mt-2 text-gray-400">{event.date}</p> {/* Added date display */}
+        <p className="mt-2 text-md text-slate-500">{event.description}</p>
+        <p className="mt-2 text-sm">{event.icon}</p> {/* Added icon display */}
+        <p className="mt-2 text-sm">{event.date}</p> {/* Added date display */}
       </div>
     </motion.div>
   );
