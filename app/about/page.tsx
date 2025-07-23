@@ -61,7 +61,7 @@ const About: React.FC = () => {
           for a chat about design, tech, or life in general. Feel free to reach
           out!
         </p>
-        <div className="w-full h-1 bg-slate-200 my-8" />
+        <div className="w-full h-0.5 bg-slate-200 my-8" />
         <h3 className="relative inline-block text-2xl font-bold pt-16">
           {/* pink skewed “hand‑drawn” highlight */}
           <span
