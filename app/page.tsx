@@ -39,7 +39,7 @@ export default function Home() {
             </defs>
           </svg>
           <div className="flex flex-col">
-            <div className="mb-8 flex flex-col md:flex-row items-start md:items-center">
+            <div className="mb-4 flex flex-col md:flex-row items-start md:items-center">
               <div className="flex-1">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,6 @@ export default function Home() {
                   ministries, and non‑profits.
                 </p>
                 <SocialLinks />
-                <NewsletterSubscription />
               </div>
 
               {/* Container for blobs + image */}
