@@ -4,7 +4,6 @@ import CaseStudyListItem from "./components/CaseStudyListItem";
 import SocialLinks from "./components/SocialLinks";
 import * as motion from "motion/react-client";
 import BlogContentServer from "./components/BlogContentServer";
-import NewsletterSubscription from "./components/NewsletterSubscription";
 
 export const metadata = {
   title: "Eric Allen | UX Designer",

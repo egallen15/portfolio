@@ -3,7 +3,7 @@ import BlogPostHeader from './app/components/BlogPostHeader'
 import AuthorBio from './app/components/AuthorBio'
  
 const defaultComponents = getNextraComponents({
-  wrapper({ children, toc, ...allProps }) {
+  wrapper({ children, ...allProps }) {
     // Nextra provides frontMatter as 'metadata' in App Router
     const frontMatter = allProps.metadata || {};
     
@@ -22,7 +22,6 @@ const defaultComponents = getNextraComponents({
             </article>
             <AuthorBio />
           </div>
-          {/* <TOC toc={toc} /> */}
         </div>
       </div>
     )
