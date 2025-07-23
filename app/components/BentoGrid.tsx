@@ -3,12 +3,11 @@ import Image from 'next/image';
 export default function BentoGrid() {
   return (
         <div>
-          <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-            <h2 className="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
-            <p className="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-foreground text-pretty sm:text-5xl">
-              Everything you need to deploy your app
+          <div className="mx-auto xl:px-0 max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+            <p className="max-w-lg text-4xl font-bold text-foreground sm:text-5xl">
+              Portfolio
             </p>
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
               <div className="relative lg:col-span-3">
                 <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
                 <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
