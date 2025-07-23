@@ -1,5 +1,6 @@
 import { useMDXComponents as getNextraComponents } from 'nextra/mdx-components'
 import BlogPostHeader from './app/components/BlogPostHeader'
+import AuthorBio from './app/components/AuthorBio'
  
 const defaultComponents = getNextraComponents({
   wrapper({ children, toc, ...allProps }) {
@@ -12,13 +13,14 @@ const defaultComponents = getNextraComponents({
     }
     
     return (
-      <div className='container flex flex-col justify-center mx-auto'>
+      <div className='container flex flex-col justify-center mb-6 lg:mb-0 mx-auto'>
         <div className="container flex flex-col lg:flex-row justify-center">
           <div className="w-full max-w-4xl">
             <BlogPostHeader frontMatter={frontMatter} />
             <article className="container w-fit prose leading-relaxed self-center items-center dark:prose-invert mb-6 mx-6 lg:mx-auto prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
               {children}
             </article>
+            <AuthorBio />
           </div>
           {/* <TOC toc={toc} /> */}
         </div>
