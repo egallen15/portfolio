@@ -43,7 +43,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
      <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.1 }}
           >
             <Link href="/blog" className='w-fit font-semibold underline lg:ml-0 rounded-full items-stretch hover:text-sky-800 dark:text-bg-sky-800'>
