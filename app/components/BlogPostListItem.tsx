@@ -43,7 +43,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-200 text-gray-800 dark:bg-slate-700 dark:text-slate-300 mr-2"
+                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-700 dark:bg-sky-700 dark:text-sky-200 mr-2"
               >
                 {tag}
               </span>
