@@ -38,7 +38,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
             </div>
             <div className="h-[2px] w-full bg-gradient-to-r from-sky-500 to-sky-300 rounded-full my-2" />
           <p className="mt-2 text-gray-700 dark:text-gray-300">{excerpt}</p>
-          <div className="my-2 flex-col justify-between items-center">
+          <div className="mt-2 flex-col justify-between items-center">
           <p className="text-gray-500 dark:text-gray-400 mb-2 mr-4">{relativeDate}</p>
             {tags.map((tag) => (
               <span
