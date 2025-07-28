@@ -36,7 +36,7 @@ export default async function BlogContentServer({
     const posts = maxPosts ? fetchedPosts.slice(0, maxPosts) : fetchedPosts;
 
     return (
-      <div className="flex w-auto max-w-7xl mx-auto">
+      <div className="flex w-full max-w-7xl mx-auto">
       <BlogContentClient 
         posts={posts}
         showTitle={showTitle}
