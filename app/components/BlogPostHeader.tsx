@@ -39,7 +39,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
   };
 
   return (
-    <header className='w-auto mx-6 mb-4 md:mb-8 md:mx-auto flex flex-col lg:items-center lg:px-0 rounded-lg'>
+    <header className='w-auto mx-6 mb-6 md:mb-9 md:mx-auto flex flex-col lg:items-center lg:px-0 rounded-lg'>
      <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -55,7 +55,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
       </h1>
       
       {excerpt && (
-        <p className='text-md text-gray-600 dark:text-gray-300 max-w-2xl mb-2 md:mb-4'>
+        <p className='text-md xl:text-center text-gray-600 dark:text-gray-300 max-w-2xl mb-2 md:mb-4'>
           {excerpt}
         </p>
       )}
