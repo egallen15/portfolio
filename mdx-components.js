@@ -17,7 +17,7 @@ const defaultComponents = getNextraComponents({
         <div className="container flex flex-col lg:flex-row justify-center">
           <div className="w-full max-w-4xl">
             <BlogPostHeader frontMatter={frontMatter} />
-            <article className="container w-fit prose leading-relaxed self-center items-center dark:prose-invert mb-6 mx-6 lg:mx-auto prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
+            <article className="w-fit prose leading-relaxed dark:prose-invert mb-6 mx-6 lg:mx-auto prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
               {children}
             </article>
             <AuthorBio />
@@ -54,8 +54,10 @@ const defaultComponents = getNextraComponents({
   // // Explicitly define pre component with the styling you want
   pre: ({ children }) => {
     return (
-      <pre className="p-4 rounded-lg max-w-4xl my-4 overflow-x-auto">
-      {children}
+      <pre className="p-4 rounded-lg my-8 overflow-x-auto w-full min-w-0 max-w-[calc(100vw-3rem)] sm:max-w-full whitespace-pre">
+        <code className="block">
+          {children}
+        </code>
       </pre>
     );
   },
