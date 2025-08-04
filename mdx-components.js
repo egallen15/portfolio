@@ -28,11 +28,11 @@ const defaultComponents = getNextraComponents({
   },
   // Add custom components for specific markdown elements with auto-generated IDs
   h1: ({ children, id }) => <h1 id={id} className="text-2xl text-foreground md:text-4xl font-bold pt-6 mb-8">{children}</h1>,
-  h2: ({ children, id }) => <h2 id={id} className="text-xl text-foreground md:text-3xl font-semibold pt-4 mb-6">{children}</h2>,
-  h3: ({ children, id }) => <h3 id={id} className="text-lg text-foreground md:text-2xl font-semibold pt-4 mb-6">{children}</h3>,
-  h4: ({ children, id }) => <h4 id={id} className="text-md text-foreground md:text-xl font-medium pt-4 mb-2">{children}</h4>,
-  h5: ({ children, id }) => <h5 id={id} className="font-semibold text-foreground pt-3 mb-2">{children}</h5>,
-  h6: ({ children, id }) => <h6 id={id} className="text-md text-foreground font-medium pt-2 mb-1">{children}</h6>,
+  h2: ({ children, id }) => <h2 id={id} className="text-xl text-foreground md:text-3xl font-semibold mb-6">{children}</h2>,
+  h3: ({ children, id }) => <h3 id={id} className="text-lg text-foreground md:text-2xl font-semibold mb-6">{children}</h3>,
+  h4: ({ children, id }) => <h4 id={id} className="text-md text-foreground md:text-xl font-medium mb-2">{children}</h4>,
+  h5: ({ children, id }) => <h5 id={id} className="font-semibold text-foreground mb-2">{children}</h5>,
+  h6: ({ children, id }) => <h6 id={id} className="text-md text-foreground font-medium mb-1">{children}</h6>,
   // p: ({ children }) => <p className="mb-4">{children}</p>,
   // a: ({ children, href }) => (
   //   <a href={href} className="text-blue-600 hover:underline">
