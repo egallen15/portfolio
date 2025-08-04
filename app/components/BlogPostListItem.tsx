@@ -38,7 +38,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
         </div>
         <div className="w-fit">
           <div className="flex items-end">
-            <h2 className="text-md font-semibold mr-2">{title}</h2>
+            <h3 className="text-md mr-2">{title}</h3>
           </div>
           <div className="h-[1px] w-full bg-gradient-to-r from-sky-400 to-sky-300 rounded-full my-2" />
           <p className="text-sm text-slate-700 dark:text-slate-300">{excerpt}</p>
