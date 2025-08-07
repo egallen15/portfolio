@@ -34,14 +34,14 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
     >
       <div className="flex flex-col md:flex-row md:items-center w-full max-w-7xl rounded-lg">
         <div className="flex flex-shrink-0">
-          <Image src={imageUrl} alt="Post Image" width={200} height={200} className="object-cover aspect-video rounded-lg mr-4 mb-4 lg:mb-0" />
+          <Image src={imageUrl} alt="Post Image" width={200} height={200} className="object-cover aspect-video rounded-lg mr-4 mb-4 md:mb-0" />
         </div>
         <div className="w-fit">
           <div className="flex items-end">
             <h3 className="text-md font-medium mr-2">{title}</h3>
           </div>
-          <div className="h-[1px] w-full bg-gradient-to-r from-sky-400 to-sky-300 rounded-full my-2" />
-          <p className="text-sm text-slate-700 dark:text-slate-300">{excerpt}</p>
+          {/* <div className="h-[1px] w-full bg-gradient-to-r from-sky-400 to-sky-300 rounded-full my-2" /> */}
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">{excerpt}</p>
           <div className="mt-3 flex flex-row items-center">
             <p className="text-slate-500 text-sm font-light dark:text-slate-400 mr-3">
               {relativeDate}
