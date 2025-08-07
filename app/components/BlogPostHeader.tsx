@@ -92,9 +92,10 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
             {formatDate(date)}
           </time>
         </div>
-        <span className="font-medium text-slate-500">•</span>
+        
         {tags.length > 0 && (
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+          <span className="font-medium text-slate-500">•</span>
             {tags.map((tag) => (
               <span
                 key={tag}
