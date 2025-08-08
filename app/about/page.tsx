@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Timeline, { TimelineEvent } from "../components/Timeline";
+import * as motion from "motion/react-client";
 
 export const metadata = {
   title: "About",
@@ -25,18 +26,34 @@ const About: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center pb-8">
       <main className="mx-6 max-w-7xl flex flex-col backdrop-blur-sm rounded-md">
-        <h1 className="text-3xl md:text-5xl font-bold">About Me</h1>
+        <motion.h1 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.1 }}
+          className="text-3xl md:text-5xl font-bold"
+        >
+          About Me
+        </motion.h1>
         <p className="text-md max-w-3xl py-6 md:py-8">
         I&#39;m Eric—a designer, builder, and writer living in Austin, Texas.
             </p>
-        <Image
-          className="rounded-lg self-center"
-          src="/images/eric-allen-profile-pic-2023.png"
-          alt="About us image"
-          width="480"
-          height="480"
-          priority
-        />
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
+          className="self-center"
+        >
+          <Image
+            className="rounded-lg mb-4"
+            src="/images/eric-allen-profile-pic-2023.png"
+            alt="About us image"
+            width="480"
+            height="480"
+            priority
+          />
+        </motion.div>
         {/* <svg id="visual"><rect x="0" y="0" width="900" height="600" fill="#FF0066"></rect><g transform="translate(442.29705101177933 280.6360684745338)"><path d="M111.2 -97.5C151.7 -70.7 197.4 -35.4 212.6 15.2C227.8 65.8 212.5 131.5 172 167C131.5 202.5 65.8 207.8 -2.5 210.2C-70.7 212.7 -141.4 212.4 -174.8 176.9C-208.1 141.4 -204 70.7 -201 3.1C-197.9 -64.6 -195.8 -129.2 -162.5 -156C-129.2 -182.8 -64.6 -171.9 -14.6 -157.3C35.4 -142.7 70.7 -124.4 111.2 -97.5" fill="#BB004B"></path></g></svg> */}
         <p className="prose dark:prose-invert pt-3">
           I&#39;m obsessed with learning. I love reading and watching everything I can about science, engineering, product design, and technology and sharing my insights with others.
