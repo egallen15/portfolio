@@ -135,9 +135,17 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
-          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
-            Latest posts
-          </h3>
+            <div className="flex flex-row items-baseline justify-between pt-8">
+            <h3 className="uppercase tracking-wider text-slate-500 font-semibold">
+              Latest posts
+            </h3>
+            <Link 
+              href="/blog" 
+              className="text-sm font-semibold text-slate-500 hover:underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+            >
+              View all posts →
+            </Link>
+            </div>
           <motion.section className="mt-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -151,9 +159,17 @@ export default function Home() {
 />
             </motion.div>
           </motion.section>
-          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
-            Case studies
-          </h3>
+          <div className="flex flex-row items-baseline justify-between pt-8">
+            <h3 className="uppercase tracking-wider text-slate-500 font-semibold">
+              Case Studies
+            </h3>
+            <Link 
+              href="/portfolio" 
+              className="text-sm font-semibold text-slate-500 hover:underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+            >
+              View portfolio →
+            </Link>
+            </div>
           <section className="mt-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
