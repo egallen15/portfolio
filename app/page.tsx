@@ -75,7 +75,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
                   viewport={{ once: true, amount: 0.1 }}
-                  className="relative order-first mt-6 width-full md:mt-0 mb-6 md:mb-0 mr-12">
+                  className="relative order-first mt-6 width-full md:mt-0 mb-6 md:mb-0 mr-14">
                 {/* 1) Background blob with gradient */}
                 <span className="absolute md:-top-0 -right-8 h-auto w-72 -z-10">
                   <svg
