@@ -75,9 +75,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
                   viewport={{ once: true, amount: 0.1 }}
-                  className="relative order-first md:order-none mt-6 md:mt-0 mb-6 md:mb-0 md:ml-6">
+                  className="relative order-first mt-6 width-full md:mt-0 mb-6 md:mb-0 mr-12">
                 {/* 1) Background blob with gradient */}
-                <span className="absolute md:-top-0 -right-8 md:right-4 lg:right-2 h-auto w-64 md:w-72 lg:w-[320px] -z-10">
+                <span className="absolute md:-top-0 -right-8 h-auto w-72 -z-10">
                   <svg
                     width="100%"
                     height="100%"
@@ -128,7 +128,7 @@ export default function Home() {
                   alt="Eric Allen Profile Picture"
                   width={300}
                   height={300}
-                  className="shadow-xl w-64 lg:w-72 h-auto dark:neon"
+                  className="shadow-xl w-72 h-auto dark:neon"
                   style={{ clipPath: "url(#blobClip)" }}
                   priority
                 />
