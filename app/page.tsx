@@ -143,7 +143,7 @@ export default function Home() {
               href="/blog" 
               className="text-sm font-semibold text-slate-500 hover:underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
             >
-              View all posts →
+              View all
             </Link>
             </div>
           <motion.section className="mt-4">
@@ -167,7 +167,7 @@ export default function Home() {
               href="/portfolio" 
               className="text-sm font-semibold text-slate-500 hover:underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
             >
-              View portfolio →
+              View all
             </Link>
             </div>
           <section className="mt-4">
