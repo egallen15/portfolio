@@ -10,7 +10,7 @@ const BlogContentClient = ({
 }: BlogContentProps) => {
   return (
     <div className="flex w-full max-w-7xl mx-auto">
-      <main className='w-full mx-6 xl:mx-0'>
+      <div className='w-full'>
         {showTitle && (
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
@@ -59,7 +59,7 @@ const BlogContentClient = ({
         ) : (
           <p className="font-bold mx-4 mt-4 mb-4">No blog posts found.</p>
         )}
-      </main>
+      </div>
     </div>
   );
 };

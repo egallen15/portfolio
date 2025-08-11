@@ -37,11 +37,13 @@ export default async function BlogContentServer({
 
     return (
       <div className="flex w-full max-w-7xl mx-auto">
-      <BlogContentClient 
-        posts={posts}
-        showTitle={showTitle}
-        title={title}
-      />
+        <div className="w-full xl:mx-0">
+          <BlogContentClient 
+            posts={posts}
+            showTitle={showTitle}
+            title={title}
+          />
+        </div>
       </div>
     );
   } catch (error) {
