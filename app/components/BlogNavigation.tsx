@@ -44,7 +44,7 @@ export default function BlogNavigation({ previousPost, nextPost }: BlogNavigatio
                 <span className="mr-1">←</span>
                 {formatDate(previousPost.date)}
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:underline transition-colors">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 underline transition-colors">
                 {previousPost.title}
               </h3>
               <p className="text-sm text-gray-500 dark:text-gray-400 overflow-hidden" style={{ 
@@ -69,7 +69,7 @@ export default function BlogNavigation({ previousPost, nextPost }: BlogNavigatio
                 {formatDate(nextPost.date)}
                 <span className="ml-1">→</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:underline transition-colors text-right">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 underline transition-colors text-right">
                 {nextPost.title}
               </h3>
               <p className="text-sm text-gray-500 dark:text-gray-400 text-right overflow-hidden" style={{ 
