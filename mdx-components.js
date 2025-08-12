@@ -1,6 +1,7 @@
 import { useMDXComponents as getNextraComponents } from 'nextra/mdx-components'
 import BlogPostHeader from './app/components/BlogPostHeader'
 import AuthorBio from './app/components/AuthorBio'
+import BlogNavigationServer from './app/components/BlogNavigationServer'
  
 const defaultComponents = getNextraComponents({
   wrapper({ children, ...allProps }) {
@@ -21,6 +22,12 @@ const defaultComponents = getNextraComponents({
               {children}
             </article>
             <AuthorBio />
+            {/* Blog navigation - always show for blog posts */}
+            {frontMatter.slug && (
+              <div className="mx-6 lg:mx-auto">
+                <BlogNavigationServer currentSlug={frontMatter.slug} />
+              </div>
+            )}
           </div>
         </div>
       </div>
