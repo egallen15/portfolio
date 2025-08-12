@@ -60,7 +60,7 @@ export const TOC: FC<{ toc: Heading[] }> = ({ toc }) => {
   }
 
   return (
-    <aside className="hidden lg:block p-6 pt-[165px] w-fit ml-9 dark:text-slate-300 rounded">
+    <aside className="hidden lg:block p-6 pt-[165px] w-fit ml-9 dark:text-slate-300 rounded-sm">
       <div className='sticky top-40'>
         <h2 className="font-bold uppercase pb-4 text-sm text-slate-500 tracking-widest">On this page</h2>
         <ul className=''>

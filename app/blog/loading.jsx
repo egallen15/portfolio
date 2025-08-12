@@ -7,11 +7,11 @@ export default function Loading() {
           {[...Array(5)].map((_, i) => (
             <div 
               key={i} 
-              className="p-4 border rounded-lg shadow-sm animate-pulse"
+              className="p-4 border rounded-lg shadow-xs animate-pulse"
             >
-              <div className="h-7 bg-gray-200 dark:bg-slate-700 rounded w-3/4 mb-3"></div>
-              <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded w-full mb-2"></div>
-              <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded w-5/6"></div>
+              <div className="h-7 bg-gray-200 dark:bg-slate-700 rounded-sm w-3/4 mb-3"></div>
+              <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded-sm w-full mb-2"></div>
+              <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded-sm w-5/6"></div>
             </div>
           ))}
         </div>

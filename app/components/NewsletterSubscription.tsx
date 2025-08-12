@@ -82,7 +82,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email address"
-              className="flex-1 px-4 py-3 max-w-md text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-4 py-3 max-w-md text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-hidden transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={isLoading}
             aria-label="Email address"
             required

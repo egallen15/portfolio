@@ -27,7 +27,7 @@ export default function BentoGrid() {
                     </p>
                   </div>
                 </div>
-                <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
+                <div className="pointer-events-none absolute inset-px rounded-lg shadow-xs ring-1 ring-black/5 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
               </div>
               <div className="relative lg:col-span-3">
                 <div className="absolute inset-px rounded-lg bg-white lg:rounded-tr-[2rem]" />
@@ -48,7 +48,7 @@ export default function BentoGrid() {
                     </p>
                   </div>
                 </div>
-                <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 lg:rounded-tr-[2rem]" />
+                <div className="pointer-events-none absolute inset-px rounded-lg shadow-xs ring-1 ring-black/5 lg:rounded-tr-[2rem]" />
               </div>
               <div className="relative lg:col-span-2">
                 <div className="absolute inset-px rounded-lg bg-white lg:rounded-bl-[2rem]" />

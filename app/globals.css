@@ -1,8 +1,78 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Dark mode configuration */
+  --default-transition-duration: 0.3s;
+  
+  /* Custom colors */
+  --color-primary: #1a202c;
+  --color-secondary: #edf2f7;
+  --color-accent: #38b2ac;
+  
+  /* Custom gray scale */
+  --color-gray-50: #f8f8f8;
+  --color-gray-100: #f0f0f0;
+  --color-gray-200: #d9d9d9;
+  --color-gray-300: #bfbfbf;
+  --color-gray-400: #a6a6a6;
+  --color-gray-500: #8c8c8c;
+  --color-gray-600: #737373;
+  --color-gray-700: #595959;
+  --color-gray-800: #404040;
+  --color-gray-900: #262626;
+  
+  /* Custom animations */
+  --animate-gradient: gradient 15s ease infinite;
+  --animate-fadeInRight: fadeInRight 0.6s ease-out forwards;
+  --animate-lawnmower: lawnMower 1s ease 0s infinite normal forwards;
+}
+
+/* Custom keyframes */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translate3d(-60%, 0, 0); }
+  30% { opacity: 0; transform: translate3d(-30%, 0, 0); }
+  100% { opacity: 1; transform: translateZ(0); }
+}
+
+@keyframes lawnMower {
+  0% { transform: translate(0); }
+  10% { transform: translate(-1px, -1px); }
+  20% { transform: translate(1px, -1px); }
+  30% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, 1px); }
+  50% { transform: translate(-1px, -1px); }
+  60% { transform: translate(1px, -1px); }
+  70% { transform: translate(-1px, 1px); }
+  80% { transform: translate(-1px, -1px); }
+  90% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+/* Custom utilities */
+@utility prose {
+  max-width: 80ch;
+  line-height: 1.6;
+}
+
+@utility neon-white {
+  --neon: #fefefe;
+  --neon-glow: #ffffff;
+  text-shadow: 0 0 10px var(--neon);
+}
+
+@utility neon {
+  --neon: #fefefe;
+  --neon-glow: #ffffff;
+  text-shadow: 0 0 10px var(--neon);
+}
 
 :root {
   --background: #FDFDFF;
@@ -37,7 +107,6 @@ html {
   color-scheme: light dark;
 }
 
-
 body::before {
   content: "";
   position: fixed;
@@ -71,17 +140,4 @@ body {
   background-color: var(--background);
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: "Noto Sans", Arial, Helvetica, sans-serif;
-}
-
-/* Neon White definitions */
-.neon-white {
-  --neon: #fefefe;
-  --neon-glow: #ffffff;
-  text-shadow: 0 0 10px var(--neon);
-}
-
-@layer components {
-  .neon {
-    @apply neon-white;
-  }
 }

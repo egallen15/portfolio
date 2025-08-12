@@ -149,7 +149,7 @@ export const Footer: FC = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="p-2 rounded-full bg-slate-300/30 dark:bg-slate-400/30 backdrop-blur-sm hover:bg-gradient-to-tr hover:from-slate-300/30 hover:to-sky-300/30 dark:hover:bg-gradient-to-tr dark:hover:from-slate-400/30 dark:hover:to-sky-700 transition-all duration-200"
+                  className="p-2 rounded-full bg-slate-300/30 dark:bg-slate-400/30 backdrop-blur-xs hover:bg-gradient-to-tr hover:from-slate-300/30 hover:to-sky-300/30 dark:hover:bg-gradient-to-tr dark:hover:from-slate-400/30 dark:hover:to-sky-700 transition-all duration-200"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
