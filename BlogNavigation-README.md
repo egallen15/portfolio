@@ -5,9 +5,11 @@ This component provides automatic previous/next post navigation for your blog po
 ## Components
 
 ### 1. `BlogNavigation.tsx`
+
 The main UI component that renders the navigation cards with previous/next post information.
 
 ### 2. `BlogNavigationServer.tsx`  
+
 Server component that fetches all blog posts and determines previous/next posts based on the current post's slug.
 
 ## Features
