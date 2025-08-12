@@ -25,7 +25,7 @@ const About: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center pb-8">
-      <main className="mx-6 max-w-7xl flex flex-col backdrop-blur-xs rounded-md">
+      <main className="mx-6 max-w-7xl flex flex-col backdrop-blur-sm rounded-md">
         <motion.h1 
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -92,7 +92,7 @@ const About: React.FC = () => {
               skew-y-2          /* slight skew for hand‑drawn feel */
               transform
               origin-left       /* skew around the left edge */
-              rounded-xs        /* soft corners */
+              rounded-sm        /* soft corners */
             "
           />
           <span className="relative z-10">

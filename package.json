@@ -10,7 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.11",
     "date-fns": "^4.1.0",
     "motion": "^12.10.1",
     "next": "^15.1.6",
@@ -19,7 +18,7 @@
     "react-dom": "^19.0.0",
     "react-intersection-observer": "^9.16.0",
     "rehype-slug": "^6.0.0",
-    "tailwindcss": "^4.0.0"
+    "tailwind": "^4.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -27,9 +26,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
 }
