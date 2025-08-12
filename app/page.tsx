@@ -148,8 +148,8 @@ export default function Home() {
             </div>
           <motion.section className="mt-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
               viewport={{ once: true, amount: 0.1 }}
             >
