@@ -53,7 +53,23 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
           ⬅️ Back to All Posts
         </Link>
       </motion.div>
-      <h1 className="text-3xl md:text-4xl font-bold mt-8">{title}</h1>
+
+      <div className="flex flex-wrap items-center gap-3 mt-6">
+        {tags.length > 0 && (
+          <div className="flex flex-wrap items-center gap-2">
+            {/* <span className="font-medium text-slate-500">•</span> */}
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-400 rounded-full text-sm font-medium"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+      <h1 className="text-3xl md:text-4xl font-bold mt-4">{title}</h1>
 
       {excerpt && (
         <p className="text-md xl:text-center text-slate-500 dark:text-slate-400 max-w-2xl mt-3">
@@ -77,36 +93,22 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
         />
       </motion.div>
       {/* Display author, date, and tags in a more structured way */}
-
-      <div className="flex flex-wrap items-center gap-3 mt-2">
-        
-
-        <div className="flex items-baseline gap-2">
-          <span className="font-medium dark:text-slate-400 text-slate-500">{author}</span>
-          
-        </div>
-
-        <span className="font-medium text-slate-500">•</span>
-        <div className="flex items-baseline gap-2">
-          <time dateTime={date} className="font-medium dark:text-slate-400 text-slate-500">
-            {formatDate(date)}
-          </time>
-        </div>
-        
-        {tags.length > 0 && (
-          <div className="flex flex-wrap items-center gap-2">
-          <span className="font-medium text-slate-500">•</span>
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-400 rounded-full text-sm font-medium"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+      <div className="flex items-baseline gap-2">
+        <span className="font-sm dark:text-slate-400 text-slate-500">
+          {author}
+        </span>
+        <span className="font-sm text-slate-500">•</span>
+      <div className="flex items-baseline gap-2">
+        <time
+          dateTime={date}
+          className="font-sm dark:text-slate-400 text-slate-500"
+        >
+          {formatDate(date)}
+        </time>
       </div>
+      </div>
+
+      
     </header>
   );
 };

@@ -49,7 +49,7 @@ export default function Home() {
                 >
                   Hi! I&#39;m{" "}
                   <Link href="/about" className="hover:neon">
-                    Eric
+                    Eric Allen
                   </Link>{" "}
                   👋
                 </motion.h1>
@@ -136,12 +136,12 @@ export default function Home() {
             </div>
           </div>
             <div className="flex flex-row items-baseline justify-between pt-8">
-            <h3 className="uppercase tracking-wider text-slate-500 font-semibold">
+            <h3 className="text-lg text-slate-800 font-bold">
               Latest posts
             </h3>
             <Link 
               href="/blog" 
-              className="text-sm font-semibold text-slate-500 hover:underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+              className="text-sm hover:underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
             >
               View all
             </Link>
@@ -160,12 +160,12 @@ export default function Home() {
             </motion.div>
           </motion.section>
           <div className="flex flex-row items-baseline justify-between pt-8">
-            <h3 className="uppercase tracking-wider text-slate-500 font-semibold">
-              Case Studies
+            <h3 className="text-lg text-slate-800 dark:text-slate-300 font-bold">
+              Case studies
             </h3>
             <Link 
               href="/portfolio" 
-              className="text-sm font-semibold text-slate-500 hover:underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+              className="text-sm hover:underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
             >
               View all
             </Link>
