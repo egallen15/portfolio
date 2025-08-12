@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import CaseStudyListItem from "./components/CaseStudyListItem";
 import SocialLinks from "./components/SocialLinks";
 import * as motion from "motion/react-client";
 import BlogContentServer from "./components/BlogContentServer";
+import BentoGrid from "./components/BentoGrid";
 
 export const metadata = {
   title: "Eric Allen | UX Designer",
@@ -134,34 +134,16 @@ export default function Home() {
                 />
               </motion.div>
             </div>
-          </div>
-            <div className="flex flex-row items-baseline justify-between pt-8">
-            <h3 className="text-lg text-slate-800 font-bold">
-              Latest posts
-            </h3>
-            <Link 
-              href="/blog" 
-              className="text-sm hover:underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
-            >
-              View all
-            </Link>
-            </div>
-          <motion.section className="mt-4">
+             <section className="mt-4">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              <BlogContentServer 
-  maxPosts={3}
-  showTitle={false} 
-/>
-            </motion.div>
-          </motion.section>
-          <div className="flex flex-row items-baseline justify-between pt-8">
-            <h3 className="text-lg text-slate-800 dark:text-slate-300 font-bold">
-              Case studies
+                <div className="flex flex-row items-baseline justify-between pt-8">
+            <h3 className="text-xl text-slate-800 dark:text-slate-300 font-bold">
+              Portfolio
             </h3>
             <Link 
               href="/portfolio" 
@@ -170,14 +152,8 @@ export default function Home() {
               View all
             </Link>
             </div>
-          <section className="mt-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <CaseStudyListItem
+              <BentoGrid></BentoGrid>
+              {/* <CaseStudyListItem
                 title="Subsplash Check-in"
                 description="A fast, safe, and secure check-in system for churches."
                 imageSrc="/images/Check-in frame.png"
@@ -223,9 +199,36 @@ export default function Home() {
                 metric2Value="4.5"
                 metric2Label="Avg. Session Time"
                 linkHref="/case-study-3"
-              />
+              /> */}
             </motion.div>
           </section>
+          </div>
+          
+            <div className="flex flex-row items-baseline justify-between pt-8">
+            <h3 className="text-xl text-slate-800 font-bold">
+              Latest posts
+            </h3>
+            <Link 
+              href="/blog" 
+              className="text-sm hover:underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+            >
+              View all
+            </Link>
+            </div>
+          <motion.section className="mt-4">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <BlogContentServer 
+  maxPosts={3}
+  showTitle={false} 
+/>
+            </motion.div>
+          </motion.section>
+         
           <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
             Services
           </h3>
