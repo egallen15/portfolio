@@ -16,7 +16,10 @@ const AuthorBio: React.FC = () => {
       <div>
         <h4 className="text-xl font-bold mb-2">About Eric Allen</h4>
         <p className="prose text-sm  leading-relaxed dark:prose-invert">
-          I&#39;m Eric—a UX designer/writer living in Austin, Texas. I get a kick out of empowering people to do their best work. In my spare time, I love long walks with a good playlist, spending time with my wife and three kids, playing and making games, and watching great films.
+          I&#39;m a UX designer/writer living in Austin, Texas, and I get a kick out of empowering people to do their best work.
+        </p>
+        <p className='prose text-sm leading-relaxed dark:prose-invert mt-2'>
+          In my spare time, I love long walks with a good playlist, spending time with my wife and three kids, playing and making games, and watching great films.
         </p>
       </div>
     </div>
