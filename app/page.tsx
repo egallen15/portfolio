@@ -4,6 +4,7 @@ import SocialLinks from "./components/SocialLinks";
 import * as motion from "motion/react-client";
 import BlogContentServer from "./components/BlogContentServer";
 import BentoGrid from "./components/BentoGrid";
+import HighlightedHeading from "./components/HighlightedHeading";
 
 export const metadata = {
   title: "Eric Allen | UX Designer",
@@ -141,13 +142,18 @@ export default function Home() {
               transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-                <div className="flex flex-row items-baseline justify-between pt-8">
-            <h3 className="text-xl text-slate-800 dark:text-slate-300 font-bold">
+                <div className="flex flex-row items-baseline justify-between pt-6 lg:pt-12">
+            <HighlightedHeading 
+              highlightColor="yellow"
+              highlightStyle="full"
+              skewAngle="medium"
+              as="h3"
+            >
               Portfolio
-            </h3>
+            </HighlightedHeading>
             <Link 
               href="/portfolio" 
-              className="text-sm hover:underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+              className="text-sm underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
             >
               View all
             </Link>
@@ -204,13 +210,18 @@ export default function Home() {
           </section>
           </div>
           
-            <div className="flex flex-row items-baseline justify-between pt-8">
-            <h3 className="text-xl text-slate-800 font-bold">
+            <div className="flex flex-row items-baseline justify-between pt-12">
+            <HighlightedHeading 
+              highlightColor="cyan"
+              highlightStyle="full"
+              skewAngle="medium"
+              as="h3"
+            >
               Latest posts
-            </h3>
+            </HighlightedHeading>
             <Link 
               href="/blog" 
-              className="text-sm hover:underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+              className="text-sm underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
             >
               View all
             </Link>
@@ -229,9 +240,15 @@ export default function Home() {
             </motion.div>
           </motion.section>
          
-          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+          <HighlightedHeading 
+            highlightColor="pink"
+            highlightStyle="full"
+            skewAngle="light"
+            as="h3"
+            className=""
+          >
             Services
-          </h3>
+          </HighlightedHeading>
           <motion.section className="mt-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -242,9 +259,15 @@ export default function Home() {
               {/* Add links to book a call or service here */}
             </motion.div>
           </motion.section>
-          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+          <HighlightedHeading 
+            highlightColor="green"
+            highlightStyle="full"
+            skewAngle="light"
+            as="h3"
+            className=""
+          >
             Products
-          </h3>
+          </HighlightedHeading>
           <motion.section className="mt-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -255,9 +278,15 @@ export default function Home() {
               {/* Add products here */}
             </motion.div>
           </motion.section>
-          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+          <HighlightedHeading 
+            highlightColor="purple"
+            highlightStyle="full"
+            skewAngle="medium"
+            as="h3"
+            className=""
+          >
             Testimonials
-          </h3>
+          </HighlightedHeading>
           <motion.section className="mt-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -268,9 +297,15 @@ export default function Home() {
               {/* Add testimonials here */}
             </motion.div>
           </motion.section>
-          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+          <HighlightedHeading 
+            highlightColor="yellow"
+            highlightStyle="full"
+            skewAngle="heavy"
+            as="h3"
+            className=""
+          >
             CV/Experience
-          </h3>
+          </HighlightedHeading>
           <motion.section className="mt-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -281,9 +316,15 @@ export default function Home() {
               {/* Add experience here */}
             </motion.div>
           </motion.section>
-          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+          <HighlightedHeading 
+            highlightColor="cyan"
+            highlightStyle="full"
+            skewAngle="heavy"
+            as="h3"
+            className=""
+          >
             My Stack
-          </h3>
+          </HighlightedHeading>
           <motion.section className="mt-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -294,9 +335,15 @@ export default function Home() {
               {/* Add my tech stack here */}
             </motion.div>
           </motion.section>
-          <h3 className="uppercase tracking-wider text-slate-500 font-semibold pt-8">
+          <HighlightedHeading 
+            highlightColor="pink"
+            highlightStyle="full"
+            skewAngle="medium"
+            as="h3"
+            className=""
+          >
             FAQ
-          </h3>
+          </HighlightedHeading>
           <motion.section className="mt-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
