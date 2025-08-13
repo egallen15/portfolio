@@ -61,11 +61,42 @@ const config: Config = {
         fadeInRight: 'fadeInRight .6s ease-out forwards',
         lawnmower: 'lawnMower 1s ease 0s infinite normal forwards',
       },
-      typography: (theme: any) => ({
+      typography: (theme: (path: string) => string) => ({
         DEFAULT: {
           css: {
             maxWidth: '80ch',
             lineHeight: '1.6',
+            code: {
+              backgroundColor: theme('colors.slate.100'),
+              color: theme('colors.slate.900'),
+              borderRadius: theme('borderRadius.md'),
+              paddingLeft: theme('spacing.2'),
+              paddingRight: theme('spacing.2'),
+              paddingTop: theme('spacing.1'),
+              paddingBottom: theme('spacing.1'),
+              fontSize: theme('fontSize.sm')[0],
+              fontWeight: '500',
+              '&::before': {
+                content: '""',
+              },
+              '&::after': {
+                content: '""',
+              },
+            },
+          },
+        },
+        invert: {
+          css: {
+            code: {
+              backgroundColor: theme('colors.slate.800'),
+              color: theme('colors.slate.100'),
+              '&::before': {
+                content: '""',
+              },
+              '&::after': {
+                content: '""',
+              },
+            },
           },
         },
       }),

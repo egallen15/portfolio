@@ -53,16 +53,16 @@ const defaultComponents = getNextraComponents({
   //   <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4">{children}</blockquote>
   // ),
   // hr: () => <hr className="my-6 border-t" />,
-  // code: ({ children }) => (
-  //   <code className="rounded bg-gray-600 px-2 py-1">
-  //     {children}
-  //   </code>
-  // ),
+  code: ({ children }) => (
+    <code className="rounded bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 px-2 py-1 text-sm font-mono before:content-[''] after:content-[''] [pre_&]:bg-slate-800 [pre_&]:px-0 [pre_&]:text-slate-100 [pre_&]:py-0 [pre_&]:rounded-none">
+      {children}
+    </code>
+  ),
   // // Explicitly define pre component with the styling you want
   pre: ({ children }) => {
     return (
-      <pre className="p-4 rounded-lg my-8 overflow-x-auto w-full min-w-0 max-w-[calc(100vw-3rem)] sm:max-w-full whitespace-pre">
-        <code className="block">
+      <pre className="p-4 rounded-lg my-8 overflow-x-auto w-full min-w-0 max-w-[calc(100vw-3rem)] sm:max-w-full whitespace-pre bg-slate-800 dark:bg-slate-900 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700">
+        <code className="bg-inherit text-slate-100 ">
           {children}
         </code>
       </pre>
