@@ -16,11 +16,11 @@ interface HighlightedHeadingProps {
 }
 
 const colorMap: Record<HighlightColor, string> = {
-  cyan: 'from-cyan-300/60 to-cyan-200/50',
-  pink: 'from-pink-300/60 to-pink-200/50', 
-  green: 'from-green-300/60 to-green-200/50',
-  yellow: 'from-yellow-300/60 to-yellow-200/50',
-  purple: 'from-purple-300/60 to-purple-200/50',
+    cyan: 'from-cyan-300/60 to-cyan-200/50 dark:from-cyan-500/40 dark:to-cyan-600/30',
+    pink: 'from-pink-300/60 to-pink-200/50 dark:from-pink-500/40 dark:to-pink-600/30', 
+    green: 'from-green-300/60 to-green-200/50 dark:from-green-500/40 dark:to-green-600/30',
+    yellow: 'from-yellow-300/60 to-yellow-200/50 dark:from-yellow-500/40 dark:to-yellow-600/30',
+    purple: 'from-purple-300/60 to-purple-200/50 dark:from-purple-500/40 dark:to-purple-600/30',
 };
 
 const skewMap: Record<SkewAngle, string> = {
@@ -47,8 +47,8 @@ const HighlightedHeading: React.FC<HighlightedHeadingProps> = ({
 
   const fullHighlightClasses = `
     ${baseHighlightClasses}
-    px-2 mx-1 py-1 rounded-lg
-    backdrop-blur-sm h-6 -left-2 top-1 right-0
+    px-2 -my-1 mx-1 py-1 rounded-lg
+    backdrop-blur-sm h-8 -left-2.5 top-1 -right-4
   `;
 
   const underlineHighlightClasses = `

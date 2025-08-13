@@ -145,7 +145,7 @@ export default function Home() {
                 <div className="flex flex-row items-baseline justify-between pt-6 lg:pt-12">
             <HighlightedHeading 
               highlightColor="yellow"
-              highlightStyle="full"
+              highlightStyle="underline"
               skewAngle="medium"
               as="h3"
             >
@@ -213,7 +213,7 @@ export default function Home() {
             <div className="flex flex-row items-baseline justify-between pt-12">
             <HighlightedHeading 
               highlightColor="cyan"
-              highlightStyle="full"
+              highlightStyle="underline"
               skewAngle="medium"
               as="h3"
             >
@@ -242,7 +242,7 @@ export default function Home() {
          
           <HighlightedHeading 
             highlightColor="pink"
-            highlightStyle="full"
+            highlightStyle="underline"
             skewAngle="light"
             as="h3"
             className=""
@@ -261,7 +261,7 @@ export default function Home() {
           </motion.section>
           <HighlightedHeading 
             highlightColor="green"
-            highlightStyle="full"
+            highlightStyle="underline"
             skewAngle="light"
             as="h3"
             className=""
@@ -280,7 +280,7 @@ export default function Home() {
           </motion.section>
           <HighlightedHeading 
             highlightColor="purple"
-            highlightStyle="full"
+            highlightStyle="underline"
             skewAngle="medium"
             as="h3"
             className=""
@@ -299,7 +299,7 @@ export default function Home() {
           </motion.section>
           <HighlightedHeading 
             highlightColor="yellow"
-            highlightStyle="full"
+            highlightStyle="underline"
             skewAngle="heavy"
             as="h3"
             className=""
@@ -318,7 +318,7 @@ export default function Home() {
           </motion.section>
           <HighlightedHeading 
             highlightColor="cyan"
-            highlightStyle="full"
+            highlightStyle="underline"
             skewAngle="heavy"
             as="h3"
             className=""
@@ -337,7 +337,7 @@ export default function Home() {
           </motion.section>
           <HighlightedHeading 
             highlightColor="pink"
-            highlightStyle="full"
+            highlightStyle="underline"
             skewAngle="medium"
             as="h3"
             className=""
