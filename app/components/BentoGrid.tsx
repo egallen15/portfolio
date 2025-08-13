@@ -7,11 +7,11 @@ export default function BentoGrid() {
       
         <div className="mt-6 grid gap-4 lg:grid-cols-3 lg:grid-rows-2">
           <div className="relative lg:row-span-2">
-            <div className="absolute inset-px rounded-lg bg-slate-50 lg:rounded-l-[2rem] dark:bg-slate-800" />
+            <div className="absolute inset-px rounded-lg bg-gray-50 lg:rounded-l-[2rem] dark:bg-slate-800" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
               <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white">
-                  Mobile friendly
+                  Subsplash Event Registration
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
                   Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
@@ -30,14 +30,14 @@ export default function BentoGrid() {
                 </div>
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow outline outline-1 outline-black/5 lg:rounded-l-[2rem] dark:outline-white/15" />
+            <div className="pointer-events-none absolute inset-px rounded-lg lg:rounded-l-[2rem]" />
           </div>
           <div className="relative max-lg:row-start-1">
-            <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem] dark:bg-slate-800" />
+            <div className="absolute inset-px rounded-lg bg-gray-50 max-lg:rounded-t-[2rem] dark:bg-slate-800" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white">
-                  Performance
+                  Subsplash Workflows
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit
@@ -62,14 +62,14 @@ export default function BentoGrid() {
                 />
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow outline outline-1 outline-black/5 max-lg:rounded-t-[2rem] dark:outline-white/15" />
+            <div className="pointer-events-none absolute inset-px rounded-lg max-lg:rounded-t-[2rem]" />
           </div>
           <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-            <div className="absolute inset-px rounded-lg bg-white dark:bg-slate-800" />
+            <div className="absolute inset-px rounded-lg bg-gray-50 dark:bg-slate-800" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white">
-                  Security
+                  Subsplash Signup
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
                   Morbi viverra dui mi arcu sed. Tellus semper adipiscing
@@ -93,14 +93,14 @@ export default function BentoGrid() {
                 />
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow outline outline-1 outline-black/5 dark:outline-white/15" />
+            <div className="pointer-events-none absolute inset-px rounded-lg" />
           </div>
           <div className="relative lg:row-span-2">
-            <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem] dark:bg-slate-800" />
+            <div className="absolute inset-px rounded-lg bg-gray-50 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem] dark:bg-slate-800" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
               <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white">
-                  Powerful APIs
+                  Subsplash Check-in
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
                   Sit quis amet rutrum tellus ullamcorper ultricies libero dolor
@@ -111,7 +111,7 @@ export default function BentoGrid() {
                 <div className="absolute bottom-0 left-10 right-0 top-10 overflow-hidden rounded-tl-xl bg-slate-900 shadow-2xl outline outline-1 outline-white/10 dark:bg-slate-900/60 dark:shadow-none">
                   <div className="flex bg-slate-900 outline outline-1 outline-white/5">
                     <div className="-mb-px flex text-sm/6 font-medium text-slate-400">
-                      <div className="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">
+                      <div className="border-b border-r border-b-white/20 border-r-white/10 bg-gray-50/5 px-4 py-2 text-white">
                         NotificationSetting.jsx
                       </div>
                       <div className="border-r border-slate-600/10 px-4 py-2">
@@ -125,7 +125,7 @@ export default function BentoGrid() {
                 </div>
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow outline outline-1 outline-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem] dark:outline-white/15" />
+            <div className="pointer-events-none absolute inset-px rounded-lg max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]" />
           </div>
         </div>
       </div>
