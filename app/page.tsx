@@ -56,9 +56,8 @@ export default function Home() {
                   👋
                 </motion.h1>
                 <p className="text-md max-w-3xl backdrop-blur-lg rounded-lg pt-3 mb-6 md:pt-4">
-                  I&#39;m a UX designer based in{" "}
-                  <strong>Austin, Texas</strong>. For the past{" "}
-                  <span>7 years</span>, I&#39;ve worked at{" "}
+                  I&#39;m a UX designer based in <strong>Austin, Texas</strong>.
+                  For the past <span>7 years</span>, I&#39;ve worked at{" "}
                   <a
                     href="https://subsplash.com"
                     className="underline hover:text-gray-400 dark:hover:text-slate-400"
@@ -72,12 +71,13 @@ export default function Home() {
               </div>
 
               {/* Container for blobs + image */}
-              <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  className="relative order-first mt-6 width-full md:mt-0 mb-6 md:mb-0 mr-14">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true, amount: 0.1 }}
+                className="relative order-first mt-6 width-full md:mt-0 mb-6 md:mb-0 mr-14"
+              >
                 {/* 1) Background blob with gradient */}
                 <span className="absolute md:-top-0 -right-8 h-auto w-72 -z-10">
                   <svg
@@ -136,80 +136,28 @@ export default function Home() {
                 />
               </motion.div>
             </div>
-             <section className="mt-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-                <div className="flex flex-row items-baseline justify-between pt-6 mb-6 lg:pt-12">
-            <HighlightedHeading 
-              highlightColor="yellow"
-              highlightStyle="underline"
-              skewAngle="medium"
-              as="h3"
-            >
-              Portfolio
-            </HighlightedHeading>
-            <Link 
-              href="/portfolio" 
-              className="text-sm underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
-            >
-              View all
-            </Link>
-            </div>
+            <section className="mt-4">
+              {/* Portfolio */}
+              <div className="flex flex-row items-baseline justify-between pt-6 mb-6 lg:pt-12">
+                <HighlightedHeading
+                  highlightColor="yellow"
+                  highlightStyle="underline"
+                  skewAngle="medium"
+                  as="h3"
+                >
+                  Portfolio
+                </HighlightedHeading>
+                <Link
+                  href="/portfolio"
+                  className="text-sm underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+                >
+                  View all
+                </Link>
+              </div>
               <BentoGrid></BentoGrid>
-              {/* <CaseStudyListItem
-                title="Subsplash Check-in"
-                description="A fast, safe, and secure check-in system for churches."
-                imageSrc="/images/Check-in frame.png"
-                imageAlt="Case Study 1 Image"
-                metric1Value="90%"
-                metric1Label="Satisfaction"
-                metric2Value="2x"
-                metric2Label="Conversion"
-                linkHref="/case-study-1"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <CaseStudyListItem
-                title="Subsplash Event Registration"
-                description="Effortless event registration for free and paid events."
-                imageSrc="https://placehold.co/600x400"
-                imageAlt="Case Study 2 Image"
-                metric1Value="40%"
-                metric1Label="Efficiency"
-                metric2Value="30%"
-                metric2Label="Cost Reduction"
-                linkHref="/case-study-2"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: 0.4 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <CaseStudyListItem
-                title="Subsplash Import"
-                description="Importing data into the Subsplash platform."
-                imageSrc="https://placehold.co/600x400"
-                imageAlt="Case Study 3 Image"
-                metric1Value="150k"
-                metric1Label="Active Users"
-                metric2Value="4.5"
-                metric2Label="Avg. Session Time"
-                linkHref="/case-study-3"
-              /> */}
-            </motion.div>
-          </section>
+            </section>
           </div>
+          {/* Experience */}
           <motion.section className="mt-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -217,22 +165,21 @@ export default function Home() {
               transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              {/* Add experience here */}
-              <HighlightedHeading 
-            highlightColor="yellow"
-            highlightStyle="underline"
-            skewAngle="heavy"
-            as="h3"
-            className="mb-6"
-          >
-            CV/Experience
-          </HighlightedHeading>
-          <WorkExperience />
+              <HighlightedHeading
+                highlightColor="yellow"
+                highlightStyle="underline"
+                skewAngle="heavy"
+                as="h3"
+                className="mb-6"
+              >
+                CV/Experience
+              </HighlightedHeading>
+              <WorkExperience />
             </motion.div>
           </motion.section>
-          
-            <div className="flex flex-row items-baseline justify-between">
-            <HighlightedHeading 
+          {/* Latest posts */}
+          <div className="flex flex-row items-baseline justify-between">
+            <HighlightedHeading
               highlightColor="cyan"
               highlightStyle="underline"
               skewAngle="medium"
@@ -241,13 +188,13 @@ export default function Home() {
             >
               Latest posts
             </HighlightedHeading>
-            <Link 
-              href="/blog" 
+            <Link
+              href="/blog"
               className="text-sm underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
             >
               View all
             </Link>
-            </div>
+          </div>
           <motion.section className="mt-4">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -255,14 +202,11 @@ export default function Home() {
               transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              <BlogContentServer 
-  maxPosts={3}
-  showTitle={false} 
-/>
+              <BlogContentServer maxPosts={3} showTitle={false} />
             </motion.div>
           </motion.section>
-         
-          <HighlightedHeading 
+          {/* Services */}
+          <HighlightedHeading
             highlightColor="pink"
             highlightStyle="underline"
             skewAngle="light"
@@ -281,7 +225,8 @@ export default function Home() {
               {/* Add links to book a call or service here */}
             </motion.div>
           </motion.section>
-          <HighlightedHeading 
+          {/* Products */}
+          <HighlightedHeading
             highlightColor="green"
             highlightStyle="underline"
             skewAngle="light"
@@ -300,7 +245,8 @@ export default function Home() {
               {/* Add products here */}
             </motion.div>
           </motion.section>
-          <HighlightedHeading 
+          {/* Testimonials */}
+          <HighlightedHeading
             highlightColor="purple"
             highlightStyle="underline"
             skewAngle="medium"
@@ -319,9 +265,8 @@ export default function Home() {
               {/* Add testimonials here */}
             </motion.div>
           </motion.section>
-          
-          
-          <HighlightedHeading 
+          {/* My stack */}
+          <HighlightedHeading
             highlightColor="cyan"
             highlightStyle="underline"
             skewAngle="heavy"
@@ -340,7 +285,8 @@ export default function Home() {
               {/* Add my tech stack here */}
             </motion.div>
           </motion.section>
-          <HighlightedHeading 
+          {/* FAQ */}
+          <HighlightedHeading
             highlightColor="pink"
             highlightStyle="underline"
             skewAngle="medium"
