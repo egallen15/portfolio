@@ -34,7 +34,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
     >
       <div className="flex flex-col sm:flex-row sm:items-center w-full max-w-7xl rounded-lg">
         <div className="flex flex-shrink-0">
-          <Image src={imageUrl} alt="Post Image" width={200} height={200} className="object-cover h-auto w-auto sm:w-72 aspect-video rounded-lg mr-4 mb-4 md:mb-0" />
+          <Image src={imageUrl} alt="Post Image" width={200} height={200} className="object-cover h-auto w-auto sm:w-44 aspect-video rounded-lg mr-4 mb-4 md:mb-0" />
         </div>
         <div className="w-fit">
           <div className="flex items-end">
