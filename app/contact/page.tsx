@@ -9,7 +9,7 @@ export const metadata = {
 
 const Contact: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center pb-8">
+    <div className="flex flex-col justify-center items-center">
       <main className="mx-6 max-w-7xl flex flex-col backdrop-blur-sm rounded-md">
         <Breadcrumb pages={[{ name: "Contact", href: "/contact", current: true }]} />
         <motion.h1 
@@ -17,9 +17,9 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.1 }}
-          className="text-3xl md:text-5xl font-bold"
+          className="text-3xl md:text-5xl font-bold text-center"
         >
-          Contact Me
+          Let&apos;s connect!
         </motion.h1>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
           viewport={{ once: true, amount: 0.1 }}
           className="py-6 md:py-8"
         >
-          <p className="text-md max-w-3xl mb-6">
+          <p className="text-md text-center max-w-3xl mb-6">
             I&#39;d love to hear from you! Whether you have a project in mind, want to collaborate, 
             or just want to say hello, feel free to reach out.
           </p>
