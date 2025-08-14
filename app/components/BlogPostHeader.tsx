@@ -56,23 +56,8 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
           ]}
         />
       </motion.div>
-
-      <div className="flex flex-wrap items-center gap-3">
-        {tags.length > 0 && (
-          <div className="flex flex-wrap items-center gap-2">
-            {/* <span className="font-medium text-slate-500">•</span> */}
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-400 rounded-full text-sm font-medium"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
-      <h1 className="text-3xl md:text-4xl font-bold mt-4">{title}</h1>
+      
+      <h1 className="text-3xl md:text-4xl font-bold">{title}</h1>
 
       {excerpt && (
         <p className="text-md lg:text-center text-slate-500 dark:text-slate-400 max-w-2xl mt-3">
