@@ -2,6 +2,7 @@ import { useMDXComponents as getNextraComponents } from 'nextra/mdx-components'
 import BlogPostHeader from './app/components/BlogPostHeader'
 import AuthorBio from './app/components/AuthorBio'
 import BlogNavigationServer from './app/components/BlogNavigationServer'
+import Image from 'next/image'
  
 const defaultComponents = getNextraComponents({
   wrapper({ children, ...allProps }) {
@@ -41,11 +42,20 @@ const defaultComponents = getNextraComponents({
   h5: ({ children, id }) => <h5 id={id} className="font-semibold text-foreground mb-2">{children}</h5>,
   h6: ({ children, id }) => <h6 id={id} className="text-md text-foreground font-medium mb-1">{children}</h6>,
   // p: ({ children }) => <p className="mb-4">{children}</p>,
-  // a: ({ children, href }) => (
-  //   <a href={href} className="text-blue-600 hover:underline">
-  //     {children}
-  //   </a>
-  // ),
+  a: ({ children, href }) => (
+    <a href={href} className="text-sky-600 underline whitespace-nowrap">
+      {children}
+    </a>
+  ),
+  img: ({ src, alt, title, ...props }) => (
+    <Image 
+      src={src} 
+      alt={alt} 
+      title={title}
+      className="rounded-xl my-4"
+      {...props}
+    />
+  ),
   // ul: ({ children }) => <ul className="list-disc list-inside ml-6 mb-4">{children}</ul>,
   // ol: ({ children }) => <ol className="list-decimal list-inside ml-6 mb-4">{children}</ol>,
   // li: ({ children }) => <li className="mb-1">{children}</li>,
