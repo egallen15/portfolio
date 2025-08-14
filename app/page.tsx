@@ -55,7 +55,7 @@ export default function Home() {
                   👋
                 </motion.h1>
                 <p className="text-md max-w-3xl backdrop-blur-lg rounded-lg pt-6 mb-6 md:pt-8">
-                  I&#39;m a senior UX designer based in{" "}
+                  I&#39;m a UX designer based in{" "}
                   <strong>Austin, Texas</strong>. For the past{" "}
                   <span>7 years</span>, I&#39;ve worked at{" "}
                   <a
