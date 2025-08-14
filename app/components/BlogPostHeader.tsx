@@ -48,14 +48,14 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.1 }}
-      >
+      ></motion.div>
         <Breadcrumb 
           pages={[
             { name: "All posts", href: "/blog", current: false },
             { name: breadcrumbName, href: "", current: true }
           ]}
         />
-      </motion.div>
+      
       
       <h1 className="text-3xl md:text-4xl font-bold">{title}</h1>
 
