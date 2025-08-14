@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function Blog() {
   return (
-    <main className="w-full mx-6 mb-6 xl:mx-0">
+    <main className="w-full mx-6 mb-6 max-w-3xl xl:mx-0">
       <Breadcrumb pages={[{ name: "All posts", href: "/blog", current: true }]} />
       <BlogContentServer />
     </main>

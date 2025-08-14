@@ -17,7 +17,7 @@ const BlogContentClient = ({
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.1 }}
-            className="text-3xl md:text-5xl font-bold mb-6"
+            className="text-3xl md:text-5xl font-bold mb-6 flex lg:justify-center"
           >
             {title}
           </motion.h1>
