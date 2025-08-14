@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import * as motion from "motion/react-client";
-import Link from "next/link";
+import Breadcrumb from "./Breadcrumb";
 
 interface BlogPostHeaderProps {
   frontMatter?: {
@@ -46,12 +46,12 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
         transition={{ duration: 0.3, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.1 }}
       >
-        <Link
-          href="/blog"
-          className="w-fit font-semibold underline lg:ml-0 rounded-full items-stretch hover:text-sky-800 dark:text-bg-sky-800"
-        >
-          ⬅️ Back to All Posts
-        </Link>
+        <Breadcrumb 
+          pages={[
+            { name: "Blog", href: "/blog", current: false },
+            { name: title, href: "", current: true }
+          ]}
+        />
       </motion.div>
 
       <div className="flex flex-wrap items-center gap-3 mt-6">
