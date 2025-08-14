@@ -41,7 +41,7 @@ const signupData: CaseStudyProps = {
 
 export default function SignupCaseStudy() {
   return (
-    <main>
+    <main className="flex flex-col mx-6 xl:mx-auto w-auto lg:max-w-7xl">
       <Breadcrumb pages={[
         { name: "Portfolio", href: "/portfolio", current: false },
         { name: "Signup", href: "/signup", current: true }

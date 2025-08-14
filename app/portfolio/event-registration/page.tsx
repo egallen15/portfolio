@@ -41,7 +41,7 @@ const eventRegistrationData: CaseStudyProps = {
 
 export default function EventRegistrationCaseStudy() {
   return (
-    <main>
+    <main className="flex flex-col mx-6 xl:mx-auto w-auto lg:max-w-7xl">
         <Breadcrumb pages={[
           { name: "Portfolio", href: "/portfolio", current: false },
           { name: "Event Registration", href: "/event-registration", current: true }
