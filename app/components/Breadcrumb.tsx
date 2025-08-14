@@ -17,7 +17,7 @@ export default function Breadcrumb({ pages, homeHref = "/", pageTitle }: Breadcr
   return (
     <div className="mb-8">
       <nav aria-label="Breadcrumb" className="flex lg:justify-center">
-        <ol role="list" className="flex items-center space-x-4">
+        <ol role="list" className="flex items-center space-x-2">
           <li>
             <div>
               <Link href={homeHref} className="text-slate-400 hover:text-slate-500 dark:text-slate-400 dark:hover:text-slate-300">
@@ -40,7 +40,7 @@ export default function Breadcrumb({ pages, homeHref = "/", pageTitle }: Breadcr
                 <Link
                   href={page.href}
                   aria-current={page.current ? 'page' : undefined}
-                  className="ml-4 text-sm font-medium text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                  className="ml-2 text-sm font-medium text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
                 >
                   {page.name}
                 </Link>
