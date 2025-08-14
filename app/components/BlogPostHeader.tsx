@@ -51,7 +51,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
       >
         <Breadcrumb 
           pages={[
-            { name: "Blog", href: "/blog", current: false },
+            { name: "All posts", href: "/blog", current: false },
             { name: breadcrumbName, href: "", current: true }
           ]}
         />
