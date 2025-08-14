@@ -5,6 +5,7 @@ import * as motion from "motion/react-client";
 import BlogContentServer from "./components/BlogContentServer";
 import BentoGrid from "./components/BentoGrid";
 import HighlightedHeading from "./components/HighlightedHeading";
+import WorkExperience from "./components/WorkExperience";
 
 export const metadata = {
   title: "Eric Allen | UX Designer",
@@ -209,6 +210,26 @@ export default function Home() {
             </motion.div>
           </section>
           </div>
+          <motion.section className="mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {/* Add experience here */}
+              <HighlightedHeading 
+            highlightColor="yellow"
+            highlightStyle="underline"
+            skewAngle="heavy"
+            as="h3"
+            className="my-4"
+          >
+            CV/Experience
+          </HighlightedHeading>
+          <WorkExperience />
+            </motion.div>
+          </motion.section>
           
             <div className="flex flex-row items-baseline justify-between pt-12">
             <HighlightedHeading 
@@ -297,25 +318,8 @@ export default function Home() {
               {/* Add testimonials here */}
             </motion.div>
           </motion.section>
-          <HighlightedHeading 
-            highlightColor="yellow"
-            highlightStyle="underline"
-            skewAngle="heavy"
-            as="h3"
-            className=""
-          >
-            CV/Experience
-          </HighlightedHeading>
-          <motion.section className="mt-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              {/* Add experience here */}
-            </motion.div>
-          </motion.section>
+          
+          
           <HighlightedHeading 
             highlightColor="cyan"
             highlightStyle="underline"
