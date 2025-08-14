@@ -20,7 +20,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
     title = "Untitled Post",
     author = "Eric Allen",
     date = new Date().toISOString().split("T")[0],
-    image = "https://placehold.co/1792x770",
+    image,
     tags = [],
     excerpt,
   } = frontMatter ?? {};
@@ -42,7 +42,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
   const breadcrumbName = tags.length > 0 ? tags[0] : title;
 
   return (
-    <header className="w-auto mx-6 mb-6 md:mb-9 md:mx-auto flex flex-col lg:items-center lg:px-0 rounded-lg">
+    <header className="w-auto mx-6 mb-6 md:mb-9 md:mx-auto flex flex-col lg:px-0 rounded-lg">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -60,28 +60,30 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
       <h1 className="text-3xl md:text-4xl font-bold">{title}</h1>
 
       {excerpt && (
-        <p className="text-md lg:text-center text-slate-500 dark:text-slate-400 max-w-2xl mt-3">
+        <p className="text-md text-slate-500 dark:text-slate-400 mt-3">
           {excerpt}
         </p>
       )}
 
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
-        viewport={{ once: true, amount: 0.1 }}
-      >
-        <Image
-          src={image}
-          alt={title}
-          width={896}
-          height={384}
-          className="rounded-lg shadow-md w-auto max-h-96 object-cover my-6"
-          priority // This loads the image faster since it's above the fold
-        />
-      </motion.div>
+      {image && (
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          <Image
+            src={image}
+            alt={title}
+            width={896}
+            height={384}
+            className="rounded-lg shadow-md w-auto max-h-96 object-cover my-6"
+            priority // This loads the image faster since it's above the fold
+          />
+        </motion.div>
+      )}
       {/* Display author, date, and tags in a more structured way */}
-      <div className="flex items-baseline gap-2">
+      <div className="flex items-baseline gap-2 mt-3">
         <span className="font-sm dark:text-slate-400 text-slate-500">
           {author}
         </span>
