@@ -38,6 +38,9 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
     }
   };
 
+  // Determine what to show in breadcrumb - use first tag if available, otherwise use title
+  const breadcrumbName = tags.length > 0 ? tags[0] : title;
+
   return (
     <header className="w-auto mx-6 mb-6 md:mb-9 md:mx-auto flex flex-col lg:items-center lg:px-0 rounded-lg">
       <motion.div
@@ -49,12 +52,12 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
         <Breadcrumb 
           pages={[
             { name: "Blog", href: "/blog", current: false },
-            { name: title, href: "", current: true }
+            { name: breadcrumbName, href: "", current: true }
           ]}
         />
       </motion.div>
 
-      <div className="flex flex-wrap items-center gap-3 mt-6">
+      <div className="flex flex-wrap items-center gap-3">
         {tags.length > 0 && (
           <div className="flex flex-wrap items-center gap-2">
             {/* <span className="font-medium text-slate-500">•</span> */}
