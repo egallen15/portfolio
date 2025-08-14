@@ -16,7 +16,7 @@ const NextraTheme: FC<{ children: ReactNode; pageMap: PageMap }> = ({ children, 
         Custom theme demo for <strong>Nextra</strong>
       </h1> */}
       <NewNavbar />
-      <div className="pt-6 md:pt-16 w-full flex justify-center max-w-7xl mx-auto">
+      <div className="pt-6 w-full flex justify-center max-w-7xl mx-auto">
         {children}
       </div>
       <Footer />

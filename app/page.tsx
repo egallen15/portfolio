@@ -40,7 +40,7 @@ export default function Home() {
             </defs>
           </svg>
           <div className="flex flex-col">
-            <div className="mb-4 flex flex-col md:flex-row items-start md:items-center">
+            <div className="lg:mt-6 flex flex-col md:flex-row items-start md:items-center">
               <div className="flex-1">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ export default function Home() {
                   </Link>{" "}
                   👋
                 </motion.h1>
-                <p className="text-md max-w-3xl backdrop-blur-lg rounded-lg pt-6 mb-6 md:pt-8">
+                <p className="text-md max-w-3xl backdrop-blur-lg rounded-lg pt-3 mb-6 md:pt-4">
                   I&#39;m a UX designer based in{" "}
                   <strong>Austin, Texas</strong>. For the past{" "}
                   <span>7 years</span>, I&#39;ve worked at{" "}
