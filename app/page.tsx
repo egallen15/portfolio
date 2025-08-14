@@ -143,7 +143,7 @@ export default function Home() {
               transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-                <div className="flex flex-row items-baseline justify-between pt-6 lg:pt-12">
+                <div className="flex flex-row items-baseline justify-between pt-6 mb-6 lg:pt-12">
             <HighlightedHeading 
               highlightColor="yellow"
               highlightStyle="underline"

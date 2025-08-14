@@ -6,7 +6,7 @@ export default function BentoGrid() {
     <div className="">
       <div className="xl:mx-auto max-w-2xl lg:max-w-7xl">
       
-        <div className="mt-6 grid gap-6 lg:grid-cols-3 lg:grid-rows-2">
+        <div className="grid gap-6 lg:grid-cols-3 lg:grid-rows-2">
           <Link href="/portfolio/event-registration" className="relative lg:row-span-2 group cursor-pointer">
             <div className="absolute inset-px rounded-lg bg-gray-50 lg:rounded-l-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
