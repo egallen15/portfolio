@@ -16,7 +16,7 @@ interface BreadcrumbProps {
 export default function Breadcrumb({ pages, homeHref = "/", pageTitle }: BreadcrumbProps) {
   return (
     <div className="mb-8">
-      <nav aria-label="Breadcrumb" className="flex lg:justify-center">
+      <nav aria-label="Breadcrumb" className="flex">
         <ol role="list" className="flex items-center space-x-2">
           <li>
             <div>

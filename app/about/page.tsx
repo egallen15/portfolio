@@ -29,7 +29,7 @@ const About: React.FC = () => {
       <div className="w-full max-w-7xl mx-6 xl:mx-0">
       <Breadcrumb pages={[{ name: "About", href: "/about", current: true }]} />
       </div>
-      <main className="mx-6 max-w-7xl flex flex-col lg:items-center backdrop-blur-sm rounded-md">
+      <main className="mx-6 max-w-7xl flex flex-col lg:mx-0 backdrop-blur-sm rounded-md">
         
         <motion.h1 
           initial={{ opacity: 0, x: -20 }}
