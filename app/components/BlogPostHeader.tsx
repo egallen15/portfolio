@@ -75,7 +75,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
       <h1 className="text-3xl md:text-4xl font-bold mt-4">{title}</h1>
 
       {excerpt && (
-        <p className="text-md xl:text-center text-slate-500 dark:text-slate-400 max-w-2xl mt-3">
+        <p className="text-md lg:text-center text-slate-500 dark:text-slate-400 max-w-2xl mt-3">
           {excerpt}
         </p>
       )}
