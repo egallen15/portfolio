@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "date-fns": "^4.1.0",
     "motion": "^12.10.1",
     "next": "^15.1.6",
