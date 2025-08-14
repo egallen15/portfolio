@@ -88,7 +88,7 @@ export default function WorkExperience({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.1 }}
-      className="relative mx-auto mb-12"
+      className="relative mx-auto"
     >
       {/* Background layer - matches BentoGrid pattern */}
       <div className="absolute inset-px rounded-lg bg-gray-50 dark:bg-slate-800" />

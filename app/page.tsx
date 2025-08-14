@@ -223,7 +223,7 @@ export default function Home() {
             highlightStyle="underline"
             skewAngle="heavy"
             as="h3"
-            className="my-4"
+            className="mb-6"
           >
             CV/Experience
           </HighlightedHeading>
@@ -231,12 +231,13 @@ export default function Home() {
             </motion.div>
           </motion.section>
           
-            <div className="flex flex-row items-baseline justify-between pt-12">
+            <div className="flex flex-row items-baseline justify-between">
             <HighlightedHeading 
               highlightColor="cyan"
               highlightStyle="underline"
               skewAngle="medium"
               as="h3"
+              className="mt-12"
             >
               Latest posts
             </HighlightedHeading>
@@ -266,7 +267,7 @@ export default function Home() {
             highlightStyle="underline"
             skewAngle="light"
             as="h3"
-            className=""
+            className="mt-12"
           >
             Services
           </HighlightedHeading>
@@ -285,7 +286,7 @@ export default function Home() {
             highlightStyle="underline"
             skewAngle="light"
             as="h3"
-            className=""
+            className="mt-12"
           >
             Products
           </HighlightedHeading>
@@ -304,7 +305,7 @@ export default function Home() {
             highlightStyle="underline"
             skewAngle="medium"
             as="h3"
-            className=""
+            className="mt-12"
           >
             Testimonials
           </HighlightedHeading>
@@ -325,7 +326,7 @@ export default function Home() {
             highlightStyle="underline"
             skewAngle="heavy"
             as="h3"
-            className=""
+            className="mt-12"
           >
             My Stack
           </HighlightedHeading>
@@ -344,7 +345,7 @@ export default function Home() {
             highlightStyle="underline"
             skewAngle="medium"
             as="h3"
-            className=""
+            className="mt-12"
           >
             FAQ
           </HighlightedHeading>

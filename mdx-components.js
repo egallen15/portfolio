@@ -17,9 +17,9 @@ const defaultComponents = getNextraComponents({
     return (
       <div className='container flex flex-col justify-center mb-6 lg:mb-0 mx-auto'>
         <div className="container flex flex-col lg:flex-row justify-center">
-          <div className="w-full max-w-4xl">
+          <div className="w-auto max-w-4xl">
             <BlogPostHeader frontMatter={frontMatter} />
-            <article className="w-fit prose leading-relaxed dark:prose-invert mb-6 mx-6 lg:mx-auto prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
+            <article className="w-auto prose leading-relaxed dark:prose-invert mb-6 mx-6 lg:mx-auto prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
               {children}
             </article>
             {/* Blog navigation - always show for blog posts */}
@@ -43,7 +43,7 @@ const defaultComponents = getNextraComponents({
   h6: ({ children, id }) => <h6 id={id} className="text-md text-foreground font-medium mb-1">{children}</h6>,
   // p: ({ children }) => <p className="mb-4">{children}</p>,
   a: ({ children, href }) => (
-    <a href={href} className="text-sky-600 underline whitespace-nowrap">
+    <a href={href} className="text-sky-600 underline">
       {children}
     </a>
   ),
@@ -52,6 +52,8 @@ const defaultComponents = getNextraComponents({
       src={src} 
       alt={alt} 
       title={title}
+      width={768} // Default width, adjust as needed
+      height={300} // Default height, adjust as needed
       className="rounded-xl my-4"
       {...props}
     />
