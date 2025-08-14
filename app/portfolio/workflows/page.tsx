@@ -4,7 +4,7 @@ import { CogIcon, BoltIcon, ChartBarIcon } from '@heroicons/react/20/solid'
 
 const workflowsData: CaseStudyProps = {
   subtitle: "Process Automation",
-  title: "Subsplash Workflows Platform", 
+  title: "Subsplash Workflows", 
   description: "An intuitive workflow automation system that empowers teams to build custom business processes without code, increasing efficiency and reducing manual tasks.",
   
   image: {

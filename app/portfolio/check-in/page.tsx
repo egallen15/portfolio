@@ -4,7 +4,7 @@ import { QrCodeIcon, UserGroupIcon, CheckCircleIcon } from '@heroicons/react/20/
 
 const checkInData: CaseStudyProps = {
   subtitle: "Event Technology",
-  title: "Subsplash Event Check-In System",
+  title: "Subsplash Event Check-In",
   description: "A streamlined mobile-first check-in solution that enables fast, contactless event entry with real-time attendance tracking and seamless integration with event management systems.",
   
   image: {

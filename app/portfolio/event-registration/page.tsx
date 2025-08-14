@@ -4,7 +4,7 @@ import { CalendarIcon, UsersIcon, CheckCircleIcon } from '@heroicons/react/20/so
 
 const eventRegistrationData: CaseStudyProps = {
   subtitle: "Product Development",
-  title: "Subsplash Event Registration System",
+  title: "Event Registration",
   description: "A comprehensive event registration platform that streamlines the entire process from sign-up to check-in, built with React and modern web technologies.",
   
   image: {
