@@ -1,9 +1,47 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
+import { ComponentType } from 'react'
 
-export default function CaseStudy() {
+export interface CaseStudyFeature {
+  icon: ComponentType<{ className?: string; 'aria-hidden'?: boolean }>
+  title: string
+  description: string
+}
+
+export interface CaseStudyProps {
+  // Hero section
+  subtitle: string
+  title: string
+  description: string
+  
+  // Main image
+  image: {
+    src: string
+    alt: string
+    width: number
+    height: number
+  }
+  
+  // Features list
+  features: CaseStudyFeature[]
+  
+  // Content sections
+  content: {
+    mainContent: string
+    secondaryTitle?: string
+    secondaryContent?: string
+  }
+}
+
+export default function CaseStudy({
+  subtitle,
+  title,
+  description,
+  image,
+  features,
+  content
+}: CaseStudyProps) {
   return (
-    <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0 dark:bg-gray-900">
+    <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0 dark:bg-slate-900">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <svg
           aria-hidden="true"
@@ -34,23 +72,22 @@ export default function CaseStudy() {
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">Deploy faster</p>
+              <p className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">{subtitle}</p>
               <h1 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-                A better workflow
+                {title}
               </h1>
               <p className="mt-6 text-xl/8 text-gray-700 dark:text-gray-300">
-                Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam
-                eget aliquam. Quisque id at vitae feugiat egestas.
+                {description}
               </p>
             </div>
           </div>
         </div>
         <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <Image
-            alt="Application screenshot"
-            src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
-            width={912}
-            height={684}
+            alt={image.alt}
+            src={image.src}
+            width={image.width}
+            height={image.height}
             className="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] dark:bg-gray-800 dark:ring-white/10"
           />
         </div>
@@ -58,58 +95,33 @@ export default function CaseStudy() {
           <div className="lg:pr-4">
             <div className="max-w-xl text-base/7 text-gray-600 lg:max-w-lg dark:text-gray-400">
               <p>
-                Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
-                vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
-                erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-                semper sed amet vitae sed turpis id.
+                {content.mainContent}
               </p>
               <ul role="list" className="mt-8 space-y-8 text-gray-600 dark:text-gray-400">
-                <li className="flex gap-x-3">
-                  <CloudArrowUpIcon
-                    aria-hidden="true"
-                    className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900 dark:text-white">Push to deploy.</strong> Lorem
-                    ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste
-                    dolor cupiditate blanditiis ratione.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <LockClosedIcon
-                    aria-hidden="true"
-                    className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900 dark:text-white">SSL certificates.</strong> Anim aute
-                    id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <ServerIcon
-                    aria-hidden="true"
-                    className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900 dark:text-white">Database backups.</strong> Ac
-                    tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
-                  </span>
-                </li>
+                {features.map((feature, index) => (
+                  <li key={index} className="flex gap-x-3">
+                    <feature.icon
+                      aria-hidden={true}
+                      className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
+                    />
+                    <span>
+                      <strong className="font-semibold text-gray-900 dark:text-white">{feature.title}</strong> {feature.description}
+                    </span>
+                  </li>
+                ))}
               </ul>
-              <p className="mt-8">
-                Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor
-                fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac
-                adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
-              </p>
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                No server? No problem.
-              </h2>
-              <p className="mt-6">
-                Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis arcu ipsum urna nibh.
-                Pharetra, euismod vitae interdum mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-                tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam
-                turpis ipsum eu a sed convallis diam.
-              </p>
+              {content.secondaryTitle && (
+                <>
+                  <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    {content.secondaryTitle}
+                  </h2>
+                  {content.secondaryContent && (
+                    <p className="mt-6">
+                      {content.secondaryContent}
+                    </p>
+                  )}
+                </>
+              )}
             </div>
           </div>
         </div>
