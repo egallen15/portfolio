@@ -64,7 +64,7 @@ const config: Config = {
       typography: (theme: (path: string) => string) => ({
         DEFAULT: {
           css: {
-            maxWidth: '80ch',
+            maxWidth: '742px',
             lineHeight: '1.6',
             code: {
               backgroundColor: theme('colors.slate.100'),

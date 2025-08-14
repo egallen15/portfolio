@@ -17,7 +17,7 @@ const defaultComponents = getNextraComponents({
     return (
       <div className='container flex flex-col justify-center mb-6 lg:mb-0 mx-auto'>
         <div className="container flex flex-col lg:flex-row justify-center">
-          <div className="w-auto max-w-4xl">
+          <div className="w-auto max-w-[742px]">
             <BlogPostHeader frontMatter={frontMatter} />
             <article className="w-auto prose leading-relaxed dark:prose-invert mb-6 mx-6 lg:mx-auto prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
               {children}

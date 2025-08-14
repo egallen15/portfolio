@@ -42,7 +42,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
   const breadcrumbName = tags.length > 0 ? tags[0] : title;
 
   return (
-    <header className="w-auto mx-6 mb-6 md:mb-9 md:mx-auto flex flex-col lg:px-0 rounded-lg">
+    <header className="w-auto mx-6 mb-6 md:mb-9 md:mx-0 md:w-[742px] flex flex-col lg:px-0 rounded-lg">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
