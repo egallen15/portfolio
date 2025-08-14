@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Timeline, { TimelineEvent } from "../components/Timeline";
+import Breadcrumb from "../components/Breadcrumb";
 import * as motion from "motion/react-client";
 
 export const metadata = {
@@ -24,8 +25,12 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center pb-8">
-      <main className="mx-6 max-w-7xl flex flex-col backdrop-blur-sm rounded-md">
+    <div className="min-h-screen flex flex-col justify-center lg:items-center pb-8">
+      <div className="w-full max-w-7xl mx-6 xl:mx-0">
+      <Breadcrumb pages={[{ name: "About", href: "/about", current: true }]} />
+      </div>
+      <main className="mx-6 max-w-7xl flex flex-col lg:items-center backdrop-blur-sm rounded-md">
+        
         <motion.h1 
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}

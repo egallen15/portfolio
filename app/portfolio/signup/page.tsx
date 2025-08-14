@@ -44,7 +44,7 @@ export default function SignupCaseStudy() {
     <main>
       <Breadcrumb pages={[
         { name: "Portfolio", href: "/portfolio", current: false },
-        { name: "User Registration", href: "/signup", current: true }
+        { name: "Signup", href: "/signup", current: true }
       ]} />
       <CaseStudy {...signupData} />
     </main>

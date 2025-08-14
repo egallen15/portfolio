@@ -44,7 +44,7 @@ export default function CheckInCaseStudy() {
     <main>
       <Breadcrumb pages={[
         { name: "Portfolio", href: "/portfolio", current: false },
-        { name: "Check-In System", href: "/check-in", current: true }
+        { name: "Subsplash Check-In", href: "/check-in", current: true }
       ]} />
       <CaseStudy {...checkInData} />
     </main>

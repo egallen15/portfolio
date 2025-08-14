@@ -1,3 +1,4 @@
+import Breadcrumb from '@/app/components/Breadcrumb'
 import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
 import { CogIcon, BoltIcon, ChartBarIcon } from '@heroicons/react/20/solid'
 
@@ -39,5 +40,13 @@ const workflowsData: CaseStudyProps = {
 }
 
 export default function WorkflowsCaseStudy() {
-  return <CaseStudy {...workflowsData} />
+  return (
+    <main>
+      <Breadcrumb pages={[
+        { name: "Portfolio", href: "/portfolio", current: false },
+        { name: "Workflows", href: "/workflows", current: true }
+      ]} pageTitle='Workflows' />
+      <CaseStudy {...workflowsData} />
+    </main>
+  )
 }
