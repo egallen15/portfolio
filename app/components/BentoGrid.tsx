@@ -7,7 +7,7 @@ export default function BentoGrid() {
       <div className="xl:mx-auto max-w-2xl lg:max-w-7xl">
       
         <div className="mt-6 grid gap-6 lg:grid-cols-3 lg:grid-rows-2">
-          <Link href="/portfolio" className="relative lg:row-span-2 group cursor-pointer">
+          <Link href="/portfolio/event-registration" className="relative lg:row-span-2 group cursor-pointer">
             <div className="absolute inset-px rounded-lg bg-gray-50 lg:rounded-l-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
@@ -33,7 +33,7 @@ export default function BentoGrid() {
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg lg:rounded-l-[2rem]" />
           </Link>
-          <Link href="/portfolio" className="relative max-lg:row-start-1 group cursor-pointer">
+          <Link href="/portfolio/workflows" className="relative max-lg:row-start-1 group cursor-pointer">
             <div className="absolute inset-px rounded-lg bg-gray-50 max-lg:rounded-t-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
@@ -65,7 +65,7 @@ export default function BentoGrid() {
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg max-lg:rounded-t-[2rem]" />
           </Link>
-          <Link href="/portfolio" className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2 group cursor-pointer">
+          <Link href="/portfolio/signup" className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2 group cursor-pointer">
             <div className="absolute inset-px rounded-lg bg-gray-50 dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
@@ -96,7 +96,7 @@ export default function BentoGrid() {
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg" />
           </Link>
-          <Link href="/portfolio" className="relative lg:row-span-2 group cursor-pointer">
+          <Link href="/portfolio/check-in" className="relative lg:row-span-2 group cursor-pointer">
             <div className="absolute inset-px rounded-lg bg-gray-50 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
