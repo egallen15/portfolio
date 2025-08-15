@@ -31,7 +31,7 @@ export default function BlogNavigation({ previousPost, nextPost }: BlogNavigatio
   return (
     <nav className="w-auto max-w-3xl my-6 xl:mx-auto">
         <hr className="my-8 border-slate-200 dark:border-slate-700" />
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Read more</h3>
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">Read more</h3>
       <div className="flex flex-col sm:flex-row gap-6">
         {/* Previous Post */}
         {previousPost && (
@@ -40,14 +40,13 @@ export default function BlogNavigation({ previousPost, nextPost }: BlogNavigatio
               href={previousPost.route}
               className="group block p-6 rounded-lg bg-[#F4F6FD] hover:bg-slate-200 dark:bg-slate-800 transition-colors duration-200"
             >
-              <div className="flex items-center text-sm text-slate-500 dark:text-slate-400 mb-2">
-                <span className="mr-1">←</span>
+              <div className="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-2">
                 {formatDate(previousPost.date)}
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 underline transition-colors">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2 hover:underline transition-colors">
                 {previousPost.title}
               </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 overflow-hidden" style={{ 
+              <p className="text-sm text-slate-500 dark:text-slate-400 overflow-hidden" style={{ 
                 display: '-webkit-box', 
                 WebkitLineClamp: 2, 
                 WebkitBoxOrient: 'vertical' 
@@ -65,14 +64,13 @@ export default function BlogNavigation({ previousPost, nextPost }: BlogNavigatio
               href={nextPost.route}
               className="group block p-6 rounded-lg bg-[#F4F6FD] hover:bg-slate-200 dark:bg-slate-800 transition-colors duration-200"
             >
-              <div className="flex items-center justify-end text-sm text-slate-500 dark:text-slate-400 mb-2">
+              <div className="flex items-center justify-end text-xs text-slate-500 dark:text-slate-400 mb-2">
                 {formatDate(nextPost.date)}
-                <span className="ml-1">→</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 underline transition-colors text-right">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2 hover:underline transition-colors text-right">
                 {nextPost.title}
               </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 text-right overflow-hidden" style={{ 
+              <p className="text-sm text-slate-500 dark:text-slate-400 text-right overflow-hidden" style={{ 
                 display: '-webkit-box', 
                 WebkitLineClamp: 2, 
                 WebkitBoxOrient: 'vertical' 
