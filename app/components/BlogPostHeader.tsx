@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import * as motion from "motion/react-client";
+import { CalendarDaysIcon } from "@heroicons/react/20/solid";
 import Breadcrumb from "./Breadcrumb";
 
 interface BlogPostHeaderProps {
@@ -77,19 +78,28 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
             alt={title}
             width={896}
             height={384}
-            className="rounded-lg shadow-md w-auto max-h-96 object-cover mt-6 mb-3"
+            className="rounded-lg shadow-md w-auto max-h-96 object-cover mt-6 mb-2"
             priority // This loads the image faster since it's above the fold
           />
         </motion.div>
       )}
 
       {/* Display author, date, and tags in a more structured way */}
-      <div className="flex items-baseline mt-3 gap-2">
-        <span className="text-sm dark:text-slate-400 text-slate-500">
-          {author}
-        </span>
-        <span className="text-sm text-slate-500">•</span>
-        <div className="flex items-baseline gap-2">
+      <div className="flex items-center mt-4 gap-3">
+        <div className="flex items-center gap-2">
+          <Image
+            src="/images/eric-allen-profile-pic-2023.png"
+            alt={author}
+            width={20}
+            height={20}
+            className="rounded-full"
+          />
+          <span className="text-sm dark:text-slate-400 text-slate-500">
+            {author}
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <CalendarDaysIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" />
           <time
             dateTime={date}
             className="text-sm dark:text-slate-400 text-slate-500"
