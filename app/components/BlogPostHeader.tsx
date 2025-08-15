@@ -49,14 +49,14 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
         transition={{ duration: 0.3, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.1 }}
       ></motion.div>
-        <Breadcrumb 
-          pages={[
-            { name: "All posts", href: "/blog", current: false },
-            { name: breadcrumbName, href: "", current: true }
-          ]}
-        />
+      <Breadcrumb
+        pages={[
+          { name: "All posts", href: "/blog", current: false },
+          { name: breadcrumbName, href: "", current: true },
+        ]}
+      />
       
-      
+
       <h1 className="text-3xl md:text-4xl font-bold">{title}</h1>
 
       {excerpt && (
@@ -77,28 +77,27 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
             alt={title}
             width={896}
             height={384}
-            className="rounded-lg shadow-md w-auto max-h-96 object-cover my-6"
+            className="rounded-lg shadow-md w-auto max-h-96 object-cover mt-6 mb-3"
             priority // This loads the image faster since it's above the fold
           />
         </motion.div>
       )}
+
       {/* Display author, date, and tags in a more structured way */}
-      <div className="flex items-baseline gap-2 mt-3">
-        <span className="font-sm dark:text-slate-400 text-slate-500">
+      <div className="flex items-baseline mt-3 gap-2">
+        <span className="text-sm dark:text-slate-400 text-slate-500">
           {author}
         </span>
-        <span className="font-sm text-slate-500">•</span>
-      <div className="flex items-baseline gap-2">
-        <time
-          dateTime={date}
-          className="font-sm dark:text-slate-400 text-slate-500"
-        >
-          {formatDate(date)}
-        </time>
+        <span className="text-sm text-slate-500">•</span>
+        <div className="flex items-baseline gap-2">
+          <time
+            dateTime={date}
+            className="text-sm dark:text-slate-400 text-slate-500"
+          >
+            {formatDate(date)}
+          </time>
+        </div>
       </div>
-      </div>
-
-      
     </header>
   );
 };
