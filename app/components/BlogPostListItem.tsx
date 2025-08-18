@@ -3,6 +3,7 @@ import type { FC } from "react";
 import Link from "next/link";
 import { formatDistanceToNow } from "date-fns";
 import Image from "next/image";
+import { CalendarDaysIcon, HashtagIcon } from "@heroicons/react/24/outline";
 
 interface BlogPostListItemProps {
   title: string;
@@ -42,18 +43,21 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
           </div>
           {/* <div className="h-[1px] w-full bg-gradient-to-r from-sky-400 to-sky-300 rounded-full my-2" /> */}
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">{excerpt}</p>
-          <div className="mt-3 flex flex-row items-center">
-            <p className="text-slate-500 text-sm font-light dark:text-slate-400 mr-3">
-              {relativeDate}
-            </p>
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-700 dark:bg-sky-700 dark:text-sky-200 mr-2"
-              >
-                {tag}
-              </span>
-            ))}
+          <div className="flex items-baseline mt-3 gap-3">
+            <div className="flex items-center gap-2">
+              <CalendarDaysIcon className="h-4 w-4 text-slate-500 dark:text-slate-400" />
+              <time className="text-xs text-slate-500 dark:text-slate-400">
+                {relativeDate}
+              </time>
+            </div>
+            {tags.length > 0 && (
+              <div className="flex items-center gap-1">
+                <HashtagIcon className="h-4 w-4 text-slate-500 dark:text-slate-400" />
+                <span className="text-xs text-slate-500 dark:text-slate-400">
+                  {tags.join(", ")}
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>
