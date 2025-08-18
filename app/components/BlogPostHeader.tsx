@@ -79,14 +79,14 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
             alt={title}
             width={896}
             height={384}
-            className="rounded-lg w-auto max-h-96 object-cover mt-5 md:mt-6"
+            className="rounded-lg w-auto max-h-96 object-cover mt-6"
             priority // This loads the image faster since it's above the fold
           />
         </motion.div>
       )}
 
       {/* Display author, date, and tags in a more structured way */}
-      <div className="flex items-center mt-5 md:mt-6 gap-4">
+      <div className="flex items-center mt-6 gap-4">
         <div className="flex items-center gap-2">
           <Image
             src="/images/eric-allen-profile-pic-2023.png"
