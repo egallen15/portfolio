@@ -1,4 +1,12 @@
-# Prompt Library for Workflow Creation
+---
+title: "Creating LLM examples for learnability"
+author: "Eric Allen"
+date: "2025-08-18"
+excerpt: "Teach your users how to use your LLM by providing creative example prompts."
+slug: creating-llm-example-prompts
+tags:
+  - Guides
+---
 
 This library contains example prompts that can be used with the "Create with AI" feature. Each prompt describes a workflow with steps and tasks.
 
