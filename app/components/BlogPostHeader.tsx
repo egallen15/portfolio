@@ -43,7 +43,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
   const breadcrumbName = tags.length > 0 ? tags[0] : title;
 
   return (
-    <header className="w-auto mx-6 mb-6 md:mb-9 md:mx-0 md:w-[48rem] flex flex-col lg:px-0 rounded-lg">
+    <header className="w-auto mx-6 mb-6 md:mx-0 md:w-[48rem] flex flex-col lg:px-0 rounded-lg">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -78,14 +78,14 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
             alt={title}
             width={896}
             height={384}
-            className="rounded-lg shadow-md w-auto max-h-96 object-cover mt-6 mb-2"
+            className="rounded-lg w-auto max-h-96 object-cover mt-5 md:mt-6"
             priority // This loads the image faster since it's above the fold
           />
         </motion.div>
       )}
 
       {/* Display author, date, and tags in a more structured way */}
-      <div className="flex items-center mt-4 gap-3">
+      <div className="flex items-center mt-5 md:mt-6 gap-3">
         <div className="flex items-center gap-2">
           <Image
             src="/images/eric-allen-profile-pic-2023.png"
@@ -108,6 +108,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
           </time>
         </div>
       </div>
+      <hr className="mt-5 md:mt-6 border-slate-200 dark:border-slate-700 border-t" />
     </header>
   );
 };
