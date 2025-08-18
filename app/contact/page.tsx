@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.1 }}
-          className="text-3xl md:text-5xl font-bold text-center"
+          className="text-3xl md:text-5xl font-bold"
         >
           Let&apos;s connect!
         </motion.h1>
@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
           viewport={{ once: true, amount: 0.1 }}
           className="py-6 md:py-8"
         >
-          <p className="text-md text-center max-w-3xl mb-6">
+          <p className="text-md max-w-3xl mb-6">
             I&#39;d love to hear from you! Whether you have a project in mind, want to collaborate, 
             or just want to say hello, feel free to reach out.
           </p>
