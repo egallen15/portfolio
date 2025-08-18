@@ -8,7 +8,7 @@ export default function BentoGrid() {
       <div className="xl:mx-auto max-w-2xl lg:max-w-7xl">
       
         <motion.div 
-          className="grid gap-6 lg:grid-cols-3 lg:grid-rows-2"
+          className="grid gap-6 lg:grid-cols-3 lg:grid-rows-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
@@ -30,8 +30,8 @@ export default function BentoGrid() {
             className="relative lg:row-span-2"
           >
             <Link href="/portfolio/event-registration" className="group cursor-pointer block h-full">
-            <div className="absolute inset-px rounded-lg bg-gray-50 lg:rounded-l-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
+            <div className="absolute inset-px rounded-lg bg-gray-50 lg:rounded-tl-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-tl-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                   Subsplash Event Registration
@@ -53,7 +53,7 @@ export default function BentoGrid() {
                 </div>
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg lg:rounded-l-[2rem]" />
+            <div className="pointer-events-none absolute inset-px rounded-lg lg:rounded-tl-[2rem]" />
           </Link>
           </motion.div>
           <motion.div
@@ -146,8 +146,8 @@ export default function BentoGrid() {
             className="relative lg:row-span-2"
           >
             <Link href="/portfolio/check-in" className="group cursor-pointer block h-full">
-            <div className="absolute inset-px rounded-lg bg-gray-50 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
+            <div className="absolute inset-px rounded-lg bg-gray-50 lg:rounded-tr-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-tr-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                   Subsplash Check-in
@@ -175,7 +175,163 @@ export default function BentoGrid() {
                 </div>
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]" />
+            <div className="pointer-events-none absolute inset-px rounded-lg lg:rounded-tr-[2rem]" />
+          </Link>
+          </motion.div>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, x: -20 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative lg:col-span-2 lg:row-start-3"
+          >
+            <Link href="/portfolio/new-project-1" className="group cursor-pointer block h-full">
+            <div className="absolute inset-px rounded-lg bg-gray-50 dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
+              <div className="px-8 pt-8 sm:px-10 sm:pt-10">
+                <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                  New Project 1
+                </p>
+                <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
+                  Description for the first new project that spans two columns.
+                </p>
+              </div>
+              <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
+                <Image
+                  alt=""
+                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
+                  className="w-full max-lg:max-w-xs dark:hidden transition-transform duration-300 group-hover:scale-102"
+                  width={500}
+                  height={500}
+                />
+                <Image
+                  alt=""
+                  src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-performance.png"
+                  className="hidden w-full max-lg:max-w-xs dark:block transition-transform duration-300 group-hover:scale-102"
+                  width={500}
+                  height={500}
+                />
+              </div>
+            </div>
+            <div className="pointer-events-none absolute inset-px rounded-lg" />
+          </Link>
+          </motion.div>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, x: -20 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative lg:col-start-3 lg:row-start-3"
+          >
+            <Link href="/portfolio/new-project-2" className="group cursor-pointer block h-full">
+            <div className="absolute inset-px rounded-lg bg-gray-50 dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
+              <div className="px-8 pt-8 sm:px-10 sm:pt-10">
+                <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                  New Project 2
+                </p>
+                <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
+                  Description for the second new project in single column.
+                </p>
+              </div>
+              <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
+                <Image
+                  alt=""
+                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png"
+                  className="h-[min(152px,40cqw)] object-cover dark:hidden transition-transform duration-300 group-hover:scale-102"
+                  width={500}
+                  height={500}
+                />
+                <Image
+                  alt=""
+                  src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-security.png"
+                  className="hidden h-[min(152px,40cqw)] object-cover dark:block transition-transform duration-300 group-hover:scale-102"
+                  width={500}
+                  height={500}
+                />
+              </div>
+            </div>
+            <div className="pointer-events-none absolute inset-px rounded-lg" />
+          </Link>
+          </motion.div>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, x: -20 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative lg:col-start-1 lg:row-start-4"
+          >
+            <Link href="/portfolio/new-project-3" className="group cursor-pointer block h-full">
+            <div className="absolute inset-px rounded-lg bg-gray-50 lg:rounded-bl-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-bl-[calc(2rem+1px)] lg:rounded-bl-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
+              <div className="px-8 pt-8 sm:px-10 sm:pt-10">
+                <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                  New Project 3
+                </p>
+                <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
+                  Description for the third new project in single column.
+                </p>
+              </div>
+              <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
+                <Image
+                  alt=""
+                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png"
+                  className="h-[min(152px,40cqw)] object-cover dark:hidden transition-transform duration-300 group-hover:scale-102"
+                  width={500}
+                  height={500}
+                />
+                <Image
+                  alt=""
+                  src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-security.png"
+                  className="hidden h-[min(152px,40cqw)] object-cover dark:block transition-transform duration-300 group-hover:scale-102"
+                  width={500}
+                  height={500}
+                />
+              </div>
+            </div>
+            <div className="pointer-events-none absolute inset-px rounded-lg lg:rounded-bl-[2rem]" />
+          </Link>
+          </motion.div>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, x: -20 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative lg:col-span-2 lg:col-start-2 lg:row-start-4"
+          >
+            <Link href="/portfolio/new-project-4" className="group cursor-pointer block h-full">
+            <div className="absolute inset-px rounded-lg bg-gray-50 max-lg:rounded-b-[2rem] lg:rounded-br-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
+              <div className="px-8 pt-8 sm:px-10 sm:pt-10">
+                <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                  New Project 4
+                </p>
+                <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
+                  Description for the fourth new project that spans two columns.
+                </p>
+              </div>
+              <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
+                <Image
+                  alt=""
+                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
+                  className="w-full max-lg:max-w-xs dark:hidden transition-transform duration-300 group-hover:scale-102"
+                  width={500}
+                  height={500}
+                />
+                <Image
+                  alt=""
+                  src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-performance.png"
+                  className="hidden w-full max-lg:max-w-xs dark:block transition-transform duration-300 group-hover:scale-102"
+                  width={500}
+                  height={500}
+                />
+              </div>
+            </div>
+            <div className="pointer-events-none absolute inset-px rounded-lg max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]" />
           </Link>
           </motion.div>
         </motion.div>
