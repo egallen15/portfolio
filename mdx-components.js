@@ -64,7 +64,7 @@ const defaultComponents = getNextraComponents({
   // blockquote: ({ children }) => (
   //   <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4">{children}</blockquote>
   // ),
-  // hr: () => <hr className="my-6 border-t" />,
+  hr: () => <hr className="my-9 border-t" />,
   code: ({ children }) => (
     <code className="rounded bg-slate-200 text-slate-900 dark:text-slate-100 dark:bg-slate-800 py-1 text-sm font-mono before:content-[''] after:content-[''] [pre_&]:bg-slate-900 dark:[pre_&]:bg-slate-900 [pre_&]:px-0 [pre_&]:text-slate-100 [pre_&]:py-0 [pre_&]:rounded-none">
       {children}
