@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import { CalendarDaysIcon } from "@heroicons/react/20/solid";
-import { HashtagIcon } from "@heroicons/react/24/outline";
 import Breadcrumb from "./Breadcrumb";
 
 interface BlogPostHeaderProps {
