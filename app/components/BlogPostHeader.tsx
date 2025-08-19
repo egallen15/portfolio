@@ -57,7 +57,14 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
           { name: breadcrumbName, href: "", current: true },
         ]}
       />
-      
+      {tags.length > 0 && (
+          <div className="flex items-center gap-1 mb-3">
+            {/* <HashtagIcon className="h-4 w-4 text-slate-500 dark:text-slate-400" /> */}
+            <span className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">
+              {tags.join(" • ")}
+            </span>
+          </div>
+        )}
 
       <h1 className="text-3xl md:text-4xl font-bold">{title}</h1>
 
@@ -108,14 +115,6 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
             {formatDate(date)}
           </time>
         </div>
-        {tags.length > 0 && (
-          <div className="flex items-center gap-1">
-            <HashtagIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" />
-            <span className="text-sm text-slate-500 dark:text-slate-400">
-              {tags.join(", ")}
-            </span>
-          </div>
-        )}
       </div>
       <hr className="mt-5 md:mt-6 border-slate-200 dark:border-slate-700 border-t" />
     </header>
