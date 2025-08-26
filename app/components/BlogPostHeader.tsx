@@ -57,7 +57,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
         ]}
       />
       {tags.length > 0 && (
-          <div className="flex items-center gap-1 mb-3">
+          <div className="flex items-center gap-1 mb-3 sm:mb-4">
             {/* <HashtagIcon className="h-4 w-4 text-slate-500 dark:text-slate-400" /> */}
             <span className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">
               {tags.join(" • ")}
@@ -68,7 +68,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
       <h1 className="text-3xl md:text-4xl font-bold">{title}</h1>
 
       {excerpt && (
-        <p className="text-md text-slate-500 dark:text-slate-400 mt-3">
+        <p className="text-md text-slate-500 dark:text-slate-400 mt-3 sm:mt-4">
           {excerpt}
         </p>
       )}
