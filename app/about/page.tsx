@@ -74,10 +74,10 @@ const About: React.FC = () => {
             I&#39;m Eric—a designer, builder, and writer living in Austin, Texas.
           </p>
           {/* <svg id="visual"><rect x="0" y="0" width="900" height="600" fill="#FF0066"></rect><g transform="translate(442.29705101177933 280.6360684745338)"><path d="M111.2 -97.5C151.7 -70.7 197.4 -35.4 212.6 15.2C227.8 65.8 212.5 131.5 172 167C131.5 202.5 65.8 207.8 -2.5 210.2C-70.7 212.7 -141.4 212.4 -174.8 176.9C-208.1 141.4 -204 70.7 -201 3.1C-197.9 -64.6 -195.8 -129.2 -162.5 -156C-129.2 -182.8 -64.6 -171.9 -14.6 -157.3C35.4 -142.7 70.7 -124.4 111.2 -97.5" fill="#BB004B"></path></g></svg> */}
-          <p className="prose dark:prose-invert pt-3">
+          <p className="prose dark:prose-invert pt-6">
             I&#39;m obsessed with learning. I love reading and watching everything I can about science, engineering, product design, and technology and sharing my insights with others.
           </p>
-          <p className="prose dark:prose-invert pt-3">
+          <p className="prose dark:prose-invert pt-6">
             In my spare time, I enjoy long walks with a good playlist, great films, cooking and eating great food, and solving every little problem in my life no matter how small. As a dad of 3, I love laughing with my wife and children.
           </p>
         </div>
