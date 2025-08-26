@@ -1,15 +1,20 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Timeline, { TimelineEvent } from "../components/Timeline";
 import Breadcrumb from "../components/Breadcrumb";
 import * as motion from "motion/react-client";
 
-export const metadata = {
-  title: "About",
-  description: "Welcome to my Next.js 13 portfolio!",
-};
-
 const About: React.FC = () => {
+  // State to track which image is currently displayed
+  const [isLogo, setIsLogo] = useState(false);
+  
+  // Function to toggle between images
+  const toggleImage = () => {
+    setIsLogo(!isLogo);
+  };
+
   // define your timeline data
   const timelineEvents: TimelineEvent[] = [
     { id: 1, date: 'Fall 2015', title: "Started on Subsplash Support",   description: "Joined as Platform Specialist, solving tickets and taking customer service calls.",                side: "left"  },
@@ -40,34 +45,48 @@ const About: React.FC = () => {
         >
           About Me
         </motion.h1>
-        <p className="text-md max-w-3xl py-6 md:py-8">
-        I&#39;m Eric—a designer, builder, and writer living in Austin, Texas.
-            </p>
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
-          viewport={{ once: true, amount: 0.1 }}
-          className="self-center"
-        >
-          <Image
-            className="rounded-lg mb-4"
-            src="/images/eric-allen-profile-pic-2023.png"
-            alt="About us image"
-            width="480"
-            height="480"
-            priority
-          />
-        </motion.div>
-        {/* <svg id="visual"><rect x="0" y="0" width="900" height="600" fill="#FF0066"></rect><g transform="translate(442.29705101177933 280.6360684745338)"><path d="M111.2 -97.5C151.7 -70.7 197.4 -35.4 212.6 15.2C227.8 65.8 212.5 131.5 172 167C131.5 202.5 65.8 207.8 -2.5 210.2C-70.7 212.7 -141.4 212.4 -174.8 176.9C-208.1 141.4 -204 70.7 -201 3.1C-197.9 -64.6 -195.8 -129.2 -162.5 -156C-129.2 -182.8 -64.6 -171.9 -14.6 -157.3C35.4 -142.7 70.7 -124.4 111.2 -97.5" fill="#BB004B"></path></g></svg> */}
-        <p className="prose dark:prose-invert pt-3">
-          I&#39;m obsessed with learning. I love reading and watching everything I can about science, engineering, product design, and technology and sharing my insights with others.
-        </p>
-         <p className="prose dark:prose-invert pt-3">
-        In my spare time, I enjoy long walks with a good playlist, great films, cooking and eating great food, and solving every little problem in my life no matter how small. As a dad of 3, I love laughing with my wife and children.
-        </p>
+        
+        {/* Container for text wrapping around image */}
+        <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
+            className="block md:float-left md:mr-8 md:mb-4 mt-8 mb-6"
+          >
+            <div 
+              onClick={toggleImage}
+              className="cursor-pointer transition-transform hover:scale-105 active:scale-95"
+            >
+              <Image
+                className="rounded-lg transition-all duration-300 mx-auto md:mx-0"
+                src={isLogo ? "/images/logo.png" : "/images/eric-allen-profile-pic-2023.png"}
+                alt={isLogo ? "Eric Allen Logo" : "Eric Allen Profile Picture"}
+                width="300"
+                height="300"
+                priority
+              />
+            </div>
+          </motion.div>
+
+          <p className="prose dark:prose-invert md:pt-8">
+            I&#39;m Eric—a designer, builder, and writer living in Austin, Texas.
+          </p>
+          {/* <svg id="visual"><rect x="0" y="0" width="900" height="600" fill="#FF0066"></rect><g transform="translate(442.29705101177933 280.6360684745338)"><path d="M111.2 -97.5C151.7 -70.7 197.4 -35.4 212.6 15.2C227.8 65.8 212.5 131.5 172 167C131.5 202.5 65.8 207.8 -2.5 210.2C-70.7 212.7 -141.4 212.4 -174.8 176.9C-208.1 141.4 -204 70.7 -201 3.1C-197.9 -64.6 -195.8 -129.2 -162.5 -156C-129.2 -182.8 -64.6 -171.9 -14.6 -157.3C35.4 -142.7 70.7 -124.4 111.2 -97.5" fill="#BB004B"></path></g></svg> */}
+          <p className="prose dark:prose-invert pt-3">
+            I&#39;m obsessed with learning. I love reading and watching everything I can about science, engineering, product design, and technology and sharing my insights with others.
+          </p>
+          <p className="prose dark:prose-invert pt-3">
+            In my spare time, I enjoy long walks with a good playlist, great films, cooking and eating great food, and solving every little problem in my life no matter how small. As a dad of 3, I love laughing with my wife and children.
+          </p>
+        </div>
+        
+        {/* Clear float to prevent layout issues with subsequent content - only needed on md+ screens */}
+        <div className="hidden md:block md:clear-both"></div>
+        
         <p className="prose dark:prose-invert pt-6">
-          I enjoy the thrill of cracking difficult design puzzles with simple
+          I enjoy the thrill of cracking design puzzles with simple
           solutions. If I could choose to do anything, it would be: 
         </p>
         <ul className="prose dark:prose-invert pt-6 list-disc list-inside"> 
