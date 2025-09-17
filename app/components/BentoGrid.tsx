@@ -43,7 +43,7 @@ export default function BentoGrid() {
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Led UX & interim PM for Event Registration, a tool for churches to manage events and attendees.
+                  A registration product used to collect payments and details about guests for church events.
                 </p>
               </div>
               <div className="relative min-h-[30rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm">
@@ -83,7 +83,7 @@ export default function BentoGrid() {
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  UX lead for Kanban style board managing church processes in the Subsplash Dashboard.
+                  A Trello-style kanban tool for managing church processes in the Subsplash Dashboard.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
@@ -129,7 +129,7 @@ export default function BentoGrid() {
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  UX lead for Subsplash signup and onboarding process, integrating with Stripe, Salesforce, and Netsuite.
+                  Streamlined signup and onboarding at Subsplash for delight and scalability.
                 </p>
               </div>
               <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
@@ -174,7 +174,7 @@ export default function BentoGrid() {
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  iPad app for quick and easy check-in at events, fully integrated with the Subsplash platform.
+                  A child check-in iPad app + attendance reporting for events.
                 </p>
               </div>
               <div className="relative min-h-[30rem] w-full grow">
@@ -211,7 +211,7 @@ export default function BentoGrid() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  Payment forms
+                  Subsplash Payment Forms
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
                   
@@ -220,7 +220,7 @@ export default function BentoGrid() {
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  UX lead for a simple payment tool; $100M+ processed in first 4 years.
+                  Non-charitable payments for churches; $100M+ processed in first 4 years.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
@@ -256,7 +256,7 @@ export default function BentoGrid() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  Church Management
+                  Subsplash Church Management
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
                   
@@ -265,7 +265,7 @@ export default function BentoGrid() {
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Integrated a church management platform into Subsplash after a complex acquisition.
+                  Absorbed a church management platform into the Subsplash ecosystem after an acquisition.
                 </p>
               </div>
               <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
@@ -346,7 +346,7 @@ export default function BentoGrid() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  Events improvements
+                  Subsplash Events improvements
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
                   
@@ -355,7 +355,7 @@ export default function BentoGrid() {
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Improvements to the Events product made based on customer feedback.
+                  Improvements to Subsplash Events made based on customer feedback.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
