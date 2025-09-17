@@ -76,7 +76,7 @@ const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
           }}
         />
       </head>
-      <body className="flex flex-col w-full mx-auto dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-950 dark:via-80% dark:to-slate-900 dark:bg-fixed">
+      <body className="flex flex-col w-full mx-auto dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-950 dark:via-80% dark:to-slate-900 dark:bg-fixed overflow-x-clip">
         <NextraTheme pageMap={pageMap}>{children}</NextraTheme>
       </body>
     </html>
