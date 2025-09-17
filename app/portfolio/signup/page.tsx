@@ -14,46 +14,81 @@ const signupData: CaseStudyProps = {
     height: 600
   },
   
-  features: [
-    {
-      icon: UserPlusIcon,
-      title: "Streamlined Onboarding",
-      description: "Multi-step registration process with progressive disclosure, social login options, and smart field validation to minimize user friction."
-    },
-    {
-      icon: ShieldCheckIcon,
-      title: "Security & Compliance",
-      description: "Enterprise-grade security with GDPR compliance, email verification, password strength validation, and fraud detection mechanisms."
-    },
-    {
-      icon: ChartBarIcon,
-      title: "Registration Analytics",
-      description: "Comprehensive funnel analysis, conversion tracking, and A/B testing capabilities to optimize registration completion rates."
-    }
-  ],
-  
-  content: {
-    mainContent: "The registration platform handles over 10,000 new user signups monthly with a 94% completion rate. The system's intelligent validation and progressive onboarding approach significantly reduced user drop-off during registration.",
-    secondaryTitle: "Performance Impact",
-    secondaryContent: "Implementation of smart validation and social login options increased registration completion rates by 40% while reducing support tickets related to account creation by 65%. The system now supports multiple authentication providers and maintains 99.9% uptime."
-  },
-  
   sections: {
+    tools: {
+      title: "Technology Stack",
+      content: "Built using modern web technologies to ensure security, performance, and scalability for handling thousands of new user registrations daily.",
+      features: [
+        {
+          icon: UserPlusIcon,
+          title: "React & Next.js",
+          description: "Frontend framework providing server-side rendering and optimized performance for the registration flow."
+        },
+        {
+          icon: ShieldCheckIcon,
+          title: "OAuth Integration",
+          description: "Secure social login integration with Google, Facebook, and other providers for streamlined registration."
+        },
+        {
+          icon: ChartBarIcon,
+          title: "Analytics & Tracking",
+          description: "Comprehensive funnel analysis and A/B testing infrastructure to optimize conversion rates."
+        }
+      ]
+    },
+    
     problemStatement: {
-      title: "",
-      content: "Subsplash needed a streamlined registration process to reduce user friction and increase conversion rates. The existing signup flow had high abandonment rates and lacked proper validation mechanisms."
+      title: "Problem",
+      content: "Subsplash needed a streamlined registration process to reduce user friction and increase conversion rates. The existing signup flow had high abandonment rates and lacked proper validation mechanisms, resulting in incomplete registrations and frustrated users."
     },
+    
     researchAndFeedback: {
-      title: "",
-      content: "Through user testing and analytics review, we identified key pain points in the registration flow including complex form fields, unclear validation messages, and lack of social login options."
+      title: "Research & User Feedback",
+      content: "Through user testing and analytics review, we identified key pain points in the registration flow including complex form fields, unclear validation messages, and lack of social login options. 60% of users abandoned the form due to complexity, and 35% experienced validation errors that weren't clearly explained."
     },
+    
     solution: {
-      title: "",
-      content: "We implemented a progressive disclosure approach with smart validation, social login integration, and clear error messaging to create a frictionless signup experience."
+      title: "Solution",
+      content: "We implemented a progressive disclosure approach with smart validation, social login integration, and clear error messaging to create a frictionless signup experience. The registration platform handles over 10,000 new user signups monthly with a 94% completion rate.",
+      features: [
+        {
+          icon: UserPlusIcon,
+          title: "Streamlined Onboarding",
+          description: "Multi-step registration process with progressive disclosure, social login options, and smart field validation to minimize user friction."
+        },
+        {
+          icon: ShieldCheckIcon,
+          title: "Security & Compliance",
+          description: "Enterprise-grade security with GDPR compliance, email verification, password strength validation, and fraud detection mechanisms."
+        },
+        {
+          icon: ChartBarIcon,
+          title: "Registration Analytics",
+          description: "Comprehensive funnel analysis, conversion tracking, and A/B testing capabilities to optimize registration completion rates."
+        }
+      ]
     },
+    
     impactAndResults: {
-      title: "Impact & results",
-      content: "The new registration system achieved a 94% completion rate with 40% improvement in conversions and 65% reduction in support tickets."
+      title: "Impact & Results",
+      content: "Implementation of smart validation and social login options increased registration completion rates by 40% while reducing support tickets related to account creation by 65%. The system now supports multiple authentication providers and maintains 99.9% uptime.",
+      features: [
+        {
+          icon: UserPlusIcon,
+          title: "94% Completion Rate",
+          description: "Achieved industry-leading registration completion rates through optimized user experience."
+        },
+        {
+          icon: ShieldCheckIcon,
+          title: "40% Conversion Increase",
+          description: "Significant improvement in user conversion from signup initiation to completion."
+        },
+        {
+          icon: ChartBarIcon,
+          title: "65% Fewer Support Tickets",
+          description: "Dramatic reduction in account creation related support requests through better UX."
+        }
+      ]
     }
   }
 }
