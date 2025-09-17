@@ -53,14 +53,14 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true, amount: 0.1 }}
-            className="block md:float-left md:mr-8 md:mb-4 mt-8 mb-6"
+            className="md:mr-8 md:mb-4 mt-8 mb-6"
           >
             <div 
               onClick={toggleImage}
               className="cursor-pointer transition-transform hover:scale-105 active:scale-95"
             >
               <Image
-                className="rounded-lg transition-all duration-300 mx-auto md:mx-0"
+                className="rounded-lg transition-all duration-300 mx-auto"
                 src={isLogo ? "/images/logo.png" : "/images/eric-allen-profile-pic-2023.png"}
                 alt={isLogo ? "Eric Allen Logo" : "Eric Allen Profile Picture"}
                 width="300"
@@ -75,10 +75,10 @@ const About: React.FC = () => {
           </p>
           {/* <svg id="visual"><rect x="0" y="0" width="900" height="600" fill="#FF0066"></rect><g transform="translate(442.29705101177933 280.6360684745338)"><path d="M111.2 -97.5C151.7 -70.7 197.4 -35.4 212.6 15.2C227.8 65.8 212.5 131.5 172 167C131.5 202.5 65.8 207.8 -2.5 210.2C-70.7 212.7 -141.4 212.4 -174.8 176.9C-208.1 141.4 -204 70.7 -201 3.1C-197.9 -64.6 -195.8 -129.2 -162.5 -156C-129.2 -182.8 -64.6 -171.9 -14.6 -157.3C35.4 -142.7 70.7 -124.4 111.2 -97.5" fill="#BB004B"></path></g></svg> */}
           <p className="prose dark:prose-invert pt-6">
-            I&#39;m obsessed with learning. I love reading and watching everything I can about science, engineering, product design, and technology and sharing my insights with others.
+            I&#39;m obsessed with learning about everything: science, technology, engineering, product design, business (the list is long). I get excited when I can share what I&#39;ve learned with others.
           </p>
           <p className="prose dark:prose-invert pt-6">
-            In my spare time, I enjoy long walks with a good playlist, great films, cooking and eating great food, and solving every little problem in my life no matter how small. As a dad of 3, I love laughing with my wife and children.
+            As a dad of 3, I love laughing with my wife and children. In my spare time, I enjoy long walks with a good playlist, watching great movies, cooking and eating great food, and solving every little problem in my life no matter how small. 
           </p>
         </div>
         
@@ -86,15 +86,14 @@ const About: React.FC = () => {
         <div className="hidden md:block md:clear-both"></div>
         
         <p className="prose dark:prose-invert pt-6">
-          I enjoy the thrill of cracking design puzzles with simple
-          solutions. If I could choose to do anything, it would be: 
+          If I could do anything, I would choose to:
         </p>
-        <ul className="prose dark:prose-invert pt-6 list-disc list-inside"> 
-          <li>To build beautiful, beloved, and useful things</li>
-          <li>To cultivate strong and meaningful friendships with teammates</li>
-          <li>To make work feel like play by empowering authenticity</li>
-          <li>To love and help others</li>
-          <li>To discover who I am</li>
+        <ul className="prose dark:prose-invert pt-6 list-disc list-inside">
+          <li>Create beautiful, beloved, and useful things</li>
+          <li>Build strong and meaningful friendships with teammates</li>
+          <li>Make work feel like play by empowering authenticity</li>
+          <li>Love and help others</li>
+          <li>Discover who I am</li>
         </ul>
         <p className="prose dark:prose-invert pt-6">
           I live in the Austin, TX area with my family. My perfect day starts
