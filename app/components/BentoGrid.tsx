@@ -37,15 +37,13 @@ export default function BentoGrid() {
                   Subsplash Event Registration
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
-                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
-                    Lead UX Designer
-                  </span>
+                  
                   <p className="text-sm text-slate-500 dark:text-slate-400">
-                    January, 2022
+                    January 2022 – Present
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  UX & PM lead for Event Registration, a tool for churches to manage events and attendees.
+                  Led UX & interim PM for Event Registration, a tool for churches to manage events and attendees.
                 </p>
               </div>
               <div className="relative min-h-[30rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm">
@@ -79,11 +77,9 @@ export default function BentoGrid() {
                   Subsplash Workflows
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
-                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
-                    Lead UX Designer
-                  </span>
+                  
                   <p className="text-sm text-slate-500 dark:text-slate-400">
-                    March, 2021
+                    September 2024 – Present
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
@@ -127,15 +123,13 @@ export default function BentoGrid() {
                   Subsplash signup & onboarding
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
-                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
-                    Lead UX Designer
-                  </span>
+                  
                   <p className="text-sm text-slate-500 dark:text-slate-400">
-                    September, 2020
+                    September 2020
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  UX lead for a simplified signup and onboarding process, integrating with Stripe, Salesforce, and Netsuite.
+                  UX lead for Subsplash signup and onboarding process, integrating with Stripe, Salesforce, and Netsuite.
                 </p>
               </div>
               <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
@@ -174,11 +168,9 @@ export default function BentoGrid() {
                   Subsplash Check-in
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
-                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
-                    Lead UX Designer
-                  </span>
+                  
                   <p className="text-sm text-slate-500 dark:text-slate-400">
-                    June, 2021
+                    January 2023 – Present
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
@@ -222,15 +214,13 @@ export default function BentoGrid() {
                   Payment forms
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
-                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
-                    Lead UX Designer
-                  </span>
+                  
                   <p className="text-sm text-slate-500 dark:text-slate-400">
-                    February, 2019
+                    January – June 2025
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  UX design lead for a simple payment processing tool. $100M+ processed in first 4 years.
+                  UX lead for a simple payment tool; $100M+ processed in first 4 years.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
@@ -269,15 +259,13 @@ export default function BentoGrid() {
                   Church Management
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
-                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
-                    Lead UX Designer
-                  </span>
+                  
                   <p className="text-sm text-slate-500 dark:text-slate-400">
-                    August, 2020
+                    August 2020 – 2021
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Integrated a church management tool into the Subsplash Dashboard over time via a complex acquisition.
+                  Integrated a church management platform into Subsplash after a complex acquisition.
                 </p>
               </div>
               <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
@@ -316,11 +304,9 @@ export default function BentoGrid() {
                   Waves Design System
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
-                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
-                    Lead UX Designer
-                  </span>
+                  
                   <p className="text-sm text-slate-500 dark:text-slate-400">
-                    November, 2021
+                    2018 – Present
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
@@ -363,15 +349,13 @@ export default function BentoGrid() {
                   Events improvements
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
-                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
-                    Lead UX Designer
-                  </span>
+                  
                   <p className="text-sm text-slate-500 dark:text-slate-400">
-                    Ongoing
+                    2018 – Present
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Improvements to the Events product made over time, based on customer feedback.
+                  Improvements to the Events product made based on customer feedback.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
