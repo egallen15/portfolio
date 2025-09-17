@@ -36,9 +36,16 @@ export default function BentoGrid() {
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                   Subsplash Event Registration
                 </p>
+                <div className="mt-2 flex flex-col max-lg:items-center gap-1">
+                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
+                    Lead UX Designer
+                  </span>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    January, 2022
+                  </p>
+                </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                  qui lorem cupidatat commodo.
+                  UX & PM lead for Event Registration, a tool for churches to manage events and attendees.
                 </p>
               </div>
               <div className="relative min-h-[30rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm">
@@ -71,9 +78,16 @@ export default function BentoGrid() {
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                   Subsplash Workflows
                 </p>
+                <div className="mt-2 flex flex-col max-lg:items-center gap-1">
+                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
+                    Lead UX Designer
+                  </span>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    March, 2021
+                  </p>
+                </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                  maiores impedit.
+                  UX lead for Kanban style board managing church processes in the Subsplash Dashboard.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
@@ -112,9 +126,16 @@ export default function BentoGrid() {
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                   Subsplash Signup
                 </p>
+                <div className="mt-2 flex flex-col max-lg:items-center gap-1">
+                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
+                    Lead UX Designer
+                  </span>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    September, 2020
+                  </p>
+                </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Morbi viverra dui mi arcu sed. Tellus semper adipiscing
-                  suspendisse semper morbi.
+                  UX lead for a simplified signup process, integrating with Stripe, Salesforce, and Netsuite.
                 </p>
               </div>
               <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
@@ -152,9 +173,16 @@ export default function BentoGrid() {
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                   Subsplash Check-in
                 </p>
+                <div className="mt-2 flex flex-col max-lg:items-center gap-1">
+                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
+                    Lead UX Designer
+                  </span>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    June, 2021
+                  </p>
+                </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Sit quis amet rutrum tellus ullamcorper ultricies libero dolor
-                  eget sem sodales gravida.
+                  iPad app for quick and easy check-in at events, fully integrated with the Subsplash platform.
                 </p>
               </div>
               <div className="relative min-h-[30rem] w-full grow">
@@ -191,10 +219,18 @@ export default function BentoGrid() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  New Project 1
+                  Payment Forms
                 </p>
+                <div className="mt-2 flex flex-col max-lg:items-center gap-1">
+                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
+                    Lead UX Designer
+                  </span>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    February, 2019
+                  </p>
+                </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Description for the first new project that spans two columns.
+                  UX design lead for a simple payment processing tool. $100M+ processed in first 4 years.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
@@ -230,10 +266,18 @@ export default function BentoGrid() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  New Project 2
+                  Church Management
                 </p>
+                <div className="mt-2 flex flex-col max-lg:items-center gap-1">
+                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
+                    Lead UX Designer
+                  </span>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    August, 2020
+                  </p>
+                </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Description for the second new project in single column.
+                  Integrated a church management tool into the Subsplash Dashboard over time via a complex acquisition.
                 </p>
               </div>
               <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
@@ -269,10 +313,18 @@ export default function BentoGrid() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-bl-[calc(2rem+1px)] lg:rounded-bl-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  New Project 3
+                  Waves Design System
                 </p>
+                <div className="mt-2 flex flex-col max-lg:items-center gap-1">
+                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
+                    Lead UX Designer
+                  </span>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    November, 2021
+                  </p>
+                </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Description for the third new project in single column.
+                  Documented and iterated on the Subsplash design system, including UI components, principles, and guidelines.
                 </p>
               </div>
               <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
@@ -308,10 +360,18 @@ export default function BentoGrid() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  New Project 4
+                  New customer onboarding
                 </p>
+                <div className="mt-2 flex flex-col max-lg:items-center gap-1">
+                  <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
+                    Lead UX Designer
+                  </span>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    May, 2022
+                  </p>
+                </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Description for the fourth new project that spans two columns.
+                  Principal UX designer streamlined onboarding process for new users, including guided setup and tutorials.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
