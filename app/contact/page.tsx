@@ -37,22 +37,22 @@ const Contact: React.FC = () => {
             <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0">
               <span className="font-medium text-gray-900 dark:text-gray-100">Email:</span>
               <a 
-                href="mailto:eric@ericallen.me" 
+                href="mailto:egallen15@gmail.com" 
                 className="text-blue-600 dark:text-blue-400 hover:underline"
               >
-                eric@ericallen.me
+                egallen15@gmail.com
               </a>
             </div>
             
             <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0">
               <span className="font-medium text-gray-900 dark:text-gray-100">LinkedIn:</span>
               <a 
-                href="https://linkedin.com/in/ericallentx" 
+                href="https://www.linkedin.com/in/ericallen5" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-600 dark:text-blue-400 hover:underline"
               >
-                linkedin.com/in/ericallentx
+                linkedin.com/in/ericallen5
               </a>
             </div>
           </div>
