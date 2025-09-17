@@ -3,9 +3,9 @@ import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
 import { UserPlusIcon, ShieldCheckIcon, ChartBarIcon } from '@heroicons/react/20/solid'
 
 const signupData: CaseStudyProps = {
-  subtitle: "User Experience",
-  title: "Subsplash User Registration Platform",
-  description: "A comprehensive user onboarding and registration system that simplifies account creation while maintaining security and compliance standards across multiple platforms.",
+  subtitle: "Subsplash",
+  title: "Signup & onboarding",
+  description: "I designed the first time experience for every customer that signs up for Subsplash.",
   
   image: {
     src: "/images/subsplash.png",
@@ -36,6 +36,25 @@ const signupData: CaseStudyProps = {
     mainContent: "The registration platform handles over 10,000 new user signups monthly with a 94% completion rate. The system's intelligent validation and progressive onboarding approach significantly reduced user drop-off during registration.",
     secondaryTitle: "Performance Impact",
     secondaryContent: "Implementation of smart validation and social login options increased registration completion rates by 40% while reducing support tickets related to account creation by 65%. The system now supports multiple authentication providers and maintains 99.9% uptime."
+  },
+  
+  sections: {
+    problemStatement: {
+      title: "",
+      content: "Subsplash needed a streamlined registration process to reduce user friction and increase conversion rates. The existing signup flow had high abandonment rates and lacked proper validation mechanisms."
+    },
+    researchAndFeedback: {
+      title: "",
+      content: "Through user testing and analytics review, we identified key pain points in the registration flow including complex form fields, unclear validation messages, and lack of social login options."
+    },
+    solution: {
+      title: "",
+      content: "We implemented a progressive disclosure approach with smart validation, social login integration, and clear error messaging to create a frictionless signup experience."
+    },
+    impactAndResults: {
+      title: "Impact & results",
+      content: "The new registration system achieved a 94% completion rate with 40% improvement in conversions and 65% reduction in support tickets."
+    }
   }
 }
 

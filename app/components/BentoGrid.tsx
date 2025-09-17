@@ -124,7 +124,7 @@ export default function BentoGrid() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  Subsplash Signup
+                  Subsplash signup & onboarding
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
                   <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
@@ -135,7 +135,7 @@ export default function BentoGrid() {
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  UX lead for a simplified signup process, integrating with Stripe, Salesforce, and Netsuite.
+                  UX lead for a simplified signup and onboarding process, integrating with Stripe, Salesforce, and Netsuite.
                 </p>
               </div>
               <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
@@ -219,7 +219,7 @@ export default function BentoGrid() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  Payment Forms
+                  Payment forms
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
                   <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
@@ -360,18 +360,18 @@ export default function BentoGrid() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)] transition-transform duration-300 group-hover:scale-[1.02]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  New customer onboarding
+                  Events improvements
                 </p>
                 <div className="mt-2 flex flex-col max-lg:items-center gap-1">
                   <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
                     Lead UX Designer
                   </span>
                   <p className="text-sm text-slate-500 dark:text-slate-400">
-                    May, 2022
+                    Ongoing
                   </p>
                 </div>
                 <p className="mt-2 max-w-lg text-sm/6 text-slate-600 max-lg:text-center dark:text-slate-400">
-                  Principal UX designer streamlined onboarding process for new users, including guided setup and tutorials.
+                  Improvements to the Events product made over time, based on customer feedback.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
