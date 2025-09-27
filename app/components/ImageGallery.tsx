@@ -25,9 +25,9 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
   }
 
   return (
-    <div className="-ml-12 lg:sticky lg:top-32 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+    <div className="lg:-ml-12 lg:sticky lg:top-32 lg:col-start-2 lg:row-span-2 lg:row-start-1">
       {/* Main Featured Image with 16:9 Aspect Ratio */}
-      <div className="relative aspect-video w-full max-w-[48rem] sm:max-w-[57rem] rounded-xl ring-slate-400/10 dark:ring-white/10">
+      <div className="relative aspect-video w-full max-w-[48rem] sm:max-w-[57rem] rounded-xl ring-2 ring-slate-400/10 dark:ring-white/10 bg-slate-50 dark:bg-slate-800">
         <Image
           alt={currentImage.alt}
           src={currentImage.src}
