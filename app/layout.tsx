@@ -57,20 +57,27 @@ const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                function getThemePreference() {
-                  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-                    return localStorage.getItem('theme');
+                try {
+                  function getThemePreference() {
+                    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+                      return localStorage.getItem('theme');
+                    }
+                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                   }
-                  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  
+                  const theme = getThemePreference();
+                  const resolvedTheme = theme === 'system' 
+                    ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                    : theme;
+                  
+                  document.documentElement.classList.remove('light', 'dark');
+                  document.documentElement.classList.add(resolvedTheme);
+                  document.documentElement.style.colorScheme = resolvedTheme;
+                } catch (e) {
+                  // Fallback to light theme if anything fails
+                  document.documentElement.classList.add('light');
+                  document.documentElement.style.colorScheme = 'light';
                 }
-                
-                const theme = getThemePreference();
-                const resolvedTheme = theme === 'system' 
-                  ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-                  : theme;
-                
-                document.documentElement.classList.remove('light', 'dark');
-                document.documentElement.classList.add(resolvedTheme);
               })();
             `,
           }}

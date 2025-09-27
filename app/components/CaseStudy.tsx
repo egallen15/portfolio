@@ -103,7 +103,7 @@ export default function CaseStudy({
     return icons[iconName] || icons['chart-bar']
   }
   return (
-    <div className="relative isolate lg:overflow-visible lg:px-0">
+    <div className="relative isolate lg:overflow-visible lg:px-0 min-h-screen">
       {/* <div className="absolute inset-0 -z-10">
         <svg
           aria-hidden="true"
@@ -203,7 +203,7 @@ export default function CaseStudy({
         <ImageGallery images={availableImages} />
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:pr-8">
           <div className="lg:pr-4">
-            <div className="max-w-xl text-base/7 text-slate-600 lg:max-w-lg dark:text-slate-400">
+            <div className="max-w-xl text-base/7 text-slate-600 lg:max-w-lg dark:text-slate-400 min-h-[600px]">
               {sections ? (
                 // New structured sections
                 <div className="space-y-12">

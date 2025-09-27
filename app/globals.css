@@ -35,6 +35,8 @@ html {
   min-height: 100%;
   /* Prevent flash by setting initial colors that will be overridden */
   color-scheme: light dark;
+  /* Prevent layout shift from font loading */
+  font-display: swap;
 }
 
 
@@ -84,4 +86,20 @@ body {
   .neon {
     @apply neon-white;
   }
+}
+
+/* Prevent layout shift during loading */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure consistent sizing for dynamic content */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent reflow from content changes */
+.content-area {
+  contain: layout style;
 }

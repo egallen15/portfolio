@@ -33,7 +33,10 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
           src={currentImage.src}
           width={currentImage.width}
           height={currentImage.height}
-          className="h-full w-full object-contain"
+          className="h-full w-full object-contain bg-transparent"
+          priority={true}
+          placeholder="blur"
+          blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNmOGZhZmMiLz48L3N2Zz4="
         />
       </div>
       
@@ -45,7 +48,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
               <button
                 key={index}
                 onClick={() => setSelectedImageIndex(index)}
-                className={`relative aspect-square overflow-hidden rounded-lg transition-all duration-200 hover:scale-105 ${
+                className={`relative aspect-square overflow-hidden rounded-lg transition-all duration-200 hover:scale-105 bg-slate-50 dark:bg-slate-800 ${
                   index === selectedImageIndex
                     ? 'ring-2 ring-indigo-500 ring-offset-2 ring-offset-white dark:ring-offset-slate-900'
                     : 'ring-1 ring-slate-200 hover:ring-slate-300 dark:ring-slate-700 dark:hover:ring-slate-600'
@@ -56,7 +59,9 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                   alt={img.alt}
                   width={150}
                   height={150}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover bg-transparent"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNmOGZhZmMiLz48L3N2Zz4="
                 />
                 {index === selectedImageIndex && (
                   <div className="absolute inset-0 bg-indigo-500/10" />
