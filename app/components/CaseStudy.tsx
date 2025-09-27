@@ -64,7 +64,7 @@ export interface CaseStudyProps {
 }
 
 export default function CaseStudy({
-  // subtitle,
+  subtitle,
   title,
   description,
   image,
@@ -111,7 +111,7 @@ export default function CaseStudy({
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:pr-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              {/* <p className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">{subtitle}</p> */}
+              <p className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">{subtitle}</p>
               <h1 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl dark:text-white">
                 {title}
               </h1>

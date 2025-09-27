@@ -5,7 +5,7 @@ import { CalendarIcon, UsersIcon, CheckCircleIcon, ChartBarIcon } from '@heroico
 const eventRegistrationData: CaseStudyProps = {
   subtitle: "Subsplash",
   title: "Event Registration",
-  description: "I led the design of an event registration system designed to handle complex event management needs, from ticketing to attendee tracking.",
+  description: "I designed an event registration system for Subsplash with support for payments, balances, customizable forms, ticket types, and more.",
   
   images: [
     {
@@ -37,21 +37,21 @@ const eventRegistrationData: CaseStudyProps = {
   sections: {
     tools: {
       title: "Design tools",
-      content: "Built using modern web technologies to ensure scalability, performance, and maintainability across the entire event management workflow.",
+      content: "Using wireframes, prototypes, and user flows, I created a simple event registration experience that met both user needs and business goals.",
       features: [
         {
           icon: ChartBarIcon,
-          title: "React & TypeScript",
+          title: "Sketch",
           description: "Frontend built with React and TypeScript for type safety and component reusability, ensuring maintainable and scalable code."
         },
         {
           icon: ChartBarIcon,
-          title: "Backend API Integration",
+          title: "Zeplin",
           description: "Robust REST API integration for real-time data synchronization and secure payment processing."
         },
         {
           icon: ChartBarIcon,
-          title: "Advanced Caching",
+          title: "Procreate",
           description: "Implemented caching strategies to handle high-traffic registration periods without performance degradation."
         }
       ]
@@ -59,12 +59,12 @@ const eventRegistrationData: CaseStudyProps = {
     
     problemStatement: {
       title: "Problem",
-      content: "Churches and organizations needed a robust event registration system that could handle both free and paid events, manage complex registration forms, and provide detailed analytics on attendee behavior. \n\n Organizations struggled with fragmented tools that didn't integrate well, making event management cumbersome and data insights difficult to obtain."
+      content: "Church event organizers need a simple way to gather payments and details about who is coming to their event. \n\n The problem these event organizers face is that the free tools they use to manage events are often disconnected from their data and systems, handle payments differently than their other tools, and can be difficult to use. \n\n This can make setting up an event registration intimidating and time-consuming for organizers, leading them to fall back to manual processes that are error-prone and inefficient."
     },
     
     researchAndFeedback: {
       title: "Research",
-      content: "Through user interviews with church administrators and event organizers, we identified key pain points: 78% of users abandoned registration forms that were too long or complex, 65% needed better integration with existing church management systems, and 82% wanted real-time analytics to track registration progress.\n\nUser testing revealed that organizers needed more granular control over registration settings while maintaining simplicity for attendees. Feedback consistently emphasized the need for mobile-optimized registration flows and automated communication features."
+      content: "To build a new event registration system the right way, we needed to understand the list of needs and pain points from these church event organizers. \n\n To learn these pain points, I ran user interviews with church event organizers, analyzed competitor platforms, and gathered feedback from our customer success team to identify key requirements. \n\nWe identified several pain points with existing solutions, including complex setup processes, lack of customization options, and poor mobile experiences.",
     },
     
     solution: {
