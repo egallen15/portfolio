@@ -1,6 +1,5 @@
 import Breadcrumb from '@/app/components/Breadcrumb'
 import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
-import { CogIcon, BoltIcon, ChartBarIcon } from '@heroicons/react/20/solid'
 
 const workflowsData: CaseStudyProps = {
   subtitle: "Process Automation",
@@ -20,17 +19,17 @@ const workflowsData: CaseStudyProps = {
       content: "Built using modern web technologies and microservices architecture to ensure scalability and reliability for enterprise-level workflow automation.",
       features: [
         {
-          icon: CogIcon,
+          icon: "cog",
           title: "React & TypeScript",
           description: "Frontend built with React and TypeScript for a responsive and type-safe user interface."
         },
         {
-          icon: BoltIcon,
+          icon: "bolt",
           title: "Microservices Architecture",
           description: "Scalable backend architecture designed to handle complex workflow executions reliably."
         },
         {
-          icon: ChartBarIcon,
+          icon: "chart-bar",
           title: "Real-time Processing",
           description: "Event-driven architecture for instant workflow execution and status updates."
         }
@@ -52,17 +51,17 @@ const workflowsData: CaseStudyProps = {
       content: "The Workflows platform revolutionized how teams at Subsplash handle repetitive tasks and complex business processes. By providing a no-code solution, we enabled non-technical users to create sophisticated automations that previously required developer intervention.",
       features: [
         {
-          icon: CogIcon,
+          icon: "cog",
           title: "Visual Builder",
           description: "Drag-and-drop interface for creating complex workflows with conditional logic, loops, and integrations."
         },
         {
-          icon: BoltIcon,
+          icon: "bolt",
           title: "Automation Engine", 
           description: "Powerful execution engine that processes workflows reliably with built-in error handling and retry mechanisms."
         },
         {
-          icon: ChartBarIcon,
+          icon: "chart-bar",
           title: "Performance Insights",
           description: "Real-time monitoring and analytics to track workflow performance and identify optimization opportunities."
         }
@@ -74,17 +73,17 @@ const workflowsData: CaseStudyProps = {
       content: "Since launch, the platform has automated over 50,000 workflows, saving an estimated 2,000 hours of manual work per month and reducing process errors by 85%. The visual interface has made workflow creation accessible to all team members.",
       features: [
         {
-          icon: CogIcon,
+          icon: "cog",
           title: "50,000+ Workflows Automated",
           description: "Teams have successfully automated thousands of previously manual processes."
         },
         {
-          icon: BoltIcon,
+          icon: "bolt",
           title: "2,000 Hours Saved Monthly",
           description: "Significant time savings across all departments through process automation."
         },
         {
-          icon: ChartBarIcon,
+          icon: "chart-bar",
           title: "85% Error Reduction",
           description: "Dramatic decrease in process errors through automated validation and execution."
         }

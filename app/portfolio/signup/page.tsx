@@ -1,6 +1,5 @@
 import Breadcrumb from '@/app/components/Breadcrumb'
 import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
-import { UserPlusIcon, ShieldCheckIcon, ChartBarIcon } from '@heroicons/react/20/solid'
 
 const signupData: CaseStudyProps = {
   subtitle: "Subsplash",
@@ -20,17 +19,17 @@ const signupData: CaseStudyProps = {
       content: "Built using modern web technologies to ensure security, performance, and scalability for handling thousands of new user registrations daily.",
       features: [
         {
-          icon: UserPlusIcon,
+          icon: "user-plus",
           title: "React & Next.js",
           description: "Frontend framework providing server-side rendering and optimized performance for the registration flow."
         },
         {
-          icon: ShieldCheckIcon,
+          icon: "shield-check",
           title: "OAuth Integration",
           description: "Secure social login integration with Google, Facebook, and other providers for streamlined registration."
         },
         {
-          icon: ChartBarIcon,
+          icon: "chart-bar",
           title: "Analytics & Tracking",
           description: "Comprehensive funnel analysis and A/B testing infrastructure to optimize conversion rates."
         }
@@ -52,17 +51,17 @@ const signupData: CaseStudyProps = {
       content: "We implemented a progressive disclosure approach with smart validation, social login integration, and clear error messaging to create a frictionless signup experience. The registration platform handles over 10,000 new user signups monthly with a 94% completion rate.",
       features: [
         {
-          icon: UserPlusIcon,
+          icon: "user-plus",
           title: "Streamlined Onboarding",
           description: "Multi-step registration process with progressive disclosure, social login options, and smart field validation to minimize user friction."
         },
         {
-          icon: ShieldCheckIcon,
+          icon: "shield-check",
           title: "Security & Compliance",
           description: "Enterprise-grade security with GDPR compliance, email verification, password strength validation, and fraud detection mechanisms."
         },
         {
-          icon: ChartBarIcon,
+          icon: "chart-bar",
           title: "Registration Analytics",
           description: "Comprehensive funnel analysis, conversion tracking, and A/B testing capabilities to optimize registration completion rates."
         }
@@ -74,17 +73,17 @@ const signupData: CaseStudyProps = {
       content: "Implementation of smart validation and social login options increased registration completion rates by 40% while reducing support tickets related to account creation by 65%. The system now supports multiple authentication providers and maintains 99.9% uptime.",
       features: [
         {
-          icon: UserPlusIcon,
+          icon: "user-plus",
           title: "94% Completion Rate",
           description: "Achieved industry-leading registration completion rates through optimized user experience."
         },
         {
-          icon: ShieldCheckIcon,
+          icon: "shield-check",
           title: "40% Conversion Increase",
           description: "Significant improvement in user conversion from signup initiation to completion."
         },
         {
-          icon: ChartBarIcon,
+          icon: "chart-bar",
           title: "65% Fewer Support Tickets",
           description: "Dramatic reduction in account creation related support requests through better UX."
         }

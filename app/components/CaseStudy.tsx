@@ -1,10 +1,24 @@
-import { ComponentType } from 'react'
+import React from 'react'
+import Image from 'next/image'
 import ImageGallery from './ImageGallery'
+import { 
+  UsersIcon, 
+  CalendarDaysIcon, 
+  WrenchScrewdriverIcon
+} from '@heroicons/react/20/solid'
+import { icons, type IconName } from '../../lib/icons'
 
 export interface CaseStudyFeature {
-  icon: ComponentType<{ className?: string; 'aria-hidden'?: boolean }>
+  icon: IconName // Changed to IconName
   title: string
   description: string
+}
+
+export interface CaseStudyMetadata {
+  role?: string
+  teamSize?: string
+  dateRange?: string
+  tools?: string[] // Simplified to just an array of tool names
 }
 
 export interface CaseStudyProps {
@@ -12,6 +26,9 @@ export interface CaseStudyProps {
   subtitle: string
   title: string
   description: string
+  
+  // Metadata section
+  metadata?: CaseStudyMetadata
   
   // Images - support for single image (legacy) or multiple images (new)
   image?: {
@@ -67,6 +84,7 @@ export default function CaseStudy({
   subtitle,
   title,
   description,
+  metadata,
   image,
   images,
   sections,
@@ -78,6 +96,11 @@ export default function CaseStudy({
   
   if (availableImages.length === 0) {
     throw new Error('CaseStudy component requires either an image or images prop')
+  }
+
+  // Simple icon mapping for features only
+  const getFeatureIcon = (iconName: IconName) => {
+    return icons[iconName] || icons['chart-bar']
   }
   return (
     <div className="relative isolate bg-white py-8 lg:overflow-visible lg:px-0 dark:bg-slate-900">
@@ -118,6 +141,62 @@ export default function CaseStudy({
               <p className="mt-6 text-xl/8 text-slate-800 dark:text-slate-400">
                 {description}
               </p>
+              
+              {/* Metadata Section */}
+              {metadata && (
+                <div className="mt-6 flex flex-wrap items-center gap-4">
+                  {metadata.role && (
+                    <div className="flex items-center gap-2 cursor-help relative group">
+                      <Image
+                        src="/images/eric-allen-profile-pic-2023.png"
+                        alt="Eric Allen"
+                        width={20}
+                        height={20}
+                        className="rounded-full"
+                      />
+                      <span className="text-sm dark:text-slate-400 text-slate-500">
+                        {metadata.role}
+                      </span>
+                      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                        My role on this project
+                      </div>
+                    </div>
+                  )}
+                  {metadata.teamSize && (
+                    <div className="flex items-center gap-2 cursor-help relative group">
+                      <UsersIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" aria-hidden="true" />
+                      <span className="text-sm dark:text-slate-400 text-slate-500">
+                        {metadata.teamSize}
+                      </span>
+                      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                        Team composition and size
+                      </div>
+                    </div>
+                  )}
+                  {metadata.dateRange && (
+                    <div className="flex items-center gap-2 cursor-help relative group">
+                      <CalendarDaysIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" aria-hidden="true" />
+                      <span className="text-sm dark:text-slate-400 text-slate-500">
+                        {metadata.dateRange}
+                      </span>
+                      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                        Project timeline and duration
+                      </div>
+                    </div>
+                  )}
+                  {metadata.tools && metadata.tools.length > 0 && (
+                    <div className="flex items-center gap-2 cursor-help relative group">
+                      <WrenchScrewdriverIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" aria-hidden="true" />
+                      <span className="text-sm dark:text-slate-400 text-slate-500">
+                        {metadata.tools.join(', ')}
+                      </span>
+                      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                        Design and development tools used
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -165,17 +244,20 @@ export default function CaseStudy({
                       </div>
                       {sections.tools.features && (
                         <ul role="list" className="space-y-4 text-slate-500 dark:text-slate-400">
-                          {sections.tools.features.map((feature, index) => (
-                            <li key={index} className="flex gap-x-3">
-                              <feature.icon
-                                aria-hidden={true}
-                                className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
-                              />
-                              <span>
-                                <strong className="font-semibold text-slate-900 dark:text-white">{feature.title}</strong> {feature.description}
-                              </span>
-                            </li>
-                          ))}
+                          {sections.tools.features.map((feature, index) => {
+                            const IconComponent = getFeatureIcon(feature.icon)
+                            return (
+                              <li key={index} className="flex gap-x-3">
+                                <IconComponent
+                                  aria-hidden={true}
+                                  className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
+                                />
+                                <span>
+                                  <strong className="font-semibold text-slate-900 dark:text-white">{feature.title}</strong> {feature.description}
+                                </span>
+                              </li>
+                            )
+                          })}
                         </ul>
                       )}
                     </section>
@@ -192,17 +274,20 @@ export default function CaseStudy({
                     </div>
                     {sections.solution.features && (
                       <ul role="list" className="space-y-4 text-slate-600 dark:text-slate-400">
-                        {sections.solution.features.map((feature, index) => (
-                          <li key={index} className="flex gap-x-3">
-                            <feature.icon
-                              aria-hidden={true}
-                              className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
-                            />
-                            <span>
-                              <strong className="font-semibold text-slate-900 dark:text-white">{feature.title}</strong> {feature.description}
-                            </span>
-                          </li>
-                        ))}
+                        {sections.solution.features.map((feature, index) => {
+                          const IconComponent = getFeatureIcon(feature.icon)
+                          return (
+                            <li key={index} className="flex gap-x-3">
+                              <IconComponent
+                                aria-hidden={true}
+                                className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
+                              />
+                              <span>
+                                <strong className="font-semibold text-slate-900 dark:text-white">{feature.title}</strong> {feature.description}
+                              </span>
+                            </li>
+                          )
+                        })}
                       </ul>
                     )}
                   </section>
@@ -219,17 +304,20 @@ export default function CaseStudy({
                     </div>
                     {sections.impactAndResults.features && (
                       <ul role="list" className="space-y-4 text-slate-600 dark:text-slate-400">
-                        {sections.impactAndResults.features.map((feature, index) => (
-                          <li key={index} className="flex gap-x-3">
-                            <feature.icon
-                              aria-hidden={true}
-                              className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
-                            />
-                            <span>
-                              <strong className="font-semibold text-slate-900 dark:text-white">{feature.title}</strong> {feature.description}
-                            </span>
-                          </li>
-                        ))}
+                        {sections.impactAndResults.features.map((feature, index) => {
+                          const IconComponent = getFeatureIcon(feature.icon)
+                          return (
+                            <li key={index} className="flex gap-x-3">
+                              <IconComponent
+                                aria-hidden={true}
+                                className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
+                              />
+                              <span>
+                                <strong className="font-semibold text-slate-900 dark:text-white">{feature.title}</strong> {feature.description}
+                              </span>
+                            </li>
+                          )
+                        })}
                       </ul>
                     )}
                   </section>
@@ -242,17 +330,20 @@ export default function CaseStudy({
                   </p>
                   {features && (
                     <ul role="list" className="mt-8 space-y-8 text-slate-600 dark:text-slate-400">
-                      {features.map((feature, index) => (
-                        <li key={index} className="flex gap-x-3">
-                          <feature.icon
-                            aria-hidden={true}
-                            className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
-                          />
-                          <span>
-                            <strong className="font-semibold text-slate-900 dark:text-white">{feature.title}</strong> {feature.description}
-                          </span>
-                        </li>
-                      ))}
+                      {features.map((feature, index) => {
+                        const IconComponent = getFeatureIcon(feature.icon)
+                        return (
+                          <li key={index} className="flex gap-x-3">
+                            <IconComponent
+                              aria-hidden={true}
+                              className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
+                            />
+                            <span>
+                              <strong className="font-semibold text-slate-900 dark:text-white">{feature.title}</strong> {feature.description}
+                            </span>
+                          </li>
+                        )
+                      })}
                     </ul>
                   )}
                   {content?.secondaryTitle && (
