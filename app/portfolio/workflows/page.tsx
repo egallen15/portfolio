@@ -95,7 +95,7 @@ const workflowsData: CaseStudyProps = {
 
 export default function WorkflowsCaseStudy() {
   return (
-    <main className="flex flex-col mx-6 xl:mx-auto w-auto lg:max-w-7xl">
+    <main className="flex flex-col mx-6 xl:mx-auto w-full lg:max-w-7xl">
       <Breadcrumb pages={[
         { name: "Portfolio", href: "/portfolio", current: false },
         { name: "Workflows", href: "/workflows", current: true }

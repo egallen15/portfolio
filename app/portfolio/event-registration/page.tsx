@@ -7,12 +7,32 @@ const eventRegistrationData: CaseStudyProps = {
   title: "Event Registration",
   description: "I led the design of an event registration system designed to handle complex event management needs, from ticketing to attendee tracking.",
   
-  image: {
-    src: "https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png",
-    alt: "Subsplash Event Registration Interface",
-    width: 912,
-    height: 684
-  },
+  images: [
+    {
+      src: "/images/Check-in frame.png",
+      alt: "Event Check-in Interface",
+      width: 800,
+      height: 600
+    },
+    {
+      src: "/images/Payment Forms 2.0 Walkthrough Image.png",
+      alt: "Payment Forms Walkthrough",
+      width: 800,
+      height: 600
+    },
+    {
+      src: "/images/payment-forms.png",
+      alt: "Payment Forms Interface",
+      width: 800,
+      height: 600
+    },
+    {
+      src: "/images/subsplash.png",
+      alt: "Subsplash Platform Overview",
+      width: 800,
+      height: 600
+    }
+  ],
   
   sections: {
     tools: {

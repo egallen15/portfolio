@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import { ComponentType } from 'react'
+import ImageGallery from './ImageGallery'
 
 export interface CaseStudyFeature {
   icon: ComponentType<{ className?: string; 'aria-hidden'?: boolean }>
@@ -13,13 +13,19 @@ export interface CaseStudyProps {
   title: string
   description: string
   
-  // Main image
-  image: {
+  // Images - support for single image (legacy) or multiple images (new)
+  image?: {
     src: string
     alt: string
     width: number
     height: number
   }
+  images?: {
+    src: string
+    alt: string
+    width: number
+    height: number
+  }[]
   
   // Content sections
   sections: {
@@ -58,14 +64,21 @@ export interface CaseStudyProps {
 }
 
 export default function CaseStudy({
-  subtitle,
+  // subtitle,
   title,
   description,
   image,
+  images,
   sections,
   features, // legacy support
   content   // legacy support
 }: CaseStudyProps) {
+  // Determine which images to use - prioritize new images array, fallback to single image
+  const availableImages = images || (image ? [image] : [])
+  
+  if (availableImages.length === 0) {
+    throw new Error('CaseStudy component requires either an image or images prop')
+  }
   return (
     <div className="relative isolate bg-white py-8 lg:overflow-visible lg:px-0 dark:bg-slate-900">
       <div className="absolute inset-0 -z-10">
@@ -98,7 +111,7 @@ export default function CaseStudy({
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:pr-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">{subtitle}</p>
+              {/* <p className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">{subtitle}</p> */}
               <h1 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl dark:text-white">
                 {title}
               </h1>
@@ -108,15 +121,7 @@ export default function CaseStudy({
             </div>
           </div>
         </div>
-        <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-24 lg:col-start-2 lg:row-span-2 lg:row-start-1">
-          <Image
-            alt={image.alt}
-            src={image.src}
-            width={image.width}
-            height={image.height}
-            className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-slate-400/10 sm:w-[57rem] dark:ring-white/10"
-          />
-        </div>
+        <ImageGallery images={availableImages} />
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:pr-8">
           <div className="lg:pr-4">
             <div className="max-w-xl text-base/7 text-slate-600 lg:max-w-lg dark:text-slate-400">
