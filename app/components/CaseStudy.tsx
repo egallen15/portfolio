@@ -134,11 +134,11 @@ export default function CaseStudy({
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:pr-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">{subtitle}</p>
-              <h1 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl dark:text-white">
+              <p className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">{subtitle}</p>
+              <h1 className="mt-2 text-pretty text-3xl font-bold text-slate-900 md:text-4xl dark:text-white">
                 {title}
               </h1>
-              <p className="mt-6 text-xl/8 text-slate-800 dark:text-slate-400">
+              <p className="mt-4 text-xl/8 text-slate-800 dark:text-slate-400">
                 {description}
               </p>
               
@@ -210,7 +210,7 @@ export default function CaseStudy({
 
                   {/* Problem Statement Section */}
                   <section>
-                    <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+                    <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white mb-4">
                       {sections.problemStatement.title || 'Problem'}
                     </h2>
                     <div className="space-y-4">
@@ -222,7 +222,7 @@ export default function CaseStudy({
 
                   {/* Research & Feedback Section */}
                   <section>
-                    <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+                    <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white mb-4">
                       {sections.researchAndFeedback.title || 'Research'}
                     </h2>
                     <div className="space-y-4">
@@ -234,7 +234,7 @@ export default function CaseStudy({
 {/* Tools Section */}
                   {sections.tools && (
                     <section>
-                      <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+                      <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white mb-4">
                         {sections.tools.title || 'Tools'}
                       </h2>
                       <div className="space-y-4 mb-6">
@@ -264,7 +264,7 @@ export default function CaseStudy({
                   )}
                   {/* Solution Section */}
                   <section>
-                    <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+                    <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white mb-4">
                       {sections.solution.title || 'Solution'}
                     </h2>
                     <div className="space-y-4 mb-6">
@@ -294,7 +294,7 @@ export default function CaseStudy({
 
                   {/* Impact and Results Section */}
                   <section>
-                    <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+                    <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white mb-4">
                       {sections.impactAndResults.title || 'Impact & Results'}
                     </h2>
                     <div className="space-y-4 mb-6">
