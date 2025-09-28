@@ -150,7 +150,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
               className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200 hover:scale-105"
               aria-label="View fullscreen"
             >
-              <div className="bg-black/60 dark:bg-white/20 backdrop-blur-sm text-white dark:text-slate-200 text-sm px-4 py-2 rounded-full flex items-center gap-2 hover:bg-black/70 dark:hover:bg-white/30">
+              <div className="bg-black/60 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full flex items-center gap-2 hover:bg-black/70">
                 <svg
                   className="w-4 h-4"
                   fill="none"
