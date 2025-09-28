@@ -8,7 +8,7 @@ export default function BentoGrid() {
       <div className="xl:mx-auto max-w-2xl lg:max-w-7xl">
       
         <motion.div 
-          className="grid gap-6 lg:grid-cols-3 lg:grid-rows-8 max-h-[160rem]"
+          className="grid gap-6 lg:grid-cols-3 lg:grid-rows-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
@@ -27,7 +27,7 @@ export default function BentoGrid() {
               visible: { opacity: 1, x: 0 }
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative lg:row-span-2 lg:col-start-1 lg:row-start-1 max-h-[48rem]"
+            className="relative lg:row-span-2 lg:col-start-1 lg:row-start-1 max-lg:h-96 lg:max-h-[48rem]"
           >
             <Link href="/portfolio/event-registration" className="group cursor-pointer block h-full">
             <div className="absolute inset-px rounded-lg bg-gray-50 lg:rounded-tl-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
@@ -46,7 +46,7 @@ export default function BentoGrid() {
                   A registration product used to collect payments and details about guests for church events.
                 </p>
               </div>
-              <div className="relative min-h-[30rem] max-h-[25rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm overflow-hidden">
+              <div className="relative min-h-[30rem] max-h-[25rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm max-lg:min-h-[12rem] max-lg:max-h-[12rem] overflow-hidden">
                 <div className="absolute inset-x-10 bottom-0 top-10 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-slate-700 bg-slate-900 shadow-2xl dark:shadow-none dark:outline dark:outline-1 dark:outline-white/20 transition-all duration-300 group-hover:shadow-3xl group-hover:border-slate-600">
                   <Image
                     alt=""
@@ -67,7 +67,7 @@ export default function BentoGrid() {
               visible: { opacity: 1, x: 0 }
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative max-lg:row-start-1 lg:col-span-2 lg:row-span-2 lg:col-start-2 lg:row-start-1 max-h-[54rem]"
+            className="relative max-lg:row-start-1 lg:col-span-2 lg:row-span-2 lg:col-start-2 lg:row-start-1 max-lg:h-80 lg:max-h-[54rem]"
           >
             <Link href="/portfolio/workflows" className="group cursor-pointer block h-full">
             <div className="absolute inset-px rounded-lg bg-gray-50 max-lg:rounded-t-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
@@ -86,7 +86,7 @@ export default function BentoGrid() {
                   A Trello-style kanban tool for managing church processes in the Subsplash Dashboard.
                 </p>
               </div>
-              <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2 overflow-hidden max-h-[40rem]">
+              <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2 overflow-hidden max-lg:max-h-[8rem] lg:max-h-[40rem]">
                 <Image
                   alt=""
                   src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
@@ -113,7 +113,7 @@ export default function BentoGrid() {
               visible: { opacity: 1, x: 0 }
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative max-lg:row-start-3 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-3 max-h-[54rem]"
+            className="relative max-lg:row-start-3 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-3 max-lg:h-64 lg:max-h-[54rem]"
           >
             <Link href="/portfolio/signup" className="group cursor-pointer block h-full">
             <div className="absolute inset-px rounded-lg bg-gray-50 dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
@@ -132,7 +132,7 @@ export default function BentoGrid() {
                   Streamlined signup and onboarding at Subsplash for delight and scalability.
                 </p>
               </div>
-              <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2 overflow-hidden max-h-[18rem]">
+              <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2 overflow-hidden max-lg:max-h-[6rem] lg:max-h-[18rem]">
                 <Image
                   alt=""
                   src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png"
@@ -158,7 +158,7 @@ export default function BentoGrid() {
               visible: { opacity: 1, x: 0 }
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative lg:row-span-2 lg:col-start-3 lg:row-start-3 max-h-[48rem]"
+            className="relative lg:row-span-2 lg:col-start-3 lg:row-start-3 max-lg:h-96 lg:max-h-[48rem]"
           >
             <Link href="/portfolio/check-in" className="group cursor-pointer block h-full">
             <div className="absolute inset-px rounded-lg bg-gray-50 lg:rounded-tr-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
@@ -177,7 +177,7 @@ export default function BentoGrid() {
                   A child check-in iPad app + attendance reporting for events.
                 </p>
               </div>
-              <div className="relative min-h-[30rem] max-h-[25rem] w-full grow overflow-hidden">
+              <div className="relative min-h-[30rem] max-h-[25rem] w-full grow overflow-hidden max-lg:min-h-[12rem] max-lg:max-h-[12rem]">
                 <div className="absolute bottom-0 left-10 right-0 top-10 overflow-hidden rounded-tl-xl bg-slate-900 shadow-2xl outline outline-1 outline-white/10 dark:bg-slate-900/60 dark:shadow-none transition-all duration-300 group-hover:shadow-3xl group-hover:bg-slate-800">
                   <div className="flex bg-slate-900 outline outline-1 outline-white/5">
                     <div className="-mb-px flex text-sm/6 font-medium text-slate-400">
@@ -204,7 +204,7 @@ export default function BentoGrid() {
               visible: { opacity: 1, x: 0 }
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative lg:row-span-2 lg:col-start-1 lg:row-start-5 max-h-[48rem]"
+            className="relative lg:row-span-2 lg:col-start-1 lg:row-start-5 max-lg:h-80 lg:max-h-[48rem]"
           >
             <Link href="/portfolio/new-project-1" className="group cursor-pointer block h-full">
             <div className="absolute inset-px rounded-lg bg-gray-50 dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
@@ -223,7 +223,7 @@ export default function BentoGrid() {
                   Non-charitable payments for churches; $100M+ processed in first 4 years.
                 </p>
               </div>
-              <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2 overflow-hidden max-h-[40rem]">
+              <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2 overflow-hidden max-lg:max-h-[8rem] lg:max-h-[40rem]">
                 <Image
                   alt=""
                   src="/images/payment-forms.png"
@@ -249,7 +249,7 @@ export default function BentoGrid() {
               visible: { opacity: 1, x: 0 }
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative lg:col-span-2 lg:row-span-2 lg:col-start-2 lg:row-start-5 max-h-[54rem]"
+            className="relative lg:col-span-2 lg:row-span-2 lg:col-start-2 lg:row-start-5 max-lg:h-64 lg:max-h-[54rem]"
           >
             <Link href="/portfolio/new-project-2" className="group cursor-pointer block h-full">
             <div className="absolute inset-px rounded-lg bg-gray-50 dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
@@ -268,7 +268,7 @@ export default function BentoGrid() {
                   Absorbed a church management platform into the Subsplash ecosystem after an acquisition.
                 </p>
               </div>
-              <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2 overflow-hidden max-h-[18rem]">
+              <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2 overflow-hidden max-lg:max-h-[6rem] lg:max-h-[18rem]">
                 <Image
                   alt=""
                   src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png"
@@ -294,7 +294,7 @@ export default function BentoGrid() {
               visible: { opacity: 1, x: 0 }
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-7 max-h-[54rem]"
+            className="relative lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-7 max-lg:h-64 lg:max-h-[54rem]"
           >
             <Link href="/portfolio/new-project-3" className="group cursor-pointer block h-full">
             <div className="absolute inset-px rounded-lg bg-gray-50 lg:rounded-bl-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
@@ -313,7 +313,7 @@ export default function BentoGrid() {
                   Documented and iterated on the Subsplash design system, including UI components, principles, and guidelines.
                 </p>
               </div>
-              <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2 overflow-hidden max-h-[18rem]">
+              <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2 overflow-hidden max-lg:max-h-[6rem] lg:max-h-[18rem]">
                 <Image
                   alt=""
                   src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png"
@@ -339,7 +339,7 @@ export default function BentoGrid() {
               visible: { opacity: 1, x: 0 }
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative lg:row-span-2 lg:col-start-3 lg:row-start-7 max-h-[48rem]"
+            className="relative lg:row-span-2 lg:col-start-3 lg:row-start-7 max-lg:h-80 lg:max-h-[48rem]"
           >
             <Link href="/portfolio/new-project-4" className="group cursor-pointer block h-full">
             <div className="absolute inset-px rounded-lg bg-gray-50 max-lg:rounded-b-[2rem] lg:rounded-br-[2rem] dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700" />
@@ -358,7 +358,7 @@ export default function BentoGrid() {
                   Improvements to Subsplash Events made based on customer feedback.
                 </p>
               </div>
-              <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2 overflow-hidden max-h-[40rem]">
+              <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2 overflow-hidden max-lg:max-h-[8rem] lg:max-h-[40rem]">
                 <Image
                   alt=""
                   src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
