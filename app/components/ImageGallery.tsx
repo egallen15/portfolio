@@ -236,17 +236,17 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                   height={currentImage.height}
                   className="max-w-full max-h-full object-contain"
                   priority={true}
-                  style={{ maxHeight: 'calc(100vh - 200px)' }}
+                  style={{ maxHeight: 'calc(100vh - 300px)' }}
                 />
               </div>
               
-              {/* Navigation Controls - Only show if there are multiple images */}
+              {/* Desktop Navigation Controls - Only show on larger screens and if there are multiple images */}
               {images.length > 1 && (
                 <>
-                  {/* Left Navigation */}
+                  {/* Left Navigation - Desktop */}
                   <button
                     onClick={goToPrevious}
-                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110"
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110 hidden lg:block"
                     aria-label="Previous image"
                   >
                     <svg
@@ -259,10 +259,10 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                     </svg>
                   </button>
                   
-                  {/* Right Navigation */}
+                  {/* Right Navigation - Desktop */}
                   <button
                     onClick={goToNext}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110"
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110 hidden lg:block"
                     aria-label="Next image"
                   >
                     <svg
@@ -278,10 +278,27 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
               )}
             </div>
             
-            {/* Thumbnail Gallery - Only show if there are multiple images */}
+            {/* Combined Navigation and Thumbnail Gallery - Only show if there are multiple images */}
             {images.length > 1 && (
               <div className="w-full max-w-4xl">
-                <div className="flex justify-center overflow-x-auto py-2">
+                <div className="flex justify-center items-center overflow-x-auto py-2">
+                  {/* Left Navigation - Mobile */}
+                  <button
+                    onClick={goToPrevious}
+                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110 lg:hidden mr-4 flex-shrink-0"
+                    aria-label="Previous image"
+                  >
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  
+                  {/* Thumbnail Gallery */}
                   <div className="flex gap-2 px-4">
                     {images.map((img, index) => (
                       <button
@@ -307,6 +324,22 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                       </button>
                     ))}
                   </div>
+                  
+                  {/* Right Navigation - Mobile */}
+                  <button
+                    onClick={goToNext}
+                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110 lg:hidden ml-4 flex-shrink-0"
+                    aria-label="Next image"
+                  >
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             )}
