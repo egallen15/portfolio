@@ -233,7 +233,7 @@ export default function Home() {
                     <span className="text-gray-600 dark:text-gray-400">Design</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-orange-200 dark:bg-orange-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-200 dark:bg-yellow-400"></div>
                     <span className="text-gray-600 dark:text-gray-400">Business & Soft Skills</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -295,22 +295,22 @@ export default function Home() {
                   </span>
 
                   {/* Business & Soft Skills - All orange */}
-                  <span className="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
+                  <span className="px-4 py-2 bg-yellow-100 dark:bg-yellow-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
                     Product management
                   </span>
-                  <span className="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
+                  <span className="px-4 py-2 bg-yellow-100 dark:bg-yellow-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
                     Listening
                   </span>
-                  <span className="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
+                  <span className="px-4 py-2 bg-yellow-100 dark:bg-yellow-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
                     Leadership
                   </span>
-                  <span className="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
+                  <span className="px-4 py-2 bg-yellow-100 dark:bg-yellow-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
                     Strategy
                   </span>
-                  <span className="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
+                  <span className="px-4 py-2 bg-yellow-100 dark:bg-yellow-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
                     Writing
                   </span>
-                  <span className="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
+                  <span className="px-4 py-2 bg-yellow-100 dark:bg-yellow-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
                     Empathy
                   </span>
 
