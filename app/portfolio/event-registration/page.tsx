@@ -75,16 +75,16 @@ const eventRegistrationData: CaseStudyProps = {
     
     solution: {
       title: "Solution",
-      content: "The solution featured a user-friendly interface for both organizers and attendees, with comprehensive event management capabilities and advanced analytics tools.",
+      content: "We built an MVP of event registration that first only allowed for only free events, and iterated consistently over time to add features like:",
       features: [
         {
           icon: "calendar",
-          title: "Free & Paid Events",
-          description: "Comprehensive event creation and management tools that allow organizers to set up complex registration forms with custom fields and validation."
+          title: "Registration types",
+          description: "Simple headcount or everyone registers"
         },
         {
           icon: "users",
-          title: "Custom Registration Forms",
+          title: "Free or paid events",
           description: "Streamlined registration process with real-time availability checking, group registrations, and automated confirmation emails."
         },
         {
@@ -102,22 +102,22 @@ const eventRegistrationData: CaseStudyProps = {
 
     impactAndResults: {
       title: "Impact & Results",
-      content: "The new event registration system significantly improved the event management experience for both organizers and attendees, resulting in measurable business outcomes and enhanced user satisfaction.",
+      content: "From these events, Subsplash has been able to create a new consistent revenue stream.",
       features: [
         {
           icon: "chart-bar",
-          title: "40% Increase in Registration Completion",
-          description: "Streamlined registration flow and mobile optimization reduced abandonment rates from 78% to 38%, significantly improving conversion."
+          title: "40M processed in the first 3 years",
+          description: "Significant revenue growth from event registration fees, contributing to overall company profitability and sustainability."
         },
         {
           icon: "users",
-          title: "60% Reduction in Support Tickets",
+          title: "10,000+ events with registrations",
           description: "Intuitive interface and automated features reduced event-related support requests, freeing up customer success team resources."
         },
         {
           icon: "check-circle",
-          title: "25% Faster Event Setup",
-          description: "Simplified event creation process and reusable templates enabled organizers to set up events 25% faster than previous system."
+          title: "35+ NPS score",
+          description: "Users were highly satisfied with the event registration system, leading to increased customer retention and positive word-of-mouth referrals."
         },
         {
           icon: "calendar",

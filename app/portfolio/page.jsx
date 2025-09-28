@@ -9,7 +9,7 @@ const PortfolioPage = () => {
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-6">My work</h1>
             <span className="text-xl text-slate-800 dark:text-slate-400 mb-8">
-                A few interesting projects I've worked on in my career so far.
+                A few interesting projects I've worked on in my career.
             </span>
             <BentoGrid />
         </main>
