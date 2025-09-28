@@ -182,7 +182,7 @@ export default function Home() {
                   View all
                 </Link>
               </div>
-              <BentoGrid></BentoGrid>
+              <BentoGrid maxItems={4} />
             </section>
           </div>
           {/* Experience and Skills Container - side by side on large screens */}
@@ -345,7 +345,7 @@ export default function Home() {
           </div>
           
           
-          {/* Products */}
+          {/* Projects */}
           <HighlightedHeading
             highlightColor="green"
             highlightStyle="underline"
@@ -353,7 +353,7 @@ export default function Home() {
             as="h3"
             className="mt-12"
           >
-            Products
+            Projects
           </HighlightedHeading>
           <motion.section className="mt-4">
             <motion.div
@@ -362,7 +362,7 @@ export default function Home() {
               transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              {/* Add products here */}
+              {/* Add projects here */}
             </motion.div>
           </motion.section>
           {/* Testimonials */}
