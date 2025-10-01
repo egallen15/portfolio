@@ -4,7 +4,7 @@ import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
 const eventRegistrationData: CaseStudyProps = {
   subtitle: "Subsplash",
   title: "Event Registration",
-  description: "I designed an event registration system for Subsplash with support for payments, balances, customizable forms, ticket types, and more.",
+  description: "I designed an event registration system with support for payments, balances, customizable forms, ticket types, and more.",
   
   metadata: {
     role: "Senior UX Designer & Interim PM",
@@ -65,7 +65,7 @@ const eventRegistrationData: CaseStudyProps = {
     
     problemStatement: {
       title: "Problem",
-      content: "Church event organizers need a simple way to gather payments and details about who is coming to their event. \n\n The problem is that the free tools they use to manage events are often disconnected from their data and systems, handle payments differently than their other tools, and can be difficult to use. \n\n This can make setting up an event registration intimidating and time-consuming for organizers, leading them to fall back to manual processes that are error-prone and inefficient."
+      content: "Church leaders and admins tend to use freemium event products to set up registrations for their events. Free tools like Eventbrite and Google Forms are powerful and easy to adopt, but unfortunately don't integrate well with their people data, preferred payment systems, and bookkeeping tools. \n\n Since Subsplash didn't offer event registration, our customers were basically forced to adopt these tools to run event registration through the Subsplash mobile app. The registration data ended up in different dashboards, and payments were hard to track down and tally up. Less than ideal. \n\n The challenges of juggling multiple tools also made setting up an event registration and intimidating and complicated challenge for newer church employees, requiring training in multiple tools. \n\n This ultimately incentivizes them to fall back to familiar but manual processes that are error-prone and inefficient."
     },
     
     researchAndFeedback: {
