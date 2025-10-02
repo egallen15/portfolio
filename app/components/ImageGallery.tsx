@@ -81,7 +81,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
           src={currentImage.src}
           width={currentImage.width}
           height={currentImage.height}
-          className="h-full w-full object-cover bg-transparent rounded-xl"
+          className="h-full w-full object-contain bg-white rounded-xl"
           priority={true}
           placeholder="blur"
           blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNmOGZhZmMiLz48L3N2Zz4="
@@ -191,7 +191,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                   alt={img.alt}
                   width={336}
                   height={336}
-                  className="h-full w-full object-cover bg-transparent"
+                  className="h-full w-full object-contain bg-transparent"
                   sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 336px"
                   quality={95}
                   priority={index === selectedImageIndex}
