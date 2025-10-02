@@ -115,7 +115,7 @@ function TimelineCard({
       } md:flex-row flex-col items-center`}
     >
       {/* Icon on the curve */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-1/4 z-10">
         <div className="w-6 h-6 bg-sky-400 rounded-full flex items-center justify-center text-foreground shadow-lg">
         </div>
       </div>
