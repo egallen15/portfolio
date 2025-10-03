@@ -6,7 +6,7 @@ import { AnimatePresence } from "motion/react";
 import HighlightedHeading from "./HighlightedHeading";
 
 type SkillCategory = "design" | "product" | "soft" | "technical";
-type ExpertiseLevel = "bronze" | "silver" | "gold" | "platinum" | "diamond";
+type ExpertiseLevel = "bronze" | "silver" | "gold" | "diamond";
 type ViewMode = "category" | "expertise";
 
 interface Skill {
@@ -16,8 +16,7 @@ interface Skill {
 }
 
 const expertiseOrder: Record<ExpertiseLevel, number> = {
-  diamond: 5,
-  platinum: 4,
+  diamond: 4,
   gold: 3,
   silver: 2,
   bronze: 1,
@@ -26,12 +25,12 @@ const expertiseOrder: Record<ExpertiseLevel, number> = {
 const skills: Skill[] = [
   // Design Skills
   { name: "UX Design", category: "design", expertise: "diamond" },
-  { name: "Visual Design (UI)", category: "design", expertise: "platinum" },
-  { name: "Prototyping", category: "design", expertise: "platinum" },
-  { name: "Wireframing", category: "design", expertise: "platinum" },
-  { name: "User journey maps & flows", category: "design", expertise: "platinum" },
+  { name: "Visual Design (UI)", category: "design", expertise: "gold" },
+  { name: "Prototyping", category: "design", expertise: "gold" },
+  { name: "Wireframing", category: "design", expertise: "gold" },
+  { name: "User journey maps & flows", category: "design", expertise: "gold" },
   { name: "User research", category: "design", expertise: "gold" },
-  { name: "Design systems", category: "design", expertise: "platinum" },
+  { name: "Design systems", category: "design", expertise: "gold" },
   { name: "Video editing", category: "design", expertise: "gold" },
   { name: "Photography", category: "design", expertise: "silver" },
   { name: "Video production", category: "design", expertise: "silver" },
@@ -39,25 +38,25 @@ const skills: Skill[] = [
   { name: "Data visualization", category: "design", expertise: "gold" },
   { name: "Motion design & animation", category: "design", expertise: "gold" },
   { name: "Sketching", category: "design", expertise: "silver" },
-  { name: "Information architecture", category: "design", expertise: "platinum" },
+  { name: "Information architecture", category: "design", expertise: "gold" },
   { name: "UX Writing", category: "design", expertise: "gold" },
   // Product Skills
-  { name: "Product management", category: "product", expertise: "platinum" },
+  { name: "Product management", category: "product", expertise: "gold" },
   { name: "Strategy", category: "product", expertise: "gold" },
   // Technical Skills
   { name: "Web development", category: "technical", expertise: "gold" },
-  { name: "React", category: "technical", expertise: "platinum" },
+  { name: "React", category: "technical", expertise: "gold" },
   { name: "TypeScript", category: "technical", expertise: "gold" },
-  { name: "HTML/CSS", category: "technical", expertise: "platinum" },
+  { name: "HTML/CSS", category: "technical", expertise: "gold" },
   { name: "Next.js", category: "technical", expertise: "gold" },
   { name: "Git", category: "technical", expertise: "gold" },
-  { name: "AI", category: "technical", expertise: "platinum" },
-  { name: "Github Copilot", category: "technical", expertise: "platinum" },
+  { name: "AI", category: "technical", expertise: "gold" },
+  { name: "Github Copilot", category: "technical", expertise: "gold" },
   // Soft Skills
-  { name: "Listening", category: "soft", expertise: "platinum" },
+  { name: "Listening", category: "soft", expertise: "gold" },
   { name: "Leadership", category: "soft", expertise: "gold" },
-  { name: "Writing", category: "soft", expertise: "platinum" },
-  { name: "Empathy", category: "soft", expertise: "platinum" },
+  { name: "Writing", category: "soft", expertise: "gold" },
+  { name: "Empathy", category: "soft", expertise: "gold" },
 ];
 
 const categoryStyles = {
@@ -68,11 +67,10 @@ const categoryStyles = {
 };
 
 const expertiseStyles = {
-  diamond: "bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 border-2 border-cyan-400 dark:border-cyan-500",
-  platinum: "bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border-2 border-slate-400 dark:border-slate-500",
-  gold: "bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 border-2 border-amber-400 dark:border-amber-500",
-  silver: "bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-2 border-gray-400 dark:border-gray-500",
-  bronze: "bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 border-2 border-orange-400 dark:border-orange-500",
+  diamond: "bg-gradient-to-br from-cyan-200 via-blue-300 to-cyan-200 dark:from-cyan-400 dark:via-blue-500 dark:to-cyan-400 text-cyan-900 dark:text-cyan-950 ring-2 ring-inset ring-cyan-400 dark:ring-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.6)] dark:shadow-[0_0_20px_rgba(6,182,212,0.8)] animate-pulse",
+  gold: "bg-gradient-to-br from-yellow-300 via-amber-400 to-yellow-300 dark:from-yellow-400 dark:via-amber-500 dark:to-yellow-400 text-amber-900 dark:text-amber-950 ring-2 ring-inset ring-amber-500 dark:ring-amber-400 shadow-[0_0_12px_rgba(251,191,36,0.6)] dark:shadow-[0_0_18px_rgba(251,191,36,0.8)]",
+  silver: "bg-gradient-to-br from-slate-200 via-slate-300 to-slate-200 dark:from-slate-300 dark:via-slate-400 dark:to-slate-300 text-slate-900 dark:text-slate-950 ring-2 ring-inset ring-slate-400 dark:ring-slate-300 shadow-[0_0_10px_rgba(148,163,184,0.5)] dark:shadow-[0_0_15px_rgba(148,163,184,0.7)]",
+  bronze: "bg-gradient-to-br from-orange-300 to-orange-400 dark:from-orange-600 dark:to-orange-700 text-orange-950 dark:text-orange-100 ring-2 ring-inset ring-orange-500 dark:ring-orange-600 opacity-80",
 };
 
 export default function Skills() {
@@ -197,7 +195,7 @@ export default function Skills() {
                   }`}
                 ></div>
                 <span 
-                  className={`text-gray-600 dark:text-gray-400 transition-all ${
+                  className={` dark:text-gray-400 transition-all ${
                     isCategorySelected("design") ? "font-bold text-gray-900 dark:text-gray-100" : ""
                   }`}
                 >
@@ -215,7 +213,7 @@ export default function Skills() {
                   }`}
                 ></div>
                 <span 
-                  className={`text-gray-600 dark:text-gray-400 transition-all ${
+                  className={` dark:text-gray-400 transition-all ${
                     isCategorySelected("product") ? "font-bold text-gray-900 dark:text-gray-100" : ""
                   }`}
                 >
@@ -233,7 +231,7 @@ export default function Skills() {
                   }`}
                 ></div>
                 <span 
-                  className={`text-gray-600 dark:text-gray-400 transition-all ${
+                  className={` dark:text-gray-400 transition-all ${
                     isCategorySelected("technical") ? "font-bold text-gray-900 dark:text-gray-100" : ""
                   }`}
                 >
@@ -251,7 +249,7 @@ export default function Skills() {
                   }`}
                 ></div>
                 <span 
-                  className={`text-gray-600 dark:text-gray-400 transition-all ${
+                  className={` dark:text-gray-400 transition-all ${
                     isCategorySelected("soft") ? "font-bold text-gray-900 dark:text-gray-100" : ""
                   }`}
                 >
@@ -272,29 +270,11 @@ export default function Skills() {
                   }`}
                 ></div>
                 <span 
-                  className={`text-gray-600 dark:text-gray-400 transition-all ${
+                  className={` dark:text-gray-400 transition-all ${
                     isExpertiseSelected("diamond") ? "font-bold text-gray-900 dark:text-gray-100" : ""
                   }`}
                 >
                   Diamond
-                </span>
-              </button>
-              <button
-                onClick={() => toggleExpertise("platinum")}
-                className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform"
-                aria-label="Toggle platinum expertise skills"
-              >
-                <div 
-                  className={`w-3 h-3 rounded-full bg-slate-400 border border-slate-500 transition-all ${
-                    isExpertiseSelected("platinum") ? "scale-110" : ""
-                  }`}
-                ></div>
-                <span 
-                  className={`text-gray-600 dark:text-gray-400 transition-all ${
-                    isExpertiseSelected("platinum") ? "font-bold text-gray-900 dark:text-gray-100" : ""
-                  }`}
-                >
-                  Platinum
                 </span>
               </button>
               <button
@@ -308,7 +288,7 @@ export default function Skills() {
                   }`}
                 ></div>
                 <span 
-                  className={`text-gray-600 dark:text-gray-400 transition-all ${
+                  className={` dark:text-gray-400 transition-all ${
                     isExpertiseSelected("gold") ? "font-bold text-gray-900 dark:text-gray-100" : ""
                   }`}
                 >
@@ -326,7 +306,7 @@ export default function Skills() {
                   }`}
                 ></div>
                 <span 
-                  className={`text-gray-600 dark:text-gray-400 transition-all ${
+                  className={` dark:text-gray-400 transition-all ${
                     isExpertiseSelected("silver") ? "font-bold text-gray-900 dark:text-gray-100" : ""
                   }`}
                 >
@@ -344,7 +324,7 @@ export default function Skills() {
                   }`}
                 ></div>
                 <span 
-                  className={`text-gray-600 dark:text-gray-400 transition-all ${
+                  className={` dark:text-gray-400 transition-all ${
                     isExpertiseSelected("bronze") ? "font-bold text-gray-900 dark:text-gray-100" : ""
                   }`}
                 >
