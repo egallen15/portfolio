@@ -126,10 +126,9 @@ function TimelineCard({
           isLeft ? 'md:rotate-2' : 'md:-rotate-2'
         }`}
       >
-        <h3 className="text-xl font-bold">{event.title}</h3>
-        <p className="mt-2 text-md text-slate-500">{event.description}</p>
-        <p className="mt-2 text-sm">{event.icon}</p> {/* Added icon display */}
-        <p className="mt-2 text-sm">{event.date}</p> {/* Added date display */}
+        <p className="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">{event.date}</p>
+        <h3 className="mt-3 text-xl font-bold">{event.title}</h3>
+        <p className="mt-1 text-md text-slate-500">{event.description}</p>
       </div>
     </motion.div>
   );
