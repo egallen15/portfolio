@@ -53,7 +53,7 @@ const defaultExperiences: WorkExperienceItemProps[] = [
   {
     logo: "/images/subsplash.png",
     company: "Subsplash",
-    position: "Product Support Specialist",
+    position: "Support Specialist",
     dateRange: "Sep 2015 — Sep 2017",
     logoAlt: "Subsplash logo"
   },
@@ -73,7 +73,7 @@ function WorkExperienceItem({ logo, company, position, dateRange, logoAlt }: Wor
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
-      className="flex items-center gap-4 py-4"
+      className="flex items-start gap-4 py-2 sm:py-4"
     >
       {/* Company Logo */}
       <div className="flex-shrink-0 w-12 h-12 rounded-full overflow-hidden bg-gray-50 dark:bg-slate-700 flex items-center justify-center p-1">
@@ -86,21 +86,28 @@ function WorkExperienceItem({ logo, company, position, dateRange, logoAlt }: Wor
         />
       </div>
       
-      {/* Company Info */}
-      <div className="flex-grow min-w-0">
-        <h3 className="text-lg font-semibold text-slate-950 dark:text-white truncate">
-          {company}
-        </h3>
-        <p className="text-sm text-slate-600 dark:text-slate-400 truncate">
-          {position}
-        </p>
-      </div>
-      
-      {/* Date Range */}
-      <div className="flex-shrink-0 text-right">
-        <p className="text-sm text-slate-500 dark:text-slate-400 whitespace-nowrap">
-          {dateRange}
-        </p>
+      {/* Company Info & Date Range Container */}
+      <div className="flex-grow min-w-0 flex flex-col sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        {/* Company Info */}
+        <div className="flex-grow min-w-0">
+          <h3 className="text-lg font-semibold text-slate-950 dark:text-white truncate">
+            {company}
+          </h3>
+          <p className="text-sm text-slate-600 dark:text-slate-400 truncate">
+            {position}
+          </p>
+          {/* Date Range - Mobile only (on new line) */}
+          <p className="text-xs sm:hidden text-slate-500 dark:text-slate-400 mt-0.5">
+            {dateRange}
+          </p>
+        </div>
+        
+        {/* Date Range - Desktop only */}
+        <div className="hidden sm:block flex-shrink-0 text-right">
+          <p className="text-sm text-slate-500 dark:text-slate-400 whitespace-nowrap">
+            {dateRange}
+          </p>
+        </div>
       </div>
     </motion.div>
   );
