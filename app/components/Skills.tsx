@@ -75,14 +75,15 @@ export default function Skills() {
         if (prev.size === 0) {
           return new Set([category]);
         }
-        // If adding would make all selected, clear all (show all)
+        // Otherwise just add it (allow all 4 to be selected)
         newSet.add(category);
-        if (newSet.size === 4) {
-          return new Set();
-        }
       }
       return newSet;
     });
+  };
+
+  const resetCategories = () => {
+    setVisibleCategories(new Set());
   };
 
   // Show all if nothing selected, otherwise show only selected
@@ -115,7 +116,7 @@ export default function Skills() {
         </HighlightedHeading>
         
         {/* Legend */}
-        <div className="mb-6 flex flex-wrap gap-4 text-sm">
+        <div className="mb-6 flex flex-wrap gap-4 text-sm items-center">
           <button
             onClick={() => toggleCategory("design")}
             className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform"
@@ -188,6 +189,20 @@ export default function Skills() {
               Soft skills
             </span>
           </button>
+          
+          {/* Reset Button - appears when categories are filtered */}
+          {visibleCategories.size > 0 && (
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              onClick={resetCategories}
+              className="ml-auto px-3 text-sm hover:text-slate-700 dark:hover:text-slate-300 underline transition-colors"
+              aria-label="Reset skill filters"
+            >
+              Reset
+            </motion.button>
+          )}
         </div>
 
         {/* All Skills - Simplified Color Coding */}
