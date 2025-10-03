@@ -342,7 +342,7 @@ export default function Skills() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               onClick={viewMode === "category" ? resetCategories : resetExpertise}
-              className="ml-auto px-3 text-sm hover:text-slate-700 dark:hover:text-slate-300 underline transition-colors"
+              className="ml-auto pl-3 text-sm hover:text-slate-700 dark:hover:text-slate-300 underline transition-colors"
               aria-label="Reset skill filters"
             >
               Reset
