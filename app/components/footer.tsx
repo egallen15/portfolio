@@ -7,19 +7,21 @@ import NewsletterSubscription from "./NewsletterSubscription";
 const navigation = {
   main: [
     { name: "About me", href: "/about" },
-    { name: "CV/Experience", href: "/experience" },
-    { name: "My stack", href: "/portfolio" },
-    { name: "FAQ", href: "/faq" },
+    { name: "CV/experience", href: "/experience" },
+    { name: "My stack", href: "/my-stack" },
+    { name: "My portfolio", href: "/portfolio" },
+    { name: "Contact", href: "/contact" },
   ],
-  services: [
-    { name: "UX/UI Design", href: "/portfolio" },
-    { name: "User Research", href: "/portfolio" },
-    { name: "Prototyping", href: "/portfolio" },
+  projects: [
+    { name: "Project 1", href: "/blog" },
+    { name: "WorkLog", href: "/about" },
+    { name: "Maelstorm", href: "/maelstorm" },
   ],
-  products: [
-    { name: "My book", href: "/blog" },
-    { name: "My course", href: "/portfolio" },
-    { name: "My app", href: "/about" },
+  writing: [
+    { name: "Blog", href: "/blog" },
+    { name: "UX Flow", href: "/book" },
+    { name: "UX Codex", href: "/ux-codex" },
+    { name: "Videos", href: "/videos" },
   ],
   social: [
     {
@@ -72,7 +74,7 @@ const navigation = {
 export const Footer: FC = () => {
   return (
     <footer>
-      <div className="w-full max-w-screen-xl mx-auto mb-6 px-6 xl:px-0 md:py-8">
+      <div className="w-full max-w-screen-xl mx-auto mb-6 px-6 xl:px-0 md:pt-8">
         <hr className="mb-6 border-slate-200 dark:border-slate-700 sm:mx-auto lg:my-8" />
 
         {/* Main Footer Content */}
@@ -80,7 +82,7 @@ export const Footer: FC = () => {
           {/* Navigation Links */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 xl:col-span-2">
             <div>
-              <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-4">
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-2 md:mb-4">
                 About
               </h3>
               <ul className="space-y-3">
@@ -98,11 +100,11 @@ export const Footer: FC = () => {
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-4">
-                Services
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-2 md:mb-4">
+                Writing & more
               </h3>
               <ul className="space-y-3">
-                {navigation.services.map((item) => (
+                {navigation.writing.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
@@ -116,11 +118,11 @@ export const Footer: FC = () => {
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-4">
-                Products
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-2 md:mb-4">
+                Projects
               </h3>
               <ul className="space-y-3">
-                {navigation.products.map((item) => (
+                {navigation.projects.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
@@ -131,12 +133,12 @@ export const Footer: FC = () => {
                   </li>
                 ))}
               </ul>
+            </div>
           </div>
-        </div>
 
-        {/* Newsletter Subscription */}
-        <div className="mt-10 xl:mt-0">
-          <NewsletterSubscription />
+          {/* Newsletter Subscription */}
+          <div className="mt-10 xl:mt-0">
+            <NewsletterSubscription />
           </div>
         </div>
         

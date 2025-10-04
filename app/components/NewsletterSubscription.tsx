@@ -68,7 +68,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
   return (
     <div className={`flex flex-col max-w-4xl ${className}`}>
       <div className="flex flex-col mb-4 md:mb-0">
-        <h4 className="text-sm font-semibold mb-2 text-gray-900 dark:text-white">
+        <h4 className="text-sm font-semibold mb-2 md:mb-4 text-gray-900 dark:text-white">
           Subscribe to updates
         </h4>
         <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
