@@ -262,7 +262,7 @@ export default function Home() {
             as="h3"
             className="mt-12"
           >
-            My Stack
+            My stack
           </HighlightedHeading>
           <motion.section className="mt-4">
             <motion.div
