@@ -1,7 +1,6 @@
 import ProjectGrid, { ProjectGridItem } from "../components/ProjectGrid";
 import HighlightedHeading from "../components/HighlightedHeading";
 import Breadcrumb from "../components/Breadcrumb";
-import * as motion from "motion/react-client";
 
 export default function StackPage() {
   const designTools: ProjectGridItem[] = [
