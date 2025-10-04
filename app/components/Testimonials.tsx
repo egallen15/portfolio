@@ -1,17 +1,23 @@
+import Image from 'next/image'
+
 export default function Example() {
   return (
     <section className="bg-white py-8 dark:bg-gray-900">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
-            <img
-              alt=""
-              src="https://tailwindcss.com/plus-assets/img/logos/tuple-logo-gray-900.svg"
+            <Image
+              alt="Tuple logo"
+              src="https://tailwindcss.com/plus-assets/Image/logos/tuple-logo-gray-900.svg"
+              width={48}
+              height={48}
               className="h-12 self-start dark:hidden"
             />
-            <img
-              alt=""
-              src="https://tailwindcss.com/plus-assets/img/logos/tuple-logo-white.svg"
+            <Image
+              alt="Tuple logo"
+              src="https://tailwindcss.com/plus-assets/Image/logos/tuple-logo-white.svg"
+              width={48}
+              height={48}
               className="hidden h-12 self-start dark:block"
             />
             <figure className="flex flex-auto flex-col justify-between">
@@ -23,9 +29,11 @@ export default function Example() {
                 </p>
               </blockquote>
               <figcaption className="mt-10 flex items-center gap-x-6">
-                <img
-                  alt=""
+                <Image
+                  alt="Judith Black"
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  width={56}
+                  height={56}
                   className="size-14 rounded-full bg-gray-50 dark:bg-gray-800"
                 />
                 <div className="text-base">
@@ -36,14 +44,18 @@ export default function Example() {
             </figure>
           </div>
           <div className="flex flex-col border-t border-gray-900/10 pt-10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20 dark:border-white/10">
-            <img
-              alt=""
-              src="https://tailwindcss.com/plus-assets/img/logos/reform-logo-gray-900.svg"
+            <Image
+              alt="Reform logo"
+              src="https://tailwindcss.com/plus-assets/Image/logos/reform-logo-gray-900.svg"
+              width={48}
+              height={48}
               className="h-12 self-start dark:hidden"
             />
-            <img
-              alt=""
-              src="https://tailwindcss.com/plus-assets/img/logos/reform-logo-white.svg"
+            <Image
+              alt="Reform logo"
+              src="https://tailwindcss.com/plus-assets/Image/logos/reform-logo-white.svg"
+              width={48}
+              height={48}
               className="hidden h-12 self-start dark:block"
             />
             <figure className="mt-10 flex flex-auto flex-col justify-between">
@@ -55,9 +67,11 @@ export default function Example() {
                 </p>
               </blockquote>
               <figcaption className="mt-10 flex items-center gap-x-6">
-                <img
-                  alt=""
+                <Image
+                  alt="Joseph Rodriguez"
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  width={56}
+                  height={56}
                   className="size-14 rounded-full bg-gray-50 dark:bg-gray-800"
                 />
                 <div className="text-base">
