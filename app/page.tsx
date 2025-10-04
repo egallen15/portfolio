@@ -7,6 +7,9 @@ import BentoGrid from "./components/BentoGrid";
 import HighlightedHeading from "./components/HighlightedHeading";
 import WorkExperience from "./components/WorkExperience";
 import Skills from "./components/Skills";
+import Faq from "./components/Faq";
+import Testimonials from "./components/Testimonials";
+import ProjectGrid from "./components/ProjectGrid";
 
 export const metadata = {
   title: "Eric Allen | UX Designer",
@@ -16,6 +19,32 @@ export const metadata = {
 export default function Home() {
   // This is the main page of the portfolio
   // It contains the hero section, latest posts, case studies, and other sections
+  
+  // Projects for the homepage
+  const personalProjects = [
+    {
+      id: "planetaria",
+      href: "https://planetaria.tech",
+      title: "Planetaria",
+      description: "Creating technology to empower civilians to explore space on their own terms.",
+      logo: "/images/logo.png",
+    },
+    {
+      id: "animaginary",
+      href: "https://github.com",
+      title: "Animaginary",
+      description: "High performance web animation library, hand-written in optimized WASM.",
+      logo: "/images/logo.png",
+    },
+    {
+      id: "heliostream",
+      href: "https://github.com",
+      title: "HelioStream",
+      description: "Real-time video streaming library, optimized for interstellar transmission.",
+      logo: "/images/logo.png",
+    },
+  ];
+  
   return (
     <div className="min-h-screen flex flex-col mx-auto w-full lg:max-w-7xl">
       <div className="w-full flex-grow">
@@ -231,7 +260,7 @@ export default function Home() {
               transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              {/* Add projects here */}
+              <ProjectGrid items={personalProjects} columns={3} />
             </motion.div>
           </motion.section>
           {/* Testimonials */}
@@ -252,6 +281,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.1 }}
             >
               {/* Add testimonials here */}
+              <Testimonials />
             </motion.div>
           </motion.section>
           {/* My stack */}
@@ -284,7 +314,7 @@ export default function Home() {
           >
             FAQ
           </HighlightedHeading>
-          <motion.section className="mt-4">
+          <motion.section className="mt-4 w-full lg:w-1/2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -292,6 +322,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.1 }}
             >
               {/* Add FAQ content here */}
+              <Faq />
             </motion.div>
           </motion.section>
         </main>
