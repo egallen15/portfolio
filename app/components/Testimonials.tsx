@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Example() {
   return (
-    <section className="bg-white py-8 dark:bg-gray-900">
+    <section className="py-8">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
