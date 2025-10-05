@@ -126,11 +126,13 @@ export default function ProjectGrid({ items, columns = 3 }: ProjectGridProps) {
                           strokeLinecap="round" 
                           strokeLinejoin="round" 
                           strokeWidth={2} 
-                          d="M13 7l5 5m0 0l-5 5m5-5H6" 
+                          d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" 
                         />
                       </svg>
                       <span className="text-xs">
-                        {item.href.startsWith('http') ? 'Visit site' : 'View project'}
+                        {item.href.startsWith('http') 
+                          ? new URL(item.href).hostname.replace('www.', '')
+                          : 'View project'}
                       </span>
                     </div>
                   </div>
