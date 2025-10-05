@@ -3,9 +3,10 @@
 import { useState } from "react";
 import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
+import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import HighlightedHeading from "./HighlightedHeading";
 
-type SkillCategory = "design" | "product" | "soft" | "technical";
+type SkillCategory = "design" | "product" | "soft" | "technical" | "video";
 type ExpertiseLevel = "bronze" | "silver" | "gold" | "diamond";
 type ViewMode = "category" | "expertise";
 
@@ -31,15 +32,16 @@ const skills: Skill[] = [
   { name: "User journey maps & flows", category: "design", expertise: "gold" },
   { name: "User research", category: "design", expertise: "gold" },
   { name: "Design systems", category: "design", expertise: "gold" },
-  { name: "Video editing", category: "design", expertise: "gold" },
   { name: "Photography", category: "design", expertise: "silver" },
-  { name: "Video production", category: "design", expertise: "silver" },
   { name: "Accessibility", category: "design", expertise: "gold" },
   { name: "Data visualization", category: "design", expertise: "gold" },
   { name: "Motion design & animation", category: "design", expertise: "gold" },
   { name: "Sketching", category: "design", expertise: "silver" },
   { name: "Information architecture", category: "design", expertise: "gold" },
   { name: "UX Writing", category: "design", expertise: "gold" },
+  // Video Skills
+  { name: "Video editing", category: "video", expertise: "gold" },
+  { name: "Video production", category: "video", expertise: "silver" },
   // Product Skills
   { name: "Product management", category: "product", expertise: "gold" },
   { name: "Strategy", category: "product", expertise: "gold" },
@@ -64,6 +66,7 @@ const categoryStyles = {
   product: "bg-yellow-100 dark:bg-yellow-900 text-orange-800 dark:text-orange-200",
   soft: "bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200",
   technical: "bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200",
+  video: "bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200",
 };
 
 const expertiseStyles = {
@@ -160,7 +163,7 @@ export default function Skills() {
         transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
         viewport={{ once: true, amount: 0.1 }}
       >
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-start justify-between mb-6">
           <HighlightedHeading
             highlightColor="pink"
             highlightStyle="underline"
@@ -171,13 +174,31 @@ export default function Skills() {
             Skills
           </HighlightedHeading>
           
-          {/* View Mode Toggle */}
-          <button
-            onClick={() => setViewMode(viewMode === "category" ? "expertise" : "category")}
-            className="text-xs px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-          >
-            View by {viewMode === "category" ? "expertise" : "category"}
-          </button>
+          <div className="flex items-center gap-2">
+            {/* Reset Button */}
+            {((viewMode === "category" && visibleCategories.size > 0) || 
+              (viewMode === "expertise" && visibleExpertise.size > 0)) && (
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                onClick={viewMode === "category" ? resetCategories : resetExpertise}
+                className="text-sm px-4 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors whitespace-nowrap flex items-center gap-1.5"
+                aria-label="Reset skill filters"
+              >
+                <ArrowPathIcon className="w-4 h-4" />
+                Reset
+              </motion.button>
+            )}
+            
+            {/* View Mode Toggle */}
+            <button
+              onClick={() => setViewMode(viewMode === "category" ? "expertise" : "category")}
+              className="text-sm px-4 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors whitespace-nowrap"
+            >
+              View by {viewMode === "category" ? "expertise" : "category"}
+            </button>
+          </div>
         </div>
         
         {/* Legend */}
@@ -256,6 +277,24 @@ export default function Skills() {
                   Soft skills
                 </span>
               </button>
+              <button
+                onClick={() => toggleCategory("video")}
+                className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform"
+                aria-label="Toggle video skills"
+              >
+                <div 
+                  className={`w-3 h-3 rounded-full bg-orange-200 dark:bg-orange-400 transition-all ${
+                    isCategorySelected("video") ? "opacity-100 scale-110" : "opacity-100"
+                  }`}
+                ></div>
+                <span 
+                  className={` dark:text-gray-400 transition-all ${
+                    isCategorySelected("video") ? "font-bold text-gray-900 dark:text-gray-100" : ""
+                  }`}
+                >
+                  Video
+                </span>
+              </button>
             </>
           ) : (
             <>
@@ -332,21 +371,6 @@ export default function Skills() {
                 </span>
               </button>
             </>
-          )}
-          
-          {/* Reset Button - appears when filters are active */}
-          {((viewMode === "category" && visibleCategories.size > 0) || 
-            (viewMode === "expertise" && visibleExpertise.size > 0)) && (
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              onClick={viewMode === "category" ? resetCategories : resetExpertise}
-              className="ml-auto pl-3 text-sm hover:text-slate-700 dark:hover:text-slate-300 underline transition-colors"
-              aria-label="Reset skill filters"
-            >
-              Reset
-            </motion.button>
           )}
         </div>
 
