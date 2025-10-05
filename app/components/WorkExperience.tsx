@@ -19,49 +19,49 @@ const defaultExperiences: WorkExperienceItemProps[] = [
     logo: "/images/subsplash.png", // We'll create this
     company: "Subsplash",
     position: "UX Designer III",
-    dateRange: "April 2024 — Present",
+    dateRange: "2024 — Present",
     logoAlt: "Subsplash logo"
   },
   {
     logo: "/images/subsplash.png", // We'll create this
     company: "Subsplash",
     position: "UX Designer II",
-    dateRange: "Apr 2021 — Apr 2024",
+    dateRange: "2021 — 2024",
     logoAlt: "Subsplash logo"
   },
   {
     logo: "/images/subsplash.png",
     company: "Subsplash",
     position: "UX Designer I",
-    dateRange: "Oct 2018 — Apr 2021",
+    dateRange: "2018 — 2021",
     logoAlt: "Freelance logo"
   },
   {
     logo: "/images/subsplash.png",
     company: "Subsplash",
     position: "UX Design Intern",
-    dateRange: "Apr 2018 — Oct 2018",
+    dateRange: "2018",
     logoAlt: "Subsplash logo"
   },
   {
     logo: "/images/sleeping-giant.png",
     company: "Sleeping Giant",
     position: "Sales & Marketing",
-    dateRange: "Sep 2017 — Apr 2018",
+    dateRange: "2017 — 2018",
     logoAlt: "Sleeping Giant logo"
   },
   {
     logo: "/images/subsplash.png",
     company: "Subsplash",
     position: "Support Specialist",
-    dateRange: "Sep 2015 — Sep 2017",
+    dateRange: "2015 — 2017",
     logoAlt: "Subsplash logo"
   },
   {
     logo: "/images/general-assembly.png", 
     company: "General Assembly",
     position: "UX Immersive Student",
-    dateRange: "Dec 2014 — Feb 2015",
+    dateRange: "2014 — 2015",
     logoAlt: "General Assembly logo"
   }
 ];
@@ -76,13 +76,13 @@ function WorkExperienceItem({ logo, company, position, dateRange, logoAlt }: Wor
       className="flex items-start gap-4 py-2 sm:py-4"
     >
       {/* Company Logo */}
-      <div className="flex-shrink-0 w-12 h-12 rounded-full overflow-hidden bg-gray-50 dark:bg-slate-700 flex items-center justify-center p-1">
+      <div className="flex-shrink-0 w-12 h-12 ring ring-slate-700 rounded-full overflow-hidden flex items-center justify-center">
         <Image
           src={logo}
           alt={logoAlt || `${company} logo`}
           width={48}
           height={48}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover rounded-full"
         />
       </div>
       
