@@ -36,7 +36,7 @@ const faqs = [
 
 export default function Example() {
   return (
-    <div className="bg-white dark:bg-slate-900">
+    <div className="">
       <div className="mx-auto xl:mx-0 max-w-7xl py-8">
         <div className="mx-auto max-w-4xl">
           <dl className="divide-y divide-slate-900/10 dark:divide-white/10">
