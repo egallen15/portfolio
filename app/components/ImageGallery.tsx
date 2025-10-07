@@ -75,13 +75,13 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
   return (
     <div className="lg:-ml-12 lg:sticky lg:top-32 lg:col-start-2 lg:row-span-2 lg:row-start-1">
       {/* Main Featured Image with Fixed Height Container */}
-      <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[450px] rounded-xl ring-1 ring-slate-200 dark:ring-slate-600 bg-slate-50 dark:bg-slate-800 group">
+      <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[450px] rounded-xl bg-transparent group">
         <Image
           alt={currentImage.alt}
           src={currentImage.src}
           width={currentImage.width}
           height={currentImage.height}
-          className="h-full w-full object-contain bg-white rounded-xl"
+          className="h-full w-full object-contain rounded-xl"
           priority={true}
           placeholder="blur"
           blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNmOGZhZmMiLz48L3N2Zz4="

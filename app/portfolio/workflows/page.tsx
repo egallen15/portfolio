@@ -2,14 +2,14 @@ import Breadcrumb from '@/app/components/Breadcrumb'
 import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
 
 const workflowsData: CaseStudyProps = {
-  subtitle: "Process Automation",
-  title: "Subsplash Workflows", 
+  subtitle: "Subsplash",
+  title: "Workflows", 
   description: "An intuitive workflow automation system that empowers teams to build custom business processes without code, increasing efficiency and reducing manual tasks.",
   
   image: {
-    src: "https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png",
+    src: "/images/workflows.png",
     alt: "Subsplash Workflows Interface",
-    width: 500,
+    width: 1500,
     height: 500
   },
   

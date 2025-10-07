@@ -26,8 +26,8 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
       title: "Subsplash Workflows",
       date: "September 2024 – Present",
       description: "A Trello-style kanban tool for managing church processes in the Subsplash Dashboard.",
-      image: "https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png",
-      darkImage: "https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-performance.png",
+      image: "/images/workflows.png",
+      darkImage: "/images/workflows.png",
       gridClasses: "relative max-lg:row-start-1 lg:col-span-2 lg:row-span-2 lg:col-start-2 lg:row-start-1 max-lg:h-80 lg:max-h-[54rem]",
       roundedClasses: "max-lg:rounded-t-[2rem]",
       contentType: "image"
@@ -164,7 +164,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
                       <div className="absolute inset-x-10 bottom-0 top-10 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-slate-700 bg-slate-900 shadow-2xl dark:shadow-none dark:outline dark:outline-1 dark:outline-white/20 transition-all duration-300 group-hover:shadow-3xl group-hover:border-slate-600">
                         <Image
                           alt=""
-                          width={500}
+                          width={1500}
                           height={500}
                           src={project.image!}
                           className="size-full object-cover object-top transition-transform duration-300 group-hover:scale-102"
