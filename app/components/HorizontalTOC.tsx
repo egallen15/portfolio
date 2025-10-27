@@ -88,11 +88,11 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
   const getBarWidth = (heading: Heading) => {
     // Different widths based on heading depth for visual hierarchy
     switch (heading.depth) {
-      case 2: return 'w-10'
-      case 3: return 'w-8'
-      case 4: return 'w-6'
-      case 5: return 'w-5'
-      case 6: return 'w-4'
+      case 2: return 'w-6'
+      case 3: return 'w-5'
+      case 4: return 'w-4'
+      case 5: return 'w-3'
+      case 6: return 'w-2'
       default: return 'w-8'
     }
   }
@@ -113,7 +113,8 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
     <div ref={containerRef} className="relative">
       {/* Horizontal bars representing headings */}
       <div 
-        className="flex flex-col space-y-3 p-3 bg-slate-50/50 dark:bg-slate-800/50 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer relative group"
+        className="flex flex-col gap-3 p-3 bg-slate-50/50 dark:bg-slate-800/50 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700/50 cursor-pointer relative group w-fit"
+        style={{ minHeight: 'fit-content' }}
         onClick={(e) => handleBarClick(e)}
         title="Click to show table of contents"
         role="button"
@@ -138,7 +139,7 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
         {toc.map((heading) => (
           <div
             key={heading.id}
-            className={`h-1.5 rounded-full transition-all duration-200 ${getBarWidth(heading)} ${getBarOpacity(heading.id)} hover:scale-105 pointer-events-none`}
+            className={`h-1.5 rounded-full ${getBarWidth(heading)} ${getBarOpacity(heading.id)} pointer-events-none`}
             onMouseEnter={() => setHoveredHeading(heading.id)}
             onMouseLeave={() => setHoveredHeading(null)}
             title={typeof heading.value === 'string' ? `${heading.value}` : ''}
