@@ -14,6 +14,11 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
   const containerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
+    // Set the first heading as active by default
+    if (toc.length > 0 && !activeHeading) {
+      setActiveHeading(toc[0].id)
+    }
+
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -39,7 +44,7 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
       })
       observer.current?.disconnect()
     }
-  }, [toc])
+  }, [toc, activeHeading])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
