@@ -144,7 +144,7 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
         {toc.map((heading) => (
           <div
             key={heading.id}
-            className={`h-1.5 rounded-full ${getBarWidth(heading)} ${getBarOpacity(heading.id)} pointer-events-none`}
+            className={`h-1 rounded-full ${getBarWidth(heading)} ${getBarOpacity(heading.id)} pointer-events-none`}
             onMouseEnter={() => setHoveredHeading(heading.id)}
             onMouseLeave={() => setHoveredHeading(null)}
             title={typeof heading.value === 'string' ? `${heading.value}` : ''}
@@ -182,12 +182,12 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
                       ? 'bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 font-medium' 
                       : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:text-slate-900 dark:hover:text-slate-200'
                   }`}
-                  style={{ paddingLeft: `${(heading.depth - 1) * 12 + 8}px` }}
+                  style={{ paddingLeft: `${(heading.depth - 1) * 12 + 4}px` }}
                 >
                   {heading.value}
                 </button>
                 {activeHeading === heading.id && (
-                  <div className="absolute left-0 top-1.5 bottom-1.5 w-0.5 bg-sky-500 dark:bg-sky-400 rounded-full"></div>
+                  <div className="absolute left-0 top-1.5 bottom-1.5 w-1 bg-sky-500 dark:bg-sky-400 rounded-full"></div>
                 )}
               </li>
             ))}

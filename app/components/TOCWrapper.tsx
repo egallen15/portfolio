@@ -43,10 +43,10 @@ export default function TOCWrapper() {
   if (isLoading) {
     return (
       <div className="flex flex-col gap-3 p-3 w-fit animate-pulse">
-        <div className="h-1.5 w-6 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
-        <div className="h-1.5 w-5 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
-        <div className="h-1.5 w-4 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
-        <div className="h-1.5 w-5 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+        <div className="h-1 w-5 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+        <div className="h-1 w-4 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+        <div className="h-1 w-3 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+        <div className="h-1 w-2 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
       </div>
     )
   }
