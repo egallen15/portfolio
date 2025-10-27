@@ -113,10 +113,10 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
     <div ref={containerRef} className="relative">
       {/* Horizontal bars representing headings */}
       <div 
-        className="flex flex-col gap-3 p-3 bg-slate-50/50 dark:bg-slate-800/50 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700/50 cursor-pointer relative group w-fit"
+        className="flex flex-col gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer relative group w-fit"
         style={{ minHeight: 'fit-content' }}
         onClick={(e) => handleBarClick(e)}
-        title="Click to show table of contents"
+        title=""
         role="button"
         tabIndex={0}
         aria-label="Show table of contents"

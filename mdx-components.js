@@ -31,7 +31,7 @@ const defaultComponents = getNextraComponents({
             )}
             <AuthorBio />
           </div>
-          <div className="hidden lg:block lg:pl-8 lg:sticky lg:top-96 lg:self-start lg:w-auto">
+          <div className="hidden lg:block lg:pl-4 lg:sticky lg:top-96 lg:self-start lg:w-auto">
             <TOCWrapper />
           </div>
         </div>
