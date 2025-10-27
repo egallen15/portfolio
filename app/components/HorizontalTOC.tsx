@@ -79,7 +79,7 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
       behavior: 'smooth'
     })
 
-    setShowPopover(false)
+    // Don't close popover when clicking on headings - let it stay open
   }
 
   const handleBarClick = (event: React.MouseEvent) => {
