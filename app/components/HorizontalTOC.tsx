@@ -19,30 +19,94 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
       setActiveHeading(toc[0].id)
     }
 
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveHeading(entry.target.id)
+    const headings = toc.map(heading => document.getElementById(heading.id)).filter(Boolean) as HTMLElement[]
+    if (headings.length === 0) return
+
+    const updateActiveHeading = () => {
+      const scrollY = window.scrollY
+      const NAV_OFFSET = 120
+      const windowHeight = window.innerHeight
+      const documentHeight = document.documentElement.scrollHeight
+      
+      // Check if we're at the very top
+      if (scrollY <= NAV_OFFSET) {
+        setActiveHeading(toc[0].id)
+        return
+      }
+      
+      // Check if we're at the very bottom
+      if (scrollY + windowHeight >= documentHeight - 50) {
+        setActiveHeading(toc[toc.length - 1].id)
+        return
+      }
+      
+      // Find the heading that should be active based on scroll position
+      let newActiveHeading = toc[0].id // Default to first
+      
+      // Go through headings from bottom to top to find the last one that's above the offset
+      for (let i = headings.length - 1; i >= 0; i--) {
+        const heading = headings[i]
+        if (heading) {
+          const rect = heading.getBoundingClientRect()
+          const headingTop = rect.top
+          
+          // If this heading is above the navigation offset, it should be active
+          if (headingTop <= NAV_OFFSET + 10) { // Small buffer for precision
+            newActiveHeading = heading.id
+            break
+          }
         }
-      })
+      }
+      
+      // Only update if the active heading actually changed
+      setActiveHeading(prev => prev !== newActiveHeading ? newActiveHeading : prev)
+    }
+
+    // Use intersection observer primarily for performance, but simpler logic
+    const handleIntersection = () => {
+      // Only update on intersection changes to trigger recalculation
+      updateActiveHeading()
     }
 
     observer.current = new IntersectionObserver(handleIntersection, {
-      rootMargin: '-15% 0px -85% 0px',
-      threshold: [0, 0.25, 0.5, 0.75, 1]
+      rootMargin: '-10% 0px -10% 0px',
+      threshold: [0]
     })
-
-    const headings = toc.map(heading => document.getElementById(heading.id)).filter(Boolean)
 
     headings.forEach(heading => {
-      observer.current?.observe(heading!)
+      if (heading) {
+        observer.current?.observe(heading)
+      }
     })
+
+    // Throttle scroll events for performance but ensure responsiveness
+    let scrollTimeout: NodeJS.Timeout | null = null
+    const throttledScroll = () => {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout)
+      }
+      scrollTimeout = setTimeout(() => {
+        updateActiveHeading()
+        scrollTimeout = null
+      }, 16) // ~60fps for smooth updates
+    }
+
+    // Initial calculation
+    updateActiveHeading()
+
+    window.addEventListener('scroll', throttledScroll, { passive: true })
 
     return () => {
       headings.forEach(heading => {
-        observer.current?.unobserve(heading!)
+        if (heading) {
+          observer.current?.unobserve(heading)
+        }
       })
       observer.current?.disconnect()
+      window.removeEventListener('scroll', throttledScroll)
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout)
+      }
     }
   }, [toc, activeHeading])
 
