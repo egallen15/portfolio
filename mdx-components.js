@@ -2,6 +2,7 @@ import { useMDXComponents as getNextraComponents } from 'nextra/mdx-components'
 import BlogPostHeader from './app/components/BlogPostHeader'
 import AuthorBio from './app/components/AuthorBio'
 import BlogNavigationServer from './app/components/BlogNavigationServer'
+import TOCWrapper from './app/components/TOCWrapper'
 import Image from 'next/image'
  
 const defaultComponents = getNextraComponents({
@@ -29,6 +30,9 @@ const defaultComponents = getNextraComponents({
               </div>
             )}
             <AuthorBio />
+          </div>
+          <div className="hidden lg:block lg:pl-8 lg:sticky lg:top-96 lg:self-start lg:w-auto">
+            <TOCWrapper />
           </div>
         </div>
       </div>
