@@ -220,7 +220,7 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
       {showPopover && (
         <div
           ref={popoverRef}
-          className="absolute left-full top-0 ml-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-xl p-4 min-w-64 max-w-80 z-[60]"
+          className="absolute left-full top-1/2 -translate-y-1/2 ml-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-xl p-4 min-w-64 max-w-80 z-[60]"
         >
           <div className="flex items-center justify-between mb-3">
             <h3 className="font-semibold text-sm text-slate-700 dark:text-slate-300 uppercase tracking-wide">
