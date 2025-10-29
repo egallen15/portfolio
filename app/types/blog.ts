@@ -5,6 +5,7 @@ export interface BlogPost {
   date: string;
   excerpt: string;
   tags: string[];
+  image?: string;
 }
 
 export interface BlogContentProps {

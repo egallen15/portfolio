@@ -52,6 +52,7 @@ const BlogContentClient = ({
                   excerpt={post.excerpt}
                   url={post.route}
                   tags={post.tags}
+                  imageUrl={post.image}
                 />
               </motion.div>
             ))}

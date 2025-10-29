@@ -29,7 +29,8 @@ export default async function BlogContentServer({
         route: `/blog/${post.name}`,
         date: post.frontMatter.date,
         excerpt: post.frontMatter.excerpt || 'No excerpt available.',
-        tags: post.frontMatter.tags || []
+        tags: post.frontMatter.tags || [],
+        image: post.frontMatter.image
       }));
 
     // Limit posts if maxPosts is specified
