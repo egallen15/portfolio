@@ -42,11 +42,11 @@ export default function TOCWrapper() {
   // Show loading skeleton while extracting headings
   if (isLoading) {
     return (
-      <div className="flex flex-col gap-3 p-3 w-fit animate-pulse">
-        <div className="h-1 w-5 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
-        <div className="h-1 w-4 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
-        <div className="h-1 w-3 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
-        <div className="h-1 w-2 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+      <div className="flex flex-col gap-3 p-2 w-fit animate-pulse">
+        <div className="h-0.5 w-4 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+        <div className="h-0.5 w-3 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+        <div className="h-0.5 w-2 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+        <div className="h-0.5 w-1 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
       </div>
     )
   }
