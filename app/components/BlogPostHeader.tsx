@@ -3,6 +3,7 @@ import Image from "next/image";
 import * as motion from "motion/react-client";
 import { CalendarDaysIcon } from "@heroicons/react/20/solid";
 import Breadcrumb from "./Breadcrumb";
+import CopyLinkButton from "./CopyLinkButton";
 
 interface BlogPostHeaderProps {
   frontMatter?: {
@@ -92,28 +93,31 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
       )}
 
       {/* Display author, date, and tags in a more structured way */}
-      <div className="flex items-center mt-6 gap-4">
-        <div className="flex items-center gap-2">
-          <Image
-            src="/images/eric-allen-profile-pic-2023.png"
-            alt={author}
-            width={20}
-            height={20}
-            className="rounded-full"
-          />
-          <span className="text-sm dark:text-slate-400 text-slate-500">
-            {author}
-          </span>
+      <div className="flex items-center justify-between mt-6">
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <Image
+              src="/images/eric-allen-profile-pic-2023.png"
+              alt={author}
+              width={20}
+              height={20}
+              className="rounded-full"
+            />
+            <span className="text-sm dark:text-slate-400 text-slate-500">
+              {author}
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CalendarDaysIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" />
+            <time
+              dateTime={date}
+              className="text-sm dark:text-slate-400 text-slate-500"
+            >
+              {formatDate(date)}
+            </time>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <CalendarDaysIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" />
-          <time
-            dateTime={date}
-            className="text-sm dark:text-slate-400 text-slate-500"
-          >
-            {formatDate(date)}
-          </time>
-        </div>
+        <CopyLinkButton />
       </div>
       <hr className="mt-5 md:mt-6 border-slate-200 dark:border-slate-700 border-t" />
     </header>
