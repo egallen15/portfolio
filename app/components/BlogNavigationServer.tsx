@@ -29,11 +29,15 @@ export default async function BlogNavigationServer({ currentSlug }: BlogNavigati
         route: `/blog/${post.name}`,
         date: post.frontMatter.date,
         excerpt: post.frontMatter.excerpt || 'No excerpt available.',
-        tags: post.frontMatter.tags || []
+        tags: post.frontMatter.tags || [],
+        slug: post.frontMatter.slug
       }));
 
-    // Find the current post index
-    const currentPostIndex = allPosts.findIndex(post => post.name === currentSlug);
+    // Find the current post index by matching either directory name or slug
+    const currentPostIndex = allPosts.findIndex(post => 
+      post.name === currentSlug || 
+      post.slug === currentSlug
+    );
     
     if (currentPostIndex === -1) {
       return null; // Current post not found

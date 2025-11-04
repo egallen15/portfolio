@@ -6,6 +6,7 @@ export interface BlogPost {
   excerpt: string;
   tags: string[];
   image?: string;
+  slug?: string;
 }
 
 export interface BlogContentProps {
