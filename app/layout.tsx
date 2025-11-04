@@ -52,8 +52,6 @@ const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
   return (
     <html lang="en" dir="ltr" className={`${noto.className}`} suppressHydrationWarning>
       <head>
-        {/* Safe default; will be overridden after hydration */}
-        <meta name="theme-color" content="#FDFDFF" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -63,20 +61,20 @@ const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
     var t = localStorage.getItem(key) || 'light';
     var map = { light:'#FDFDFF', dark:'#020617' };
     var color = map[t] || '#FDFDFF';
-    var tag = document.querySelector('meta[name="theme-color"]');
-    if (!tag) { 
-      tag = document.createElement('meta'); 
-      tag.name='theme-color'; 
-      document.head.appendChild(tag); 
-    }
-    tag.setAttribute('content', color);
     document.documentElement.classList.add(t);
     document.documentElement.style.colorScheme = t;
-  } catch (e) {}
+    // Set a global var so we can use it in the meta tag
+    window.__THEME_COLOR__ = color;
+  } catch (e) {
+    window.__THEME_COLOR__ = '#FDFDFF';
+  }
 })();
             `,
           }}
         />
+        <meta name="theme-color" content="#FDFDFF" id="theme-color-meta" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body className="flex flex-col w-full mx-auto dark:bg-slate-950 overflow-x-clip">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="theme">
