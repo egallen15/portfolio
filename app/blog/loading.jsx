@@ -1,6 +1,6 @@
 export default function Loading() {
   return (
-    <div className="flex w-full max-w-7xl mx-auto">
+    <div className="flex w-full max-w-[48rem] mx-auto">
       <div className='w-full'>
         <h1 className="text-3xl md:text-5xl font-bold mx-6 mb-4">Loading...</h1>
         <div className="flex flex-col space-y-4">
