@@ -26,6 +26,16 @@ export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
     // Read the theme from the DOM (set by our blocking script)
     const isDark = document.documentElement.classList.contains("dark");
     setResolved(isDark ? "dark" : "light");
+    
+    // Ensure theme-color meta tag is set on mount
+    const color = isDark ? "#020617" : "#FDFDFF";
+    let metaThemeColor = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement;
+    if (!metaThemeColor) {
+      metaThemeColor = document.createElement('meta') as HTMLMetaElement;
+      metaThemeColor.name = 'theme-color';
+      document.head.appendChild(metaThemeColor);
+    }
+    metaThemeColor.content = color;
   }, []);
 
   // apply theme to document and track resolved color
