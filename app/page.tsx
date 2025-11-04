@@ -23,24 +23,24 @@ export default function Home() {
   // Projects for the homepage
   const personalProjects = [
     {
-      id: "planetaria",
-      href: "https://planetaria.tech",
-      title: "Planetaria",
-      description: "Creating technology to empower civilians to explore space on their own terms.",
+      id: "peak",
+      href: "https://peak.tech",
+      title: "Peak",
+      description: "Visualize your personal productivity with interactive charts and AI analysis.",
       logo: "/images/logo.png",
     },
     {
-      id: "animaginary",
+      id: "binstackr",
       href: "https://github.com",
-      title: "Animaginary",
-      description: "High performance web animation library, hand-written in optimized WASM.",
+      title: "Binstackr",
+      description: "Make a maximized multi-dimensional decision with the Binstack method from Jason Cohen.",
       logo: "/images/logo.png",
     },
     {
-      id: "heliostream",
+      id: "uxflow",
       href: "https://github.com",
-      title: "HelioStream",
-      description: "Real-time video streaming library, optimized for interstellar transmission.",
+      title: "uxflow",
+      description: "A design tool for creating user flow diagrams and user journey maps.",
       logo: "/images/logo.png",
     },
   ];
