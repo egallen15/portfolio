@@ -34,7 +34,7 @@ const defaultComponents = getNextraComponents({
             </article>
             {/* Blog navigation - always show for blog posts */}
             {frontMatter.slug && (
-              <div className="max-w-[48rem] mx-6 lg:mx-auto">
+              <div className="max-w-[48rem] mx-6 lg:mx-0">
                 <BlogNavigationServer currentSlug={frontMatter.slug} />
               </div>
             )}
