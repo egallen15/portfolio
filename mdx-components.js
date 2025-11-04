@@ -20,8 +20,8 @@ const defaultComponents = getNextraComponents({
         {/* Main content centered on the page */}
         <div className='container flex mb-6 lg:mb-0 mx-auto max-w-[48rem] relative'>
           {/* TOC positioned absolutely within the container, aligned to left edge */}
-          <div className="hidden lg:block absolute left-0 top-0 h-full">
-            <div className="sticky top-1/2 -translate-y-1/2 -translate-x-full xl:pr-56 lg:pr-16">
+          <div className="hidden lg:block absolute left-0 top-0 h-full pointer-events-none">
+            <div className="sticky top-1/2 -translate-y-1/2 -translate-x-full xl:pr-56 lg:pr-16 pointer-events-auto">
               <TOCWrapper />
             </div>
           </div>
