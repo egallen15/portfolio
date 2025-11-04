@@ -103,3 +103,7 @@ img, video, iframe {
 .content-area {
   contain: layout style;
 }
+
+nav {
+  transition: background-color 0.3s ease;
+}

@@ -55,7 +55,7 @@ export default function NewNavbar() {
   return (
     <nav ref={navRef} className="w-full sticky top-0 z-50 bg-[#FDFDFF] dark:bg-slate-950 dark:bg-fixed">
       <div className="max-w-7xl mx-auto px-6 xl:px-0">
-        <div className="flex items-center border-b border-b-slate-200 dark:border-b-slate-700 justify-between h-20">
+        <div className="flex items-center border-b border-b-slate-200 dark:border-b-slate-700 justify-between h-20 transition-colors duration-75">
           <div className="flex items-center">
             <Link
               href="/"
