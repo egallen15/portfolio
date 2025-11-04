@@ -180,7 +180,7 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
 
   return (
     <div ref={containerRef} className="relative">
-      {/* Horizontal bars representing headings */}
+      {/* Vertical bars representing headings */}
       <div 
         className="flex flex-col gap-3 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer relative group w-fit"
         style={{ minHeight: 'fit-content' }}
@@ -208,7 +208,7 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
         {toc.map((heading) => (
           <div
             key={heading.id}
-            className={`h-0.5 rounded-full ${getBarWidth(heading)} ${getBarOpacity(heading.id)} pointer-events-none`}
+            className={`h-1 rounded-full ${getBarWidth(heading)} ${getBarOpacity(heading.id)} pointer-events-none transition-all duration-200`}
             onMouseEnter={() => setHoveredHeading(heading.id)}
             onMouseLeave={() => setHoveredHeading(null)}
             title={typeof heading.value === 'string' ? `${heading.value}` : ''}
@@ -220,7 +220,7 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
       {showPopover && (
         <div
           ref={popoverRef}
-          className="absolute left-full top-1/2 -translate-y-1/2 ml-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-xl p-4 min-w-64 max-w-80 z-[60]"
+          className="absolute left-full top-1/2 -translate-y-1/2 ml-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-xl p-4 min-w-64 max-w-80 z-[70]"
         >
           <div className="flex items-center justify-between mb-3">
             <h3 className="font-semibold text-sm text-slate-700 dark:text-slate-300 uppercase tracking-wide">

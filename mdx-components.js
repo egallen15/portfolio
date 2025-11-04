@@ -16,23 +16,29 @@ const defaultComponents = getNextraComponents({
     }
     
     return (
-      <div className='container flex flex-col justify-center mb-6 lg:mb-0 mx-auto'>
-        <div className="container flex flex-col lg:flex-row justify-center">
-          <div className="w-auto max-w-[48rem]">
+      <div className="relative w-full">
+        {/* Main content centered on the page */}
+        <div className='container flex mb-6 lg:mb-0 mx-auto max-w-[48rem] relative'>
+          {/* TOC positioned absolutely within the container, aligned to left edge */}
+          <div className="hidden lg:block absolute left-0 top-0 h-full">
+            <div className="sticky top-1/2 -translate-y-1/2 -translate-x-full xl:pr-56 lg:pr-16">
+              <TOCWrapper />
+            </div>
+          </div>
+          
+          {/* Blog content - centered within container */}
+          <div className="flex flex-col justify-center w-full">
             <BlogPostHeader frontMatter={frontMatter} />
             <article className="w-auto prose lg:leading-[1.8] dark:prose-invert mb-6 mx-6 md:mx-0 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
               {children}
             </article>
             {/* Blog navigation - always show for blog posts */}
             {frontMatter.slug && (
-              <div className="mx-6 lg:mx-auto">
+              <div>
                 <BlogNavigationServer currentSlug={frontMatter.slug} />
               </div>
             )}
             <AuthorBio />
-          </div>
-          <div className="hidden lg:block lg:pl-4 lg:sticky lg:top-96 lg:self-start lg:w-auto">
-            <TOCWrapper />
           </div>
         </div>
       </div>
