@@ -2,7 +2,9 @@
 import type { FC, ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { getPageMap } from "nextra/page-map";
+import { ThemeProvider } from "next-themes";
 import NextraTheme from "./components/nextra-theme";
+import ThemeColor from "./components/ThemeColor";
 import "./globals.css";
 import { Noto_Sans } from 'next/font/google'
 
@@ -48,52 +50,39 @@ const pageMap = await getPageMap()
 
 const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
   return (
-    <html lang="en" dir="ltr" className={`${noto.className}`}>
+    <html lang="en" dir="ltr" className={`${noto.className}`} suppressHydrationWarning>
       <head>
+        {/* Safe default; will be overridden after hydration */}
+        <meta name="theme-color" content="#FDFDFF" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function() {
-                try {
-                  function getThemePreference() {
-                    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-                      return localStorage.getItem('theme');
-                    }
-                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                  }
-                  
-                  function updateThemeColor(resolvedTheme) {
-                    const color = resolvedTheme === 'dark' ? '#020617' : '#FDFDFF';
-                    let metaThemeColor = document.querySelector('meta[name="theme-color"]');
-                    if (!metaThemeColor) {
-                      metaThemeColor = document.createElement('meta');
-                      metaThemeColor.name = 'theme-color';
-                      document.head.appendChild(metaThemeColor);
-                    }
-                    metaThemeColor.setAttribute('content', color);
-                  }
-                  
-                  const theme = getThemePreference();
-                  const resolvedTheme = theme === 'system' 
-                    ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-                    : theme;
-                  
-                  document.documentElement.classList.remove('light', 'dark');
-                  document.documentElement.classList.add(resolvedTheme);
-                  document.documentElement.style.colorScheme = resolvedTheme;
-                  updateThemeColor(resolvedTheme);
-                } catch (e) {
-                  // Fallback to light theme if anything fails
-                  document.documentElement.classList.add('light');
-                  document.documentElement.style.colorScheme = 'light';
-                }
-              })();
+(function() {
+  try {
+    var key = 'theme';
+    var t = localStorage.getItem(key) || 'light';
+    var map = { light:'#FDFDFF', dark:'#020617' };
+    var color = map[t] || '#FDFDFF';
+    var tag = document.querySelector('meta[name="theme-color"]');
+    if (!tag) { 
+      tag = document.createElement('meta'); 
+      tag.name='theme-color'; 
+      document.head.appendChild(tag); 
+    }
+    tag.setAttribute('content', color);
+    document.documentElement.classList.add(t);
+    document.documentElement.style.colorScheme = t;
+  } catch (e) {}
+})();
             `,
           }}
         />
       </head>
       <body className="flex flex-col w-full mx-auto dark:bg-slate-950 overflow-x-clip">
-        <NextraTheme pageMap={pageMap}>{children}</NextraTheme>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="theme">
+          <ThemeColor />
+          <NextraTheme pageMap={pageMap}>{children}</NextraTheme>
+        </ThemeProvider>
       </body>
     </html>
   );
