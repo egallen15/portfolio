@@ -65,6 +65,17 @@ const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
                     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                   }
                   
+                  function updateThemeColor(resolvedTheme) {
+                    const color = resolvedTheme === 'dark' ? '#020617' : '#FDFDFF';
+                    let metaThemeColor = document.querySelector('meta[name="theme-color"]');
+                    if (!metaThemeColor) {
+                      metaThemeColor = document.createElement('meta');
+                      metaThemeColor.name = 'theme-color';
+                      document.head.appendChild(metaThemeColor);
+                    }
+                    metaThemeColor.setAttribute('content', color);
+                  }
+                  
                   const theme = getThemePreference();
                   const resolvedTheme = theme === 'system' 
                     ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
@@ -73,6 +84,7 @@ const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
                   document.documentElement.classList.remove('light', 'dark');
                   document.documentElement.classList.add(resolvedTheme);
                   document.documentElement.style.colorScheme = resolvedTheme;
+                  updateThemeColor(resolvedTheme);
                 } catch (e) {
                   // Fallback to light theme if anything fails
                   document.documentElement.classList.add('light');

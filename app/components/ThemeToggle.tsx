@@ -36,6 +36,17 @@ export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
     // add or remove both dark and light classes for clear manual override
     document.documentElement.classList.toggle("dark", nextResolved === "dark");
     document.documentElement.classList.toggle("light", nextResolved === "light");
+    
+    // Update Safari's header/address bar color
+    const color = nextResolved === "dark" ? "#020617" : "#FDFDFF";
+    let metaThemeColor = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement;
+    if (!metaThemeColor) {
+      metaThemeColor = document.createElement('meta') as HTMLMetaElement;
+      metaThemeColor.name = 'theme-color';
+      document.head.appendChild(metaThemeColor);
+    }
+    metaThemeColor.setAttribute('content', color);
+    
     setResolved(nextResolved);
   };
 
