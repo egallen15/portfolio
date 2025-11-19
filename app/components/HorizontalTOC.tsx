@@ -168,7 +168,7 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
 
   const getBarOpacity = (headingId: string) => {
     if (activeHeading === headingId) {
-      return 'opacity-100 bg-sky-500 dark:bg-sky-400'
+      return 'opacity-100 bg-slate-500 dark:bg-slate-400'
     }
     if (hoveredHeading === headingId) {
       return 'opacity-75 bg-slate-400 dark:bg-slate-500'
@@ -220,9 +220,9 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
       {showPopover && (
         <div
           ref={popoverRef}
-          className="absolute left-full top-1/2 -translate-y-1/2 ml-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-xl p-4 min-w-64 max-w-80 z-[70]"
+          className="absolute left-full top-1/2 -translate-y-1/2 ml-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-xl p-4 min-w-64 max-w-80 max-h-[80vh] flex flex-col z-50"
         >
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center justify-between mb-3 flex-shrink-0">
             <h3 className="font-semibold text-sm text-slate-700 dark:text-slate-300 uppercase tracking-wide">
               On this page
             </h3>
@@ -236,14 +236,14 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
             </button>
           </div>
           
-          <ul className="space-y-1">
+          <ul className="space-y-1 overflow-y-auto overflow-x-hidden pr-1 scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-600 scrollbar-track-transparent">
             {toc.map(heading => (
               <li key={heading.id} className="relative">
                 <button
                   onClick={(e) => handleHeadingClick(e, heading.id)}
                   className={`text-left w-full px-2 py-1.5 rounded text-sm transition-colors duration-150 ${
                     activeHeading === heading.id 
-                      ? 'bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 font-medium' 
+                      ? 'bg-slate-50 dark:bg-slate-900/30 text-slate-700 dark:text-slate-300 font-medium' 
                       : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:text-slate-900 dark:hover:text-slate-200'
                   }`}
                   style={{ paddingLeft: `${(heading.depth - 1) * 12 + 4}px` }}
@@ -251,7 +251,7 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
                   {heading.value}
                 </button>
                 {activeHeading === heading.id && (
-                  <div className="absolute left-0 top-1.5 bottom-1.5 w-1 bg-sky-500 dark:bg-sky-400 rounded-full"></div>
+                  <div className="absolute left-0 top-1.5 bottom-1.5 w-1 bg-slate-500 dark:bg-slate-400 rounded-full"></div>
                 )}
               </li>
             ))}
