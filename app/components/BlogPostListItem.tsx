@@ -44,7 +44,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
             <h3 className="text-md font-medium mr-2">{title}</h3>
           </div>
           {/* <div className="h-[1px] w-full bg-gradient-to-r from-sky-400 to-sky-300 rounded-full my-2" /> */}
-          <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">{excerpt}</p>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{excerpt}</p>
           <div className="flex items-baseline mt-3 gap-3">
             <div className="flex items-center gap-2">
               <CalendarDaysIcon className="h-4 w-4 text-slate-500 dark:text-slate-400" />
