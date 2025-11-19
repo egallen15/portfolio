@@ -29,8 +29,8 @@ export default function BlogNavigation({ previousPost, nextPost }: BlogNavigatio
   };
 
   return (
-    <nav className="w-full max-w-3xl my-6">
-        <hr className="my-8 border-slate-200 dark:border-slate-700" />
+    <nav className="w-full max-w-3xl mt-4">
+        <hr className="my-6 border-slate-200 dark:border-slate-700" />
         <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">Discover more</h3>
       <div className="flex flex-col sm:flex-row gap-6">
         {/* Previous Post */}

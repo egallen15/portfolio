@@ -32,13 +32,13 @@ const defaultComponents = getNextraComponents({
             <article className="w-auto prose lg:leading-[1.8] dark:prose-invert mb-6 mx-6 md:mx-0 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
               {children}
             </article>
+            <AuthorBio />
             {/* Blog navigation - always show for blog posts */}
             {frontMatter.slug && (
               <div className="max-w-[48rem] mx-6 lg:mx-0">
                 <BlogNavigationServer currentSlug={frontMatter.slug} />
               </div>
             )}
-            <AuthorBio />
           </div>
         </div>
       </div>
