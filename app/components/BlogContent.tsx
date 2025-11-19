@@ -6,21 +6,34 @@ import * as motion from "motion/react-client";
 const BlogContentClient = ({ 
   posts,
   showTitle = true,
-  title = "All Posts" 
+  title = "All Posts",
+  rssButton
 }: BlogContentProps) => {
   return (
     <div className="flex w-full max-w-7xl mx-auto">
       <div className='w-full'>
         {showTitle && (
-          <motion.h1 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.1 }}
-            className="text-3xl md:text-5xl font-bold mb-6 flex"
-          >
-            {title}
-          </motion.h1>
+          <div className="flex items-center justify-between mb-6">
+            <motion.h1 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.1 }}
+              className="text-3xl md:text-5xl font-bold"
+            >
+              {title}
+            </motion.h1>
+            {rssButton && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
+              >
+                {rssButton}
+              </motion.div>
+            )}
+          </div>
         )}
         {posts.length > 0 ? (
           <motion.div 

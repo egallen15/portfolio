@@ -6,7 +6,8 @@ import { BlogPost, BlogContentServerProps } from '../types/blog';
 export default async function BlogContentServer({ 
   maxPosts, 
   showTitle = true,
-  title = "All Posts" 
+  title = "All Posts",
+  rssButton
 }: BlogContentServerProps) {
   try {
     // Fetch and normalize the page map for '/blog'
@@ -44,6 +45,7 @@ export default async function BlogContentServer({
             posts={posts}
             showTitle={showTitle}
             title={title}
+            rssButton={rssButton}
           />
         </div>
       </div>

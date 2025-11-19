@@ -38,6 +38,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: ["/og-default.png"],
   },
+  alternates: {
+    types: {
+      'application/rss+xml': [
+        { url: '/feed.xml', title: "Eric Allen's Blog" }
+      ],
+    },
+  },
 };
 
 export const viewport: Viewport = {
