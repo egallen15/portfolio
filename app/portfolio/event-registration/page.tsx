@@ -17,55 +17,55 @@ const eventRegistrationData: CaseStudyProps = {
     {
       src: "/images/Check-in frame.png",
       alt: "Event Check-in Interface",
-      width: 800,
-      height: 600
+      width: 1200,
+      height: 675
     },
     {
       src: "/images/Payment Forms 2.0 Walkthrough Image.png",
       alt: "Payment Forms Walkthrough",
-      width: 800,
-      height: 600
+      width: 1200,
+      height: 675
     },
     {
-      src: "/images/payment-forms.png",
+      src: "/images/payment-forms-v3.png",
       alt: "Payment Forms Interface",
-      width: 800,
-      height: 600
+      width: 1200,
+      height: 675
     },
     {
       src: "/images/subsplash.png",
       alt: "Subsplash Platform Overview",
-      width: 800,
-      height: 600
+      width: 1200,
+      height: 675
     }
   ],
   
   sections: {
     tools: {
       title: "Design tools",
-      content: "Using wireframes, prototypes, and user flows, I created a simple event registration experience that met both user needs and business goals.",
+      content: "Using wireframes, prototypes, and user flows, I created a simple event registration experience that met all our business goals and delighted users.",
       features: [
         {
-          icon: "chart-bar",
-          title: "Sketch",
-          description: "Frontend built with React and TypeScript for type safety and component reusability, ensuring maintainable and scalable code."
-        },
-        {
-          icon: "chart-bar",
-          title: "Zeplin",
-          description: "Robust REST API integration for real-time data synchronization and secure payment processing."
-        },
-        {
-          icon: "chart-bar",
+          icon: "check-circle",
           title: "Procreate",
-          description: "Implemented caching strategies to handle high-traffic registration periods without performance degradation."
+          description: "Created initial sketches and concept art to explore design ideas and iterate on visual elements quickly."
+        },
+        {
+          icon: "check-circle",
+          title: "Sketch",
+          description: "Designed high-fidelity mockups and interactive prototypes to visualize the user experience and gather feedback from stakeholders."
+        },
+        {
+          icon: "user-plus",
+          title: "Zeplin",
+          description: "Handed off detailed design specifications and assets to the development team, ensuring accurate implementation of the designs."
         }
       ]
     },
     
     problemStatement: {
       title: "Problem",
-      content: "Church leaders and admins tend to use freemium event products to set up registrations for their events. Free tools like Eventbrite and Google Forms are powerful and easy to adopt, but unfortunately don't integrate well with their people data, preferred payment systems, and bookkeeping tools. \n\n Since Subsplash didn't offer event registration, our customers were basically forced to adopt these tools to run event registration through the Subsplash mobile app. The registration data ended up in different dashboards, and payments were hard to track down and tally up. Less than ideal. \n\n The challenges of juggling multiple tools also made setting up an event registration and intimidating and complicated challenge for newer church employees, requiring training in multiple tools. \n\n This ultimately incentivizes them to fall back to familiar but manual processes that are error-prone and inefficient."
+      content: "Church leaders are scrappy, cost-conscious leaders who opt for the easiest and most affordable tools for their church. When exploring ways to run event registration, free tools like Google Forms and Eventbrite are very popular. These products are powerful and easy to adopt, and have great UX. \n\n However, after they start to get data in these tools and scale their processes, they run into issues with datat not being in the right spot for their team to reference. Google Forms and Eventbrite don't easily integrate with their people database, preferred payment systems, or bookkeeping tools. \n\n Before this project, Subsplash didn't offer event registration, so our customers had to adopt other tools to run event registration. Their event data ended up scattered across different products, and payments were hard to track down and tally up. We wanted to give our customers something better. \n\n "
     },
     
     researchAndFeedback: {
@@ -75,7 +75,7 @@ const eventRegistrationData: CaseStudyProps = {
     
     solution: {
       title: "Solution",
-      content: "We built an MVP of event registration that first only allowed for only free events, and iterated consistently over time to add features like:",
+      content: "We built an MVP of event registration that only supported free events at first, but iterated quickly and consistently to add features like:",
       features: [
         {
           icon: "calendar",
@@ -85,17 +85,17 @@ const eventRegistrationData: CaseStudyProps = {
         {
           icon: "users",
           title: "Free or paid events",
-          description: "Streamlined registration process with real-time availability checking, group registrations, and automated confirmation emails."
+          description: "Add a payment form to collect payments during registration for paid events."
         },
         {
           icon: "check-circle",
           title: "Discount Codes & Ticket Types",
-          description: "Flexible pricing options with discount codes, multiple ticket types, and partial payment capabilities for better accessibility."
+          description: "Flexible pricing options with discount codes, multiple ticket types, and partial payment capabilities to give attendees more ways to pay."
         },
         {
-          icon: "chart-bar",
+          icon: "check-circle",
           title: "Analytics & Communication",
-          description: "Detailed registration analytics, attendee tracking, automated email campaigns, and customizable reports for data-driven decisions."
+          description: "Tools for viewing and managing event data, see who's paid, and who still owes."
         }
       ]
     },
@@ -105,7 +105,7 @@ const eventRegistrationData: CaseStudyProps = {
       content: "From these events, Subsplash has been able to create a new consistent revenue stream.",
       features: [
         {
-          icon: "chart-bar",
+          icon: "check-circle",
           title: "40M processed in the first 3 years",
           description: "Significant revenue growth from event registration fees, contributing to overall company profitability and sustainability."
         },
