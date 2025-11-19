@@ -22,14 +22,14 @@ const About: React.FC = () => {
       date: "Fall 2015",
       title: "Started on Subsplash Support",
       description:
-        "Joined as a Platform Specialist; solved tickets and took tech support calls.",
+        "Joined as a Platform Specialist; solved tickets, took tech support calls, filmed & produced support videos.",
       side: "left",
     },
     {
       id: 2,
       date: "Spring 2018",
       title: "Promoted to UX Design Intern",
-      description: "UX internship led to full-time design role; redesigned Subsplash push notifications & Giving features.",
+      description: "UX internship led to full-time design role; redesigned Subsplash push notifications &Giving features.",
       side: "right",
     },
     {
@@ -37,7 +37,7 @@ const About: React.FC = () => {
       date: "Winter 2018",
       title: "Promoted to UX Designer I",
       description:
-        "Lead UX designer on Subsplash Giving. $40M processed in first 2 years",
+        "Led UX designer on Subsplash Giving. $40M processed in first 2 years",
       side: "left",
     },
     {
@@ -45,7 +45,7 @@ const About: React.FC = () => {
       date: "2019",
       title: "Lead UX Designer for signup and onboarding",
       description:
-        "Modernized UI & redesigned complex packages into an extensible design system.",
+        "Modernized UI + redesigned complex packages into an extensible design system.",
       side: "right",
     },
     {
