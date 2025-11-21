@@ -122,7 +122,7 @@ function TimelineCard({
 
       {/* Card */}
       <div
-        className={`p-6 w-full lg:w-96 bg-slate-100 dark:bg-slate-700 text-foreground z-10 rounded-lg shadow-lg ${
+        className={`p-6 w-full max-w-[calc(100vw-3rem)] md:max-w-md lg:w-96 bg-slate-100 dark:bg-slate-700 text-foreground z-10 rounded-lg shadow-lg ${
           isLeft ? 'md:rotate-2' : 'md:-rotate-2'
         }`}
       >
