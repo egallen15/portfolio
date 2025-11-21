@@ -15,12 +15,6 @@ const eventRegistrationData: CaseStudyProps = {
   
   images: [
     {
-      src: "/images/Check-in frame.png",
-      alt: "Event Check-in Interface",
-      width: 1200,
-      height: 675
-    },
-    {
       src: "/images/Payment Forms 2.0 Walkthrough Image.png",
       alt: "Payment Forms Walkthrough",
       width: 1200,
@@ -29,12 +23,6 @@ const eventRegistrationData: CaseStudyProps = {
     {
       src: "/images/payment-forms-v3.png",
       alt: "Payment Forms Interface",
-      width: 1200,
-      height: 675
-    },
-    {
-      src: "/images/subsplash.png",
-      alt: "Subsplash Platform Overview",
       width: 1200,
       height: 675
     }

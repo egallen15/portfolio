@@ -75,7 +75,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
   return (
     <div className="lg:-ml-12 lg:sticky lg:top-32 lg:col-start-2 lg:row-span-2 lg:row-start-1">
       {/* Main Featured Image with Fixed Height Container */}
-      <div className="relative w-full h-[300px] sm:h-[450px] rounded-xl bg-transparent group">
+      <div className="relative w-full h-[240px] sm:h-[480px] lg:h-[420px] rounded-xl bg-transparent group">
         <Image
           alt={currentImage.alt}
           src={currentImage.src}
@@ -191,7 +191,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                   alt={img.alt}
                   width={336}
                   height={336}
-                  className="h-full w-full object-contain bg-transparent"
+                  className="h-full w-full object-cover bg-transparent"
                   sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 336px"
                   quality={95}
                   priority={index === selectedImageIndex}
@@ -234,7 +234,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                   src={currentImage.src}
                   width={1200}
                   height={675}
-                  className="max-w-full max-h-full object-contain rounded-xl"
+                  className="w-fit max-h-full object-contain rounded-xl"
                   priority={true}
                   style={{ maxHeight: 'calc(100vh - 300px)' }}
                 />
