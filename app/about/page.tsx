@@ -95,7 +95,7 @@ const About: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-center lg:items-center pb-8">
-      <div className="w-full max-w-7xl mx-6 xl:mx-0">
+      <div className="w-full lg:max-w-7xl mx-6 xl:mx-0">
         <Breadcrumb
           pages={[{ name: "About", href: "/about", current: true }]}
         />
