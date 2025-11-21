@@ -42,14 +42,17 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
     document.body.style.overflow = 'auto' // Restore scrolling
   }
   
-  // Handle keyboard navigation in lightbox
+  // Handle keyboard navigation (works both in and out of lightbox)
   useEffect(() => {
     const handleKeydown = (e: KeyboardEvent) => {
-      if (!isLightboxOpen) return
+      // Only handle arrow keys if there are multiple images
+      if (images.length <= 1) return
       
       switch (e.key) {
         case 'Escape':
-          closeLightbox()
+          if (isLightboxOpen) {
+            closeLightbox()
+          }
           break
         case 'ArrowLeft':
           e.preventDefault()
@@ -62,11 +65,9 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
       }
     }
     
-    if (isLightboxOpen) {
-      document.addEventListener('keydown', handleKeydown)
-      return () => document.removeEventListener('keydown', handleKeydown)
-    }
-  }, [isLightboxOpen, goToPrevious, goToNext])
+    document.addEventListener('keydown', handleKeydown)
+    return () => document.removeEventListener('keydown', handleKeydown)
+  }, [isLightboxOpen, goToPrevious, goToNext, images.length])
   
   if (!currentImage) {
     return null
