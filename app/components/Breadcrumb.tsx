@@ -40,7 +40,7 @@ export default function Breadcrumb({ pages, homeHref = "/", pageTitle }: Breadcr
                 <Link
                   href={page.href}
                   aria-current={page.current ? 'page' : undefined}
-                  className="ml-2 text-sm font-medium text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                  className="ml-2 text-sm font-medium text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:underline"
                 >
                   {page.name}
                 </Link>

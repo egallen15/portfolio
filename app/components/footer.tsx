@@ -90,7 +90,7 @@ export const Footer: FC = () => {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+                      className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors hover:underline"
                     >
                       {item.name}
                     </Link>
@@ -108,7 +108,7 @@ export const Footer: FC = () => {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+                      className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors hover:underline"
                     >
                       {item.name}
                     </Link>
@@ -126,7 +126,7 @@ export const Footer: FC = () => {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+                      className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors hover:underline"
                     >
                       {item.name}
                     </Link>
