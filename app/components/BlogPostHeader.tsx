@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import * as motion from "motion/react-client";
 import { CalendarDaysIcon } from "@heroicons/react/20/solid";
 import Breadcrumb from "./Breadcrumb";
@@ -58,11 +59,20 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
         ]}
       />
       {tags.length > 0 && (
-          <div className="flex items-center gap-1 mb-3 sm:mb-4">
-            {/* <HashtagIcon className="h-4 w-4 text-slate-500 dark:text-slate-400" /> */}
-            <span className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">
-              {tags.join(" • ")}
-            </span>
+          <div className="flex items-center gap-1 mb-3 sm:mb-4 flex-wrap">
+            {tags.map((tag, idx) => (
+              <span key={tag} className="flex items-center gap-1">
+                <Link
+                  href={`/blog?tag=${encodeURIComponent(tag)}`}
+                  className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:underline"
+                >
+                  {tag}
+                </Link>
+                {idx < tags.length - 1 && (
+                  <span className="text-xs text-slate-500 dark:text-slate-400">•</span>
+                )}
+              </span>
+            ))}
           </div>
         )}
 
