@@ -7,7 +7,8 @@ export default async function BlogContentServer({
   maxPosts, 
   showTitle = true,
   title = "All Posts",
-  rssButton
+  rssButton,
+  showTagFilter = true
 }: BlogContentServerProps) {
   try {
     // Fetch and normalize the page map for '/blog'
@@ -46,6 +47,7 @@ export default async function BlogContentServer({
             showTitle={showTitle}
             title={title}
             rssButton={rssButton}
+            showTagFilter={showTagFilter}
           />
         </div>
       </div>

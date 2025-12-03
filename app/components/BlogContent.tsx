@@ -11,7 +11,8 @@ const BlogContentClient = ({
   posts,
   showTitle = true,
   title = "All Posts",
-  rssButton
+  rssButton,
+  showTagFilter = true
 }: BlogContentProps) => {
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>(posts);
 
@@ -42,9 +43,11 @@ const BlogContentClient = ({
           </div>
         )}
         
-        <Suspense fallback={<div className="mb-6 h-10 animate-pulse bg-gray-200 dark:bg-gray-800 rounded" />}>
-          <BlogTagFilter posts={posts} onFilterChange={setFilteredPosts} />
-        </Suspense>
+        {showTagFilter && (
+          <Suspense fallback={<div className="mb-4 h-10 animate-pulse bg-gray-200 dark:bg-gray-800 rounded" />}>
+            <BlogTagFilter posts={posts} onFilterChange={setFilteredPosts} />
+          </Suspense>
+        )}
         
         {filteredPosts.length > 0 ? (
           <div className="flex flex-col space-y-2">

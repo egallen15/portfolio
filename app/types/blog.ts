@@ -14,6 +14,7 @@ export interface BlogContentProps {
   showTitle?: boolean;
   title?: string;
   rssButton?: React.ReactNode;
+  showTagFilter?: boolean;
 }
 
 export interface BlogContentServerProps {
@@ -21,4 +22,5 @@ export interface BlogContentServerProps {
   showTitle?: boolean;
   title?: string;
   rssButton?: React.ReactNode;
+  showTagFilter?: boolean;
 }

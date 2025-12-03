@@ -184,14 +184,14 @@ export default function Home() {
               View all
             </Link>
           </div>
-          <motion.section className="mt-6">
+          <motion.section className="mt-4">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              <BlogContentServer maxPosts={3} showTitle={false} />
+              <BlogContentServer maxPosts={3} showTitle={false} showTagFilter={false} />
             </motion.div>
           </motion.section>
             <section className="mt-4">

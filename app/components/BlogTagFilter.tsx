@@ -113,54 +113,47 @@ export default function BlogTagFilter({ posts, onFilterChange }: BlogTagFilterPr
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="mb-6"
+      className="mb-4"
     >
-      <div className="flex items-center justify-between mb-4">
-        {/* <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
-          Tags
-        </h2> */}
-        
-        {selectedTags.size > 0 && (
-          <motion.button
-            initial={{ opacity: 0, scale: 1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1 }}
-            onClick={resetTags}
-            className="text-sm px-4 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors whitespace-nowrap flex items-center gap-1.5"
-            aria-label="Reset tag filters"
-          >
-            <ArrowPathIcon className="w-4 h-4" />
-            Reset
-          </motion.button>
-        )}
-      </div>
-
-      <div className="flex flex-wrap gap-3">
-        {allTags.map((tag) => (
-          <button
-            key={tag}
-            onClick={() => toggleTag(tag)}
-            className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform"
-            aria-label={`Toggle ${tag} posts`}
-          >
-            <div 
-              className={`w-3 h-3 rounded-full transition-all ${
-                tagDotColors[tag] || "bg-gray-400 dark:bg-gray-500"
-              } ${
-                isTagSelected(tag) ? "scale-110 ring-1 ring-offset-2 ring-current" : ""
+      <div className="flex flex-wrap items-center gap-2">
+        {allTags.map((tag, index) => (
+          <>
+            {index > 0 && (
+              <span className="text-slate-400 dark:text-slate-500" aria-hidden="true">
+                •
+              </span>
+            )}
+            <button
+              key={tag}
+              onClick={() => toggleTag(tag)}
+              className={`text-xs uppercase tracking-widest transition-all ${
+                isTagSelected(tag)
+                  ? "font-bold text-gray-900 dark:text-gray-100 underline"
+                  : "text-slate-500 dark:text-slate-400 hover:underline"
               }`}
-            ></div>
-            <span 
-              className={`text-sm transition-all ${
-                isTagSelected(tag) 
-                  ? "font-bold text-gray-900 dark:text-gray-100" 
-                  : "text-gray-600 dark:text-gray-400"
-              }`}
+              aria-label={`Toggle ${tag} posts`}
             >
               {tag}
-            </span>
-          </button>
+            </button>
+          </>
         ))}
+        
+        <motion.button
+          initial={false}
+          animate={{ 
+            opacity: selectedTags.size > 0 ? 1 : 0,
+            scale: selectedTags.size > 0 ? 1 : 0.95
+          }}
+          onClick={resetTags}
+          className={`ml-auto text-sm px-4 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors whitespace-nowrap flex items-center gap-1.5 ${
+            selectedTags.size === 0 ? 'invisible pointer-events-none' : ''
+          }`}
+          aria-label="Reset tag filters"
+          aria-hidden={selectedTags.size === 0}
+        >
+          <ArrowPathIcon className="w-4 h-4" />
+          Reset
+        </motion.button>
       </div>
     </motion.div>
   );
