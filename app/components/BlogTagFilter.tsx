@@ -11,16 +11,6 @@ interface BlogTagFilterProps {
   onFilterChange: (filteredPosts: BlogPost[]) => void;
 }
 
-const tagDotColors: Record<string, string> = {
-  AI: "bg-purple-400 dark:bg-purple-500",
-  Productivity: "bg-blue-400 dark:bg-blue-500",
-  Guides: "bg-emerald-400 dark:bg-emerald-500",
-  Guide: "bg-emerald-400 dark:bg-emerald-500",
-  Games: "bg-orange-400 dark:bg-orange-500",
-  Design: "bg-pink-400 dark:bg-pink-500",
-  Example: "bg-gray-400 dark:bg-gray-500",
-};
-
 export default function BlogTagFilter({ posts, onFilterChange }: BlogTagFilterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
