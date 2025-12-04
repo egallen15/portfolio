@@ -37,7 +37,8 @@ export default function BlogTagFilter({ posts, onFilterChange }: BlogTagFilterPr
       );
       onFilterChange(filtered);
     }
-  }, [searchParams, allTags, posts, onFilterChange]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams, allTags, posts]);
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) => {
