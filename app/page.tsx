@@ -163,7 +163,6 @@ export default function Home() {
                   className="shadow-xl w-72 h-auto dark:neon"
                   style={{ clipPath: "url(#blobClip)" }}
                   priority
-                  fetchPriority="high"
                 />
               </motion.div>
             </div>
