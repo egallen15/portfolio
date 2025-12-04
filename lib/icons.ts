@@ -8,8 +8,9 @@ import {
   UserPlusIcon,
   ShieldCheckIcon,
   CogIcon,
-  BoltIcon
-} from '@heroicons/react/20/solid'
+  BoltIcon,
+  ClockIcon
+} from '@heroicons/react/24/outline'
 
 export const icons = {
   'chart-bar': ChartBarIcon,
@@ -22,6 +23,7 @@ export const icons = {
   'shield-check': ShieldCheckIcon,
   'cog': CogIcon,
   'bolt': BoltIcon,
+  'clock': ClockIcon,
 } as const
 
 export type IconName = keyof typeof icons

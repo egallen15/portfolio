@@ -3,7 +3,7 @@ import type { FC } from "react";
 import Link from "next/link";
 import { formatDistanceToNow } from "date-fns";
 import Image from "next/image";
-import { CalendarDaysIcon, HashtagIcon } from "@heroicons/react/24/outline";
+import { CalendarDaysIcon, ClockIcon, HashtagIcon } from "@heroicons/react/24/outline";
 
 interface BlogPostListItemProps {
   title: string;
@@ -12,6 +12,12 @@ interface BlogPostListItemProps {
   date: string;
   imageUrl?: string;
   tags?: string[];
+  readingTime?: {
+    text: string;
+    minutes: number;
+    time: number;
+    words: number;
+  };
 }
 
 const BlogPostListItem: FC<BlogPostListItemProps> = ({
@@ -21,6 +27,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
   url,
   imageUrl,
   tags = [],
+  readingTime,
 }) => {
   // Convert the input date string to a Date object.
   const parsedDate = new Date(date);
@@ -52,6 +59,14 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
                 {relativeDate}
               </time>
             </div>
+            {readingTime && (
+              <div className="flex items-center gap-2">
+                <ClockIcon className="h-4 w-4 text-slate-500 dark:text-slate-400" />
+                <span className="text-xs text-slate-500 dark:text-slate-400">
+                  {readingTime.text}
+                </span>
+              </div>
+            )}
             {tags.length > 0 && (
               <div className="flex items-center gap-2">
                 <HashtagIcon className="h-4 w-4 text-slate-500 dark:text-slate-400" />

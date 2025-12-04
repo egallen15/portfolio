@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import * as motion from "motion/react-client";
-import { CalendarDaysIcon } from "@heroicons/react/20/solid";
+import { CalendarDaysIcon, ClockIcon } from "@heroicons/react/24/outline";
 import Breadcrumb from "./Breadcrumb";
 import CopyLinkButton from "./CopyLinkButton";
 
@@ -14,6 +14,12 @@ interface BlogPostHeaderProps {
     image?: string;
     excerpt?: string;
     tags?: string[];
+    readingTime?: {
+      text: string;
+      minutes: number;
+      time: number;
+      words: number;
+    };
   };
 }
 
@@ -26,6 +32,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
     image,
     tags = [],
     excerpt,
+    readingTime,
   } = frontMatter ?? {};
 
   // Format the date nicely for display
@@ -126,6 +133,14 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
               {formatDate(date)}
             </time>
           </div>
+          {readingTime && (
+            <div className="flex items-center gap-2">
+              <ClockIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" />
+              <span className="text-sm dark:text-slate-400 text-slate-500">
+                {readingTime.text}
+              </span>
+            </div>
+          )}
         </div>
         <CopyLinkButton />
       </div>

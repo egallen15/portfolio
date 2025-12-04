@@ -7,6 +7,12 @@ export interface BlogPost {
   tags: string[];
   image?: string;
   slug?: string;
+  readingTime?: {
+    text: string;
+    minutes: number;
+    time: number;
+    words: number;
+  };
 }
 
 export interface BlogContentProps {

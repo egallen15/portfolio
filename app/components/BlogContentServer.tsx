@@ -33,7 +33,8 @@ export default async function BlogContentServer({
         excerpt: post.frontMatter.excerpt || 'No excerpt available.',
         tags: post.frontMatter.tags || [],
         image: post.frontMatter.image,
-        slug: post.frontMatter.slug
+        slug: post.frontMatter.slug,
+        readingTime: post.frontMatter.readingTime
       }));
 
     // Limit posts if maxPosts is specified

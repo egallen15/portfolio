@@ -69,6 +69,7 @@ const BlogContentClient = ({
                     url={post.route}
                     tags={post.tags}
                     imageUrl={post.image}
+                    readingTime={post.readingTime}
                   />
                 </motion.div>
               ))}
