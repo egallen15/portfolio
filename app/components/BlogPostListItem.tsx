@@ -53,18 +53,13 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
               </time>
             </div>
             {tags.length > 0 && (
-              <div className="flex items-center gap-1" onClick={(e) => e.preventDefault()}>
+              <div className="flex items-center gap-2">
                 <HashtagIcon className="h-4 w-4 text-slate-500 dark:text-slate-400" />
-                <div className="flex items-center gap-2 flex-wrap">
+                <div className="flex items-center flex-wrap text-xs text-slate-500 dark:text-slate-400">
                   {tags.map((tag, idx) => (
                     <span key={tag}>
-                      <Link
-                        href={`/blog?tag=${encodeURIComponent(tag)}`}
-                        className="text-xs text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
-                      >
-                        {tag}
-                      </Link>
-                      {idx < tags.length - 1 && <span className="text-xs text-slate-500 dark:text-slate-400">,</span>}
+                      {tag}
+                      {idx < tags.length - 1 && <span className="mx-1.5">•</span>}
                     </span>
                   ))}
                 </div>

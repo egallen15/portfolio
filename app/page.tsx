@@ -184,7 +184,7 @@ export default function Home() {
               View all
             </Link>
           </div>
-          <motion.section className="mt-4">
+          <motion.section className="mt-6">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}

@@ -50,7 +50,7 @@ const BlogContentClient = ({
         )}
         
         {filteredPosts.length > 0 ? (
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col divide-y divide-slate-200 dark:divide-slate-700 border-t border-b border-slate-200 dark:border-slate-700">
             <AnimatePresence mode="sync">
               {filteredPosts.map((post) => (
                 <motion.div
@@ -60,6 +60,7 @@ const BlogContentClient = ({
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="py-1.5"
                 >
                   <BlogPostListItem
                     date={post.date}
