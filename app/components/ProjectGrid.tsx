@@ -61,11 +61,11 @@ export default function ProjectGrid({ items, columns = 3 }: ProjectGridProps) {
                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               >
                 <div className="absolute inset-px rounded-2xl bg-slate-50 dark:bg-slate-800 transition-all duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-700" />
-                <div className="relative flex h-full flex-col overflow-hidden rounded-2xl transition-transform duration-300 group-hover:scale-[1.02]">
+                <div className="relative flex h-full flex-col overflow-hidden rounded-2xl transition-transform duration-100">
                   <div className="flex flex-col p-8 gap-4">
                     {/* Logo or Image Section */}
                     {item.logo && (
-                      <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 p-3 transition-all duration-300 group-hover:scale-105">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 p-3 transition-all duration-100 group-hover:scale-105">
                         <Image
                           src={item.logo}
                           alt={`${item.title} logo`}
@@ -137,7 +137,7 @@ export default function ProjectGrid({ items, columns = 3 }: ProjectGridProps) {
                     </div>
                   </div>
                 </div>
-                <div className="pointer-events-none absolute inset-px rounded-2xl shadow-sm ring-1 ring-slate-950/5 dark:ring-white/10 transition-all duration-300 group-hover:ring-blue-500/20 group-hover:shadow-md" />
+                <div className="pointer-events-none absolute inset-px rounded-2xl ring-1 ring-slate-950/5 dark:ring-white/10 transition-all duration-300 group-hover:ring-blue-500/20" />
               </Link>
             </motion.div>
           ))}
