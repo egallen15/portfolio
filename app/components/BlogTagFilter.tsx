@@ -104,7 +104,7 @@ export default function BlogTagFilter({ posts, onFilterChange }: BlogTagFilterPr
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="mb-4"
+      className=""
     >
       <div className="flex flex-wrap items-center gap-2">
         {allTags.map((tag, index) => (
