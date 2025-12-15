@@ -86,7 +86,7 @@ export default function StackPage() {
   ];
 
   return (
-    <div className="min-h-screen py-8">
+    <div className="min-h-screen">
       <div className="w-full max-w-7xl mx-6 xl:mx-0">
               <Breadcrumb
                 pages={[{ name: "My stack", href: "/my-stack", current: true }]}
