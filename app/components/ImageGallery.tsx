@@ -74,7 +74,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
   }
 
   return (
-    <div className="lg:-ml-12 lg:sticky lg:top-32 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+    <div className="lg:-ml-12 lg:sticky lg:top-1/2 lg:-translate-y-1/2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
       {/* Main Featured Image with Fixed Height Container */}
       <div className="relative w-full h-[240px] sm:h-[480px] lg:h-[420px] rounded-xl bg-transparent group">
         <Image
