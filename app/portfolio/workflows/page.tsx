@@ -1,10 +1,9 @@
 import Breadcrumb from '@/app/components/Breadcrumb'
 import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
+import { portfolioMetadata } from '../portfolioData'
 
 const workflowsData: CaseStudyProps = {
-  subtitle: "Subsplash",
-  title: "Workflows", 
-  description: "An intuitive workflow automation system that empowers teams to build custom business processes without code, increasing efficiency and reducing manual tasks.",
+  ...portfolioMetadata.workflows,
   
   image: {
     src: "/images/workflows.png",

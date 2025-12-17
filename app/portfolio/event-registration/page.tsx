@@ -1,10 +1,9 @@
 import Breadcrumb from '@/app/components/Breadcrumb'
 import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
+import { portfolioMetadata } from '../portfolioData'
 
 const eventRegistrationData: CaseStudyProps = {
-  subtitle: "Subsplash",
-  title: "Event Registration",
-  description: "I designed an event registration system with support for payments, balances, customizable forms, ticket types, and more.",
+  ...portfolioMetadata.eventRegistration,
   
   metadata: {
     role: "Senior UX Designer & Interim PM",

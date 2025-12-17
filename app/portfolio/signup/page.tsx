@@ -1,10 +1,9 @@
 import Breadcrumb from '@/app/components/Breadcrumb'
 import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
+import { portfolioMetadata } from '../portfolioData'
 
 const signupData: CaseStudyProps = {
-  subtitle: "Subsplash",
-  title: "Signup & onboarding",
-  description: "I designed the first time experience for every customer that signs up for Subsplash.",
+  ...portfolioMetadata.signup,
   
   image: {
     src: "/images/subsplash.png",
