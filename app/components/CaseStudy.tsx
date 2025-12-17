@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import ImageGallery from './ImageGallery'
+import PortfolioNavigationServer from './PortfolioNavigationServer'
 import { 
   UsersIcon, 
   CalendarDaysIcon, 
@@ -78,6 +79,9 @@ export interface CaseStudyProps {
     secondaryTitle?: string
     secondaryContent?: string
   }
+  
+  // Slug for navigation
+  slug?: string
 }
 
 export default function CaseStudy({
@@ -89,7 +93,8 @@ export default function CaseStudy({
   images,
   sections,
   features, // legacy support
-  content   // legacy support
+  content,   // legacy support
+  slug
 }: CaseStudyProps) {
   // Determine which images to use - prioritize new images array, fallback to single image
   const availableImages = images || (image ? [image] : [])
@@ -364,6 +369,13 @@ export default function CaseStudy({
           </div>
         </div>
       </div>
+      
+      {/* Portfolio Navigation */}
+      {slug && (
+        <div className="mx-auto lg:mx-0 lg:max-w-7xl mt-12">
+          <PortfolioNavigationServer currentSlug={slug} />
+        </div>
+      )}
     </div>
   )
 }

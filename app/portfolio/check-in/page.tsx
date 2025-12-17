@@ -1,10 +1,9 @@
 import Breadcrumb from '@/app/components/Breadcrumb'
 import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
+import { portfolioMetadata } from '../portfolioData'
 
 const checkInData: CaseStudyProps = {
-  subtitle: "Event Technology",
-  title: "Subsplash Event Check-In",
-  description: "A streamlined mobile-first check-in solution that enables fast, contactless event entry with real-time attendance tracking and seamless integration with event management systems.",
+  ...portfolioMetadata.checkIn,
   
   image: {
     src: "/images/Check-in frame.png",
