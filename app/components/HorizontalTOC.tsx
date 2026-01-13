@@ -3,12 +3,14 @@
 import type { Heading } from 'nextra'
 import type { FC } from 'react'
 import { useState, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 
 export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
   const [activeHeading, setActiveHeading] = useState<string | null>(null)
   const [showPopover, setShowPopover] = useState(false)
   const [hoveredHeading, setHoveredHeading] = useState<string | null>(null)
   const [showTooltip, setShowTooltip] = useState(false)
+  const [popoverPosition, setPopoverPosition] = useState({ top: 0, left: 0 })
   const observer = useRef<IntersectionObserver | null>(null)
   const popoverRef = useRef<HTMLDivElement | null>(null)
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -150,6 +152,15 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
     event.preventDefault()
     event.stopPropagation()
     
+    // Calculate position for portal-based popover
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect()
+      setPopoverPosition({
+        top: rect.top + rect.height / 2,
+        left: rect.right + 8 // 8px gap (ml-2)
+      })
+    }
+    
     // Toggle popover when clicking any bar
     setShowPopover(!showPopover)
   }
@@ -177,6 +188,53 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
   }
 
   if (!toc || toc.length === 0) return null
+
+  const popoverContent = showPopover && typeof window !== 'undefined' && (
+    <div
+      ref={popoverRef}
+      className="fixed bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-xl p-4 min-w-64 max-w-80 max-h-[80vh] flex flex-col z-[100]"
+      style={{
+        top: `${popoverPosition.top}px`,
+        left: `${popoverPosition.left}px`,
+        transform: 'translateY(-50%)'
+      }}
+    >
+      <div className="flex items-center justify-between mb-3 flex-shrink-0">
+        <h3 className="font-semibold text-sm text-slate-700 dark:text-slate-300 uppercase tracking-wide">
+          On this page
+        </h3>
+        <button
+          onClick={() => setShowPopover(false)}
+          className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <ul className="space-y-1 overflow-y-auto overflow-x-hidden pr-1 scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-600 scrollbar-track-transparent">
+        {toc.map(heading => (
+          <li key={heading.id} className="relative">
+            <button
+              onClick={(e) => handleHeadingClick(e, heading.id)}
+              className={`text-left w-full px-2 py-1.5 rounded text-sm transition-colors duration-150 ${
+                activeHeading === heading.id 
+                  ? 'bg-slate-50 dark:bg-slate-900/30 text-slate-700 dark:text-slate-300 font-medium' 
+                  : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:text-slate-900 dark:hover:text-slate-200'
+              }`}
+              style={{ paddingLeft: `${(heading.depth - 1) * 12 + 4}px` }}
+            >
+              {heading.value}
+            </button>
+            {activeHeading === heading.id && (
+              <div className="absolute left-0 top-1.5 bottom-1.5 w-1 bg-slate-500 dark:bg-slate-400 rounded-full"></div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 
   return (
     <div ref={containerRef} className="relative">
@@ -216,48 +274,8 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
         ))}
       </div>
 
-      {/* Popover with full table of contents */}
-      {showPopover && (
-        <div
-          ref={popoverRef}
-          className="absolute left-full top-1/2 -translate-y-1/2 ml-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-xl p-4 min-w-64 max-w-80 max-h-[80vh] flex flex-col z-50"
-        >
-          <div className="flex items-center justify-between mb-3 flex-shrink-0">
-            <h3 className="font-semibold text-sm text-slate-700 dark:text-slate-300 uppercase tracking-wide">
-              On this page
-            </h3>
-            <button
-              onClick={() => setShowPopover(false)}
-              className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          
-          <ul className="space-y-1 overflow-y-auto overflow-x-hidden pr-1 scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-600 scrollbar-track-transparent">
-            {toc.map(heading => (
-              <li key={heading.id} className="relative">
-                <button
-                  onClick={(e) => handleHeadingClick(e, heading.id)}
-                  className={`text-left w-full px-2 py-1.5 rounded text-sm transition-colors duration-150 ${
-                    activeHeading === heading.id 
-                      ? 'bg-slate-50 dark:bg-slate-900/30 text-slate-700 dark:text-slate-300 font-medium' 
-                      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:text-slate-900 dark:hover:text-slate-200'
-                  }`}
-                  style={{ paddingLeft: `${(heading.depth - 1) * 12 + 4}px` }}
-                >
-                  {heading.value}
-                </button>
-                {activeHeading === heading.id && (
-                  <div className="absolute left-0 top-1.5 bottom-1.5 w-1 bg-slate-500 dark:bg-slate-400 rounded-full"></div>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {/* Render popover via portal */}
+      {popoverContent && createPortal(popoverContent, document.body)}
     </div>
   )
 }
