@@ -65,6 +65,7 @@ const config: Config = {
         DEFAULT: {
           css: {
             maxWidth: '48rem',
+            fontSize: '1.125rem',
             lineHeight: '1.6',
             code: {
               backgroundColor: theme('colors.slate.100'),
