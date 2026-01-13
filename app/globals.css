@@ -107,3 +107,266 @@ img, video, iframe {
 nav {
   transition: background-color 0.3s ease;
 }
+
+/* ===================================
+   CODE BLOCK STYLING
+   =================================== */
+
+/* Nextra/Shiki syntax highlighting - target pre and code directly */
+pre code span {
+  background-color: transparent !important;
+  color: var(--shiki-light, inherit) !important;
+}
+
+html.dark pre code span {
+  background-color: transparent !important;
+  color: var(--shiki-dark, inherit) !important;
+}
+
+/* Inline code styling - subtle and refined */
+:not(pre) > code {
+  padding: 0.2em 0.4em;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(14, 165, 233, 0.15);
+  background: rgba(14, 165, 233, 0.08);
+  color: #0369a1;
+  word-break: break-word;
+  font-size: 0.9em;
+  font-weight: 500;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+html.dark :not(pre) > code {
+  border-color: rgba(56, 189, 248, 0.25);
+  background: rgba(56, 189, 248, 0.15);
+  color: #7dd3fc;
+}
+
+/* Code block container - modern with depth */
+pre {
+  position: relative;
+  background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  padding: 1rem 0;
+  margin: 2rem 0;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  animation: slideUp 0.4s ease-out;
+}
+
+html.dark pre {
+  background: linear-gradient(to bottom, #0f172a, #0a0f1f);
+  border-color: #1e293b;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+}
+
+/* Hover effect for code blocks */
+pre:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.06);
+}
+
+html.dark pre:hover {
+  border-color: #334155;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+pre code {
+  display: grid;
+  counter-reset: line;
+  background: transparent;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+pre code > span {
+  padding: 0 1.25rem;
+  transition: background-color 0.2s ease;
+}
+
+/* Highlighted lines - vibrant accent */
+pre code > span[data-highlighted-line] {
+  background-color: rgba(14, 165, 233, 0.12);
+  border-left: 3px solid #0ea5e9;
+  padding-left: calc(1.25rem - 3px);
+}
+
+html.dark pre code > span[data-highlighted-line] {
+  background-color: rgba(56, 189, 248, 0.15);
+  border-left: 3px solid #38bdf8;
+}
+
+/* Line numbers - elegant and subtle */
+pre code[data-line-numbers] > span {
+  padding-left: 0.75rem;
+}
+
+pre code[data-line-numbers] > span::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  padding-right: 1.25rem;
+  margin-right: 1rem;
+  text-align: right;
+  min-width: 2.5rem;
+  color: #94a3b8;
+  border-right: 1px solid #e2e8f0;
+  user-select: none;
+}
+
+html.dark pre code[data-line-numbers] > span::before {
+  color: #64748b;
+  border-right-color: #334155;
+}
+
+/* Language label badge - matches copy button height */
+pre[data-language]::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0.75rem;
+  right: 4rem;
+  height: 30px;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  background: rgba(148, 163, 184, 0.1);
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  z-index: 10;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+html.dark pre[data-language]::before {
+  color: #94a3b8;
+  background: rgba(148, 163, 184, 0.15);
+  border-color: #334155;
+}
+
+/* Filename display - modern tab style */
+pre[data-filename]::after {
+  content: attr(data-filename);
+  position: absolute;
+  top: -0.75rem;
+  left: 1rem;
+  padding: 0.375rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #475569;
+  background: linear-gradient(to bottom, #ffffff, #f8fafc);
+  border: 1px solid #e2e8f0;
+  border-bottom: none;
+  border-radius: 0.5rem 0.5rem 0 0;
+  z-index: 10;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  box-shadow: 0 -2px 4px -1px rgb(0 0 0 / 0.05);
+}
+
+html.dark pre[data-filename]::after {
+  color: #cbd5e1;
+  background: linear-gradient(to bottom, #1e293b, #0f172a);
+  border-color: #334155;
+}
+
+/* Copy button - Enhanced styling for Nextra button */
+/* Override Nextra's button styles while keeping functionality */
+pre.group button {
+  padding: 0.5rem !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 4px -1px rgb(0 0 0 / 0.1) !important;
+}
+
+html.dark pre.group button {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border-color: #334155 !important;
+}
+
+pre.group button:hover {
+  background: #0ea5e9 !important;
+  border-color: #0ea5e9 !important;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px -1px rgb(14 165 233 / 0.3) !important;
+}
+
+html.dark pre.group button:hover {
+  background: #0ea5e9 !important;
+  border-color: #38bdf8 !important;
+}
+
+pre.group button:active {
+  transform: scale(0.95);
+}
+
+pre.group button svg,
+pre.group button .nextra-copy-icon {
+  width: 1.1rem !important;
+  height: 1.1rem !important;
+  color: #64748b !important;
+  transition: color 0.2s ease !important;
+}
+
+pre.group button:hover svg,
+pre.group button:hover .nextra-copy-icon {
+  color: #ffffff !important;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Scrollbar styling for code blocks */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+html.dark pre::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+html.dark pre::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+html.dark pre::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}

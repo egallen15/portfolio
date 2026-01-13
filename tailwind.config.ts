@@ -67,7 +67,8 @@ const config: Config = {
             maxWidth: '48rem',
             fontSize: '1.125rem',
             lineHeight: '1.6',
-            code: {
+            // Inline code only (not code blocks)
+            ':not(pre) > code': {
               backgroundColor: theme('colors.slate.100'),
               color: theme('colors.slate.900'),
               borderRadius: theme('borderRadius.md'),
@@ -84,11 +85,24 @@ const config: Config = {
                 content: '""',
               },
             },
+            // Prevent prose from styling code blocks
+            'pre': {
+              backgroundColor: 'transparent',
+              color: 'inherit',
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              color: 'inherit',
+              padding: 0,
+            },
+            'code span': {
+              color: 'inherit',
+            },
           },
         },
         invert: {
           css: {
-            code: {
+            ':not(pre) > code': {
               backgroundColor: theme('colors.slate.800'),
               color: theme('colors.slate.100'),
               '&::before': {
@@ -97,6 +111,18 @@ const config: Config = {
               '&::after': {
                 content: '""',
               },
+            },
+            // Prevent prose from styling code blocks in dark mode
+            'pre': {
+              backgroundColor: 'transparent',
+              color: 'inherit',
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              color: 'inherit',
+            },
+            'code span': {
+              color: 'inherit',
             },
           },
         },

@@ -4,6 +4,7 @@ import AuthorBio from './app/components/AuthorBio'
 import BlogNavigationServer from './app/components/BlogNavigationServer'
 import TOCWrapper from './app/components/TOCWrapper'
 import LightboxImage from './app/components/LightboxImage'
+import CodeBlock from './app/components/CodeBlock'
  
 const defaultComponents = getNextraComponents({
   wrapper({ children, ...allProps }) {
@@ -74,21 +75,8 @@ const defaultComponents = getNextraComponents({
   //   <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4">{children}</blockquote>
   // ),
   hr: () => <hr className="my-9 border-t" />,
-  code: ({ children }) => (
-    <code className="rounded bg-slate-200 text-slate-900 dark:text-slate-100 dark:bg-slate-800 py-1 text-sm font-mono before:content-[''] after:content-[''] [pre_&]:bg-slate-900 dark:[pre_&]:bg-slate-900 [pre_&]:px-0 [pre_&]:text-slate-100 [pre_&]:py-0 [pre_&]:rounded-none">
-      {children}
-    </code>
-  ),
-  // // Explicitly define pre component with the styling you want
-  pre: ({ children }) => {
-    return (
-      <pre className="p-4 rounded-lg my-8 overflow-x-auto w-full min-w-0 max-w-[calc(100vw-3rem)] sm:max-w-full whitespace-pre bg-slate-900 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700">
-        <code className="text-slate-100 ">
-          {children}
-        </code>
-      </pre>
-    );
-  },
+  // Custom pre component with copy button
+  pre: (props) => <CodeBlock {...props} />,
 })
 
 export const useMDXComponents = components => ({

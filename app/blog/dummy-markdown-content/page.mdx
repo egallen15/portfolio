@@ -26,12 +26,18 @@ Here is some example content. Markdown allows you to create headings, lists, lin
 
 Feel free to add more sections, `code blocks`, images, or any other markdown content you need.
 
-```python
+```js copy
 # This is a Python code block example
 def greet(name):
     return f"Hello, {name}!"
 
 print(greet("World"))
+```
+
+```ts {2} /return/ copy showLineNumbers filename="demo.ts"
+export function greet(name: string) {
+  return `Hello ${name}`
+}
 ```
 
 ## another heading

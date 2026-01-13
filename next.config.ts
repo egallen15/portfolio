@@ -1,7 +1,24 @@
 import nextra from 'nextra'
 
 const withNextra = nextra({
-  readingTime: true
+  readingTime: true,
+  defaultShowCopyCode: true,
+  codeHighlight: true,
+  staticImage: true,
+  search: {
+    codeblocks: true
+  },
+  mdxOptions: {
+    format: 'detect',
+    rehypePrettyCodeOptions: {
+      theme: {
+        dark: 'ayu-dark',
+        light: 'github-light-high-contrast'
+      },
+      keepBackground: true,
+      defaultLang: 'tsx'
+    }
+  }
 })
 
 export default withNextra({
