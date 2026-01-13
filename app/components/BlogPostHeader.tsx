@@ -1,10 +1,13 @@
-import React from "react";
+'use client'
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import * as motion from "motion/react-client";
 import { CalendarDaysIcon, ClockIcon } from "@heroicons/react/24/outline";
 import Breadcrumb from "./Breadcrumb";
 import CopyLinkButton from "./CopyLinkButton";
+import ImageLightbox from "./ImageLightbox";
 
 interface BlogPostHeaderProps {
   frontMatter?: {
@@ -24,6 +27,8 @@ interface BlogPostHeaderProps {
 }
 
 const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  
   // Destructure with better defaults and validation
   const {
     title = "Untitled Post",
@@ -97,15 +102,30 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, amount: 0.1 }}
+          className="relative mt-6 cursor-pointer group"
+          onClick={() => setIsLightboxOpen(true)}
         >
           <Image
             src={image}
             alt={title}
             width={896}
             height={384}
-            className="rounded-lg w-auto max-h-96 object-cover mt-6"
+            className="rounded-lg w-auto max-h-96 object-cover"
             priority // This loads the image faster since it's above the fold
           />
+          {/* Hover overlay to indicate clickability */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-200 rounded-lg flex items-center justify-center">
+            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full p-3">
+              <svg
+                className="w-6 h-6 text-slate-700 dark:text-slate-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              </svg>
+            </div>
+          </div>
         </motion.div>
       )}
 
@@ -145,6 +165,16 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
         <CopyLinkButton />
       </div>
       <hr className="mt-5 md:mt-6 border-slate-200 dark:border-slate-700 border-t" />
+      
+      {/* Image Lightbox */}
+      {image && (
+        <ImageLightbox
+          images={[{ src: image, alt: title, width: 1200, height: 675 }]}
+          currentIndex={0}
+          isOpen={isLightboxOpen}
+          onClose={() => setIsLightboxOpen(false)}
+        />
+      )}
     </header>
   );
 };

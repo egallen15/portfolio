@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useState, useEffect, useCallback } from 'react'
-import { createPortal } from 'react-dom'
+import ImageLightbox from './ImageLightbox'
 
 interface ImageData {
   src: string
@@ -34,26 +34,18 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
   // Lightbox functions
   const openLightbox = () => {
     setIsLightboxOpen(true)
-    document.body.style.overflow = 'hidden' // Prevent scrolling
   }
   
   const closeLightbox = () => {
     setIsLightboxOpen(false)
-    document.body.style.overflow = 'auto' // Restore scrolling
   }
   
-  // Handle keyboard navigation (works both in and out of lightbox)
+  // Handle keyboard navigation (only when lightbox is closed)
   useEffect(() => {
+    if (isLightboxOpen || images.length <= 1) return
+    
     const handleKeydown = (e: KeyboardEvent) => {
-      // Only handle arrow keys if there are multiple images
-      if (images.length <= 1) return
-      
       switch (e.key) {
-        case 'Escape':
-          if (isLightboxOpen) {
-            closeLightbox()
-          }
-          break
         case 'ArrowLeft':
           e.preventDefault()
           goToPrevious()
@@ -206,148 +198,14 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
         </div>
       )}
       
-      {/* Lightbox Overlay - Rendered as Portal */}
-      {isLightboxOpen && typeof window !== 'undefined' && createPortal(
-        <div className="fixed inset-0 z-[99999] isolate flex items-center justify-center bg-black/90 backdrop-blur-sm">
-          {/* Close Button */}
-          <button
-            onClick={closeLightbox}
-            className="absolute top-4 right-4 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-colors duration-200"
-            aria-label="Close lightbox"
-          >
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          
-          {/* Lightbox Main Content Container */}
-          <div className="relative w-full h-full flex flex-col items-center justify-center p-4 max-w-7xl mx-auto">
-            {/* Main Image Container */}
-            <div className="relative w-full flex-1 flex items-center justify-center">
-              <div className="relative max-w-full max-h-full">
-                <Image
-                  alt={currentImage.alt}
-                  src={currentImage.src}
-                  width={1200}
-                  height={675}
-                  className="w-fit max-h-full object-contain rounded-xl"
-                  priority={true}
-                  style={{ maxHeight: 'calc(100vh - 300px)' }}
-                />
-              </div>
-              
-              {/* Desktop Navigation Controls - Only show on larger screens and if there are multiple images */}
-              {images.length > 1 && (
-                <>
-                  {/* Left Navigation - Desktop */}
-                  <button
-                    onClick={goToPrevious}
-                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110 hidden lg:block"
-                    aria-label="Previous image"
-                  >
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  
-                  {/* Right Navigation - Desktop */}
-                  <button
-                    onClick={goToNext}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110 hidden lg:block"
-                    aria-label="Next image"
-                  >
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </>
-              )}
-            </div>
-            
-            {/* Combined Navigation and Thumbnail Gallery - Only show if there are multiple images */}
-            {images.length > 1 && (
-              <div className="w-full max-w-4xl">
-                <div className="flex justify-center items-center overflow-x-auto py-2">
-                  {/* Left Navigation - Mobile */}
-                  <button
-                    onClick={goToPrevious}
-                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110 lg:hidden mr-4 flex-shrink-0"
-                    aria-label="Previous image"
-                  >
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  
-                  {/* Thumbnail Gallery */}
-                  <div className="flex gap-2 px-4">
-                    {images.map((img, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setSelectedImageIndex(index)}
-                        className={`relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 overflow-hidden rounded-lg transition-all duration-200 hover:scale-105 ${
-                          index === selectedImageIndex
-                            ? 'ring-2 ring-white ring-offset-2 ring-offset-black/50'
-                            : 'ring-1 ring-white/30 hover:ring-white/50'
-                        }`}
-                      >
-                        <Image
-                          src={img.src}
-                          alt={img.alt}
-                          width={80}
-                          height={80}
-                          className="h-full w-full object-cover"
-                          sizes="80px"
-                        />
-                        {index === selectedImageIndex && (
-                          <div className="absolute inset-0 bg-white/20" />
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                  
-                  {/* Right Navigation - Mobile */}
-                  <button
-                    onClick={goToNext}
-                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110 lg:hidden ml-4 flex-shrink-0"
-                    aria-label="Next image"
-                  >
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>,
-        document.body
-      )}
+      {/* Lightbox Component */}
+      <ImageLightbox
+        images={images}
+        currentIndex={selectedImageIndex}
+        isOpen={isLightboxOpen}
+        onClose={closeLightbox}
+        onNavigate={setSelectedImageIndex}
+      />
     </div>
   )
 }
