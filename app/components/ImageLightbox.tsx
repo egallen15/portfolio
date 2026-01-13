@@ -4,6 +4,24 @@ import Image from 'next/image'
 import { useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 
+/**
+ * ImageLightbox - Reusable full-screen modal component for displaying images
+ * 
+ * This is a pure presentation component that renders the lightbox UI without managing
+ * its own open/close state. It's designed to be a shared component used by:
+ * - ImageGallery (for multi-image portfolio galleries)
+ * - LightboxImage (for individual blog post images)
+ * 
+ * Features:
+ * - Full-screen overlay with backdrop blur
+ * - Keyboard navigation (Esc to close, arrow keys for multi-image navigation)
+ * - Thumbnail gallery for multiple images
+ * - Responsive navigation controls (desktop side arrows, mobile bottom buttons)
+ * - Prevents body scroll when open
+ * 
+ * This is a controlled component - the parent manages the isOpen state.
+ */
+
 interface ImageData {
   src: string
   alt: string

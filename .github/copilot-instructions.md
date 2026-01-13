@@ -52,6 +52,7 @@ npm run lint           # ESLint checking
 ### Image Handling
 - Remote images configured for `placehold.co`, `tailwindcss.com`, `images.unsplash.com`
 - SVGs allowed via `dangerouslyAllowSVG: true`
+- Ideal image size is 1200x675 for blog/social sharing and correct aspect ratio
 
 ## Project-Specific Patterns
 

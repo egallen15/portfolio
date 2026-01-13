@@ -3,7 +3,7 @@ import BlogPostHeader from './app/components/BlogPostHeader'
 import AuthorBio from './app/components/AuthorBio'
 import BlogNavigationServer from './app/components/BlogNavigationServer'
 import TOCWrapper from './app/components/TOCWrapper'
-import Image from 'next/image'
+import LightboxImage from './app/components/LightboxImage'
  
 const defaultComponents = getNextraComponents({
   wrapper({ children, ...allProps }) {
@@ -58,13 +58,12 @@ const defaultComponents = getNextraComponents({
     </a>
   ),
   img: ({ src, alt, title, ...props }) => (
-    <Image 
+    <LightboxImage 
       src={src} 
       alt={alt} 
       title={title}
-      width={768} // Default width, adjust as needed
-      height={300} // Default height, adjust as needed
-      className="rounded-xl my-4"
+      width={1200}
+      height={675}
       {...props}
     />
   ),
