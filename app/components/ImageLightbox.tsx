@@ -135,7 +135,10 @@ export default function ImageLightbox({
             <>
               {/* Left Navigation - Desktop */}
               <button
-                onClick={goToPrevious}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  goToPrevious()
+                }}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110 hidden lg:block"
                 aria-label="Previous image"
               >
@@ -151,7 +154,10 @@ export default function ImageLightbox({
               
               {/* Right Navigation - Desktop */}
               <button
-                onClick={goToNext}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  goToNext()
+                }}
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110 hidden lg:block"
                 aria-label="Next image"
               >
@@ -177,7 +183,10 @@ export default function ImageLightbox({
             <div className="flex justify-center items-center overflow-x-auto py-2">
               {/* Left Navigation - Mobile */}
               <button
-                onClick={goToPrevious}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  goToPrevious()
+                }}
                 className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110 lg:hidden mr-4 flex-shrink-0"
                 aria-label="Previous image"
               >
@@ -220,7 +229,10 @@ export default function ImageLightbox({
               
               {/* Right Navigation - Mobile */}
               <button
-                onClick={goToNext}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  goToNext()
+                }}
                 className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 hover:scale-110 lg:hidden ml-4 flex-shrink-0"
                 aria-label="Next image"
               >
