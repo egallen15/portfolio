@@ -52,7 +52,7 @@ const defaultComponents = getNextraComponents({
   h4: ({ children, id }) => <h4 id={id} className="text-lg text-foreground md:text-xl font-medium mb-1 md:mb-2">{children}</h4>,
   h5: ({ children, id }) => <h5 id={id} className="font-semibold text-foreground mb-2">{children}</h5>,
   h6: ({ children, id }) => <h6 id={id} className="text-md text-foreground font-medium mb-1">{children}</h6>,
-  // p: ({ children }) => <p className="mb-4">{children}</p>,
+  p: ({ children }) => <p className="lg:text-lg">{children}</p>,
   a: ({ children, href }) => (
     <a href={href} className="text-sky-600 underline">
       {children}
@@ -68,12 +68,32 @@ const defaultComponents = getNextraComponents({
       {...props}
     />
   ),
-  // ul: ({ children }) => <ul className="list-disc list-inside ml-6 mb-4">{children}</ul>,
-  // ol: ({ children }) => <ol className="list-decimal list-inside ml-6 mb-4">{children}</ol>,
-  // li: ({ children }) => <li className="mb-1">{children}</li>,
-  // blockquote: ({ children }) => (
-  //   <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4">{children}</blockquote>
-  // ),
+  ul: ({ children }) => <ul className="list-disc list-inside ml-6 mb-4 lg:text-lg">{children}</ul>,
+  ol: ({ children }) => <ol className="list-decimal list-inside ml-6 mb-4 lg:text-lg">{children}</ol>,
+  li: ({ children }) => <li className="mb-1 lg:text-lg">{children}</li>,
+  input: ({ type, checked, ...props }) => {
+    if (type === 'checkbox') {
+      return (
+        <span className="inline-flex items-center mr-2">
+          <input 
+            type="checkbox" 
+            checked={checked}
+            className="peer sr-only" 
+            {...props} 
+          />
+          <span className="h-4 w-4 rounded border-2 border-gray-400 bg-white dark:bg-gray-800 dark:border-gray-600 peer-checked:bg-green-600 peer-checked:border-green-600 flex items-center justify-center [&>svg]:hidden peer-checked:[&>svg]:block">
+            <svg className="w-3 h-3 text-white" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 5L4.5 8.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+        </span>
+      )
+    }
+    return <input type={type} {...props} />
+  },
+  blockquote: ({ children }) => (
+    <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4">{children}</blockquote>
+  ),
   hr: () => <hr className="my-9 border-t" />,
   // Custom pre component with copy button
   pre: (props) => <CodeBlock {...props} />,

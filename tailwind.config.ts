@@ -65,7 +65,6 @@ const config: Config = {
         DEFAULT: {
           css: {
             maxWidth: '48rem',
-            fontSize: '1.125rem',
             lineHeight: '1.6',
             // Inline code only (not code blocks)
             ':not(pre) > code': {
