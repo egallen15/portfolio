@@ -68,8 +68,8 @@ const defaultComponents = getNextraComponents({
       {...props}
     />
   ),
-  ul: ({ children }) => <ul className="list-disc list-inside ml-6 mb-4 lg:text-lg">{children}</ul>,
-  ol: ({ children }) => <ol className="list-decimal list-inside ml-6 mb-4 lg:text-lg">{children}</ol>,
+  ul: ({ children }) => <ul className="list-disc list-inside mb-4 lg:text-lg">{children}</ul>,
+  ol: ({ children }) => <ol className="list-decimal list-inside mb-4 lg:text-lg">{children}</ol>,
   li: ({ children }) => <li className="mb-1 lg:text-lg">{children}</li>,
   input: ({ type, checked, ...props }) => {
     if (type === 'checkbox') {
@@ -92,7 +92,7 @@ const defaultComponents = getNextraComponents({
     return <input type={type} {...props} />
   },
   blockquote: ({ children }) => (
-    <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4">{children}</blockquote>
+    <blockquote className="border-l-4 border-sky-600 pl-4 italic my-4">{children}</blockquote>
   ),
   hr: () => <hr className="my-9 border-t" />,
   // Custom pre component with copy button
