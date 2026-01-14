@@ -33,16 +33,15 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
       contentType: "image"
     },
     {
-      id: "signup",
-      href: "/portfolio/signup",
-      title: "Subsplash signup & onboarding", 
+      id: "subsplash-signup",
+      href: "/portfolio/subsplash-signup",
+      title: "Subsplash Signup and Onboarding", 
       date: "September 2020",
-      description: "Streamlined signup and onboarding at Subsplash for delight and scalability.",
-      image: "https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png",
-      darkImage: "https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-security.png",
+      description: "A redesigned first-time experience for new customers signing up for Subsplash.",
+      image: "https://placehold.co/1200x675?text=Subsplash+Signup",
       gridClasses: "relative max-lg:row-start-3 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-3 max-lg:h-64 lg:max-h-[54rem]",
       roundedClasses: "",
-      contentType: "image-small"
+      contentType: "image"
     },
     {
       id: "check-in",

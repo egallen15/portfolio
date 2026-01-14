@@ -36,6 +36,12 @@ export const portfolioMetadata = {
     title: "Workflows",
     description: "An intuitive workflow automation system that empowers teams to build custom business processes without code, increasing efficiency and reducing manual tasks.",
     slug: "workflows",
+  },
+  subsplashSignup: {
+    subtitle: "Subsplash",
+    title: "Subsplash Signup and Onboarding",
+    description: "A redesigned first-time experience for new customers signing up for Subsplash.",
+    slug: "subsplash-signup",
   }
 } as const;
 
@@ -60,5 +66,10 @@ export const portfolioProjects: PortfolioProjectMeta[] = [
     ...portfolioMetadata.workflows,
     route: '/portfolio/workflows',
     order: 4
+  },
+  {
+    ...portfolioMetadata.subsplashSignup,
+    route: '/portfolio/subsplash-signup',
+    order: 5
   }
 ];
