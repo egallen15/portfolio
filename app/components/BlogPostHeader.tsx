@@ -130,8 +130,8 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
       )}
 
       {/* Display author, date, and tags in a more structured way */}
-      <div className="flex items-center justify-between mt-6">
-        <div className="flex items-center gap-4">
+      <div className="flex items-start xs:items-center justify-between mt-6">
+        <div className="flex flex-col xs:flex-row xs:items-center gap-2 xs:gap-4">
           <div className="flex items-center gap-2">
             <Image
               src="/images/eric-allen-profile-pic-2023.png"
