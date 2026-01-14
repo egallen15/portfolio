@@ -92,7 +92,7 @@ const defaultComponents = getNextraComponents({
     return <input type={type} {...props} />
   },
   blockquote: ({ children }) => (
-    <blockquote className="border-l-4 border-sky-600 pl-4 italic my-4">{children}</blockquote>
+    <blockquote className="border-l-4 border-sky-600 italic my-4">{children}</blockquote>
   ),
   hr: () => <hr className="my-9 border-t" />,
   // Custom pre component with copy button
