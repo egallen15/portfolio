@@ -68,8 +68,8 @@ const defaultComponents = getNextraComponents({
       {...props}
     />
   ),
-  ul: ({ children }) => <ul className="list-disc list-inside mb-4 lg:text-lg">{children}</ul>,
-  ol: ({ children }) => <ol className="list-decimal list-inside mb-4 lg:text-lg">{children}</ol>,
+  ul: ({ children }) => <ul className="list-disc mb-4 lg:text-lg">{children}</ul>,
+  ol: ({ children }) => <ol className="list-decimal mb-4 lg:text-lg">{children}</ol>,
   li: ({ children }) => <li className="mb-1 lg:text-lg">{children}</li>,
   input: ({ type, checked, ...props }) => {
     if (type === 'checkbox') {
