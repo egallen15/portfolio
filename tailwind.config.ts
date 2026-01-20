@@ -73,7 +73,7 @@ const config: Config = {
         DEFAULT: {
           css: {
             maxWidth: '48rem',
-            lineHeight: '1.6',
+            lineHeight: '1.8',
             // Inline code only (not code blocks)
             ':not(pre) > code': {
               backgroundColor: theme('colors.slate.100'),

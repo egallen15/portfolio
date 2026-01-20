@@ -30,7 +30,7 @@ const defaultComponents = getNextraComponents({
           {/* Blog content - centered within container */}
           <div className="flex flex-col justify-center w-full">
             <BlogPostHeader frontMatter={frontMatter} />
-            <article className="w-auto prose lg:leading-[1.8] dark:prose-invert mb-6 mx-6 md:mx-0 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400 font-[family-name:var(--font-noto-serif)]">
+            <article className="w-auto prose lg:leading-[2.0rem] dark:prose-invert mb-6 mx-6 md:mx-0 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
               {children}
             </article>
             <AuthorBio />
@@ -52,7 +52,7 @@ const defaultComponents = getNextraComponents({
   h4: ({ children, id }) => <h4 id={id} className="text-lg text-foreground md:text-xl font-medium mb-1 md:mb-2">{children}</h4>,
   h5: ({ children, id }) => <h5 id={id} className="font-semibold text-foreground mb-2">{children}</h5>,
   h6: ({ children, id }) => <h6 id={id} className="text-md text-foreground font-medium mb-1">{children}</h6>,
-  p: ({ children }) => <p className="lg:text-lg">{children}</p>,
+  p: ({ children }) => <p className="lg:text-lg lg:leading-8">{children}</p>,
   a: ({ children, href }) => (
     <a href={href} className="text-sky-600 underline">
       {children}
