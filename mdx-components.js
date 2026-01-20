@@ -30,7 +30,7 @@ const defaultComponents = getNextraComponents({
           {/* Blog content - centered within container */}
           <div className="flex flex-col justify-center w-full">
             <BlogPostHeader frontMatter={frontMatter} />
-            <article className="w-auto prose lg:leading-[1.8] dark:prose-invert mb-6 mx-6 md:mx-0 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
+            <article className="w-auto prose lg:leading-[1.8] dark:prose-invert mb-6 mx-6 md:mx-0 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400 font-[family-name:var(--font-noto-serif)]">
               {children}
             </article>
             <AuthorBio />

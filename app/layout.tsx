@@ -6,12 +6,20 @@ import { ThemeProvider } from "next-themes";
 import NextraTheme from "./components/nextra-theme";
 import ThemeColor from "./components/ThemeColor";
 import "./globals.css";
-import { Noto_Sans } from 'next/font/google'
+import { Noto_Sans, Noto_Serif } from 'next/font/google'
 
 const noto = Noto_Sans({
   subsets: ['latin'],
   weight: ['100','200','300','400','500','600','700','800','900'],
-  display: 'swap'
+  display: 'swap',
+  variable: '--font-noto-sans'
+})
+
+const notoSerif = Noto_Serif({
+  subsets: ['latin'],
+  weight: ['400','500','600','700'],
+  display: 'swap',
+  variable: '--font-noto-serif'
 })
 
 export const metadata: Metadata = {
@@ -57,7 +65,7 @@ const pageMap = await getPageMap()
 
 const RootLayout: FC<{ children: ReactNode }> = async ({ children }) => {
   return (
-    <html lang="en" dir="ltr" className={`${noto.className}`} suppressHydrationWarning>
+    <html lang="en" dir="ltr" className={`${noto.variable} ${notoSerif.variable}`} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
