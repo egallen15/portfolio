@@ -10,7 +10,7 @@ export const metadata = {
 const Contact: React.FC = () => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <main className="mx-6 max-w-7xl flex flex-col backdrop-blur-sm rounded-md">
+      <main className="mx-6 max-w-5xl flex flex-col backdrop-blur-sm rounded-md">
         <Breadcrumb pages={[{ name: "Contact", href: "/contact", current: true }]} />
         <motion.h1 
           initial={{ opacity: 0, x: -20 }}

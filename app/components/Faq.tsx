@@ -38,7 +38,7 @@ export default function Example() {
   return (
     <div className="">
       <div className="mx-auto xl:mx-0 max-w-7xl py-8">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto">
           <dl className="divide-y divide-slate-900/10 dark:divide-white/10">
             {faqs.map((faq) => (
               <Disclosure key={faq.question} as="div" className="py-6 first:pt-0 last:pb-0">

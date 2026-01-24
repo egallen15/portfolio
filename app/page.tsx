@@ -46,7 +46,7 @@ export default function Home() {
   ];
   
   return (
-    <div className="min-h-screen flex flex-col mx-auto w-full lg:max-w-7xl">
+    <div className="min-h-screen flex flex-col mx-auto w-full lg:max-w-5xl">
       <div className="w-full flex-grow">
         <div className="sm:flex sm:items-center sm:justify-between"></div>
         <main className="mx-6 xl:mx-0">
@@ -314,7 +314,7 @@ export default function Home() {
           >
             FAQ
           </HighlightedHeading>
-          <motion.section className="mt-4 w-full lg:w-1/2">
+          <motion.section className="mt-4 w-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
