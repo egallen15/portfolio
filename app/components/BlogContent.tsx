@@ -10,7 +10,7 @@ import { AnimatePresence } from "motion/react";
 const BlogContentClient = ({ 
   posts,
   showTitle = true,
-  title = "All Posts",
+  title = "blog",
   rssButton,
   showTagFilter = true
 }: BlogContentProps) => {
