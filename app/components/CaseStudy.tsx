@@ -139,11 +139,11 @@ export default function CaseStudy({
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:pr-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">{subtitle}</p>
+              <p className="text-xs uppercase tracking-widest text-slate-600 dark:text-slate-400">{subtitle}</p>
               <h1 className="mt-2 text-pretty text-3xl font-bold text-slate-900 md:text-4xl dark:text-white">
                 {title}
               </h1>
-              <p className="mt-4 text-xl/8 text-slate-800 dark:text-slate-400">
+              <p className="mt-4 text-xl/8 text-slate-600 dark:text-slate-400">
                 {description}
               </p>
               
@@ -159,7 +159,7 @@ export default function CaseStudy({
                         height={20}
                         className="rounded-full"
                       />
-                      <span className="text-sm dark:text-slate-400 text-slate-500">
+                      <span className="text-sm dark:text-slate-400 text-slate-600">
                         {metadata.role}
                       </span>
                       <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
@@ -169,8 +169,8 @@ export default function CaseStudy({
                   )}
                   {metadata.teamSize && (
                     <div className="flex items-center gap-2 cursor-help relative group">
-                      <UsersIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" aria-hidden="true" />
-                      <span className="text-sm dark:text-slate-400 text-slate-500">
+                      <UsersIcon className="h-5 w-5 text-slate-600 dark:text-slate-400" aria-hidden="true" />
+                      <span className="text-sm dark:text-slate-400 text-slate-600">
                         {metadata.teamSize}
                       </span>
                       <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
@@ -180,8 +180,8 @@ export default function CaseStudy({
                   )}
                   {metadata.dateRange && (
                     <div className="flex items-center gap-2 cursor-help relative group">
-                      <CalendarDaysIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" aria-hidden="true" />
-                      <span className="text-sm dark:text-slate-400 text-slate-500">
+                      <CalendarDaysIcon className="h-5 w-5 text-slate-600 dark:text-slate-400" aria-hidden="true" />
+                      <span className="text-sm dark:text-slate-400 text-slate-600">
                         {metadata.dateRange}
                       </span>
                       <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
@@ -191,8 +191,8 @@ export default function CaseStudy({
                   )}
                   {metadata.tools && metadata.tools.length > 0 && (
                     <div className="flex items-center gap-2 cursor-help relative group">
-                      <WrenchScrewdriverIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" aria-hidden="true" />
-                      <span className="text-sm dark:text-slate-400 text-slate-500">
+                      <WrenchScrewdriverIcon className="h-5 w-5 text-slate-600 dark:text-slate-400" aria-hidden="true" />
+                      <span className="text-sm dark:text-slate-400 text-slate-600">
                         {metadata.tools.join(', ')}
                       </span>
                       <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
@@ -248,7 +248,7 @@ export default function CaseStudy({
                         ))}
                       </div>
                       {sections.tools.features && (
-                        <ul role="list" className="space-y-4 text-slate-500 dark:text-slate-400">
+                        <ul role="list" className="space-y-5 text-slate-600 dark:text-slate-400">
                           {sections.tools.features.map((feature, index) => {
                             const IconComponent = getFeatureIcon(feature.icon)
                             return (
@@ -257,9 +257,14 @@ export default function CaseStudy({
                                   aria-hidden={true}
                                   className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
                                 />
-                                <span>
-                                  <strong className="font-semibold text-slate-900 dark:text-white">{feature.title}</strong> {feature.description}
-                                </span>
+                                <div>
+                                  <div className="font-semibold text-slate-900 dark:text-white">
+                                    {feature.title}
+                                  </div>
+                                  <p className="mt-1 text-md text-slate-600 dark:text-slate-400">
+                                    {feature.description}
+                                  </p>
+                                </div>
                               </li>
                             )
                           })}
@@ -278,7 +283,7 @@ export default function CaseStudy({
                       ))}
                     </div>
                     {sections.solution.features && (
-                      <ul role="list" className="space-y-4 text-slate-600 dark:text-slate-400">
+                      <ul role="list" className="space-y-5 text-slate-600 dark:text-slate-400">
                         {sections.solution.features.map((feature, index) => {
                           const IconComponent = getFeatureIcon(feature.icon)
                           return (
@@ -287,9 +292,14 @@ export default function CaseStudy({
                                 aria-hidden={true}
                                 className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
                               />
-                              <span>
-                                <strong className="font-semibold text-slate-900 dark:text-white">{feature.title}</strong> {feature.description}
-                              </span>
+                              <div>
+                                <div className="font-semibold text-slate-900 dark:text-white">
+                                  {feature.title}
+                                </div>
+                                <p className="mt-1 text-md text-slate-600 dark:text-slate-400">
+                                  {feature.description}
+                                </p>
+                              </div>
                             </li>
                           )
                         })}
@@ -308,7 +318,7 @@ export default function CaseStudy({
                       ))}
                     </div>
                     {sections.impactAndResults.features && (
-                      <ul role="list" className="space-y-4 text-slate-600 dark:text-slate-400">
+                      <ul role="list" className="space-y-5 text-slate-600 dark:text-slate-400">
                         {sections.impactAndResults.features.map((feature, index) => {
                           const IconComponent = getFeatureIcon(feature.icon)
                           return (
@@ -317,9 +327,14 @@ export default function CaseStudy({
                                 aria-hidden={true}
                                 className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
                               />
-                              <span>
-                                <strong className="font-semibold text-slate-900 dark:text-white">{feature.title}</strong> {feature.description}
-                              </span>
+                              <div>
+                                <div className="font-semibold text-slate-900 dark:text-white">
+                                  {feature.title}
+                                </div>
+                                <p className="mt-1 text-md text-slate-600 dark:text-slate-400">
+                                  {feature.description}
+                                </p>
+                              </div>
                             </li>
                           )
                         })}
@@ -334,7 +349,7 @@ export default function CaseStudy({
                     {content?.mainContent}
                   </p>
                   {features && (
-                    <ul role="list" className="mt-8 space-y-8 text-slate-600 dark:text-slate-400">
+                    <ul role="list" className="mt-8 space-y-6 text-slate-600 dark:text-slate-400">
                       {features.map((feature, index) => {
                         const IconComponent = getFeatureIcon(feature.icon)
                         return (
@@ -343,12 +358,17 @@ export default function CaseStudy({
                               aria-hidden={true}
                               className="mt-1 size-5 flex-none text-indigo-600 dark:text-indigo-400"
                             />
-                            <span>
-                              <strong className="font-semibold text-slate-900 dark:text-white">{feature.title}</strong> {feature.description}
-                            </span>
+                            <div>
+                              <div className="font-semibold text-slate-900 dark:text-white">
+                                {feature.title}
+                              </div>
+                              <p className="mt-1 text-md text-slate-600 dark:text-slate-400">
+                                {feature.description}
+                              </p>
+                            </div>
                           </li>
-                        )
-                      })}
+                        )}
+                      )}
                     </ul>
                   )}
                   {content?.secondaryTitle && (
@@ -357,7 +377,7 @@ export default function CaseStudy({
                         {content.secondaryTitle}
                       </h2>
                       {content.secondaryContent && (
-                        <p className="mt-6">
+                        <p className="mt-6 text-md text-slate-600 dark:text-slate-400">
                           {content.secondaryContent}
                         </p>
                       )}
