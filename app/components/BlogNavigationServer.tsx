@@ -30,7 +30,8 @@ export default async function BlogNavigationServer({ currentSlug }: BlogNavigati
         date: post.frontMatter.date,
         excerpt: post.frontMatter.excerpt || 'No excerpt available.',
         tags: post.frontMatter.tags || [],
-        slug: post.frontMatter.slug
+        slug: post.frontMatter.slug,
+        image: post.frontMatter.image
       }));
 
     // Find the current post index by matching either directory name or slug
