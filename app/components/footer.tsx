@@ -83,7 +83,7 @@ export const Footer: FC = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 xl:col-span-2">
             <div>
               <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-2 md:mb-4">
-                About
+                about
               </h3>
               <ul className="space-y-3">
                 {navigation.main.map((item) => (
@@ -101,7 +101,7 @@ export const Footer: FC = () => {
 
             <div>
               <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-2 md:mb-4">
-                Writing & more
+                writing & more
               </h3>
               <ul className="space-y-3">
                 {navigation.writing.map((item) => (
@@ -119,7 +119,7 @@ export const Footer: FC = () => {
 
             <div>
               <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-2 md:mb-4">
-                Projects
+                projects
               </h3>
               <ul className="space-y-3">
                 {navigation.projects.map((item) => (

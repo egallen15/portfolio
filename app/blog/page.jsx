@@ -3,14 +3,14 @@ import Breadcrumb from '../components/Breadcrumb';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'All posts',
+  title: 'blog',
   description: 'The latest blog posts from Eric Allen.',
 };
 
 export default function Blog() {
   return (
     <main className="w-full mx-6 mb-6 max-w-3xl xl:mx-0">
-      <Breadcrumb pages={[{ name: "All posts", href: "/blog", current: true }]} />
+      <Breadcrumb pages={[{ name: "blog", href: "/blog", current: true }]} />
       <BlogContentServer rssButton={
         <Link 
           href="/feed.xml"

@@ -26,10 +26,10 @@ export default function NewNavbar() {
 
   // Navigation items
   const navItems = [
-    { name: "About", path: "/about" },
-    { name: "Blog", path: "/blog" },
-    { name: "Portfolio", path: "/portfolio" },
-    { name: "Contact", path: "/contact" },
+    { name: "about", path: "/about" },
+    { name: "blog", path: "/blog" },
+    { name: "portfolio", path: "/portfolio" },
+    { name: "contact", path: "/contact" },
   ];
 
   // Mobile menu animation variants remain unchanged

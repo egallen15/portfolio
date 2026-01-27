@@ -97,7 +97,7 @@ const About: React.FC = () => {
     <div className="min-h-screen flex flex-col justify-center lg:items-center pb-8">
       <div className="w-full lg:max-w-7xl px-6 xl:px-0">
         <Breadcrumb
-          pages={[{ name: "About", href: "/about", current: true }]}
+          pages={[{ name: "about", href: "/about", current: true }]}
         />
       </div>
       <main className="px-6 w-full max-w-7xl flex flex-col lg:px-0 backdrop-blur-sm rounded-md">
@@ -108,7 +108,7 @@ const About: React.FC = () => {
           viewport={{ once: true, amount: 0.1 }}
           className="text-3xl md:text-5xl font-bold"
         >
-          About Me
+          about
         </motion.h1>
 
         {/* Container for text wrapping around image */}
