@@ -108,14 +108,13 @@ export default function BlogTagFilter({ posts, onFilterChange }: BlogTagFilterPr
     >
       <div className="flex flex-wrap items-center gap-2">
         {allTags.map((tag, index) => (
-          <>
+          <span key={tag} className="flex items-center gap-1">
             {index > 0 && (
               <span className="text-slate-400 dark:text-slate-500" aria-hidden="true">
                 •
               </span>
             )}
             <button
-              key={tag}
               onClick={() => toggleTag(tag)}
               className={`text-xs uppercase tracking-widest transition-all ${
                 isTagSelected(tag)
@@ -126,7 +125,7 @@ export default function BlogTagFilter({ posts, onFilterChange }: BlogTagFilterPr
             >
               {tag}
             </button>
-          </>
+          </span>
         ))}
         
         <motion.button
