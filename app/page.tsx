@@ -46,7 +46,7 @@ export default function Home() {
   ];
   
   return (
-    <div className="min-h-screen flex flex-col mx-auto w-full lg:max-w-5xl">
+    <div className="min-h-screen flex flex-col mx-auto w-full max-w-7xl">
       <div className="w-full flex-grow">
         <div className="sm:flex sm:items-center sm:justify-between"></div>
         <main className="mx-6 xl:mx-0">
