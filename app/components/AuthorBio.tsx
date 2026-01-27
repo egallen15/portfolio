@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AuthorBio: React.FC = () => {
   return (
@@ -14,7 +15,12 @@ const AuthorBio: React.FC = () => {
         />
       </div>
       <div>
-        <h4 className="text-xl font-bold mb-2">About Eric Allen</h4>
+        <h4 className="text-xl font-bold mb-2">
+          About{' '}
+          <Link href="/about" className="hover:underline">
+            Eric Allen
+          </Link>
+        </h4>
         <p className="prose text-sm  leading-relaxed dark:prose-invert">
           I&#39;m a UX designer/writer living in Austin, Texas, and I get a kick out of empowering people to do their best work.
         </p>
