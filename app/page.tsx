@@ -27,21 +27,21 @@ export default function Home() {
       href: "https://peak.tech",
       title: "Peak",
       description: "Visualize your personal productivity with interactive charts and AI analysis.",
-      logo: "/images/logo.png",
+      logo: "",
     },
     {
       id: "binstackr",
-      href: "https://github.com",
+      href: "https://bin-stack.com",
       title: "Binstackr",
       description: "Make a maximized multi-dimensional decision with the Binstack method from Jason Cohen.",
-      logo: "/images/logo.png",
+      logo: "/images/binstackr-logo.svg",
     },
     {
       id: "uxflow",
-      href: "https://github.com",
+      href: "https://uxflow.net",
       title: "uxflow",
       description: "A design tool for creating user flow diagrams and user journey maps.",
-      logo: "/images/logo.png",
+      logo: "",
     },
   ];
   
