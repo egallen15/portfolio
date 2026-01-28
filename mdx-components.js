@@ -2,6 +2,7 @@ import { useMDXComponents as getNextraComponents } from 'nextra/mdx-components'
 import BlogPostHeader from './app/components/BlogPostHeader'
 import AuthorBio from './app/components/AuthorBio'
 import BlogNavigationServer from './app/components/BlogNavigationServer'
+import Signature from './app/components/Signature'
 import TOCWrapper from './app/components/TOCWrapper'
 import LightboxImage from './app/components/LightboxImage'
 import CodeBlock from './app/components/CodeBlock'
@@ -33,14 +34,18 @@ const defaultComponents = getNextraComponents({
             <article className="w-auto prose lg:leading-[2.0rem] dark:prose-invert mb-6 mx-6 md:mx-0 prose-img:rounded-xl marker:text-sky-600 dark:marker:text-sky-400">
               {children}
             </article>
+            <Signature />
             {/* Blog navigation - always show for blog posts */}
             {frontMatter.slug && (
-              <div className="max-w-[48rem] mx-6 lg:mx-0">
+              <div className="max-w-[48rem] mx-6 md:mx-0">
                 <BlogNavigationServer currentSlug={frontMatter.slug} />
               </div>
             )}
             <div className="mt-6">
               <AuthorBio />
+            </div>
+            <div className="mt-4">
+              
             </div>
           </div>
         </div>
@@ -48,12 +53,12 @@ const defaultComponents = getNextraComponents({
     )
   },
   // Add custom components for specific markdown elements with auto-generated IDs
-  h1: ({ children, id }) => <h1 id={id} className="text-3xl text-foreground md:text-4xl font-bold pt-6 mb-6 md:mb-8">{children}</h1>,
-  h2: ({ children, id }) => <h2 id={id} className="text-2xl text-foreground md:text-3xl font-semibold mb-4 md:mb-6">{children}</h2>,
-  h3: ({ children, id }) => <h3 id={id} className="text-xl text-foreground md:text-2xl font-semibold mb-4 md:mb-6">{children}</h3>,
-  h4: ({ children, id }) => <h4 id={id} className="text-lg text-foreground md:text-xl font-medium mb-1 md:mb-2">{children}</h4>,
-  h5: ({ children, id }) => <h5 id={id} className="font-semibold text-foreground mb-2">{children}</h5>,
-  h6: ({ children, id }) => <h6 id={id} className="text-md text-foreground font-medium mb-1">{children}</h6>,
+  h1: ({ children, id }) => <h1 id={id} className="text-3xl md:text-4xl font-bold pt-6 mb-6 md:mb-8">{children}</h1>,
+  h2: ({ children, id }) => <h2 id={id} className="text-2xl md:text-3xl font-semibold mb-4 md:mb-6">{children}</h2>,
+  h3: ({ children, id }) => <h3 id={id} className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">{children}</h3>,
+  h4: ({ children, id }) => <h4 id={id} className="text-lg md:text-xl font-medium mb-1 md:mb-2">{children}</h4>,
+  h5: ({ children, id }) => <h5 id={id} className="font-semibold mb-2">{children}</h5>,
+  h6: ({ children, id }) => <h6 id={id} className="text-md font-medium mb-1">{children}</h6>,
   p: ({ children }) => <p className="lg:text-[17px] lg:leading-8">{children}</p>,
   a: ({ children, href }) => (
     <a href={href} className="text-sky-600 underline">
