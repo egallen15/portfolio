@@ -1,10 +1,10 @@
 ---
-Title: Subsplash UX Pillars
-Author: Eric Allen
-Date: 2026-01-28
+title: Subsplash UX Pillars
+author: Eric Allen
+date: 2026-01-28
 tags:
   - UX
-Excerpt: Advocate, simplify, systemize, and sprinkles.
+excerpt: "Advocate, simplify, systemize, and sprinkles."
 ---
 tl;dr - These are the things we value as a UX designers. If we’re doing all of these things, we’ll create incredible value, delight our users, and save our teams time and effort:
 
