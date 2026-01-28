@@ -82,7 +82,7 @@ export default function NewNavbar() {
           {/* Main navigation area */}
           <div className="flex items-center space-x-2 md:space-x-4">
             {/* Desktop Theme Toggle Button */}
-            <ThemeToggle className="hidden md:block" />
+            <ThemeToggle className="hidden md:block transition transform duration-300 lg:hover:-rotate-6 lg:hover:scale-[1.02]" />
             
             {/* Desktop Navigation Items */}
             <div className="hidden md:flex items-center space-x-4">
@@ -90,7 +90,7 @@ export default function NewNavbar() {
                 <Link
                   key={item.name}
                   href={item.path}
-                  className="p-2 rounded-md text-md font-medium transition border border-transparent hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center"
+                  className="p-2 rounded-md text-md font-medium transition transform duration-300 lg:hover:-rotate-2 lg:hover:scale-[1.02] border border-transparent hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center"
                 >
                   {item.name}
                 </Link>
@@ -98,7 +98,7 @@ export default function NewNavbar() {
             </div>
             
             {/* Mobile Theme Toggle Button */}
-            <ThemeToggle className="md:hidden" />
+            <ThemeToggle className="md:hidden transition transform duration-300 lg:hover:-rotate-6 lg:hover:scale-[1.02]" />
 
             {/* Mobile Hamburger Menu Button */}
             <div className="md:hidden">
@@ -159,7 +159,7 @@ export default function NewNavbar() {
                   key={item.name}
                   href={item.path}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 rounded-md text-base font-medium transition border border-transparent dark:hover:bg-slate-700 hover:bg-gray-100"
+                  className="block px-3 py-2 rounded-md text-base font-medium transition transform duration-300 lg:hover:-rotate-2 lg:hover:scale-[1.02] border border-transparent dark:hover:bg-slate-700 hover:bg-gray-100"
                 >
                   {item.name}
                 </Link>
