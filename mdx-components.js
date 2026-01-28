@@ -54,7 +54,7 @@ const defaultComponents = getNextraComponents({
   h4: ({ children, id }) => <h4 id={id} className="text-lg text-foreground md:text-xl font-medium mb-1 md:mb-2">{children}</h4>,
   h5: ({ children, id }) => <h5 id={id} className="font-semibold text-foreground mb-2">{children}</h5>,
   h6: ({ children, id }) => <h6 id={id} className="text-md text-foreground font-medium mb-1">{children}</h6>,
-  p: ({ children }) => <p className="lg:text-lg lg:leading-8">{children}</p>,
+  p: ({ children }) => <p className="lg:text-[17px] lg:leading-8">{children}</p>,
   a: ({ children, href }) => (
     <a href={href} className="text-sky-600 underline">
       {children}
