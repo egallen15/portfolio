@@ -1,10 +1,13 @@
 ---
 title: Subsplash UX Pillars
 author: Eric Allen
+image:
 date: 2026-01-28
+slug: subsplash-ux-pillars
 tags:
   - UX
-excerpt: "Advocate, simplify, systemize, and sprinkles."
+  - Subsplash
+excerpt: "Advocate, simplify, systemize, and sprinkle."
 ---
 tl;dr - These are the things we value as a UX designers. If we’re doing all of these things, we’ll create incredible value, delight our users, and save our teams time and effort:
 
@@ -33,7 +36,9 @@ In addition to product cohesion, if a product has an outdated, clunky UX, there 
 
 ### 3. Build towards a system
 
-I’m going to use a goofy example to make a point, so please bear with me for a few moments. Imagine a group of 100 drones sitting on the ground in neat little rows on a football field. Each drone is turned on and humming, but they’re not moving yet. The whole Subsplash Product & Engineering team sits on the edge of the field with their own drone controller, ready to fly their own drone.
+I’m going to use a goofy example to make a point, so please bear with me.
+
+Imagine a group of 100 drones sitting on the ground in neat little rows on a football field. Each drone is turned on and humming, but they’re not moving yet. The whole Subsplash Product & Engineering team sits on the edge of the field with their own drone controller, ready to fly their own drone.
 
 All of those drones are connected to a heavy log by individual ropes. The objective for our team is to use the drones to move the heavy log 100 yards down the field. A drone can’t move the log on its own--it won’t even budge. Since the log is so heavy, it will take at least 90 of these drones working together to move the log. How do we move the log?
 
