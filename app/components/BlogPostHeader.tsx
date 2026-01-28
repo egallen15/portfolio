@@ -140,9 +140,12 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
               height={20}
               className="rounded-full"
             />
-            <span className="text-sm dark:text-slate-400 text-slate-500">
+            <Link
+              href="/about"
+              className="text-sm dark:text-slate-400 text-slate-500 hover:underline"
+            >
               {author}
-            </span>
+            </Link>
           </div>
           <div className="flex items-center gap-2">
             <CalendarDaysIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" />
