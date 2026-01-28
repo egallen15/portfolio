@@ -12,3 +12,4 @@ tags:
 This is some dummy content
 
 Here's another bit of content.
+```

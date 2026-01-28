@@ -10,13 +10,18 @@ interface BlogNavigationServerProps {
 export default async function BlogNavigationServer({ currentSlug }: BlogNavigationServerProps) {
   try {
     // Fetch and normalize the page map for '/blog'
-    const { directories } = normalizePages({
+    const normalized = normalizePages({
       list: await getPageMap('/blog'),
       route: '/blog'
     });
 
+    const entries = [
+      ...((normalized as { pages?: typeof normalized.directories }).pages ?? []),
+      ...normalized.directories
+    ];
+
     // Filter out 'index' and sort posts by date descending (newest first)
-    const allPosts: BlogPost[] = directories
+    const allPosts: BlogPost[] = entries
       .filter(post => post.name !== 'index')
       .sort((a, b) => {
         const dateA = new Date(a.frontMatter.date);
