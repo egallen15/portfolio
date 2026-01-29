@@ -1,6 +1,5 @@
 import { useMDXComponents as getNextraComponents } from 'nextra/mdx-components'
 import BlogPostHeader from './app/components/BlogPostHeader'
-import AuthorBio from './app/components/AuthorBio'
 import BlogNavigationServer from './app/components/BlogNavigationServer'
 import Signature from './app/components/Signature'
 import TOCWrapper from './app/components/TOCWrapper'
@@ -41,12 +40,6 @@ const defaultComponents = getNextraComponents({
                 <BlogNavigationServer currentSlug={frontMatter.slug} />
               </div>
             )}
-            <div className="mt-6">
-              <AuthorBio />
-            </div>
-            <div className="mt-4">
-              
-            </div>
           </div>
         </div>
       </div>
