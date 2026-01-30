@@ -139,7 +139,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
               className={maxItems === 4 ? "relative h-80 lg:h-96" : project.gridClasses}
             >
               <Link href={project.href} className="group cursor-pointer block h-full">
-                <div className={`absolute inset-px rounded-lg bg-gray-50 dark:bg-slate-800 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-slate-700 ${maxItems !== 4 ? project.roundedClasses : ''}`} />
+                <div className={`absolute inset-px rounded-lg bg-slate-50 dark:bg-slate-800 transition-all duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-700 ${maxItems !== 4 ? project.roundedClasses : ''}`} />
                 <div className={`relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 group-hover:scale-[1.02] ${maxItems !== 4 && project.roundedClasses ? project.roundedClasses.replace('rounded-', 'rounded-[calc(') + '+1px)]' : ''}`}>
                   <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                     <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
@@ -219,7 +219,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
                       <div className="absolute bottom-0 left-10 right-0 top-10 overflow-hidden rounded-tl-xl bg-slate-900 shadow-2xl outline outline-1 outline-white/10 dark:bg-slate-900/60 dark:shadow-none transition-all duration-300 group-hover:shadow-3xl group-hover:bg-slate-800">
                         <div className="flex bg-slate-900 outline outline-1 outline-white/5">
                           <div className="-mb-px flex text-sm/6 font-medium text-slate-400">
-                            <div className="border-b border-r border-b-white/20 border-r-white/10 bg-gray-50/5 px-4 py-2 text-white">
+                            <div className="border-b border-r border-b-white/20 border-r-white/10 bg-slate-50/5 px-4 py-2 text-white">
                               NotificationSetting.jsx
                             </div>
                             <div className="border-r border-slate-600/10 px-4 py-2">
