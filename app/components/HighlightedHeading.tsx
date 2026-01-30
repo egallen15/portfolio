@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 export type HighlightColor = 'cyan' | 'pink' | 'green' | 'yellow' | 'purple';
-export type HighlightStyle = 'full' | 'underline';
+export type HighlightStyle = 'full' | 'underline' | 'skinny';
 export type SkewAngle = 'light' | 'medium' | 'heavy';
 
 interface HighlightedHeadingProps {
@@ -66,6 +66,12 @@ const HighlightedHeading: React.FC<HighlightedHeadingProps> = ({
     backdrop-blur-sm h-8 -left-2.5 top-1 -right-4
   `;
 
+  const skinnyHighlightClasses = `
+    ${baseHighlightClasses}
+    px-1 -my-0.5 mx-0.5 py-0.5 rounded-md
+    backdrop-blur-sm h-4 -left-1.5 top-1 -right-2
+  `;
+
   const underlineHighlightClasses = `
     ${baseHighlightClasses}
     h-3 -mx-1 top-5 left-0 right-0
@@ -94,6 +100,10 @@ const HighlightedHeading: React.FC<HighlightedHeadingProps> = ({
       {highlightStyle === 'full' ? (
         <span 
           className={`absolute inset-0 ${fullHighlightClasses} -z-10`}
+        />
+      ) : highlightStyle === 'skinny' ? (
+        <span 
+          className={`absolute inset-0 ${skinnyHighlightClasses} -z-10`}
         />
       ) : (
         <span 

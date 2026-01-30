@@ -3,7 +3,7 @@ import type { FC } from "react";
 import Link from "next/link";
 import { formatDistanceToNow } from "date-fns";
 import Image from "next/image";
-import { CalendarDaysIcon, ClockIcon, HashtagIcon } from "@heroicons/react/24/outline";
+import { CalendarDaysIcon, ChevronRightIcon, ClockIcon, HashtagIcon } from "@heroicons/react/24/outline";
 
 interface BlogPostListItemProps {
   title: string;
@@ -48,7 +48,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
               alt="Post Image"
               width={200}
               height={200}
-              className="object-cover w-full h-auto aspect-video sm:h-full"
+              className="object-cover w-full h-auto aspect-video sm:h-full rounded-l-lg"
             />
           </div>
         )}
@@ -87,6 +87,9 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
               </div>
             )}
           </div>
+        </div>
+        <div className="hidden sm:flex items-center pr-6">
+          <ChevronRightIcon className="h-5 w-5 text-slate-400 dark:text-slate-500" />
         </div>
       </div>
     </Link>

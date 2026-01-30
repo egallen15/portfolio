@@ -52,13 +52,13 @@ export default async function BlogNavigationServer({ currentSlug }: BlogNavigati
     // Get previous and next posts
     // Since posts are sorted newest first, previous is actually next in array (older)
     // and next is previous in array (newer)
-    const previousPost = currentPostIndex < allPosts.length - 1 ? allPosts[currentPostIndex + 1] : undefined;
-    const nextPost = currentPostIndex > 0 ? allPosts[currentPostIndex - 1] : undefined;
+    const previousPosts = allPosts.slice(currentPostIndex + 1, currentPostIndex + 4);
+    const nextPosts = allPosts.slice(Math.max(currentPostIndex - 3, 0), currentPostIndex);
 
     return (
       <BlogNavigation 
-        previousPost={previousPost}
-        nextPost={nextPost}
+        previousPosts={previousPosts}
+        nextPosts={nextPosts}
       />
     );
   } catch (error) {

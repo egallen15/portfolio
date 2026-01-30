@@ -1,118 +1,95 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import BlogPostListItem from './BlogPostListItem';
+import HighlightedHeading from './HighlightedHeading';
 
 interface BlogNavigationProps {
-  previousPost?: {
+  previousPosts?: {
     title: string;
     route: string;
     date: string;
     excerpt: string;
     image?: string;
-  };
-  nextPost?: {
+    tags?: string[];
+  }[];
+  nextPosts?: {
     title: string;
     route: string;
     date: string;
     excerpt: string;
     image?: string;
-  };
+    tags?: string[];
+  }[];
 }
 
-export default function BlogNavigation({ previousPost, nextPost }: BlogNavigationProps) {
-  if (!previousPost && !nextPost) {
+export default function BlogNavigation({ previousPosts, nextPosts }: BlogNavigationProps) {
+  if (!previousPosts?.length && !nextPosts?.length) {
     return null;
   }
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
   return (
     <nav className="w-full max-w-3xl">
-        <hr className="mb-6 border-slate-200 dark:border-slate-700" />
-        <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">Discover more</h3>
+      <hr className="mb-6 border-slate-200 dark:border-slate-700" />
+      <HighlightedHeading
+        as="h3"
+        highlightStyle="underline"
+        skewAngle="light"
+        className="text-lg mb-6 font-bold text-slate-900 dark:text-slate-100"
+      >
+        Discover more
+      </HighlightedHeading>
       <div className="flex flex-col gap-6">
-        {/* Previous Post */}
-        {previousPost && (
-          <div className="flex-1">
-            <Link 
-              href={previousPost.route}
-              className="group block p-6 rounded-lg bg-[#F4F6FD] hover:bg-slate-200 dark:bg-slate-800 transition-colors duration-200"
+        {nextPosts?.length ? (
+          <div className="flex flex-col gap-2">
+            <HighlightedHeading
+              as="h5"
+              highlightStyle="skinny"
+              highlightColor='green'
+              skewAngle="light"
+              className="w-fit mb-2 font-medium text-sm uppercase tracking-wide"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                {previousPost.image && (
-                  <div className="flex-shrink-0">
-                    <Image
-                      src={previousPost.image}
-                      alt={previousPost.title}
-                      width={200}
-                      height={200}
-                      className="object-cover h-auto w-auto sm:w-40 aspect-video rounded-lg"
-                    />
-                  </div>
-                )}
-                <div className="flex-1">
-                  <div className="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-2">
-                    {formatDate(previousPost.date)}
-                  </div>
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2 hover:underline transition-colors">
-                    {previousPost.title}
-                  </h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 overflow-hidden" style={{ 
-                    display: '-webkit-box', 
-                    WebkitLineClamp: 2, 
-                    WebkitBoxOrient: 'vertical' 
-                  }}>
-                    {previousPost.excerpt}
-                  </p>
-                </div>
-              </div>
-            </Link>
+              Newer posts
+            </HighlightedHeading>
+            <div className="flex flex-col gap-4">
+              {nextPosts.map(post => (
+                <BlogPostListItem
+                  key={post.route}
+                  title={post.title}
+                  excerpt={post.excerpt}
+                  url={post.route}
+                  date={post.date}
+                  imageUrl={post.image}
+                  tags={post.tags}
+                />
+              ))}
+            </div>
           </div>
-        )}
+        ) : null}
 
-        {/* Next Post */}
-        {nextPost && (
-          <div className="flex-1">
-            <Link 
-              href={nextPost.route}
-              className="group block p-6 rounded-lg bg-[#F4F6FD] hover:bg-slate-200 dark:bg-slate-800 transition-colors duration-200"
+        {previousPosts?.length ? (
+          <div className="flex flex-col gap-2">
+            <HighlightedHeading
+              as="h5"
+              highlightStyle="skinny"
+              skewAngle="light"
+              highlightColor='pink'
+              className="w-fit mb-2 font-medium text-sm uppercase tracking-wide"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                {nextPost.image && (
-                  <div className="flex-shrink-0">
-                    <Image
-                      src={nextPost.image}
-                      alt={nextPost.title}
-                      width={200}
-                      height={200}
-                      className="object-cover h-auto w-auto sm:w-40 aspect-video rounded-lg"
-                    />
-                  </div>
-                )}
-                <div className="flex-1">
-                  <div className="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-2">
-                    {formatDate(nextPost.date)}
-                  </div>
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2 hover:underline transition-colors">
-                    {nextPost.title}
-                  </h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 overflow-hidden" style={{ 
-                    display: '-webkit-box', 
-                    WebkitLineClamp: 2, 
-                    WebkitBoxOrient: 'vertical' 
-                  }}>
-                    {nextPost.excerpt}
-                  </p>
-                </div>
-              </div>
-            </Link>
+              Older posts
+            </HighlightedHeading>
+            <div className="flex flex-col gap-4">
+              {previousPosts.map(post => (
+                <BlogPostListItem
+                  key={post.route}
+                  title={post.title}
+                  excerpt={post.excerpt}
+                  url={post.route}
+                  date={post.date}
+                  imageUrl={post.image}
+                  tags={post.tags}
+                />
+              ))}
+            </div>
           </div>
-        )}
+        ) : null}
       </div>
     </nav>
   );
