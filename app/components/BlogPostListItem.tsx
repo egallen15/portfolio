@@ -12,6 +12,7 @@ interface BlogPostListItemProps {
   date: string;
   imageUrl?: string;
   tags?: string[];
+  layout?: "card" | "row";
   readingTime?: {
     text: string;
     minutes: number;
@@ -27,6 +28,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
   url,
   imageUrl,
   tags = [],
+  layout = "row",
   readingTime,
 }) => {
   // Convert the input date string to a Date object.
@@ -40,15 +42,31 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
       href={url}
       className="block overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-gradient-to-tr hover:from-slate-200/30 hover:to-sky-100 dark:hover:bg-gradient-to-tr dark:hover:from-slate-400/30 dark:hover:to-sky-700/30"
     >
-      <div className="flex flex-col sm:flex-row sm:items-stretch w-full max-w-7xl">
+      <div
+        className={
+          layout === "card"
+            ? "flex flex-col w-full max-w-7xl"
+            : "flex flex-col min-[632px]:flex-row min-[632px]:items-stretch w-full max-w-7xl"
+        }
+      >
         {imageUrl && (
-          <div className="flex flex-shrink-0 w-full sm:w-44">
+          <div
+            className={
+              layout === "card"
+                ? "flex flex-shrink-0 w-full"
+                : "flex flex-shrink-0 w-full min-[632px]:w-44"
+            }
+          >
             <Image
               src={imageUrl}
               alt="Post Image"
               width={200}
               height={200}
-              className="object-cover w-full h-auto aspect-video sm:h-full rounded-l-lg"
+              className={
+                layout === "card"
+                  ? "object-cover w-full h-auto aspect-video rounded-t-lg"
+                  : "object-cover w-full h-auto aspect-video rounded-t-lg min-[632px]:h-full min-[632px]:rounded-l-lg min-[632px]:rounded-t-none"
+              }
             />
           </div>
         )}
@@ -88,9 +106,11 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
             )}
           </div>
         </div>
-        <div className="hidden sm:flex items-center pr-6">
-          <ChevronRightIcon className="h-5 w-5 text-slate-400 dark:text-slate-500" />
-        </div>
+        {layout !== "card" && (
+          <div className="hidden min-[632px]:flex items-center pr-6">
+            <ChevronRightIcon className="h-5 w-5 text-slate-400 dark:text-slate-500" />
+          </div>
+        )}
       </div>
     </Link>
   );

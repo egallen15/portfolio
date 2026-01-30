@@ -21,6 +21,7 @@ export interface BlogContentProps {
   title?: string;
   rssButton?: React.ReactNode;
   showTagFilter?: boolean;
+  columns?: 1 | 2 | 3 | 4;
 }
 
 export interface BlogContentServerProps {
@@ -29,4 +30,5 @@ export interface BlogContentServerProps {
   title?: string;
   rssButton?: React.ReactNode;
   showTagFilter?: boolean;
+  columns?: 1 | 2 | 3 | 4;
 }

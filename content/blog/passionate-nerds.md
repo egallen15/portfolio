@@ -2,6 +2,7 @@
 title: "How to build a game that people love"
 author: "Eric Allen"
 date: "2025-08-19"
+image: "https://placehold.co/1792x770?text=Passionate+Nerds"
 excerpt: "To build a timeless classic, become a passionate nerd."
 slug: passionate-nerds
 tags:

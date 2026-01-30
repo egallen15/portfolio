@@ -52,15 +52,41 @@ export default async function BlogNavigationServer({ currentSlug }: BlogNavigati
     // Get previous and next posts
     // Since posts are sorted newest first, previous is actually next in array (older)
     // and next is previous in array (newer)
-    const previousPosts = allPosts.slice(currentPostIndex + 1, currentPostIndex + 4);
-    const nextPosts = allPosts.slice(Math.max(currentPostIndex - 3, 0), currentPostIndex);
+    const desiredTotal = 4;
+    const desiredPerSide = 2;
 
-    return (
-      <BlogNavigation 
-        previousPosts={previousPosts}
-        nextPosts={nextPosts}
-      />
+    let nextPosts = allPosts.slice(
+      Math.max(currentPostIndex - desiredPerSide, 0),
+      currentPostIndex
     );
+    let previousPosts = allPosts.slice(
+      currentPostIndex + 1,
+      currentPostIndex + 1 + desiredPerSide
+    );
+
+    let remaining = desiredTotal - (nextPosts.length + previousPosts.length);
+
+    if (remaining > 0) {
+      // Prefer newer posts when filling the remaining slots.
+      const extraNewerStart = Math.max(
+        currentPostIndex - (desiredPerSide + remaining),
+        0
+      );
+      nextPosts = allPosts.slice(extraNewerStart, currentPostIndex);
+      remaining = desiredTotal - (nextPosts.length + previousPosts.length);
+    }
+
+    if (remaining > 0) {
+      // If still short, fill with older posts.
+      previousPosts = allPosts.slice(
+        currentPostIndex + 1,
+        currentPostIndex + 1 + desiredPerSide + remaining
+      );
+    }
+
+    const suggestedPosts = [...nextPosts, ...previousPosts];
+
+    return <BlogNavigation posts={suggestedPosts} />;
   } catch (error) {
     console.error('Error loading blog navigation:', error);
     return null;

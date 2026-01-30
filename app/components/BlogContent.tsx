@@ -12,9 +12,17 @@ const BlogContentClient = ({
   showTitle = true,
   title = "blog",
   rssButton,
-  showTagFilter = true
+  showTagFilter = true,
+  columns = 1
 }: BlogContentProps) => {
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>(posts);
+
+  const gridColsClass = {
+    1: "grid-cols-1",
+    2: "grid-cols-1 min-[632px]:grid-cols-2",
+    3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+    4: "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+  }[columns];
 
   return (
     <div className="flex w-full max-w-7xl mx-auto">
@@ -50,7 +58,7 @@ const BlogContentClient = ({
         )}
         
         {filteredPosts.length > 0 ? (
-          <div className="flex flex-col ">
+          <div className={`grid ${gridColsClass} gap-6`}>
             <AnimatePresence mode="sync">
               {filteredPosts.map((post) => (
                 <motion.div
@@ -60,7 +68,7 @@ const BlogContentClient = ({
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="py-1.5"
+                  className="py-1"
                 >
                   <BlogPostListItem
                     date={post.date}
@@ -69,6 +77,7 @@ const BlogContentClient = ({
                     url={post.route}
                     tags={post.tags}
                     imageUrl={post.image}
+                    layout="card"
                     readingTime={post.readingTime}
                   />
                 </motion.div>

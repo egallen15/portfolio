@@ -8,7 +8,8 @@ export default async function BlogContentServer({
   showTitle = true,
   title = "blog",
   rssButton,
-  showTagFilter = true
+  showTagFilter = true,
+  columns = 1
 }: BlogContentServerProps) {
   try {
     // Fetch and normalize the page map for '/blog'
@@ -54,6 +55,7 @@ export default async function BlogContentServer({
             title={title}
             rssButton={rssButton}
             showTagFilter={showTagFilter}
+            columns={columns}
           />
         </div>
       </div>
