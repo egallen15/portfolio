@@ -174,6 +174,7 @@ export default function Home() {
               skewAngle="medium"
               as="h3"
               className="mt-12"
+              href="/blog"
             >
               Latest posts
             </HighlightedHeading>
@@ -202,6 +203,7 @@ export default function Home() {
                   highlightStyle="underline"
                   skewAngle="medium"
                   as="h3"
+                  href="/portfolio"
                 >
                   Portfolio
                 </HighlightedHeading>
@@ -231,6 +233,7 @@ export default function Home() {
                   skewAngle="heavy"
                   as="h3"
                   className="mb-6"
+                  href="/experience"
                 >
                   CV/Experience
                 </HighlightedHeading>
@@ -250,6 +253,7 @@ export default function Home() {
             skewAngle="light"
             as="h3"
             className="mt-12 mb-6"
+            href="/projects"
           >
             Projects
           </HighlightedHeading>
@@ -291,6 +295,7 @@ export default function Home() {
             skewAngle="heavy"
             as="h3"
             className="mt-12"
+            href="/my-stack"
           >
             My stack
           </HighlightedHeading>
