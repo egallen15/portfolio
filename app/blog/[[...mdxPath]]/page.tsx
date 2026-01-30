@@ -44,7 +44,7 @@ export default async function Page(props: {
   const params = await props.params
   if (!params.mdxPath || params.mdxPath.length === 0) {
     return (
-      <main className="w-full mx-6 mb-6 max-w-3xl xl:mx-0">
+      <main className="w-full mx-6 mb-6 max-w-7xl xl:mx-0">
         <Breadcrumb pages={[{ name: 'blog', href: '/blog', current: true }]} />
         <BlogContentServer
           rssButton={
