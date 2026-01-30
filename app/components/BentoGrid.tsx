@@ -113,7 +113,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
     : "grid gap-6 lg:grid-cols-3 lg:grid-rows-8";
   return (
     <div className="">
-      <div className="xl:mx-auto max-w-2xl lg:max-w-7xl">
+      <div className="md:mx-auto max-w-2xl lg:max-w-7xl">
         <motion.div 
           className={gridClasses}
           initial="hidden"
