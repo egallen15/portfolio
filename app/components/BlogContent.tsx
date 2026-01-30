@@ -13,7 +13,9 @@ const BlogContentClient = ({
   title = "blog",
   rssButton,
   showTagFilter = true,
-  columns = 1
+  columns = 1,
+  layout = "card",
+  gridGapClassName = "gap-6"
 }: BlogContentProps) => {
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>(posts);
 
@@ -58,7 +60,7 @@ const BlogContentClient = ({
         )}
         
         {filteredPosts.length > 0 ? (
-          <div className={`grid ${gridColsClass} gap-6`}>
+          <div className={`grid ${gridColsClass} ${gridGapClassName}`}>
             <AnimatePresence mode="sync">
               {filteredPosts.map((post) => (
                 <motion.div
@@ -77,7 +79,7 @@ const BlogContentClient = ({
                     url={post.route}
                     tags={post.tags}
                     imageUrl={post.image}
-                    layout="card"
+                    layout={layout}
                     readingTime={post.readingTime}
                   />
                 </motion.div>

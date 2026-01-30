@@ -192,7 +192,7 @@ export default function Home() {
               transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              <BlogContentServer maxPosts={3} showTitle={false} showTagFilter={false} columns={3} />
+              <BlogContentServer maxPosts={4} showTitle={false} showTagFilter={false} columns={2} />
             </motion.div>
           </motion.section>
             <section className="mt-4">
@@ -265,27 +265,6 @@ export default function Home() {
               viewport={{ once: true, amount: 0.1 }}
             >
               <ProjectGrid items={personalProjects} columns={3} />
-            </motion.div>
-          </motion.section>
-          {/* Testimonials */}
-          <HighlightedHeading
-            highlightColor="purple"
-            highlightStyle="underline"
-            skewAngle="medium"
-            as="h3"
-            className="mt-12"
-          >
-            Testimonials
-          </HighlightedHeading>
-          <motion.section className="mt-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              {/* Add testimonials here */}
-              <Testimonials />
             </motion.div>
           </motion.section>
           {/* My stack */}

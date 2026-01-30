@@ -66,6 +66,8 @@ export default async function Page(props: {
               RSS
             </Link>
           }
+          layout="row"
+          gridGapClassName="gap-2"
         />
       </main>
     )

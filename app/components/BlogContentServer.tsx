@@ -9,7 +9,9 @@ export default async function BlogContentServer({
   title = "blog",
   rssButton,
   showTagFilter = true,
-  columns = 1
+  columns = 1,
+  layout = "card",
+  gridGapClassName = "gap-6"
 }: BlogContentServerProps) {
   try {
     // Fetch and normalize the page map for '/blog'
@@ -56,6 +58,8 @@ export default async function BlogContentServer({
             rssButton={rssButton}
             showTagFilter={showTagFilter}
             columns={columns}
+            layout={layout}
+            gridGapClassName={gridGapClassName}
           />
         </div>
       </div>
