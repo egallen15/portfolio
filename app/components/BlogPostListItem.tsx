@@ -38,15 +38,21 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
   return (
     <Link
       href={url}
-      className="block rounded-lg p-5 bg-gray-50 dark:bg-slate-800 hover:bg-gradient-to-tr hover:from-slate-200/30 hover:to-sky-100 dark:hover:bg-gradient-to-tr dark:hover:from-slate-400/30 dark:hover:to-sky-700/30"
+      className="block overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-gradient-to-tr hover:from-slate-200/30 hover:to-sky-100 dark:hover:bg-gradient-to-tr dark:hover:from-slate-400/30 dark:hover:to-sky-700/30"
     >
-      <div className="flex flex-col sm:flex-row sm:items-center w-full max-w-7xl rounded-lg">
+      <div className="flex flex-col sm:flex-row sm:items-stretch w-full max-w-7xl">
         {imageUrl && (
-          <div className="flex flex-shrink-0">
-            <Image src={imageUrl} alt="Post Image" width={200} height={200} className="object-cover h-auto w-auto sm:w-44 aspect-video rounded-lg mr-4 mb-4 md:mb-0" />
+          <div className="flex flex-shrink-0 w-full sm:w-44">
+            <Image
+              src={imageUrl}
+              alt="Post Image"
+              width={200}
+              height={200}
+              className="object-cover w-full h-auto aspect-video sm:h-full"
+            />
           </div>
         )}
-        <div className="w-fit">
+        <div className="w-full p-5">
           <div className="flex items-end">
             <h3 className="text-md font-medium mr-2">{title}</h3>
           </div>
