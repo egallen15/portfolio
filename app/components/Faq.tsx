@@ -3,34 +3,34 @@ import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
 
 const faqs = [
   {
-    question: "What's the best thing about Switzerland?",
+    question: "What makes you lose track of time (in a good way)?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      "Learning about a new topic or rewriting docs. I love making complex topics easy to understand, and getting people aligned.",
   },
   {
-    question: 'How do you make holy water?',
+    question: 'Where do you feel most like a kid again?',
     answer:
-      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aut tempora vitae odio inventore fuga aliquam nostrum quod porro. Delectus quia facere id sequi expedita natus.',
+      'Playing video games with my friends, playing soccer with my kids, or swimming in a lake. It brings back a sense of wonder and freedom that I love.',
   },
   {
-    question: 'What do you call someone with no body and no nose?',
+    question: 'What do you happily go way too deep on?',
     answer:
-      'Nobody knows. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, voluptas ipsa quia excepturi, quibusdam natus exercitationem sapiente tempore labore voluptatem.',
+      'Finding the best way to automate boring tasks I find myself doing every day. I love researching and experimenting with different tools to create better solutions, even if it means saving a single second of time.',
   },
   {
-    question: 'Why do you never see elephants hiding in trees?',
+    question: 'What is something small the reliably makes your day better?',
     answer:
-      "Because they're so good at it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      "A walk alone with some great music or podcast. It's a chance to clear my mind and feel like I exist outside of work.",
   },
   {
-    question: "Why can't you hear a pterodactyl go to the bathroom?",
+    question: "What kind of environment brings out your best work?",
     answer:
-      'Because the pee is silent. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quas voluptatibus ex culpa ipsum, aspernatur blanditiis fugiat ullam magnam suscipit deserunt illum natus facilis atque vero consequatur! Quisquam, debitis error.',
+      'A small team witih clear goals, full ownership, and deep accountability.',
   },
   {
-    question: 'Why did the invisible man turn down the job offer?',
+    question: 'What do you do besides design?',
     answer:
-      "He couldn't see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet perspiciatis officiis corrupti tenetur. Temporibus ut voluptatibus, perferendis sed unde rerum deserunt eius.",
+      "Cook, write, build games and silly little tools, watch great movies, exercise, and explore new technologies.",
   },
 ]
 
