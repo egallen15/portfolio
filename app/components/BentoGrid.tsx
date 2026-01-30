@@ -140,7 +140,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
             >
               <Link href={project.href} className="group cursor-pointer block h-full">
                 <div className={`absolute inset-px rounded-lg bg-slate-50 dark:bg-slate-800 transition-all duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-700 ${maxItems !== 4 ? project.roundedClasses : ''}`} />
-                <div className={`relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 group-hover:scale-[1.02] ${maxItems !== 4 && project.roundedClasses ? project.roundedClasses.replace('rounded-', 'rounded-[calc(') + '+1px)]' : ''}`}>
+                <div className={`relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 ${maxItems !== 4 && project.roundedClasses ? project.roundedClasses.replace('rounded-', 'rounded-[calc(') + '+1px)]' : ''}`}>
                   <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                     <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                       {project.title}
@@ -166,7 +166,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
                           width={1500}
                           height={500}
                           src={project.image!}
-                          className="size-full object-cover object-top transition-transform duration-300 group-hover:scale-102"
+                          className="size-full object-cover object-top transition-transform duration-300"
                         />
                       </div>
                     </div>
@@ -177,7 +177,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
                       <Image
                         alt=""
                         src={project.image!}
-                        className="w-full max-lg:max-w-xs dark:hidden transition-transform duration-300 group-hover:scale-102 object-cover"
+                        className="w-full max-lg:max-w-xs dark:hidden transition-transform duration-300 object-cover"
                         width={500}
                         height={500}
                       />
@@ -185,7 +185,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
                         <Image
                           alt=""
                           src={project.darkImage}
-                          className="hidden w-full max-lg:max-w-xs dark:block transition-transform duration-300 group-hover:scale-102 object-cover"
+                          className="hidden w-full max-lg:max-w-xs dark:block transition-transform duration-300 object-cover"
                           width={500}
                           height={500}
                         />
@@ -198,7 +198,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
                       <Image
                         alt=""
                         src={project.image!}
-                        className="h-[min(152px,40cqw)] object-cover dark:hidden transition-transform duration-300 group-hover:scale-102"
+                        className="h-[min(152px,40cqw)] object-cover dark:hidden transition-transform duration-300"
                         width={500}
                         height={500}
                       />
@@ -206,7 +206,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
                         <Image
                           alt=""
                           src={project.darkImage}
-                          className="hidden h-[min(152px,40cqw)] object-cover dark:block transition-transform duration-300 group-hover:scale-102"
+                          className="hidden h-[min(152px,40cqw)] object-cover dark:block transition-transform duration-300"
                           width={500}
                           height={500}
                         />
@@ -227,7 +227,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
                             </div>
                           </div>
                         </div>
-                        <div className="px-6 pb-14 pt-6 transition-transform duration-300 group-hover:scale-102">
+                        <div className="px-6 pb-14 pt-6 transition-transform duration-300">
                           {project.content}
                         </div>
                       </div>
