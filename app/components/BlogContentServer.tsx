@@ -11,7 +11,7 @@ export default async function BlogContentServer({
   showTagFilter = true,
   columns = 1,
   layout = "card",
-  gridGapClassName = "gap-6"
+  gridGapClassName = "gap-2"
 }: BlogContentServerProps) {
   try {
     // Fetch and normalize the page map for '/blog'

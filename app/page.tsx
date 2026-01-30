@@ -192,7 +192,7 @@ export default function Home() {
               transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              <BlogContentServer maxPosts={4} showTitle={false} showTagFilter={false} columns={2} />
+              <BlogContentServer maxPosts={4} showTitle={false} showTagFilter={false} layout="row" columns={1} />
             </motion.div>
           </motion.section>
             <section className="mt-4">
