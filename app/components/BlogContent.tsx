@@ -50,7 +50,7 @@ const BlogContentClient = ({
         )}
         
         {filteredPosts.length > 0 ? (
-          <div className="flex flex-col divide-y divide-slate-200 dark:divide-slate-700 border-slate-200 dark:border-slate-700">
+          <div className="flex flex-col ">
             <AnimatePresence mode="sync">
               {filteredPosts.map((post) => (
                 <motion.div

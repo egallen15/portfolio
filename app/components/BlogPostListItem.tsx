@@ -38,7 +38,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
   return (
     <Link
       href={url}
-      className="block rounded-lg -mx-4 p-4 hover:bg-gradient-to-tr hover:from-slate-200/30 hover:to-sky-100 dark:hover:bg-gradient-to-tr dark:hover:from-slate-400/30 dark:hover:to-sky-700/30"
+      className="block rounded-lg p-5 bg-gray-50 dark:bg-slate-800 hover:bg-gradient-to-tr hover:from-slate-200/30 hover:to-sky-100 dark:hover:bg-gradient-to-tr dark:hover:from-slate-400/30 dark:hover:to-sky-700/30"
     >
       <div className="flex flex-col sm:flex-row sm:items-center w-full max-w-7xl rounded-lg">
         {imageUrl && (
