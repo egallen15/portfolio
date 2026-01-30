@@ -24,9 +24,9 @@ export default function Home() {
   const personalProjects = [
     {
       id: "peak",
-      href: "https://peak.tech",
+      href: "https://peakapp.work",
       title: "Peak",
-      description: "Visualize your personal productivity with interactive charts and AI analysis.",
+      description: "Visualize your personal todo progress with interactive charts and AI analysis.",
       logo: "",
     },
     {
@@ -40,7 +40,7 @@ export default function Home() {
       id: "uxflow",
       href: "https://uxflow.net",
       title: "uxflow",
-      description: "A design tool for creating user flow diagrams and user journey maps.",
+      description: "A simple design tool for creating beautiful user flow diagrams and user journey maps.",
       logo: "",
     },
   ];
