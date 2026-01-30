@@ -20,7 +20,7 @@ const faqs = [
   {
     question: 'What is something small the reliably makes your day better?',
     answer:
-      "A walk alone with some great music or podcast. It's a chance to clear my mind and feel like I exist outside of work.",
+      "A walk alone some great music, a phone call with someone I love, or a podcast. It's a chance to clear my mind and feel like I exist outside of work.",
   },
   {
     question: "What kind of environment brings out your best work?",
