@@ -40,7 +40,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
   return (
     <Link
       href={url}
-      className="block overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-gradient-to-tr hover:from-slate-200/30 hover:to-sky-100 dark:hover:bg-gradient-to-tr dark:hover:from-slate-400/30 dark:hover:to-sky-700/30"
+      className="block overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800 stacked-shadow hover:bg-gradient-to-tr hover:from-slate-200/30 hover:to-sky-100 dark:hover:bg-gradient-to-tr dark:hover:from-slate-400/30 dark:hover:to-sky-700/30"
     >
       <div
         className={

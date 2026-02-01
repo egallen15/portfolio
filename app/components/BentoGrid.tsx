@@ -139,7 +139,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
               className={maxItems === 4 ? "relative h-80 lg:h-96" : project.gridClasses}
             >
               <Link href={project.href} className="group cursor-pointer block h-full">
-                <div className={`absolute inset-px rounded-lg bg-slate-50 dark:bg-slate-800 transition-all duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-700 ${maxItems !== 4 ? project.roundedClasses : ''}`} />
+                <div className={`absolute inset-px rounded-lg bg-slate-50 dark:bg-slate-800 stacked-shadow transition-all duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-700 ${maxItems !== 4 ? project.roundedClasses : ''}`} />
                 <div className={`relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] transition-transform duration-300 ${maxItems !== 4 && project.roundedClasses ? project.roundedClasses.replace('rounded-', 'rounded-[calc(') + '+1px)]' : ''}`}>
                   <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                     <p className="mt-2 text-lg font-medium tracking-tight text-slate-950 max-lg:text-center dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">

@@ -126,7 +126,7 @@ export default function WorkExperience({
       className="relative mx-auto"
     >
       {/* Background layer - matches BentoGrid pattern */}
-      <div className="absolute inset-px rounded-lg bg-slate-50 dark:bg-slate-800" />
+      <div className="absolute inset-px rounded-lg bg-slate-50 dark:bg-slate-800 stacked-shadow" />
       
       {/* Content layer */}
       <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] p-6">

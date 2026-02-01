@@ -20,6 +20,10 @@ const config: Config = {
       '2xl': '1536px',
     },
     extend: {
+      boxShadow: {
+        stack: "0 1px 0 0 rgba(15,23,42,0.05), 0 6px 14px -12px rgba(15,23,42,0.18)",
+        "stack-dark": "0 1px 0 0 rgba(148,163,184,0.1), 0 6px 14px -12px rgba(2,6,23,0.45)",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

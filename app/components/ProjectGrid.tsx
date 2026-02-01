@@ -60,7 +60,7 @@ export default function ProjectGrid({ items, columns = 3 }: ProjectGridProps) {
                 target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               >
-                <div className="absolute inset-px rounded-2xl bg-slate-50 dark:bg-slate-800 transition-all duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-700" />
+                <div className="absolute inset-px rounded-2xl bg-slate-50 dark:bg-slate-800 stacked-shadow transition-all duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-700" />
                 <div className="relative flex h-full flex-col overflow-hidden rounded-2xl transition-transform duration-100">
                   <div className="flex flex-col p-8 gap-4">
                     {/* Logo or Image Section */}
@@ -137,7 +137,7 @@ export default function ProjectGrid({ items, columns = 3 }: ProjectGridProps) {
                     </div>
                   </div>
                 </div>
-                <div className="pointer-events-none absolute inset-px rounded-2xl ring-1 ring-slate-950/5 dark:ring-white/10 transition-all duration-300 group-hover:ring-blue-500/20" />
+                <div className="pointer-events-none absolute inset-px rounded-2xl" />
               </Link>
             </motion.div>
           ))}

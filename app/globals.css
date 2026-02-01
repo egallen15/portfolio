@@ -88,6 +88,12 @@ body {
   }
 }
 
+@layer utilities {
+  .stacked-shadow {
+    @apply ring-1 ring-slate-200/60 dark:ring-slate-700/50 shadow-stack dark:shadow-stack-dark;
+  }
+}
+
 /* Prevent layout shift during loading */
 * {
   box-sizing: border-box;
