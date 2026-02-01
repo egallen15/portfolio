@@ -8,24 +8,19 @@ const faqs = [
       "Learning about a new topic or rewriting docs. I love making complex topics easy to understand, and getting people aligned.",
   },
   {
-    question: 'Where do you feel most like a kid again?',
-    answer:
-      'Playing video games with my friends, playing soccer with my kids, or swimming in a lake. It brings back a sense of wonder and freedom that I love.',
-  },
-  {
     question: 'What do you happily go way too deep on?',
     answer:
-      'Finding the best way to automate boring tasks I find myself doing every day. I love researching and experimenting with different tools to create better solutions, even if it means saving a single second of time.',
+      'Finding the best way to automate or improve the boring tasks I find myself doing every day.',
   },
   {
     question: 'What is something small the reliably makes your day better?',
     answer:
-      "A walk alone some great music, a phone call with someone I love, or a podcast. It's a chance to clear my mind and feel like I exist outside of work.",
+      "A long walk with some great music or a phone call with someone I love. It's a chance to clear my mind and feel like I exist outside of work.",
   },
   {
     question: "What kind of environment brings out your best work?",
     answer:
-      'A small team witih clear goals, full ownership, and deep accountability.',
+      'A small in-person team witih clear goals, full ownership, and deep accountability.',
   },
   {
     question: 'What do you do besides design?',
