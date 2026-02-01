@@ -1,7 +1,7 @@
 ---
 title: Subsplash UX Pillars
 author: Eric Allen
-image: https://placehold.co/1792x770?text=Subsplash+UX+Pillars
+image: /images/pillars.png
 date: 2026-01-28
 slug: subsplash-ux-pillars
 tags:

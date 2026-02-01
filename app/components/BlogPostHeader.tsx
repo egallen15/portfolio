@@ -110,7 +110,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ frontMatter }) => {
             alt={title}
             width={896}
             height={384}
-            className="rounded-lg w-auto max-h-96 object-cover"
+            className="rounded-lg w-auto max-h-96 object-cover stacked-shadow"
             priority // This loads the image faster since it's above the fold
           />
           {/* Hover overlay to indicate clickability */}

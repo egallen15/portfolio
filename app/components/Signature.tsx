@@ -11,12 +11,10 @@ const Signature: React.FC = () => {
           alt="Eric Allen logo"
           width={36}
           height={36}
-          className="rounded-lg"
+          className="rounded-lg stacked-shadow"
         />
       </Link>
-      <p className="text-sm md:text-base">
-      </p>
-      <div className="-ml-2">
+      <div className="">
         <Image
           src="/images/eric-allen-signature.svg"
           alt="Eric Allen signature"

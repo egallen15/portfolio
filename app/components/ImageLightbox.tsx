@@ -144,7 +144,7 @@ export default function ImageLightbox({
               height={675}
               className="w-fit max-h-full object-contain rounded-xl"
               priority={true}
-              style={{ maxHeight: 'calc(100vh - 300px)' }}
+              style={{ maxHeight: 'calc(100vh - 140px)', maxWidth: 'calc(100vw - 140px)' }}
             />
           </div>
           
