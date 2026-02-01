@@ -70,14 +70,17 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
             />
           </div>
         )}
-        <div className="w-full p-5">
+        <div className="w-full flex flex-col p-5">
           <div className="flex items-end">
             <h3 className="text-md font-medium mr-2">{title}</h3>
           </div>
           {/* <div className="h-[1px] w-full bg-gradient-to-r from-sky-400 to-sky-300 rounded-full my-2" /> */}
-          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{excerpt}</p>
-          <div className="flex items-baseline mt-3 gap-3">
-            <div className="flex items-center gap-2">
+          {layout !== "card" && (
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{excerpt}</p>
+          )}
+          <div className="flex flex-col gap-2 mt-3 sm:flex-row sm:items-baseline sm:gap-3">
+            <div className="flex items-center gap-3 whitespace-nowrap">
+              <div className="flex items-center gap-2">
               <CalendarDaysIcon className="h-4 w-4 text-slate-500 dark:text-slate-400" />
               <time className="text-xs text-slate-500 dark:text-slate-400">
                 {relativeDate}
@@ -91,6 +94,7 @@ const BlogPostListItem: FC<BlogPostListItemProps> = ({
                 </span>
               </div>
             )}
+            </div>
             {tags.length > 0 && (
               <div className="flex items-center gap-2">
                 <HashtagIcon className="h-4 w-4 text-slate-500 dark:text-slate-400" />
