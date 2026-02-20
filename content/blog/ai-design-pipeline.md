@@ -11,15 +11,19 @@ tags:
  - Productivity
 ---
 
-## WIP
+The double diamond used to be necessary. Code was expensive, and design had to be sure that what it communicated was exact. As perfect as it could be for an expensive handoff.
 
-The double diamond isn't working anymore. Code is too easy to generate for designers to wait to prototype anymore. After clarifying the "why", the new phase is exploration.
+In many ways, that world doesn't exist anymore. Code is too easy to generate for designers to wait to prototype real working applications. Prompting and testing ideas fast is almost free now.
 
-In the next few years, designers will become builders. Your skill in wielding the wave of AI tools is all that separates you from getting your ideas working in code exactly how you want.
+After clarifying the intent, and the "why" behind an idea, the next phase is exploration. Why wait to start feeling out the experience when it's a few prompts and a few minutes away from existing?
 
-Every part of an agent-built experience can be tailored with structured context.
+In the coming decades, designers will just be builders. Wielding AI tools is all that separates you from getting your ideas working in code exactly how you want.
 
-Our job now is to understand what context an LLM needs and provide it step by step. We need to build the tooling that aligns LLM's to our pipeline and redirects and corrects it at every step.
+It's tedious and laborious, but from a managerially side, instead of a design-practice based one. We've learned frameworks for interacting with our coworkers, communicating feedback and critique, and expressing minutiae in a way that makes sense.
+
+This is all that Agents need in order to do their job. In other words, every part of an agent-built experience can be tailored with structured context.
+
+Our job now is to understand what context an LLM needs and provide it step by step. We need to build the tooling and processes that aligns LLM's to our new design pipeline so that it redirects and corrects itself at every step.
 
 Let's lay out the AI Design Pipeline:
 
@@ -92,11 +96,3 @@ Put it out into the world
 - Ship, monitor metrics
 - Post-launch feedback loops
 - Add iterations to backlog
-
----
-
-### plan.md ➡ prototype
-
-Every idea should be able to be squashed into a portable `plan.md` file. This plan should be cross-examined with appropriate `AGENTS.md` context to build in the right way.
-
-That means if you can get a `plan.md` file put together out of the `IDEA` phase, then you're on your way to immediate prototyping, assuming the only thing needed to implement a prototype with a capable set of Agent instructions is a detailed plan.
