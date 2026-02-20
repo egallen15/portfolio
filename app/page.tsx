@@ -176,7 +176,7 @@ export default function Home() {
               className="mt-12"
               href="/blog"
             >
-              Latest posts
+              Posts
             </HighlightedHeading>
             <Link
               href="/blog"
