@@ -48,7 +48,7 @@ const defaultComponents = getNextraComponents({
   h4: ({ children, id }) => <h4 id={id} className="text-lg md:text-xl font-medium mb-1 md:mb-2">{children}</h4>,
   h5: ({ children, id }) => <h5 id={id} className="font-semibold mb-2">{children}</h5>,
   h6: ({ children, id }) => <h6 id={id} className="text-md font-medium mb-1">{children}</h6>,
-  p: ({ children }) => <p className="lg:text-[17px] lg:leading-8">{children}</p>,
+  p: ({ children }) => <p className="lg:text-[17px] lg:leading-7">{children}</p>,
   a: ({ children, href }) => (
     <a href={href} className="text-sky-600 underline">
       {children}
@@ -64,9 +64,9 @@ const defaultComponents = getNextraComponents({
       {...props}
     />
   ),
-  ul: ({ children }) => <ul className="list-disc lg:text-[17px] lg:leading-8 mb-4">{children}</ul>,
-  ol: ({ children }) => <ol className="list-decimal lg:text-[17px] lg:leading-8 mb-4">{children}</ol>,
-  li: ({ children }) => <li className="mb-1 lg:text-[17px] lg:leading-8">{children}</li>,
+  ul: ({ children }) => <ul className="list-disc lg:text-[17px] lg:leading-7 mb-4">{children}</ul>,
+  ol: ({ children }) => <ol className="list-decimal lg:text-[17px] lg:leading-7 mb-4">{children}</ol>,
+  li: ({ children }) => <li className="mb-1 lg:text-[17px] lg:leading-7">{children}</li>,
   input: ({ type, checked, ...props }) => {
     if (type === 'checkbox') {
       return (
