@@ -11,11 +11,6 @@ const defaultComponents = getNextraComponents({
     // Nextra provides frontMatter as 'metadata' in App Router
     const frontMatter = allProps.metadata || {};
     
-    // Clean development logging (remove this entirely when you're confident)
-    if (process.env.NODE_ENV === 'development') {
-      console.log('📝 Blog post loaded:', frontMatter.title);
-    }
-    
     return (
       <div className="relative w-full">
         {/* Main content centered on the page */}
@@ -34,14 +29,15 @@ const defaultComponents = getNextraComponents({
               {children}
             </article>
             <Signature />
-            {/* Blog navigation - always show for blog posts */}
-            {frontMatter.slug && (
-              <div className="max-w-[48rem] mx-6 md:mx-0">
-                <BlogNavigationServer currentSlug={frontMatter.slug} />
-              </div>
-            )}
           </div>
         </div>
+
+        {/* Blog navigation - always show for blog posts */}
+        {frontMatter.slug && (
+          <div className="max-w-5xl w-full mx-auto px-6 md:px-0">
+            <BlogNavigationServer currentSlug={frontMatter.slug} />
+          </div>
+        )}
       </div>
     )
   },

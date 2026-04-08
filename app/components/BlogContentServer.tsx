@@ -6,7 +6,7 @@ import { BlogPost, BlogContentServerProps } from '../types/blog';
 export default async function BlogContentServer({ 
   maxPosts, 
   showTitle = true,
-  title = "blog",
+  title = "posts",
   rssButton,
   showTagFilter = true,
   columns = 1,

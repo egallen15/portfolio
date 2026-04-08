@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, amount: 0.1 }}
-          className="py-6 md:py-8"
+          className="pt-6 md:pt-8"
         >
           <p className="text-md max-w-3xl mb-6">
             I&#39;d love to hear from you! Whether you have a project in mind, want to collaborate, 
