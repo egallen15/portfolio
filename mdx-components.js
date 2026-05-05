@@ -14,7 +14,7 @@ const defaultComponents = getNextraComponents({
     return (
       <div className="relative w-full">
         {/* Main content centered on the page */}
-        <div className='container flex mb-6 lg:mb-0 mx-auto max-w-[48rem] relative'>
+        <div className='container flex mb-6 lg:mb-0 mx-auto max-w-[52rem] relative'>
           {/* TOC positioned absolutely within the container, aligned to left edge */}
           <div className="hidden lg:block absolute left-0 top-0 h-full pointer-events-none">
             <div className="sticky top-1/2 -translate-y-1/2 -translate-x-full xl:pr-56 lg:pr-16 pointer-events-auto">
@@ -48,7 +48,7 @@ const defaultComponents = getNextraComponents({
   h4: ({ children, id }) => <h4 id={id} className="text-lg md:text-xl font-medium mb-1 md:mb-2">{children}</h4>,
   h5: ({ children, id }) => <h5 id={id} className="font-semibold mb-2">{children}</h5>,
   h6: ({ children, id }) => <h6 id={id} className="text-md font-medium mb-1">{children}</h6>,
-  p: ({ children }) => <p className="lg:text-[17px] lg:leading-7">{children}</p>,
+  p: ({ children }) => <p className="lg:text-lg lg:leading-9">{children}</p>,
   a: ({ children, href }) => (
     <a href={href} className="text-sky-600 underline">
       {children}

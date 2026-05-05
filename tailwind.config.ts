@@ -76,7 +76,7 @@ const config: Config = {
       typography: (theme: (path: string) => string) => ({
         DEFAULT: {
           css: {
-            maxWidth: '48rem',
+            maxWidth: '52rem',
             lineHeight: '1.8',
             // Inline code only (not code blocks)
             ':not(pre) > code': {

@@ -33,7 +33,7 @@ export default function CaseStudySkeleton() {
         
         {/* Image skeleton */}
         <div className="lg:-ml-12 lg:sticky lg:top-32 lg:col-start-2 lg:row-span-2 lg:row-start-1">
-          <div className="relative aspect-video w-full max-w-[48rem] sm:max-w-[57rem] rounded-xl bg-slate-200 dark:bg-slate-700"></div>
+          <div className="relative aspect-video w-full max-w-[52rem] sm:max-w-[57rem] rounded-xl bg-slate-200 dark:bg-slate-700"></div>
           
           {/* Thumbnail gallery skeleton */}
           <div className="mt-6">

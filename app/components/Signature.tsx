@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Signature: React.FC = () => {
   return (
-    <div className="text-foreground mx-6 md:mx-0 flex justify-start items-center gap-2 mb-9">
+    <div className="text-foreground mx-6 md:mx-0 flex justify-start items-center gap-2 mb-12">
       <Link href="/about" className="flex items-center gap-6 hover:scale-105 hover:-rotate-2 transition-transform">
         <Image
           src="/images/eric-allen-profile-pic-2023.png"
