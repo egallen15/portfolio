@@ -37,17 +37,17 @@ const workflowsData: CaseStudyProps = {
     
     problemStatement: {
       title: "Problem",
-      content: "Teams at Subsplash were spending countless hours on repetitive tasks and manual processes. Complex business workflows required developer intervention, creating bottlenecks and preventing non-technical users from automating their work."
+      content: "Churches using the Subsplash Dashboard were struggling to manage and automate their internal processes, leading to inefficiencies and manual workarounds. They needed a solution that would allow them to automate repetitive tasks and complex ministry processes without requiring technical expertise."
     },
     
     researchAndFeedback: {
-      title: "Research & User Feedback",
-      content: "User interviews revealed that 75% of team members had workflows they wanted to automate but lacked the technical skills to implement. Teams were losing an average of 15 hours per week on manual tasks that could be automated."
+      title: "Research & feedback",
+      content: "Through user interviews and feedback sessions, we identified key pain points around manual processes and the need for a more intuitive way to manage workflows. Users expressed a desire for a visual tool that would allow them to create and manage automations without needing to learn a complex system."
     },
     
     solution: {
       title: "Solution",
-      content: "The Workflows platform revolutionized how teams at Subsplash handle repetitive tasks and complex business processes. By providing a no-code solution, we enabled non-technical users to create sophisticated automations that previously required developer intervention.",
+      content: "We designed and developed a Trello-style kanban tool within the Subsplash Dashboard that allows users to visually create, manage, and automate their church processes. The platform features a drag-and-drop interface for building workflows with deep integrations with other Subsplash Forms, People, and other products.",
       features: [
         {
           icon: "cog",

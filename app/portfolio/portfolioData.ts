@@ -16,25 +16,25 @@ export const portfolioMetadata = {
   eventRegistration: {
     subtitle: "Subsplash",
     title: "Event Registration",
-    description: "I designed an event registration system with support for payments, balances, customizable forms, ticket types, and more.",
+    description: "I designed an event registration system with support for payments, custom forms, ticketing, and more.",
     slug: "event-registration",
   },
   checkIn: {
     subtitle: "Event Technology",
     title: "Subsplash Event Check-In",
-    description: "A streamlined mobile-first check-in solution that enables fast, contactless event entry with real-time attendance tracking and seamless integration with event management systems.",
+    description: "I designed a church check-in platform with easy setup and seamless integration with Subsplash Events.",
     slug: "check-in",
   },
   signup: {
     subtitle: "Subsplash",
     title: "Signup & onboarding",
-    description: "I designed the first time experience for every customer that signs up for Subsplash.",
+    description: "I designed the 1UX for every customer that signs up for Subsplash.",
     slug: "signup",
   },
   workflows: {
     subtitle: "Subsplash",
     title: "Workflows",
-    description: "An intuitive workflow automation system that empowers teams to build custom business processes without code, increasing efficiency and reducing manual tasks.",
+    description: "I designed a Trello-style kanban tool for managing church processes and automations in the Subsplash Dashboard.",
     slug: "workflows",
   },
   subsplashSignup: {
