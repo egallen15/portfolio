@@ -140,8 +140,8 @@ export default function ImageLightbox({
             <Image
               alt={currentImage.alt}
               src={currentImage.src}
-              width={1200}
-              height={675}
+              width={currentImage.width}
+              height={currentImage.height}
               className="w-fit max-h-full object-contain rounded-xl"
               priority={true}
               style={{ maxHeight: 'calc(100vh - 140px)', maxWidth: 'calc(100vw - 140px)' }}

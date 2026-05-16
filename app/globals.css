@@ -86,6 +86,12 @@ body {
   .neon {
     @apply neon-white;
   }
+
+  @media (min-width: 1024px) {
+    .bento-portfolio-grid {
+      grid-auto-rows: 16rem;
+    }
+  }
 }
 
 @layer utilities {

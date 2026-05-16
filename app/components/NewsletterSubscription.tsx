@@ -5,11 +5,13 @@ import React, { useState } from "react";
 interface NewsletterSubscriptionProps {
   onSubscribe?: (email: string) => Promise<void>;
   className?: string;
+  compact?: boolean;
 }
 
 const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
   onSubscribe,
   className = "",
+  compact = false,
 }) => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -66,23 +68,27 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
   };
 
   return (
-    <div className={`flex flex-col max-w-4xl ${className}`}>
-      <div className="flex flex-col mb-4 md:mb-0">
-        <h4 className="text-sm font-semibold mb-2 md:mb-4 text-gray-900 dark:text-white">
-          subscribe
-        </h4>
-        <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
-          Get email updates when I publish something. No spam.
-        </p>
-      </div>
+    <div className={`flex flex-col ${compact ? "" : "max-w-4xl"} ${className}`}>
+      {!compact && (
+        <div className="flex flex-col mb-4 md:mb-0">
+          <h4 className="text-sm font-semibold mb-2 md:mb-4 text-gray-900 dark:text-white">
+            subscribe
+          </h4>
+          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+            Get email updates when I publish something. No spam.
+          </p>
+        </div>
+      )}
       <form onSubmit={handleSubmit} className="flex-grow">
-        <div className="flex flex-col sm:flex-row gap-3">
+        <div
+          className={`flex gap-3 ${compact ? "flex-row" : "flex-col sm:flex-row"}`}
+        >
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your email address"
-              className="flex-1 px-4 py-3 max-w-md text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            placeholder="Your email address"
+            className={`${compact ? "h-12 min-w-0 flex-1 sm:w-60 sm:flex-none" : "flex-1 max-w-md"} px-4 py-3 text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
             disabled={isLoading}
             aria-label="Email address"
             required
@@ -90,7 +96,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
           <button
             type="submit"
             disabled={isLoading}
-            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold rounded-lg transition-colors duration-100 disabled:cursor-not-allowed whitespace-nowrap"
+            className="px-4 py-3 sm:px-6 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold rounded-lg transition-colors duration-100 disabled:cursor-not-allowed whitespace-nowrap"
           >
             {isLoading ? "Subscribing..." : "Subscribe"}
           </button>
@@ -98,7 +104,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
 
         {message && (
           <div
-            className={`p-4 rounded-lg text-sm ${
+            className={`mt-3 p-4 rounded-lg text-sm ${
               message.type === "success"
                 ? "bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200 border border-green-200 dark:border-green-700"
                 : "bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200 border border-red-200 dark:border-red-700"

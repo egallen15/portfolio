@@ -11,6 +11,7 @@ import Skills from "./components/Skills";
 import Faq from "./components/Faq";
 import Testimonials from "./components/Testimonials";
 import ProjectGrid from "./components/ProjectGrid";
+import NewsletterSubscription from "./components/NewsletterSubscription";
 
 export const metadata = {
   title: "Eric Allen | UX Designer",
@@ -105,7 +106,10 @@ export default function Home() {
                         ministries, and non‑profits.
                       </p>
                     </div>
-                  <SocialLinks />
+                    <div className="flex flex-wrap items-center gap-4">
+                      <SocialLinks />
+                      <NewsletterSubscription compact className="w-full sm:w-auto" />
+                    </div>
                   </div>
                 </div>
 

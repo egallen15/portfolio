@@ -30,7 +30,7 @@ const BlogContentClient = ({
     <div className="flex w-full max-w-7xl mx-auto">
       <div className='w-full'>
         {showTitle && (
-          <div className="flex items-center justify-between mb-6">
+          <div className="mb-6 grid grid-cols-[1fr_auto] items-center gap-4 sm:flex sm:flex-row sm:justify-between">
             <motion.h1 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -46,6 +46,7 @@ const BlogContentClient = ({
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
                 viewport={{ once: true, amount: 0.1 }}
+                className="contents sm:block sm:w-auto"
               >
                 {rssButton}
               </motion.div>
