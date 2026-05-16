@@ -127,7 +127,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
       image: "https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png",
       imageAlt: "Security-style preview for Subsplash Church Management",
       darkImage: "https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-security.png",
-      gridClasses: "relative lg:col-span-2 lg:row-span-1 lg:col-start-2 lg:row-start-5 h-40 sm:h-48 lg:h-full",
+      gridClasses: "relative lg:row-span-1 lg:col-start-2 lg:row-start-5 h-40 sm:h-48 lg:h-full",
       roundedClasses: "",
       contentType: "image-small"
     },
@@ -140,7 +140,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
       image: "https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png",
       imageAlt: "Preview for Waves Design System",
       darkImage: "https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-security.png",
-      gridClasses: "relative lg:col-span-2 lg:row-span-1 lg:col-start-1 lg:row-start-6 h-40 sm:h-48 lg:h-full",
+      gridClasses: "relative lg:row-span-1 lg:col-start-3 lg:row-start-5 h-40 sm:h-48 lg:h-full",
       roundedClasses: "",
       contentType: "image-small"
     },
@@ -153,7 +153,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
       image: "https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png",
       imageAlt: "Performance-style preview for Subsplash Events improvements",
       darkImage: "https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-performance.png",
-      gridClasses: "relative lg:row-span-1 lg:col-start-3 lg:row-start-6 h-40 sm:h-48 lg:h-full",
+      gridClasses: "relative lg:row-span-1 lg:col-start-1 lg:row-start-6 h-40 sm:h-48 lg:h-full",
       roundedClasses: "",
       contentType: "image"
     },
@@ -173,7 +173,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
         width: 2112,
         height: 669,
       },
-      gridClasses: "relative lg:col-span-2 lg:row-span-1 lg:col-start-1 lg:row-start-7 h-40 sm:h-48 lg:h-full",
+      gridClasses: "relative lg:row-span-1 lg:col-start-2 lg:row-start-6 h-40 sm:h-48 lg:h-full",
       roundedClasses: "",
       contentType: "image"
     },
@@ -193,7 +193,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
         width: 1619,
         height: 1048,
       },
-      gridClasses: "relative lg:row-span-1 lg:col-start-3 lg:row-start-7 h-40 sm:h-48 lg:h-full",
+      gridClasses: "relative lg:row-span-1 lg:col-start-3 lg:row-start-6 h-40 sm:h-48 lg:h-full",
       roundedClasses: "",
       contentType: "image"
     },
@@ -213,7 +213,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
         width: 390,
         height: 390,
       },
-      gridClasses: "relative lg:col-span-3 lg:row-span-1 lg:col-start-1 lg:row-start-8 h-40 sm:h-48 lg:h-full",
+      gridClasses: "relative lg:row-span-1 lg:col-start-1 lg:row-start-7 h-40 sm:h-48 lg:h-full",
       roundedClasses: "max-lg:rounded-b-[2rem] lg:rounded-b-[2rem]",
       contentType: "image-small"
     }
@@ -444,4 +444,3 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
     </div>
   );
 }
-
