@@ -94,8 +94,8 @@ export default function Home() {
                         👋
                       </motion.h1>
                       <p className="text-md max-w-3xl pt-2.5 md:pt-3">
-                        I&#39;m a UX designer based in <strong>Austin, Texas</strong>.
-                        For the past <span>7 years</span>, I&#39;ve worked at{" "}
+                        I&#39;m a product designer/builder/writer based in <strong>Austin, Texas</strong>.
+                        For the past <span>8 years</span>, I&#39;ve worked at{" "}
                         <a
                           href="https://subsplash.com"
                           className="underline hover:text-gray-400 dark:hover:text-slate-400"

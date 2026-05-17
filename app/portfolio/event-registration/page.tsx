@@ -31,7 +31,7 @@ const eventRegistrationData: CaseStudyProps = {
     tools: {
       title: "Design",
       content:
-        "Using wireframes, prototypes, and user flows, I designed a simple event registration experience that exceeded all our business goals and overwhelmingly delighted customers.",
+        "Using wireframes, prototypes, and user flows, I designed a simple event registration experience that exceeded all business goals and delighted customers.",
       features: [
         {
           icon: "procreate",
