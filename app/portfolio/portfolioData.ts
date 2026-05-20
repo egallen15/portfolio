@@ -25,12 +25,6 @@ export const portfolioMetadata = {
     description: "I designed a church check-in platform with easy setup and seamless integration with Subsplash Events.",
     slug: "check-in",
   },
-  signup: {
-    subtitle: "Subsplash",
-    title: "Signup & onboarding",
-    description: "I designed the 1UX for every customer that signs up for Subsplash.",
-    slug: "signup",
-  },
   workflows: {
     subtitle: "Subsplash",
     title: "Workflows",
@@ -58,18 +52,13 @@ export const portfolioProjects: PortfolioProjectMeta[] = [
     order: 2
   },
   {
-    ...portfolioMetadata.signup,
-    route: '/portfolio/signup',
-    order: 3
-  },
-  {
     ...portfolioMetadata.workflows,
     route: '/portfolio/workflows',
-    order: 4
+    order: 3
   },
   {
     ...portfolioMetadata.subsplashSignup,
     route: '/portfolio/subsplash-signup',
-    order: 5
+    order: 4
   }
 ];
