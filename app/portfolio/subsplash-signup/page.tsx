@@ -4,6 +4,11 @@ import { portfolioMetadata } from '../portfolioData'
 
 const subsplashSignupData: CaseStudyProps = {
   ...portfolioMetadata.subsplashSignup,
+
+  metadata: {
+    role: "Senior UX Designer",
+    tools: ["Sketch", "Zeplin"],
+  },
   
   image: {
     src: "https://placehold.co/1200x675?text=Subsplash+Signup",
@@ -14,24 +19,24 @@ const subsplashSignupData: CaseStudyProps = {
   
   sections: {
     tools: {
-      title: 'Design Tools & Approach',
+      title: 'Design',
       content:
-        "I used Sketch for design and Zeplin for developer handoff, prioritizing a modular component system that could scale with product expansion. The design emphasized progressive disclosure to reduce cognitive load while maintaining brand simplicity.",
+        "Using Sketch, Zeplin, and cross-department collaboration, I designed a modular signup experience to handle complex product packages while still feeling simple for new customers.",
       features: [
         {
-          icon: 'check-circle',
-          title: 'Sketch Design System',
-          description: 'Built reusable components for infinite product combinations',
+          icon: 'sketch',
+          title: 'Sketch',
+          description: 'Built reusable components for many package and add-on combinations.',
         },
         {
-          icon: 'user-plus',
-          title: 'Progressive Disclosure',
-          description: 'Five-section flow revealing details only when needed',
+          icon: 'zeplin',
+          title: 'Zeplin',
+          description: 'Handed off detailed specs for a flow with many pricing and billing states.',
         },
         {
-          icon: 'chart-bar',
-          title: 'White Space Strategy',
-          description: 'Clean layouts emphasizing simplicity and brand clarity',
+          icon: 'user-group',
+          title: 'Internal testing',
+          description: 'Validated edge cases with sales, engineering, and stakeholder teams.',
         },
       ],
     },
@@ -39,34 +44,39 @@ const subsplashSignupData: CaseStudyProps = {
     problemStatement: {
       title: 'Problem',
       content:
-        "Subsplash had a legacy signup experience disconnected from backend systems and misaligned with brand guidelines. The rigid structure could not accommodate growing combinations of packages, tiers, and add-ons. Sales teams and new customers faced a confusing first impression that contradicted the product's core strength: simple, beautiful UI.",
+        "Subsplash had a legacy signup experience that was disconnected from backend systems and no longer aligned with brand guidelines. The rigid structure could not support the growing number of packages, tiers, add-ons, discounts, and billing scenarios.\n\nSales teams and new customers were left with a confusing first impression that contradicted one of the product's core strengths: simple, beautiful UI.",
     },
     
     researchAndFeedback: {
-      title: 'Research & User Feedback',
+      title: 'Research',
       content:
-        'I validated requirements through iterative collaboration with internal teams, including sales, engineering, and stakeholders. Multiple test rounds surfaced edge cases across AWS, Salesforce, ERP, and billing integrations. Sales teams rigorously tested the system before launch since signup directly impacted their revenue.',
+        'I validated requirements through iterative collaboration with sales, engineering, and stakeholder teams.\n\nMultiple test rounds surfaced edge cases across AWS, Salesforce, ERP, and billing integrations. Sales teams also rigorously tested the system before launch because signup directly affected quote presentation and revenue.\n\nThe biggest design challenge was making a highly flexible purchasing flow feel calm, understandable, and trustworthy.',
     },
     
     solution: {
       title: 'Solution',
       content:
-        'I designed a five-section signup flow with progressive disclosure: package details, pre-populated information, payment options, review with transparent pricing breakdown, and a delightful success screen with onboarding animation. Expanding rows and modals revealed feature details without overwhelming users.',
+        'I designed a five-section signup flow that used progressive disclosure to reveal only the information customers needed at each step:',
       features: [
         {
-          icon: 'check-circle',
-          title: 'Modular Layout System',
-          description: 'Reusable sections adapting to any package or add-on configuration',
-        },
-        {
-          icon: 'check-circle',
-          title: 'Transparent Pricing',
-          description: 'Clear breakdown of costs, discounts, taxes, and payment schedules',
-        },
-        {
           icon: 'user-plus',
-          title: 'Delightful Onboarding',
-          description: 'Animated success screen building excitement during setup',
+          title: 'Guided package setup',
+          description: 'Created reusable sections for package details, pre-populated information, and add-ons.',
+        },
+        {
+          icon: 'credit-card',
+          title: 'Payment options',
+          description: 'Designed flexible payment states for custom quotes, currencies, taxes, and billing schedules.',
+        },
+        {
+          icon: 'chart-bar',
+          title: 'Transparent review',
+          description: 'Added clear breakdowns for costs, discounts, taxes, and payment timing before submission.',
+        },
+        {
+          icon: 'check-circle',
+          title: 'Delightful onboarding',
+          description: 'Created a success screen and onboarding animation to make account setup feel exciting.',
         },
       ],
     },
@@ -74,22 +84,22 @@ const subsplashSignupData: CaseStudyProps = {
     impactAndResults: {
       title: 'Impact & Results',
       content:
-        "The redesign eliminated sales team complaints and earned stakeholder praise for its modular flexibility. The system successfully handled custom quotes, multiple currencies, tax rates, and exclusive agreements while maintaining brand simplicity. It became a scalable foundation that grew with Subsplash's evolving product family.",
+        "The redesign gave Subsplash a scalable signup foundation that could grow with the product family while keeping the customer experience clear and on-brand.",
       features: [
         {
           icon: 'users',
-          title: 'Sales Team Satisfaction',
-          description: 'Zero complaints after launch; confident quote presentation',
+          title: 'Sales team satisfaction',
+          description: 'Eliminated sales team complaints and gave teams more confidence presenting quotes.',
         },
         {
           icon: 'check-circle',
-          title: 'Infinite Scalability',
-          description: 'Battle-tested system supporting any product combination',
+          title: 'Scalable product logic',
+          description: 'Supported custom quotes, currencies, tax rates, agreements, and package combinations.',
         },
         {
           icon: 'check-circle',
-          title: 'Stakeholder Approval',
-          description: 'Leadership praised elegant handling of complex requirements',
+          title: 'Stakeholder approval',
+          description: 'Leadership praised the way the flow handled complex requirements without feeling heavy.',
         },
       ],
     }

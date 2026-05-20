@@ -4,6 +4,11 @@ import { portfolioMetadata } from '../portfolioData'
 
 const workflowsData: CaseStudyProps = {
   ...portfolioMetadata.workflows,
+
+  metadata: {
+    role: "Senior UX Designer",
+    tools: ["Sketch", "Zeplin"],
+  },
   
   image: {
     src: "/images/workflows.png",
@@ -14,77 +19,82 @@ const workflowsData: CaseStudyProps = {
   
   sections: {
     tools: {
-      title: "Technology Stack",
-      content: "Built using modern web technologies and microservices architecture to ensure scalability and reliability for enterprise-level workflow automation.",
+      title: "Design",
+      content: "Using workflow maps, prototypes, and iterative feedback, I designed a visual automation tool that made complex ministry processes easier to understand and manage.",
       features: [
         {
-          icon: "cog",
-          title: "React & TypeScript",
-          description: "Frontend built with React and TypeScript for a responsive and type-safe user interface."
+          icon: "sketch",
+          title: "Sketch",
+          description: "Designed the kanban-style workflow builder and automation management experience."
         },
         {
-          icon: "bolt",
-          title: "Microservices Architecture",
-          description: "Scalable backend architecture designed to handle complex workflow executions reliably."
+          icon: "zeplin",
+          title: "Zeplin",
+          description: "Prepared specs for drag-and-drop behavior, states, and dashboard interactions."
         },
         {
-          icon: "chart-bar",
-          title: "Real-time Processing",
-          description: "Event-driven architecture for instant workflow execution and status updates."
+          icon: "user-group",
+          title: "Customer feedback",
+          description: "Used interviews and feedback sessions to simplify automation concepts for non-technical users."
         }
       ]
     },
     
     problemStatement: {
       title: "Problem",
-      content: "Churches using the Subsplash Dashboard were struggling to manage and automate their internal processes, leading to inefficiencies and manual workarounds. They needed a solution that would allow them to automate repetitive tasks and complex ministry processes without requiring technical expertise."
+      content: "Church teams using the Subsplash Dashboard were relying on manual workarounds to manage internal processes. Repetitive tasks, handoffs, and follow-up steps were easy to miss and difficult to standardize across teams.\n\nWe set out to give churches a visual way to manage automations without requiring technical expertise or a complicated setup process."
     },
     
     researchAndFeedback: {
-      title: "Research & feedback",
-      content: "Through user interviews and feedback sessions, we identified key pain points around manual processes and the need for a more intuitive way to manage workflows. Users expressed a desire for a visual tool that would allow them to create and manage automations without needing to learn a complex system."
+      title: "Research",
+      content: "Through user interviews and feedback sessions, we identified pain points around manual processes, duplicated work, and unclear ownership.\n\nUsers wanted automation, but they did not want to learn a complex builder or think like a developer. They needed something visual, familiar, and easy to scan.\n\nThe kanban pattern emerged as a strong direction because it already matched how many teams think about stages, ownership, and process movement."
     },
     
     solution: {
       title: "Solution",
-      content: "We designed and developed a Trello-style kanban tool within the Subsplash Dashboard that allows users to visually create, manage, and automate their church processes. The platform features a drag-and-drop interface for building workflows with deep integrations with other Subsplash Forms, People, and other products.",
+      content: "We designed a Trello-style kanban tool inside the Subsplash Dashboard that helped users create, manage, and automate church processes visually:",
       features: [
         {
           icon: "cog",
-          title: "Visual Builder",
-          description: "Drag-and-drop interface for creating complex workflows with conditional logic, loops, and integrations."
+          title: "Visual builder",
+          description: "Created a drag-and-drop interface for organizing stages, steps, and process movement."
         },
         {
           icon: "bolt",
-          title: "Automation Engine", 
-          description: "Powerful execution engine that processes workflows reliably with built-in error handling and retry mechanisms."
+          title: "Automation actions", 
+          description: "Designed simple patterns for adding automated steps without overwhelming non-technical users."
+        },
+        {
+          icon: "users",
+          title: "Subsplash integrations",
+          description: "Connected workflows to Forms, People, and other Subsplash products so teams could act on real customer data."
         },
         {
           icon: "chart-bar",
-          title: "Performance Insights",
-          description: "Real-time monitoring and analytics to track workflow performance and identify optimization opportunities."
+          title: "Performance insights",
+          description: "Added visibility into workflow activity so teams could understand what was happening across processes."
         }
       ]
     },
     
     impactAndResults: {
       title: "Impact & Results",
-      content: "Since launch, the platform has automated over 50,000 workflows, saving an estimated 2,000 hours of manual work per month and reducing process errors by 85%. The visual interface has made workflow creation accessible to all team members.",
+      content: "The Workflows experience made automation more approachable for church teams and reduced the amount of manual coordination required across recurring processes.",
       features: [
         {
-          icon: "cog",
-          title: "50,000+ Workflows Automated",
-          description: "Teams have successfully automated thousands of previously manual processes."
+          icon: "check-circle",
+          title: "50,000+ workflows automated",
+          description: "Teams automated thousands of previously manual church processes."
         },
         {
-          icon: "bolt",
-          title: "2,000 Hours Saved Monthly",
-          description: "Significant time savings across all departments through process automation."
+          icon: "check-circle",
+          title: "2,000 hours saved monthly",
+          description: "Reduced manual coordination through repeatable, automated process steps."
         },
         {
-          icon: "chart-bar",
-          title: "85% Error Reduction",
-          description: "Dramatic decrease in process errors through automated validation and execution."
+          icon: "check-circle",
+          title: "85% error reduction",
+          description: "Decreased process errors by replacing inconsistent manual work with guided workflows."
         }
       ]
     }

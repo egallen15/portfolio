@@ -27,6 +27,9 @@ interface ImageData {
   alt: string
   width: number
   height: number
+  title?: string
+  date?: string
+  description?: string
 }
 
 interface ImageLightboxProps {
@@ -46,6 +49,10 @@ export default function ImageLightbox({
 }: ImageLightboxProps) {
   const currentImage = images[currentIndex] || images[0]
   const hasMultipleImages = images.length > 1
+  const hasCaption = Boolean(currentImage?.title || currentImage?.date || currentImage?.description)
+  const imageReservedSpace = hasMultipleImages
+    ? hasCaption ? '300px' : '160px'
+    : hasCaption ? '180px' : '96px'
   
   // Navigation functions
   const goToPrevious = useCallback(() => {
@@ -132,7 +139,7 @@ export default function ImageLightbox({
       {/* Lightbox Main Content Container */}
       <div className="relative w-full h-full flex flex-col items-center justify-center p-4 max-w-7xl mx-auto">
         {/* Main Image Container */}
-        <div className="relative w-full flex-1 flex items-center justify-center">
+        <div className="relative w-full min-h-0 flex-1 flex items-center justify-center">
           <div 
             className="relative max-w-full max-h-full"
             onClick={(e) => e.stopPropagation()}
@@ -144,7 +151,7 @@ export default function ImageLightbox({
               height={currentImage.height}
               className="w-fit max-h-full object-contain rounded-xl"
               priority={true}
-              style={{ maxHeight: 'calc(100vh - 140px)', maxWidth: 'calc(100vw - 140px)' }}
+              style={{ maxHeight: `calc(100vh - ${imageReservedSpace})`, maxWidth: 'calc(100vw - 32px)' }}
             />
           </div>
           
@@ -191,6 +198,29 @@ export default function ImageLightbox({
             </>
           )}
         </div>
+
+        {hasCaption && (
+          <div
+            className="mt-4 w-fit max-w-[min(42rem,calc(100vw-2rem))] rounded-xl bg-black/20 px-4 py-3 text-center backdrop-blur-xl sm:px-5"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {currentImage.title && (
+              <p className="text-sm font-semibold tracking-tight text-white sm:text-base">
+                {currentImage.title}
+              </p>
+            )}
+            {currentImage.date && (
+              <p className="mt-1 text-[0.65rem] font-medium uppercase tracking-widest text-white/65 sm:text-xs">
+                {currentImage.date}
+              </p>
+            )}
+            {currentImage.description && (
+              <p className="mx-auto mt-2 max-w-2xl text-xs/5 font-medium text-white/95 sm:text-sm/6">
+                {currentImage.description}
+              </p>
+            )}
+          </div>
+        )}
         
         {/* Combined Navigation and Thumbnail Gallery - Only show if there are multiple images */}
         {hasMultipleImages && onNavigate && (

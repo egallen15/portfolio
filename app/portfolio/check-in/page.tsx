@@ -4,6 +4,11 @@ import { portfolioMetadata } from '../portfolioData'
 
 const checkInData: CaseStudyProps = {
   ...portfolioMetadata.checkIn,
+
+  metadata: {
+    role: "Senior UX Designer",
+    tools: ["Sketch", "Zeplin"],
+  },
   
   image: {
     src: "/images/Check-in frame.png",
@@ -14,77 +19,82 @@ const checkInData: CaseStudyProps = {
   
   sections: {
     tools: {
-      title: "Technology Stack",
-      content: "Built with offline-first architecture using React Native and progressive web app technologies, the system can handle high-volume check-ins during peak times and automatically syncs data when connectivity is restored.",
+      title: "Design",
+      content: "Using user flows, wireframes, and high-fidelity prototypes, I designed a mobile-first check-in experience that helped event teams move guests through the door quickly and confidently.",
       features: [
         {
-          icon: "qr-code",
-          title: "React Native",
-          description: "Cross-platform mobile development for consistent performance across iOS and Android devices."
+          icon: "sketch",
+          title: "Sketch",
+          description: "Created flows and production-ready interface designs for the check-in experience."
+        },
+        {
+          icon: "zeplin",
+          title: "Zeplin",
+          description: "Documented design specs and interaction details for engineering handoff."
         },
         {
           icon: "user-group",
-          title: "Progressive Web App",
-          description: "Offline-capable web technology that works seamlessly even with poor network connectivity."
-        },
-        {
-          icon: "check-circle",
-          title: "Real-time Sync",
-          description: "Automatic data synchronization when connectivity is restored, ensuring no check-ins are lost."
+          title: "Organizer feedback",
+          description: "Validated the experience with event teams who manage busy arrival windows."
         }
       ]
     },
     
     problemStatement: {
       title: "Problem",
-      content: "Event organizers needed a faster, more reliable check-in solution to reduce long lines and improve the attendee experience. Traditional paper-based or slow digital check-in systems created bottlenecks that frustrated both organizers and attendees."
+      content: "Event organizers needed a faster, more reliable way to check people in without creating long lines at the door. Paper lists and slow digital tools created bottlenecks that frustrated organizers, volunteers, and attendees.\n\nWe set out to create a Subsplash-native check-in experience that worked for high-volume events, supported real-time attendance tracking, and stayed dependable even when venue internet was unreliable."
     },
     
     researchAndFeedback: {
-      title: "Research & User Feedback",
-      content: "Through interviews with event organizers and attendee observations, we found that 85% of events experienced significant delays during check-in, with average wait times of 2-3 minutes per person. Users demanded a contactless solution that would work reliably even with poor internet connectivity."
+      title: "Research",
+      content: "I talked with event organizers and observed how teams managed attendee arrival during busy event windows.\n\nWe found that many teams experienced delays during check-in, with average wait times of 2-3 minutes per person when relying on manual lookup or slow tools.\n\nThe strongest feedback was around reliability: organizers wanted contactless check-in, fast search, and confidence that the system would keep working in crowded spaces with poor connectivity."
     },
     
     solution: {
       title: "Solution",
-      content: "The Check-In system transformed the event entry experience for thousands of events, reducing average check-in time from 2-3 minutes to under 30 seconds. The mobile-optimized interface ensures smooth operation even in challenging network conditions.",
+      content: "We designed a check-in system that made the most common arrival tasks fast, clear, and forgiving for volunteers working under pressure:",
       features: [
         {
           icon: "qr-code",
-          title: "QR Code Integration",
-          description: "Fast, contactless check-in using QR codes sent via email or generated on-demand, eliminating physical tickets and reducing wait times."
+          title: "QR code check-in",
+          description: "Added fast, contactless check-in using QR codes sent to attendees before the event."
         },
         {
           icon: "user-group",
-          title: "Attendee Management",
-          description: "Real-time attendee tracking with instant updates, group check-ins, and support for walk-in registrations with duplicate detection."
+          title: "Attendee lookup",
+          description: "Designed quick search and attendee management patterns for walk-ins, group check-ins, and duplicate detection."
+        },
+        {
+          icon: "clock",
+          title: "Offline-ready flow",
+          description: "Accounted for poor venue connectivity so teams could continue checking people in during peak arrival times."
         },
         {
           icon: "check-circle",
-          title: "Analytics Dashboard",
-          description: "Live attendance analytics with check-in patterns, capacity monitoring, and detailed reporting for post-event analysis."
+          title: "Attendance visibility",
+          description: "Gave organizers live attendance data so they could see who arrived and make decisions during the event."
         }
       ]
     },
     
     impactAndResults: {
       title: "Impact & Results",
-      content: "The system has been deployed across thousands of events, dramatically improving the check-in experience and providing valuable insights to event organizers.",
+      content: "The Check-In system improved the event entry experience for organizers and attendees while giving teams better visibility into attendance.",
       features: [
         {
-          icon: "qr-code",
-          title: "90% Faster Check-ins",
+          icon: "check-circle",
+          title: "90% faster check-ins",
           description: "Reduced average check-in time from 2-3 minutes to under 30 seconds per attendee."
         },
         {
-          icon: "user-group",
-          title: "99.9% Uptime",
-          description: "Reliable performance even during high-traffic events with thousands of simultaneous check-ins."
+          icon: "check-circle",
+          title: "Reliable event entry",
+          description: "Supported high-traffic check-in moments with a flow designed for speed and resilience."
         },
         {
           icon: "check-circle",
-          title: "Real-time Insights",
-          description: "Event organizers now have instant access to attendance data and can make informed decisions during events."
+          title: "Real-time insights",
+          description: "Gave organizers instant access to attendance data during and after events."
         }
       ]
     }

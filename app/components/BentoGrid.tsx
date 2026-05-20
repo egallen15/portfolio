@@ -15,6 +15,9 @@ interface LightboxImageData {
   alt: string;
   width: number;
   height: number;
+  title?: string;
+  date?: string;
+  description?: string;
 }
 
 type BentoGridItem = {
@@ -232,8 +235,17 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
       return null;
     }
 
+    const lightboxCaption = {
+      title: project.title,
+      date: project.date,
+      description: project.description,
+    };
+
     if (project.lightboxImage) {
-      return project.lightboxImage;
+      return {
+        ...project.lightboxImage,
+        ...lightboxCaption,
+      };
     }
 
     if (!project.image) {
@@ -245,6 +257,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
       alt: project.imageAlt ?? project.title,
       width: project.imageWidth ?? 1200,
       height: project.imageHeight ?? 675,
+      ...lightboxCaption,
     };
   };
 
