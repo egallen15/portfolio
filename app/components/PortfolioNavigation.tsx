@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 
 interface PortfolioNavigationProps {
   previousProject?: {
@@ -11,7 +12,7 @@ interface PortfolioNavigationProps {
     route: string;
     description: string;
   };
-  variant?: 'cards' | 'simple';
+  variant?: 'cards' | 'simple' | 'simple-inline';
 }
 
 export default function PortfolioNavigation({ previousProject, nextProject, variant = 'cards' }: PortfolioNavigationProps) {
@@ -20,27 +21,56 @@ export default function PortfolioNavigation({ previousProject, nextProject, vari
   }
 
   const simpleLinkClassName = 'inline-flex items-center gap-2 rounded-md border border-transparent px-3 py-2 text-md font-medium text-slate-700 transition transform duration-300 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 lg:hover:-rotate-2 lg:hover:scale-[1.02]';
+  const simpleEdgeAlignedLinkClassName = `${simpleLinkClassName} -ml-3 lg:ml-0`;
+  const simpleRightEdgeAlignedLinkClassName = `ml-auto ${simpleLinkClassName} -mr-3 lg:mr-0`;
 
-  if (variant === 'simple') {
+  if (variant === 'simple-inline') {
     return (
-      <nav
-        aria-label="Project navigation"
-        className="mb-8 flex w-full flex-wrap items-center gap-x-6 gap-y-2 border-b border-slate-200 pb-4 text-sm leading-6 dark:border-slate-700"
-      >
+      <nav aria-label="Project navigation" className="flex items-center justify-end gap-2 text-sm leading-6">
         {previousProject && (
           <Link
             href={previousProject.route}
             className={simpleLinkClassName}
           >
-            &larr; Previous: {previousProject.title}
+            <ChevronLeftIcon aria-hidden="true" className="size-4 shrink-0" />
+            <span>Previous: {previousProject.title}</span>
           </Link>
         )}
         {nextProject && (
           <Link
             href={nextProject.route}
-            className={`${previousProject ? 'ml-auto ' : ''}${simpleLinkClassName}`}
+            className={simpleLinkClassName}
           >
-            Next: {nextProject.title} &rarr;
+            <span>Next: {nextProject.title}</span>
+            <ChevronRightIcon aria-hidden="true" className="size-4 shrink-0" />
+          </Link>
+        )}
+      </nav>
+    );
+  }
+
+  if (variant === 'simple') {
+    return (
+      <nav
+        aria-label="Project navigation"
+        className="mb-4 flex w-full flex-wrap items-center gap-x-6 gap-y-2 border-b border-slate-200 pb-3 text-sm leading-6 dark:border-slate-700 lg:mb-8 lg:pb-4"
+      >
+        {previousProject && (
+          <Link
+            href={previousProject.route}
+            className={simpleEdgeAlignedLinkClassName}
+          >
+            <ChevronLeftIcon aria-hidden="true" className="size-4 shrink-0" />
+            <span>Previous: {previousProject.title}</span>
+          </Link>
+        )}
+        {nextProject && (
+          <Link
+            href={nextProject.route}
+            className={previousProject ? simpleRightEdgeAlignedLinkClassName : simpleEdgeAlignedLinkClassName}
+          >
+            <span>Next: {nextProject.title}</span>
+            <ChevronRightIcon aria-hidden="true" className="size-4 shrink-0" />
           </Link>
         )}
       </nav>
@@ -60,7 +90,8 @@ export default function PortfolioNavigation({ previousProject, nextProject, vari
               className="group block p-6 rounded-lg bg-[#F4F6FD] hover:bg-slate-200 dark:bg-slate-800 transition-colors duration-200"
             >
               <div className="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-2">
-                ← Previous Project
+                <ChevronLeftIcon aria-hidden="true" className="mr-1 size-4 shrink-0" />
+                <span>Previous Project</span>
               </div>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2 hover:underline transition-colors">
                 {previousProject.title}
@@ -84,7 +115,8 @@ export default function PortfolioNavigation({ previousProject, nextProject, vari
               className="group block p-6 rounded-lg bg-[#F4F6FD] hover:bg-slate-200 dark:bg-slate-800 transition-colors duration-200"
             >
               <div className="flex items-center justify-end text-xs text-slate-500 dark:text-slate-400 mb-2">
-                Next Project →
+                <span>Next Project</span>
+                <ChevronRightIcon aria-hidden="true" className="ml-1 size-4 shrink-0" />
               </div>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2 hover:underline transition-colors text-right">
                 {nextProject.title}

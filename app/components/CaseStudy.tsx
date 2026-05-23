@@ -136,7 +136,7 @@ export default function CaseStudy({
         </svg>
       </div> */}
       {slug && (
-        <div className="mx-auto w-full lg:max-w-7xl">
+        <div className="mx-auto w-full lg:hidden lg:max-w-7xl">
           <PortfolioNavigationServer currentSlug={slug} variant="simple" />
         </div>
       )}

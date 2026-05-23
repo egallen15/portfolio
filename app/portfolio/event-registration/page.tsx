@@ -1,5 +1,6 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 import CaseStudy, { CaseStudyProps } from "../../components/CaseStudy";
+import PortfolioNavigationServer from "../../components/PortfolioNavigationServer";
 import { portfolioMetadata } from "../portfolioData";
 
 const eventRegistrationData: CaseStudyProps = {
@@ -138,6 +139,11 @@ export default function EventRegistrationCaseStudy() {
             current: true,
           },
         ]}
+        actions={(
+          <div className="hidden lg:block">
+            <PortfolioNavigationServer currentSlug={portfolioMetadata.eventRegistration.slug} variant="simple-inline" />
+          </div>
+        )}
       />
       <CaseStudy {...eventRegistrationData} />
     </main>

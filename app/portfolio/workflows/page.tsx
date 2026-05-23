@@ -1,5 +1,6 @@
 import Breadcrumb from '@/app/components/Breadcrumb'
 import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
+import PortfolioNavigationServer from '../../components/PortfolioNavigationServer'
 import { portfolioMetadata } from '../portfolioData'
 
 const workflowsData: CaseStudyProps = {
@@ -107,7 +108,11 @@ export default function WorkflowsCaseStudy() {
       <Breadcrumb pages={[
         { name: "Portfolio", href: "/portfolio", current: false },
         { name: "Workflows", href: "/workflows", current: true }
-      ]} />
+      ]} actions={(
+        <div className="hidden lg:block">
+          <PortfolioNavigationServer currentSlug={portfolioMetadata.workflows.slug} variant="simple-inline" />
+        </div>
+      )} />
       <CaseStudy {...workflowsData} />
     </main>
   )

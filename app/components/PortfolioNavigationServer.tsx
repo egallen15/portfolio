@@ -3,7 +3,7 @@ import { portfolioProjects } from '../portfolio/portfolioData';
 
 interface PortfolioNavigationServerProps {
   currentSlug: string;
-  variant?: 'cards' | 'simple';
+  variant?: 'cards' | 'simple' | 'simple-inline';
 }
 
 export default function PortfolioNavigationServer({ currentSlug, variant = 'cards' }: PortfolioNavigationServerProps) {

@@ -1,5 +1,6 @@
 import Breadcrumb from '@/app/components/Breadcrumb'
 import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
+import PortfolioNavigationServer from '../../components/PortfolioNavigationServer'
 import { portfolioMetadata } from '../portfolioData'
 
 const checkInData: CaseStudyProps = {
@@ -107,7 +108,11 @@ export default function CheckInCaseStudy() {
       <Breadcrumb pages={[
         { name: "Portfolio", href: "/portfolio", current: false },
         { name: "Subsplash Check-In", href: "/check-in", current: true }
-      ]} />
+      ]} actions={(
+        <div className="hidden lg:block">
+          <PortfolioNavigationServer currentSlug={portfolioMetadata.checkIn.slug} variant="simple-inline" />
+        </div>
+      )} />
       <CaseStudy {...checkInData} />
     </main>
   )

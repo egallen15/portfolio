@@ -1,5 +1,6 @@
 import Breadcrumb from '@/app/components/Breadcrumb'
 import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
+import PortfolioNavigationServer from '../../components/PortfolioNavigationServer'
 import { portfolioMetadata } from '../portfolioData'
 
 const subsplashSignupData: CaseStudyProps = {
@@ -112,7 +113,11 @@ export default function SubsplashSignupPage() {
       <Breadcrumb pages={[
         { name: "Portfolio", href: "/portfolio", current: false },
         { name: "Subsplash Signup", href: "/subsplash-signup", current: true }
-      ]} />
+      ]} actions={(
+        <div className="hidden lg:block">
+          <PortfolioNavigationServer currentSlug={portfolioMetadata.subsplashSignup.slug} variant="simple-inline" />
+        </div>
+      )} />
       <CaseStudy {...subsplashSignupData} />
     </main>
   )
