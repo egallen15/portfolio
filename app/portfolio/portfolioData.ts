@@ -20,8 +20,8 @@ export const portfolioMetadata = {
     slug: "event-registration",
   },
   checkIn: {
-    subtitle: "Event Technology",
-    title: "Subsplash Event Check-In",
+    subtitle: "Subsplash",
+    title: "Check-In",
     description: "I designed a church check-in platform with easy setup and seamless integration with Subsplash Events.",
     slug: "check-in",
   },
@@ -33,7 +33,7 @@ export const portfolioMetadata = {
   },
   subsplashSignup: {
     subtitle: "Subsplash",
-    title: "Subsplash Signup and Onboarding",
+    title: "Signup and Onboarding",
     description: "A redesigned first-time experience for new customers signing up for Subsplash.",
     slug: "subsplash-signup",
   }

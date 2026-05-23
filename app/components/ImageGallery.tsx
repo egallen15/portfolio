@@ -66,15 +66,15 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
   }
 
   return (
-    <div className="lg:-ml-12 lg:sticky lg:top-1/2 lg:-translate-y-1/2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+    <div className="lg:-ml-12 lg:self-start lg:sticky lg:top-24 xl:top-28 lg:col-start-2 lg:row-span-2 lg:row-start-1">
       {/* Main Featured Image with Fixed Height Container */}
-      <div className="relative w-full h-[240px] sm:h-[480px] lg:h-[420px] rounded-xl bg-transparent group">
+      <div className="relative w-full h-[240px] sm:h-[480px] lg:h-[420px] overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800 stacked-shadow group">
         <Image
           alt={currentImage.alt}
           src={currentImage.src}
           width={currentImage.width}
           height={currentImage.height}
-          className="h-full w-full object-cover rounded-xl"
+          className="h-full w-full object-cover rounded-lg"
           priority={true}
           placeholder="blur"
           blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNmOGZhZmMiLz48L3N2Zz4="
@@ -104,7 +104,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
             {/* Left Navigation Area */}
             <button
               onClick={goToPrevious}
-              className="absolute left-0 top-0 bottom-0 w-1/3 flex items-center justify-start pl-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-gradient-to-r hover:from-black/5 hover:to-transparent dark:hover:from-white/5 dark:hover:to-transparent rounded-l-xl group/left"
+              className="absolute left-0 top-0 bottom-0 w-1/3 flex items-center justify-start pl-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-gradient-to-r hover:from-black/5 hover:to-transparent dark:hover:from-white/5 dark:hover:to-transparent rounded-l-lg group/left"
               aria-label="Previous image"
             >
               <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-200 group-hover/left:scale-125">
@@ -122,7 +122,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
             {/* Right Navigation Area */}
             <button
               onClick={goToNext}
-              className="absolute right-0 top-0 bottom-0 w-1/3 flex items-center justify-end pr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-gradient-to-l hover:from-black/5 hover:to-transparent dark:hover:from-white/5 dark:hover:to-transparent rounded-r-xl group/right"
+              className="absolute right-0 top-0 bottom-0 w-1/3 flex items-center justify-end pr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-gradient-to-l hover:from-black/5 hover:to-transparent dark:hover:from-white/5 dark:hover:to-transparent rounded-r-lg group/right"
               aria-label="Next image"
             >
               <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-200 group-hover/right:scale-125">

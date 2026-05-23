@@ -31,13 +31,13 @@ const eventRegistrationData: CaseStudyProps = {
     tools: {
       title: "Design",
       content:
-        "Using wireframes, prototypes, and user flows, I designed a simple event registration experience that exceeded all business goals and delighted customers.",
+        "Using prototypes, user flows, and high-fidelity mockups, I designed a simple event registration experience that delighted our customers and exceeded business goals in multiple areas.",
       features: [
         {
           icon: "procreate",
           title: "Procreate",
           description:
-            "Created initial sketches and concept art to explore design ideas.",
+            "Created initial sketches and wireframes to explore design ideas.",
         },
         {
           icon: "sketch",
@@ -57,19 +57,19 @@ const eventRegistrationData: CaseStudyProps = {
     problemStatement: {
       title: "Problem",
       content:
-      "Church leaders typically rely on free tools like Google Forms and Eventbrite for event registration, but these solutions don't integrate with their people database, payment systems, or bookkeeping tools. \n\n We set out to give our customers a new Subsplash-native registration system to build out a new revenue stream and drive Subsplash Event adoption.",
+      "Church leaders typically rely on free tools like Google Forms and Eventbrite for event registration, but these solutions don't integrate with their Subsplash people database, payment systems, or bookkeeping tools. \n\n We set out to give our customers a new Subsplash-native registration product to build out a new revenue stream and drive Subsplash Event adoption.",
     },
 
     researchAndFeedback: {
       title: "Research",
       content:
-        "To build a new event registration system the right way, we needed to understand the needs and pain points from these church event organizers. \n\nI ran user interviews with church event organizers, analyzed competitor platforms, and gathered feedback from our support and customer success teams to identify key requirements. \n\nWe identified pain points in competing products, including complex setup, lack of customization, and poor mobile UX.",
+        "I ran user interviews with church event organizers, analyzed competitor platforms, and gathered feedback from our support and customer success teams to identify key requirements. \n\nWe identified pain points in competing products like: \n\n  - complex administrative setup \n\n  - lack of customization options for questions, tickets, and payments \n\n  - ugly, outdated mobile UX",
     },
 
     solution: {
       title: "Solution",
       content:
-        "We built an MVP of event registration that supported free event registration first, then quickly iterated:",
+        "We built an MVP of event registration that began with basic support for free event registration. After our first release, we continually iterated to add more powerful features:",
       features: [
         {
           icon: "calendar",
@@ -101,7 +101,7 @@ const eventRegistrationData: CaseStudyProps = {
     impactAndResults: {
       title: "Impact & Results",
       content:
-        "From the new Event Registration system, Subsplash has been able to create a robust and consistent new revenue stream.",
+        "From the new Event Registration product, Subsplash has been able to create a robust and consistent new revenue stream.",
       features: [
         {
           icon: "check-circle",

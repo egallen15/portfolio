@@ -3,9 +3,10 @@ import { portfolioProjects } from '../portfolio/portfolioData';
 
 interface PortfolioNavigationServerProps {
   currentSlug: string;
+  variant?: 'cards' | 'simple';
 }
 
-export default function PortfolioNavigationServer({ currentSlug }: PortfolioNavigationServerProps) {
+export default function PortfolioNavigationServer({ currentSlug, variant = 'cards' }: PortfolioNavigationServerProps) {
   // Find the current project index
   const currentProjectIndex = portfolioProjects.findIndex(project => 
     project.slug === currentSlug
@@ -23,6 +24,7 @@ export default function PortfolioNavigationServer({ currentSlug }: PortfolioNavi
     <PortfolioNavigation 
       previousProject={previousProject}
       nextProject={nextProject}
+      variant={variant}
     />
   );
 }

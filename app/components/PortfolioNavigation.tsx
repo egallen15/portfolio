@@ -11,11 +11,40 @@ interface PortfolioNavigationProps {
     route: string;
     description: string;
   };
+  variant?: 'cards' | 'simple';
 }
 
-export default function PortfolioNavigation({ previousProject, nextProject }: PortfolioNavigationProps) {
+export default function PortfolioNavigation({ previousProject, nextProject, variant = 'cards' }: PortfolioNavigationProps) {
   if (!previousProject && !nextProject) {
     return null;
+  }
+
+  const simpleLinkClassName = 'inline-flex items-center gap-2 rounded-md border border-transparent px-3 py-2 text-md font-medium text-slate-700 transition transform duration-300 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 lg:hover:-rotate-2 lg:hover:scale-[1.02]';
+
+  if (variant === 'simple') {
+    return (
+      <nav
+        aria-label="Project navigation"
+        className="mb-8 flex w-full flex-wrap items-center gap-x-6 gap-y-2 border-b border-slate-200 pb-4 text-sm leading-6 dark:border-slate-700"
+      >
+        {previousProject && (
+          <Link
+            href={previousProject.route}
+            className={simpleLinkClassName}
+          >
+            &larr; Previous: {previousProject.title}
+          </Link>
+        )}
+        {nextProject && (
+          <Link
+            href={nextProject.route}
+            className={`${previousProject ? 'ml-auto ' : ''}${simpleLinkClassName}`}
+          >
+            Next: {nextProject.title} &rarr;
+          </Link>
+        )}
+      </nav>
+    );
   }
 
   return (

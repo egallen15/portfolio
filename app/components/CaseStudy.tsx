@@ -135,6 +135,12 @@ export default function CaseStudy({
           <rect fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" width="100%" height="100%" strokeWidth={0} />
         </svg>
       </div> */}
+      {slug && (
+        <div className="mx-auto w-full lg:max-w-7xl">
+          <PortfolioNavigationServer currentSlug={slug} variant="simple" />
+        </div>
+      )}
+
       <div className="mx-auto grid grid-cols-1 gap-x-8 gap-y-6 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:pr-8">
           <div className="lg:pr-4">
