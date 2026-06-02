@@ -3,6 +3,9 @@
 import Image from 'next/image'
 import { useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
+import PlyrVideo from './PlyrVideo'
+import { getMediaDimensions, getMediaType, getVideoMimeType } from './media'
+import type { GalleryMedia } from './media'
 
 /**
  * ImageLightbox - Reusable full-screen modal component for displaying images
@@ -22,18 +25,8 @@ import { createPortal } from 'react-dom'
  * This is a controlled component - the parent manages the isOpen state.
  */
 
-interface ImageData {
-  src: string
-  alt: string
-  width: number
-  height: number
-  title?: string
-  date?: string
-  description?: string
-}
-
 interface ImageLightboxProps {
-  images: ImageData[]
+  images: GalleryMedia[]
   currentIndex: number
   isOpen: boolean
   onClose: () => void
@@ -48,6 +41,8 @@ export default function ImageLightbox({
   onNavigate 
 }: ImageLightboxProps) {
   const currentImage = images[currentIndex] || images[0]
+  const currentMediaType = currentImage ? getMediaType(currentImage) : 'image'
+  const currentDimensions = currentImage ? getMediaDimensions(currentImage) : { width: 1200, height: 675 }
   const hasMultipleImages = images.length > 1
   const hasCaption = Boolean(currentImage?.title || currentImage?.date || currentImage?.description)
   const imageReservedSpace = hasMultipleImages
@@ -144,15 +139,32 @@ export default function ImageLightbox({
             className="relative max-w-full max-h-full"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              alt={currentImage.alt}
-              src={currentImage.src}
-              width={currentImage.width}
-              height={currentImage.height}
-              className="w-fit max-h-full object-contain rounded-xl"
-              priority={true}
-              style={{ maxHeight: `calc(100vh - ${imageReservedSpace})`, maxWidth: 'calc(100vw - 32px)' }}
-            />
+            {currentMediaType === 'video' ? (
+              <div
+                className="w-[min(72rem,calc(100vw-32px))]"
+                style={{ maxHeight: `calc(100vh - ${imageReservedSpace})` }}
+              >
+                <PlyrVideo
+                  key={currentImage.src}
+                  src={currentImage.src}
+                  alt={currentImage.alt}
+                  poster={currentImage.poster}
+                  mimeType={getVideoMimeType(currentImage)}
+                  loop={currentImage.loop}
+                  className="aspect-video w-full overflow-hidden rounded-xl"
+                />
+              </div>
+            ) : (
+              <Image
+                alt={currentImage.alt}
+                src={currentImage.src}
+                width={currentDimensions.width}
+                height={currentDimensions.height}
+                className="w-fit max-h-full object-contain rounded-xl"
+                priority={true}
+                style={{ maxHeight: `calc(100vh - ${imageReservedSpace})`, maxWidth: 'calc(100vw - 32px)' }}
+              />
+            )}
           </div>
           
           {/* Desktop Navigation Controls - Only show on larger screens and if there are multiple images */}
@@ -250,7 +262,11 @@ export default function ImageLightbox({
               
               {/* Thumbnail Gallery */}
               <div className="flex gap-2 px-4">
-                {images.map((img, index) => (
+                {images.map((img, index) => {
+                  const mediaType = getMediaType(img)
+                  const thumbnailSrc = img.thumbnail || img.poster || (mediaType === 'image' ? img.src : undefined)
+
+                  return (
                   <button
                     key={index}
                     onClick={() => onNavigate(index)}
@@ -260,19 +276,46 @@ export default function ImageLightbox({
                         : 'ring-1 ring-white/30 hover:ring-white/50'
                     }`}
                   >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={80}
-                      height={80}
-                      className="h-full w-full object-cover"
-                      sizes="80px"
-                    />
+                    {thumbnailSrc ? (
+                      <Image
+                        src={thumbnailSrc}
+                        alt={img.alt}
+                        width={80}
+                        height={80}
+                        className="h-full w-full object-cover"
+                        sizes="80px"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center bg-slate-900">
+                        <svg
+                          className="h-7 w-7 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          aria-hidden="true"
+                        >
+                          <path d="M6.3 4.2A1 1 0 0 0 5 5v10a1 1 0 0 0 1.54.84l7.78-5a1 1 0 0 0 0-1.68l-7.78-5A1 1 0 0 0 6.3 4.2Z" />
+                        </svg>
+                      </div>
+                    )}
+                    {mediaType === 'video' && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                        <div className="rounded-full bg-black/70 p-1.5 text-white shadow-lg">
+                          <svg
+                            className="h-3.5 w-3.5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            aria-hidden="true"
+                          >
+                            <path d="M6.3 4.2A1 1 0 0 0 5 5v10a1 1 0 0 0 1.54.84l7.78-5a1 1 0 0 0 0-1.68l-7.78-5A1 1 0 0 0 6.3 4.2Z" />
+                          </svg>
+                        </div>
+                      </div>
+                    )}
                     {index === currentIndex && (
                       <div className="absolute inset-0 bg-white/20" />
                     )}
                   </button>
-                ))}
+                )})}
               </div>
               
               {/* Right Navigation - Mobile */}

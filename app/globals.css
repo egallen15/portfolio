@@ -111,6 +111,32 @@ img, video, iframe {
   height: auto;
 }
 
+.portfolio-plyr,
+.portfolio-plyr .plyr,
+.portfolio-plyr .plyr__video-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-plyr {
+  --plyr-color-main: #4f46e5;
+  background: #020617;
+}
+
+.portfolio-plyr .plyr {
+  border-radius: inherit;
+}
+
+.portfolio-plyr .plyr__video-wrapper {
+  border-radius: inherit;
+}
+
+.portfolio-plyr video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 /* Prevent reflow from content changes */
 .content-area {
   contain: layout style;

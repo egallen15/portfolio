@@ -5,6 +5,7 @@ import { getPageMap } from "nextra/page-map";
 import { ThemeProvider } from "next-themes";
 import NextraTheme from "./components/nextra-theme";
 import ThemeColor from "./components/ThemeColor";
+import "plyr/dist/plyr.css";
 import "./globals.css";
 import { Noto_Sans, Noto_Serif } from 'next/font/google'
 

@@ -3,16 +3,12 @@
 import Image from 'next/image'
 import { useState, useEffect, useCallback } from 'react'
 import ImageLightbox from './ImageLightbox'
-
-interface ImageData {
-  src: string
-  alt: string
-  width: number
-  height: number
-}
+import PlyrVideo from './PlyrVideo'
+import { getMediaDimensions, getMediaType, getVideoMimeType } from './media'
+import type { GalleryMedia } from './media'
 
 interface ImageGalleryProps {
-  images: ImageData[]
+  images: GalleryMedia[]
 }
 
 export default function ImageGallery({ images }: ImageGalleryProps) {
@@ -21,6 +17,8 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
   
   // Get the currently selected image
   const currentImage = images[selectedImageIndex] || images[0]
+  const currentMediaType = currentImage ? getMediaType(currentImage) : 'image'
+  const currentDimensions = currentImage ? getMediaDimensions(currentImage) : { width: 1200, height: 675 }
   
   // Navigation functions
   const goToPrevious = useCallback(() => {
@@ -69,34 +67,37 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
     <div className="lg:-ml-12 lg:self-start lg:sticky lg:top-24 xl:top-28 lg:col-start-2 lg:row-span-2 lg:row-start-1">
       {/* Main Featured Image with Fixed Height Container */}
       <div className="relative w-full h-[240px] sm:h-[480px] lg:h-[420px] overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800 stacked-shadow group">
-        <Image
-          alt={currentImage.alt}
-          src={currentImage.src}
-          width={currentImage.width}
-          height={currentImage.height}
-          className="h-full w-full object-cover rounded-lg"
-          priority={true}
-          placeholder="blur"
-          blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNmOGZhZmMiLz48L3N2Zz4="
-        />
+        {currentMediaType === 'video' ? (
+          <PlyrVideo
+            key={currentImage.src}
+            src={currentImage.src}
+            alt={currentImage.alt}
+            poster={currentImage.poster}
+            mimeType={getVideoMimeType(currentImage)}
+            loop={currentImage.loop}
+            className="h-full w-full rounded-lg"
+          />
+        ) : (
+          <Image
+            alt={currentImage.alt}
+            src={currentImage.src}
+            width={currentDimensions.width}
+            height={currentDimensions.height}
+            className="h-full w-full object-cover rounded-lg"
+            priority={true}
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNmOGZhZmMiLz48L3N2Zz4="
+          />
+        )}
         
         {/* Clickable middle area to open lightbox */}
-        <button
-          onClick={openLightbox}
-          className="absolute left-1/3 right-1/3 top-0 bottom-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 cursor-pointer group/lightbox"
-          aria-label="Open lightbox"
-        >
-          {/* <div className="bg-black/60 backdrop-blur-sm rounded-full p-3 transform scale-0 group-hover/lightbox:scale-100 transition-transform duration-200">
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-            </svg>
-          </div> */}
-        </button>
+        {currentMediaType === 'image' && (
+          <button
+            onClick={openLightbox}
+            className="absolute left-1/3 right-1/3 top-0 bottom-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 cursor-pointer group/lightbox"
+            aria-label="Open lightbox"
+          />
+        )}
         
         {/* Carousel Controls - Only show if there are multiple images */}
         {images.length > 1 && (
@@ -104,7 +105,9 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
             {/* Left Navigation Area */}
             <button
               onClick={goToPrevious}
-              className="absolute left-0 top-0 bottom-0 w-1/3 flex items-center justify-start pl-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-gradient-to-r hover:from-black/5 hover:to-transparent dark:hover:from-white/5 dark:hover:to-transparent rounded-l-lg group/left"
+              className={currentMediaType === 'video'
+                ? 'absolute left-3 top-1/2 z-10 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 group/left'
+                : 'absolute left-0 top-0 bottom-0 w-1/3 flex items-center justify-start pl-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-gradient-to-r hover:from-black/5 hover:to-transparent dark:hover:from-white/5 dark:hover:to-transparent rounded-l-lg group/left'}
               aria-label="Previous image"
             >
               <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-200 group-hover/left:scale-125">
@@ -122,7 +125,9 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
             {/* Right Navigation Area */}
             <button
               onClick={goToNext}
-              className="absolute right-0 top-0 bottom-0 w-1/3 flex items-center justify-end pr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-gradient-to-l hover:from-black/5 hover:to-transparent dark:hover:from-white/5 dark:hover:to-transparent rounded-r-lg group/right"
+              className={currentMediaType === 'video'
+                ? 'absolute right-3 top-1/2 z-10 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 group/right'
+                : 'absolute right-0 top-0 bottom-0 w-1/3 flex items-center justify-end pr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-gradient-to-l hover:from-black/5 hover:to-transparent dark:hover:from-white/5 dark:hover:to-transparent rounded-r-lg group/right'}
               aria-label="Next image"
             >
               <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-200 group-hover/right:scale-125">
@@ -138,23 +143,25 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
             </button>
             
             {/* Fullscreen Button */}
-            <button
-              onClick={openLightbox}
-              className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200 hover:scale-105"
-              aria-label="View fullscreen"
-            >
-              <div className="bg-black/60 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full flex items-center gap-2 hover:bg-black/70">
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                </svg>
-                View fullscreen
-              </div>
-            </button>
+            {currentMediaType === 'image' && (
+              <button
+                onClick={openLightbox}
+                className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200 hover:scale-105"
+                aria-label="View fullscreen"
+              >
+                <div className="bg-black/60 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full flex items-center gap-2 hover:bg-black/70">
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                  </svg>
+                  View fullscreen
+                </div>
+              </button>
+            )}
           </>
         )}
       </div>
@@ -169,7 +176,11 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
             images.length === 5 ? 'grid-cols-5' :
             'grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6'
           }`}>
-            {images.map((img, index) => (
+            {images.map((img, index) => {
+              const mediaType = getMediaType(img)
+              const thumbnailSrc = img.thumbnail || img.poster || (mediaType === 'image' ? img.src : undefined)
+
+              return (
               <button
                 key={index}
                 onClick={() => setSelectedImageIndex(index)}
@@ -179,21 +190,48 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                     : 'ring-1 ring-slate-200 hover:ring-slate-300 dark:ring-slate-700 dark:hover:ring-slate-600'
                 }`}
               >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={336}
-                  height={336}
-                  className="h-full w-full object-cover bg-transparent"
-                  sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 336px"
-                  quality={95}
-                  priority={index === selectedImageIndex}
-                />
+                {thumbnailSrc ? (
+                  <Image
+                    src={thumbnailSrc}
+                    alt={img.alt}
+                    width={336}
+                    height={336}
+                    className="h-full w-full object-cover bg-transparent"
+                    sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 336px"
+                    quality={95}
+                    priority={index === selectedImageIndex}
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center bg-slate-900">
+                    <svg
+                      className="h-8 w-8 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                    >
+                      <path d="M6.3 4.2A1 1 0 0 0 5 5v10a1 1 0 0 0 1.54.84l7.78-5a1 1 0 0 0 0-1.68l-7.78-5A1 1 0 0 0 6.3 4.2Z" />
+                    </svg>
+                  </div>
+                )}
+                {mediaType === 'video' && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                    <div className="rounded-full bg-black/70 p-2 text-white shadow-lg">
+                      <svg
+                        className="h-4 w-4"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        aria-hidden="true"
+                      >
+                        <path d="M6.3 4.2A1 1 0 0 0 5 5v10a1 1 0 0 0 1.54.84l7.78-5a1 1 0 0 0 0-1.68l-7.78-5A1 1 0 0 0 6.3 4.2Z" />
+                      </svg>
+                    </div>
+                  </div>
+                )}
                 {index === selectedImageIndex && (
                   <div className="absolute inset-0 bg-indigo-500/10" />
                 )}
               </button>
-            ))}
+            )})}
           </div>
         </div>
       )}

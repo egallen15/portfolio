@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import ImageGallery from './ImageGallery'
 import PortfolioNavigationServer from './PortfolioNavigationServer'
+import type { GalleryMedia } from './media'
 import { 
   UsersIcon, 
   CalendarDaysIcon, 
@@ -32,18 +33,8 @@ export interface CaseStudyProps {
   metadata?: CaseStudyMetadata
   
   // Images - support for single image (legacy) or multiple images (new)
-  image?: {
-    src: string
-    alt: string
-    width: number
-    height: number
-  }
-  images?: {
-    src: string
-    alt: string
-    width: number
-    height: number
-  }[]
+  image?: GalleryMedia
+  images?: GalleryMedia[]
   
   // Content sections
   sections: {

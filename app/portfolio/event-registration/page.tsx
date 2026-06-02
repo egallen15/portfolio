@@ -21,6 +21,14 @@ const eventRegistrationData: CaseStudyProps = {
 
   images: [
     {
+      type: "video",
+      src: "https://lorem.video/720p",
+      alt: "Placeholder event registration walkthrough video",
+      width: 1280,
+      height: 720,
+      loop: true,
+    },
+    {
       src: "/images/Payment Forms 2.0 Walkthrough Image.png",
       alt: "Payment Forms Walkthrough",
       width: 1200,
