@@ -3,7 +3,7 @@ import Breadcrumb from "../components/Breadcrumb";
 import * as motion from "motion/react-client";
 
 export const metadata = {
-  title: "Contact",
+  title: "contact",
   description: "Get in touch with Eric Allen",
 };
 

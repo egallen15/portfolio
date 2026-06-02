@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import Breadcrumb from '@/app/components/Breadcrumb'
 import CaseStudy, { CaseStudyProps } from '../../components/CaseStudy'
 import PortfolioNavigationServer from '../../components/PortfolioNavigationServer'
 import { portfolioMetadata } from '../portfolioData'
+
+export const metadata: Metadata = {
+  title: portfolioMetadata.checkIn.title,
+  description: portfolioMetadata.checkIn.description,
+}
 
 const checkInData: CaseStudyProps = {
   ...portfolioMetadata.checkIn,

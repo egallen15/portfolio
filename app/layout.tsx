@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   ),
 
   title: {
-    absolute: "",
+    default: "Eric Allen",
     template: "%s | Eric Allen",
   },
   openGraph: {

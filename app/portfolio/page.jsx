@@ -1,6 +1,11 @@
 import BentoGrid from "../components/BentoGrid";
 import Breadcrumb from "../components/Breadcrumb";
 
+export const metadata = {
+    title: "portfolio",
+    description: "Selected product design case studies by Eric Allen.",
+};
+
 const PortfolioPage = () => {
     return (
         <main className="flex flex-col mx-6 xl:mx-auto w-auto lg:max-w-7xl">

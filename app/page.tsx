@@ -14,8 +14,10 @@ import ProjectGrid from "./components/ProjectGrid";
 import NewsletterSubscription from "./components/NewsletterSubscription";
 
 export const metadata = {
-  title: "Eric Allen | UX Designer",
-  description: "Austin-based UX Designer. Learner, Writer, Dad.",
+  title: {
+    absolute: "Eric Allen | designer • builder • writer",
+  },
+  description: "Austin-based Product Designer. Learner, Writer, Dad.",
 };
 
 export default function Home() {

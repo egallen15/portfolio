@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import CaseStudy, { CaseStudyProps } from "../../components/CaseStudy";
 import PortfolioNavigationServer from "../../components/PortfolioNavigationServer";
 import { portfolioMetadata } from "../portfolioData";
+
+export const metadata: Metadata = {
+  title: portfolioMetadata.eventRegistration.title,
+  description: portfolioMetadata.eventRegistration.description,
+};
 
 const eventRegistrationData: CaseStudyProps = {
   ...portfolioMetadata.eventRegistration,

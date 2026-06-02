@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import ProjectGrid, { ProjectGridItem } from "../components/ProjectGrid";
 import HighlightedHeading from "../components/HighlightedHeading";
 import Breadcrumb from "../components/Breadcrumb";
+
+export const metadata: Metadata = {
+  title: "my stack",
+  description: "Tools and technologies Eric Allen uses to design and build products.",
+};
 
 export default function StackPage() {
   const designTools: ProjectGridItem[] = [
