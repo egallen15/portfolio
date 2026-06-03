@@ -112,7 +112,7 @@ export default function CheckInCaseStudy() {
   return (
     <main className="flex flex-col mx-6 xl:mx-auto w-auto lg:max-w-7xl">
       <Breadcrumb pages={[
-        { name: "Portfolio", href: "/portfolio", current: false },
+        { name: "portfolio", href: "/portfolio", current: false },
         { name: "Subsplash Check-In", href: "/check-in", current: true }
       ]} actions={(
         <div className="hidden lg:block">

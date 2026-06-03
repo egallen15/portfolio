@@ -146,7 +146,7 @@ export default function EventRegistrationCaseStudy() {
     <main className="flex flex-col mx-6 xl:mx-auto w-full lg:max-w-7xl">
       <Breadcrumb
         pages={[
-          { name: "Portfolio", href: "/portfolio", current: false },
+          { name: "portfolio", href: "/portfolio", current: false },
           {
             name: "Event Registration",
             href: "/event-registration",

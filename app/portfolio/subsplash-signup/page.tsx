@@ -117,7 +117,7 @@ export default function SubsplashSignupPage() {
   return (
     <main className="flex flex-col mx-6 xl:mx-auto w-full lg:max-w-7xl">
       <Breadcrumb pages={[
-        { name: "Portfolio", href: "/portfolio", current: false },
+        { name: "portfolio", href: "/portfolio", current: false },
         { name: "Subsplash Signup", href: "/subsplash-signup", current: true }
       ]} actions={(
         <div className="hidden lg:block">
