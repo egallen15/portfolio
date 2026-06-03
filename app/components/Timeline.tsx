@@ -22,22 +22,40 @@ export default function Timeline({ events }: TimelineProps) {
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [points, setPoints] = useState<number[]>([]);
 
+  const measurePoints = useCallback(() => {
+    if (!containerRef.current) return;
+    const newPoints = cardRefs.current.slice(0, events.length).map((card) => {
+      if (!card) return 0;
+      return card.offsetTop + card.offsetHeight / 2;
+    });
+
+    setPoints((currentPoints) => {
+      const hasSamePoints = currentPoints.length === newPoints.length
+        && currentPoints.every((point, index) => Math.abs(point - newPoints[index]) < 0.5);
+
+      return hasSamePoints ? currentPoints : newPoints;
+    });
+  }, [events.length]);
+
   // measure each card’s vertical center relative to container
   useLayoutEffect(() => {
-    if (!containerRef.current) return;
-    const containerRect = containerRef.current.getBoundingClientRect();
-    const newPoints = cardRefs.current.map((card) => {
-      if (!card) return 0;
-      const rect = card.getBoundingClientRect();
-      return rect.top - containerRect.top + rect.height / 2;
+    measurePoints();
+
+    if (typeof ResizeObserver === 'undefined' || !containerRef.current) return;
+
+    const resizeObserver = new ResizeObserver(measurePoints);
+    resizeObserver.observe(containerRef.current);
+    cardRefs.current.slice(0, events.length).forEach((card) => {
+      if (card) resizeObserver.observe(card);
     });
-    setPoints(newPoints);
-  }, [events]);
+
+    return () => resizeObserver.disconnect();
+  }, [events.length, measurePoints]);
 
   return (
-    <div ref={containerRef} className="relative w-full">
-      {points.length === events.length && <CurvyLine points={points} />}
-      <div className="relative z-10 max-w-4xl mx-auto snap-y snap-mandatory h-auto">
+    <div className="relative w-full">
+      <div ref={containerRef} className="relative max-w-4xl mx-auto snap-y snap-mandatory h-auto">
+        {points.length === events.length && <CurvyLine points={points} />}
         {events.map((event, i) => (
           <TimelineCard
             key={event.id}
@@ -76,7 +94,7 @@ function CurvyLine({ points }: { points: number[] }) {
 
   return (
     <svg
-      className="absolute top-0 left-1/2 -translate-x-1/2 z-0"
+      className="absolute top-0 left-0 z-0 w-full pointer-events-none"
       width="100%"
       height={points[points.length - 1]}
       viewBox={`0 0 100 ${points[points.length - 1]}`}
@@ -115,7 +133,7 @@ function TimelineCard({
       } md:flex-row flex-col items-center`}
     >
       {/* Icon on the curve */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-1/4 z-10">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
         <div className="w-6 h-6 bg-sky-400 rounded-full flex items-center justify-center text-foreground shadow-lg">
         </div>
       </div>
