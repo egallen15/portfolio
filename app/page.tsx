@@ -182,35 +182,6 @@ export default function Home() {
                 </motion.div>
               </div>
             </div>
-            {/* Latest posts */}
-          <div className="flex flex-row items-baseline justify-between">
-            <HighlightedHeading
-              highlightColor="cyan"
-              highlightStyle="underline"
-              skewAngle="medium"
-              as="h3"
-              className="mt-12"
-              href="/blog"
-            >
-              Posts
-            </HighlightedHeading>
-            <Link
-              href="/blog"
-              className="text-sm underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
-            >
-              View all
-            </Link>
-          </div>
-          <motion.section className="mt-6">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <BlogContentServer maxPosts={4} showTitle={false} showTagFilter={false} layout="row" columns={1} />
-            </motion.div>
-          </motion.section>
             <section className="mt-4">
               {/* Portfolio */}
               <div className="flex flex-row items-baseline justify-between pt-6 mb-6 lg:pt-12">
@@ -232,6 +203,64 @@ export default function Home() {
               </div>
               <BentoGrid maxItems={4} />
             </section>
+
+            {/* Projects */}
+            <div className="flex flex-row items-baseline justify-between mt-12 mb-6">
+              <HighlightedHeading
+                highlightColor="green"
+                highlightStyle="underline"
+                skewAngle="light"
+                as="h3"
+                href="/projects"
+              >
+                Projects
+              </HighlightedHeading>
+              <Link
+                href="/projects"
+                className="text-sm underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+              >
+                View all
+              </Link>
+            </div>
+            <motion.section>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+              >
+                <ProjectGrid items={personalProjects} columns={3} />
+              </motion.div>
+            </motion.section>
+
+            {/* Latest posts */}
+            <div className="flex flex-row items-baseline justify-between mt-12">
+              <HighlightedHeading
+                highlightColor="cyan"
+                highlightStyle="underline"
+                skewAngle="medium"
+                as="h3"
+                href="/blog"
+              >
+                Posts
+              </HighlightedHeading>
+              <Link
+                href="/blog"
+                className="text-sm underline hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+              >
+                View all
+              </Link>
+            </div>
+            <motion.section className="mt-6">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+              >
+                <BlogContentServer maxPosts={4} showTitle={false} showTagFilter={false} layout="row" columns={1} />
+              </motion.div>
+            </motion.section>
           </div>
           {/* Experience and Skills Container - side by side on large screens */}
           <div className="flex flex-col lg:flex-row lg:gap-6 mt-12">
@@ -260,29 +289,6 @@ export default function Home() {
             {/* Skills */}
             <Skills />
           </div>
-          
-          
-          {/* Projects */}
-          <HighlightedHeading
-            highlightColor="green"
-            highlightStyle="underline"
-            skewAngle="light"
-            as="h3"
-            className="mt-12 mb-6"
-            href="/projects"
-          >
-            Projects
-          </HighlightedHeading>
-          <motion.section>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <ProjectGrid items={personalProjects} columns={3} />
-            </motion.div>
-          </motion.section>
           {/* My stack */}
           <HighlightedHeading
             highlightColor="cyan"

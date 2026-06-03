@@ -94,7 +94,7 @@ const HighlightedHeading: React.FC<HighlightedHeadingProps> = ({
 
   return (
     <Component
-      className={`text-2xl font-bold relative inline-block ${href ? 'group transition-transform duration-200 hover:-rotate-2' : ''} ${className}`}
+      className={`text-2xl font-bold relative inline-block w-fit ${href ? 'group transition-transform duration-200 hover:-rotate-2' : ''} ${className}`}
     >
       {content}
       {highlightStyle === 'full' ? (
