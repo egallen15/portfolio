@@ -16,9 +16,10 @@ export default function PortfolioNavigationServer({ currentSlug, variant = 'card
     return null; // Current project not found
   }
 
-  // Get previous and next projects (in sequential order)
-  const previousProject = currentProjectIndex > 0 ? portfolioProjects[currentProjectIndex - 1] : undefined;
-  const nextProject = currentProjectIndex < portfolioProjects.length - 1 ? portfolioProjects[currentProjectIndex + 1] : undefined;
+  // Get previous and next projects, wrapping at both ends.
+  const hasMultipleProjects = portfolioProjects.length > 1;
+  const previousProject = hasMultipleProjects ? portfolioProjects[(currentProjectIndex - 1 + portfolioProjects.length) % portfolioProjects.length] : undefined;
+  const nextProject = hasMultipleProjects ? portfolioProjects[(currentProjectIndex + 1) % portfolioProjects.length] : undefined;
 
   return (
     <PortfolioNavigation 

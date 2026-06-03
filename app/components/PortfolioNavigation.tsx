@@ -33,7 +33,7 @@ export default function PortfolioNavigation({ previousProject, nextProject, vari
             className={simpleLinkClassName}
           >
             <ChevronLeftIcon aria-hidden="true" className="size-4 shrink-0" />
-            <span>Previous: {previousProject.title}</span>
+            <span className="text-slate-700 dark:text-slate-300">Previous project</span>
           </Link>
         )}
         {nextProject && (
@@ -41,7 +41,7 @@ export default function PortfolioNavigation({ previousProject, nextProject, vari
             href={nextProject.route}
             className={simpleLinkClassName}
           >
-            <span>Next: {nextProject.title}</span>
+            <span className="text-slate-700 dark:text-slate-300">Next project</span>
             <ChevronRightIcon aria-hidden="true" className="size-4 shrink-0" />
           </Link>
         )}
@@ -53,7 +53,7 @@ export default function PortfolioNavigation({ previousProject, nextProject, vari
     return (
       <nav
         aria-label="Project navigation"
-        className="mb-4 flex w-full flex-wrap items-center gap-x-6 gap-y-2 border-b border-slate-200 pb-3 text-sm leading-6 dark:border-slate-700 lg:mb-8 lg:pb-4"
+        className="mb-6 flex w-full flex-wrap items-center gap-x-6 gap-y-2 border-b border-slate-200 pb-3 text-sm leading-6 dark:border-slate-700 lg:mb-8 lg:pb-4"
       >
         {previousProject && (
           <Link
@@ -61,7 +61,7 @@ export default function PortfolioNavigation({ previousProject, nextProject, vari
             className={simpleEdgeAlignedLinkClassName}
           >
             <ChevronLeftIcon aria-hidden="true" className="size-4 shrink-0" />
-            <span>Previous: {previousProject.title}</span>
+            <span>Previous project</span>
           </Link>
         )}
         {nextProject && (
@@ -69,7 +69,7 @@ export default function PortfolioNavigation({ previousProject, nextProject, vari
             href={nextProject.route}
             className={previousProject ? simpleRightEdgeAlignedLinkClassName : simpleEdgeAlignedLinkClassName}
           >
-            <span>Next: {nextProject.title}</span>
+            <span>Next project</span>
             <ChevronRightIcon aria-hidden="true" className="size-4 shrink-0" />
           </Link>
         )}
