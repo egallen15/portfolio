@@ -1,7 +1,5 @@
 'use client'
 
-import { BookmarkIcon as BookmarkOutlineIcon } from '@heroicons/react/24/outline'
-import { BookmarkIcon as BookmarkSolidIcon } from '@heroicons/react/24/solid'
 import type { Heading } from 'nextra'
 import type { FC } from 'react'
 import { useState, useEffect, useRef, useId } from 'react'
@@ -10,7 +8,6 @@ import { createPortal } from 'react-dom'
 export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
   const [activeHeading, setActiveHeading] = useState<string | null>(null)
   const [showPopover, setShowPopover] = useState(false)
-  const [isPinned, setIsPinned] = useState(false)
   const [hoveredHeading, setHoveredHeading] = useState<string | null>(null)
   const [showTooltip, setShowTooltip] = useState(false)
   const [popoverPosition, setPopoverPosition] = useState({ top: 0, left: 0 })
@@ -141,8 +138,6 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
   }
 
   const schedulePopoverClose = () => {
-    if (isPinned) return
-
     clearCloseTimeout()
     closeTimeoutRef.current = setTimeout(() => {
       setShowPopover(false)
@@ -152,8 +147,6 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (isPinned) return
-
       if (popoverRef.current && !popoverRef.current.contains(event.target as Node) &&
           containerRef.current && !containerRef.current.contains(event.target as Node)) {
         setShowPopover(false)
@@ -164,7 +157,7 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [isPinned])
+  }, [])
 
   useEffect(() => {
     if (!showPopover) return
@@ -209,25 +202,11 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
     event.preventDefault()
     event.stopPropagation()
 
-    clearCloseTimeout()
-    updatePopoverPosition()
-    setIsPinned(prev => !prev)
-    setShowPopover(true)
-  }
-
-  const handlePinClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault()
-    event.stopPropagation()
-
-    clearCloseTimeout()
-    setIsPinned(prev => !prev)
-    setShowPopover(true)
+    openPopover()
   }
 
   const handlePopoverMouseLeave = () => {
-    if (!isPinned) {
-      setShowPopover(false)
-    }
+    setShowPopover(false)
   }
 
   const getBarWidth = (heading: Heading) => {
@@ -267,27 +246,10 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
         transform: 'translateY(-50%)'
       }}
     >
-      <div className="flex items-center justify-between mb-3 flex-shrink-0">
+      <div className="flex items-center mb-3 flex-shrink-0">
         <h3 className="font-semibold text-sm text-slate-700 dark:text-slate-300 uppercase tracking-wide">
           On this page
         </h3>
-        <button
-          onClick={handlePinClick}
-          className={`p-1.5 rounded-md transition-colors ${
-            isPinned
-              ? 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-100'
-              : 'text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-700 dark:hover:text-slate-200'
-          }`}
-          aria-label={isPinned ? 'Unpin table of contents' : 'Pin table of contents'}
-          aria-pressed={isPinned}
-          title={isPinned ? 'Unpin table of contents' : 'Pin table of contents'}
-        >
-          {isPinned ? (
-            <BookmarkSolidIcon className="w-4 h-4" aria-hidden="true" />
-          ) : (
-            <BookmarkOutlineIcon className="w-4 h-4" aria-hidden="true" />
-          )}
-        </button>
       </div>
       
       <ul className="space-y-1 overflow-y-auto overflow-x-hidden pr-1 scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-600 scrollbar-track-transparent">
