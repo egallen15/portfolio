@@ -1,5 +1,7 @@
 'use client'
 
+import { BookmarkIcon as BookmarkOutlineIcon } from '@heroicons/react/24/outline'
+import { BookmarkIcon as BookmarkSolidIcon } from '@heroicons/react/24/solid'
 import type { Heading } from 'nextra'
 import type { FC } from 'react'
 import { useState, useEffect, useRef, useId } from 'react'
@@ -280,9 +282,11 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
           aria-pressed={isPinned}
           title={isPinned ? 'Unpin table of contents' : 'Pin table of contents'}
         >
-          <svg className={`w-4 h-4 transition-transform ${isPinned ? 'rotate-45' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 4l6 6m-3-3l-6.5 6.5m-2.75-2.75l5.5 5.5m-8.75.25l4.25-4.25m-2.25-2.25l7.5-7.5 4.5 4.5-7.5 7.5-4.5-4.5Z" />
-          </svg>
+          {isPinned ? (
+            <BookmarkSolidIcon className="w-4 h-4" aria-hidden="true" />
+          ) : (
+            <BookmarkOutlineIcon className="w-4 h-4" aria-hidden="true" />
+          )}
         </button>
       </div>
       
