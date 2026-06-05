@@ -2,18 +2,21 @@
 
 import type { Heading } from 'nextra'
 import type { FC } from 'react'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useId } from 'react'
 import { createPortal } from 'react-dom'
 
 export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
   const [activeHeading, setActiveHeading] = useState<string | null>(null)
   const [showPopover, setShowPopover] = useState(false)
+  const [isPinned, setIsPinned] = useState(false)
   const [hoveredHeading, setHoveredHeading] = useState<string | null>(null)
   const [showTooltip, setShowTooltip] = useState(false)
   const [popoverPosition, setPopoverPosition] = useState({ top: 0, left: 0 })
+  const popoverId = useId()
   const observer = useRef<IntersectionObserver | null>(null)
   const popoverRef = useRef<HTMLDivElement | null>(null)
   const containerRef = useRef<HTMLDivElement | null>(null)
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     // Set the first heading as active by default
@@ -112,8 +115,43 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
     }
   }, [toc, activeHeading])
 
+  const clearCloseTimeout = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current)
+      closeTimeoutRef.current = null
+    }
+  }
+
+  const updatePopoverPosition = () => {
+    if (!containerRef.current) return
+
+    const rect = containerRef.current.getBoundingClientRect()
+    setPopoverPosition({
+      top: rect.top + rect.height / 2,
+      left: rect.right + 8
+    })
+  }
+
+  const openPopover = () => {
+    clearCloseTimeout()
+    updatePopoverPosition()
+    setShowPopover(true)
+  }
+
+  const schedulePopoverClose = () => {
+    if (isPinned) return
+
+    clearCloseTimeout()
+    closeTimeoutRef.current = setTimeout(() => {
+      setShowPopover(false)
+      closeTimeoutRef.current = null
+    }, 150)
+  }
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      if (isPinned) return
+
       if (popoverRef.current && !popoverRef.current.contains(event.target as Node) &&
           containerRef.current && !containerRef.current.contains(event.target as Node)) {
         setShowPopover(false)
@@ -124,6 +162,23 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
+  }, [isPinned])
+
+  useEffect(() => {
+    if (!showPopover) return
+
+    updatePopoverPosition()
+    window.addEventListener('resize', updatePopoverPosition)
+    window.addEventListener('scroll', updatePopoverPosition, { passive: true })
+
+    return () => {
+      window.removeEventListener('resize', updatePopoverPosition)
+      window.removeEventListener('scroll', updatePopoverPosition)
+    }
+  }, [showPopover])
+
+  useEffect(() => {
+    return clearCloseTimeout
   }, [])
 
   const handleHeadingClick = (
@@ -151,18 +206,26 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
   const handleBarClick = (event: React.MouseEvent) => {
     event.preventDefault()
     event.stopPropagation()
-    
-    // Calculate position for portal-based popover
-    if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect()
-      setPopoverPosition({
-        top: rect.top + rect.height / 2,
-        left: rect.right + 8 // 8px gap (ml-2)
-      })
+
+    clearCloseTimeout()
+    updatePopoverPosition()
+    setIsPinned(prev => !prev)
+    setShowPopover(true)
+  }
+
+  const handlePinClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+    event.stopPropagation()
+
+    clearCloseTimeout()
+    setIsPinned(prev => !prev)
+    setShowPopover(true)
+  }
+
+  const handlePopoverMouseLeave = () => {
+    if (!isPinned) {
+      setShowPopover(false)
     }
-    
-    // Toggle popover when clicking any bar
-    setShowPopover(!showPopover)
   }
 
   const getBarWidth = (heading: Heading) => {
@@ -191,8 +254,11 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
 
   const popoverContent = showPopover && typeof window !== 'undefined' && (
     <div
+      id={popoverId}
       ref={popoverRef}
       className="fixed bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-xl p-4 min-w-64 max-w-80 max-h-[80vh] flex flex-col z-[100]"
+      onMouseEnter={clearCloseTimeout}
+      onMouseLeave={handlePopoverMouseLeave}
       style={{
         top: `${popoverPosition.top}px`,
         left: `${popoverPosition.left}px`,
@@ -204,11 +270,18 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
           On this page
         </h3>
         <button
-          onClick={() => setShowPopover(false)}
-          className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+          onClick={handlePinClick}
+          className={`p-1.5 rounded-md transition-colors ${
+            isPinned
+              ? 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-100'
+              : 'text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-700 dark:hover:text-slate-200'
+          }`}
+          aria-label={isPinned ? 'Unpin table of contents' : 'Pin table of contents'}
+          aria-pressed={isPinned}
+          title={isPinned ? 'Unpin table of contents' : 'Pin table of contents'}
         >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          <svg className={`w-4 h-4 transition-transform ${isPinned ? 'rotate-45' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 4l6 6m-3-3l-6.5 6.5m-2.75-2.75l5.5 5.5m-8.75.25l4.25-4.25m-2.25-2.25l7.5-7.5 4.5 4.5-7.5 7.5-4.5-4.5Z" />
           </svg>
         </button>
       </div>
@@ -247,8 +320,16 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
         role="button"
         tabIndex={0}
         aria-label="Show table of contents"
-        onMouseEnter={() => setShowTooltip(true)}
-        onMouseLeave={() => setShowTooltip(false)}
+        aria-controls={showPopover ? popoverId : undefined}
+        aria-expanded={showPopover}
+        onMouseEnter={() => {
+          setShowTooltip(true)
+          openPopover()
+        }}
+        onMouseLeave={() => {
+          setShowTooltip(false)
+          schedulePopoverClose()
+        }}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault()
@@ -258,7 +339,7 @@ export const HorizontalTOC: FC<{ toc: Heading[] }> = ({ toc }) => {
         }}
       >
         {/* Tooltip */}
-        {showTooltip && (
+        {showTooltip && !showPopover && (
           <div className="absolute left-full top-1/2 transform -translate-y-1/2 ml-2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
             Table of contents
           </div>
