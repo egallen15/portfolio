@@ -42,6 +42,12 @@ export default withNextra({
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'ericallen.info',
+        port: '',
+        pathname: '/images/**',
+      },
     ],
     dangerouslyAllowSVG: true,
   },

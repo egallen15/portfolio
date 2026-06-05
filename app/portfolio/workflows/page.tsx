@@ -17,12 +17,22 @@ const workflowsData: CaseStudyProps = {
     tools: ["Sketch", "Zeplin"],
   },
   
-  image: {
-    src: "/images/workflows.png",
-    alt: "Subsplash Workflows Interface",
-    width: 1500,
-    height: 500
-  },
+  images: [
+    {
+      type: "video",
+      src: "https://ericallen.info/workflows-demo.mp4",
+      alt: "Subsplash Workflows demo video",
+      width: 1280,
+      height: 720,
+      loop: true,
+    },
+    {
+      src: "/images/workflows.png",
+      alt: "Subsplash Workflows Interface",
+      width: 1500,
+      height: 500
+    },
+  ],
   
   sections: {
     tools: {
