@@ -58,7 +58,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
       description: "An event registration system used to collect payments and details about guests for church events.",
       image: "https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png",
       imageAlt: "Mobile screen mockup for Subsplash Event Registration",
-      gridClasses: "relative lg:row-span-2 lg:col-start-1 lg:row-start-1 max-lg:h-96 lg:max-h-[48rem]",
+      gridClasses: "relative lg:row-span-2 max-lg:h-96 lg:max-h-[48rem]",
       roundedClasses: "lg:rounded-tl-[2rem]",
       contentType: "mobile-screen"
     },
@@ -72,7 +72,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
       image: "/images/workflows.png",
       imageAlt: "Subsplash Workflows board interface",
       darkImage: "/images/workflows.png",
-      gridClasses: "relative max-lg:row-start-1 lg:col-span-2 lg:row-span-2 lg:col-start-2 lg:row-start-1 max-lg:h-80 lg:max-h-[54rem]",
+      gridClasses: "relative lg:col-span-2 lg:row-span-2 max-lg:h-80 lg:max-h-[54rem]",
       roundedClasses: "max-lg:rounded-t-[2rem]",
       contentType: "image"
     },
@@ -85,7 +85,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
       description: "A delightful first-time experience for new customers signing up for Subsplash.",
       image: "https://placehold.co/1200x675?text=Subsplash+Signup",
       imageAlt: "Placeholder preview for Subsplash Signup and Onboarding",
-      gridClasses: "relative max-lg:row-start-3 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-3 max-lg:h-64 lg:max-h-[54rem]",
+      gridClasses: "relative lg:col-span-2 lg:row-span-2 max-lg:h-64 lg:max-h-[54rem]",
       roundedClasses: "",
       contentType: "image"
     },
@@ -97,7 +97,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
       date: "January 2023 – Present", 
       description: "A simple and intuitive child check-in system + attendance reporting for events.",
       content: "asdfasdfadf",
-      gridClasses: "relative lg:row-span-2 lg:col-start-3 lg:row-start-3 max-lg:h-96 lg:max-h-[48rem]",
+      gridClasses: "relative lg:row-span-2 max-lg:h-96 lg:max-h-[48rem]",
       roundedClasses: "lg:rounded-tr-[2rem]",
       contentType: "code"
     },
@@ -117,7 +117,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
         width: 3042,
         height: 3141,
       },
-      gridClasses: "relative lg:row-span-1 lg:col-start-1 lg:row-start-5 h-40 sm:h-48 lg:h-full",
+      gridClasses: "relative lg:row-span-1 h-40 sm:h-48 lg:h-full",
       roundedClasses: "",
       contentType: "image"
     },
@@ -137,7 +137,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
         width: 2103,
         height: 1665,
       },
-      gridClasses: "relative lg:row-span-1 lg:col-start-3 lg:row-start-6 h-40 sm:h-48 lg:h-full",
+      gridClasses: "relative lg:row-span-1 h-40 sm:h-48 lg:h-full",
       roundedClasses: "",
       contentType: "image"
     },
@@ -157,7 +157,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
         width: 1551,
         height: 1044,
       },
-      gridClasses: "relative lg:row-span-1 lg:col-start-1 lg:row-start-7 h-40 sm:h-48 lg:h-full",
+      gridClasses: "relative lg:row-span-1 h-40 sm:h-48 lg:h-full",
       roundedClasses: "max-lg:rounded-b-[2rem] lg:rounded-b-[2rem]",
       contentType: "image"
     }
@@ -169,7 +169,7 @@ export default function BentoGrid({ maxItems }: BentoGridProps) {
   // Adjust grid layout for fewer items
   const gridClasses = maxItems === 4 
     ? "grid gap-6 lg:grid-cols-2 lg:grid-rows-2"
-    : "bento-portfolio-grid grid gap-6 lg:grid-cols-3";
+    : "bento-portfolio-grid grid gap-6 lg:grid-flow-dense lg:grid-cols-3";
 
   const getLightboxImage = (project: BentoGridItem): LightboxImageData | null => {
     if (project.action !== "lightbox") {
